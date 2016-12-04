@@ -8,4 +8,6 @@ public interface Block {
 
     int getZ();
 
+    net.minecraft.block.Block getMCBlock();
+
 }
