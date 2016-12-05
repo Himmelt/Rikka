@@ -1,4 +1,4 @@
-package org.rikka.craft.item;
+package org.rikka.item;
 
 public interface ItemStack {
 

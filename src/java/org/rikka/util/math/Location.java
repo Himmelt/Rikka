@@ -1,6 +1,6 @@
-package org.rikka.craft.util.math;
+package org.rikka.util.math;
 
-import org.rikka.craft.World;
+import org.rikka.World;
 
 public class Location implements Cloneable {
 

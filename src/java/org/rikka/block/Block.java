@@ -1,6 +1,6 @@
-package org.rikka.craft.block;
+package org.rikka.block;
 
-import org.rikka.craft.World;
+import org.rikka.World;
 
 public interface Block {
 

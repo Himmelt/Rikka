@@ -1,4 +1,4 @@
-package org.rikka.craft.entity;
+package org.rikka.entity;
 
 public interface Entity<T extends net.minecraft.entity.Entity> {
 
