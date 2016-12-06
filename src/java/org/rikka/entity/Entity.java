@@ -1,5 +1,8 @@
 package org.rikka.entity;
 
+import org.rikka.World;
+import org.rikka.data.Data;
+
 public interface Entity<T extends net.minecraft.entity.Entity> {
 
     double getX();
@@ -21,6 +24,18 @@ public interface Entity<T extends net.minecraft.entity.Entity> {
     int getBlockZ();
 
     void setPosition(double x, double y, double z);
+
+    Data getTempData();
+
+    Data getStoredData();
+
+    long getAge();
+
+    void despawn();
+
+    T getMCEntity();
+
+    World getWorld();
 
     EntityType getType();
 }
