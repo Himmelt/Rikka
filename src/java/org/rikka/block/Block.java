@@ -11,6 +11,7 @@ public interface Block {
     int getZ();
 
     int getMetadata();
+
     void setMetadata(int meta);
 
     World getWorld();

@@ -1,12 +1,17 @@
 package org.rikka.entity;
 
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 
-public class Player {
+public interface Player<T extends EntityPlayerMP> extends Entity<T> {
 
-    private EntityPlayer player;
+    void message(String message);
 
-    public Player(EntityPlayer player) {
-        this.player = player;
-    }
+    int getGamemode();
+
+    void setGamemode(int mode);
+
+    int getExpLevel();
+
+    void setExpLevel(int level);
+
 }

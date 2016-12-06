@@ -5,6 +5,10 @@ import org.rikka.data.Data;
 
 public interface Entity<T extends net.minecraft.entity.Entity> {
 
+    String getName();
+
+    String getDisplayName();
+
     double getX();
 
     void setX(double x);
