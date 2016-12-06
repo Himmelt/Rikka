@@ -5,13 +5,13 @@ import org.rikka.block.Block;
 import org.rikka.entity.Player;
 
 @Cancelable
-public class ActiveEvent extends BlockEvent {
+public class ActivatedEvent extends BlockEvent {
 
     private final Player player;
     private final float hitX, hitY, hitZ;
     private final int side;
 
-    public ActiveEvent(Block block, Player player, int side, float hitX, float hitY, float hitZ) {
+    public ActivatedEvent(Block block, Player player, int side, float hitX, float hitY, float hitZ) {
         super(block);
         //this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
         this.player = player;
