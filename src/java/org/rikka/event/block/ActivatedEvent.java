@@ -1,10 +1,9 @@
 package org.rikka.event.block;
 
-import net.minecraftforge.fml.common.eventhandler.Cancelable;
 import org.rikka.block.Block;
 import org.rikka.entity.Player;
 
-@Cancelable
+@net.minecraftforge.fml.common.eventhandler.Cancelable
 public class ActivatedEvent extends BlockEvent {
 
     private final Player player;

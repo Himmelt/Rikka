@@ -1,7 +1,7 @@
 package org.rikka.event.block;
 
-import net.minecraft.entity.Entity;
 import org.rikka.block.Block;
+import org.rikka.entity.Entity;
 
 public class CollidedEvent extends BlockEvent {
 
