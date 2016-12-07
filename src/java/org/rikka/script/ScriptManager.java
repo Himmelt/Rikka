@@ -2,6 +2,8 @@ package org.rikka.script;
 
 import net.minecraft.nbt.NBTTagCompound;
 import org.apache.commons.io.FileUtils;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.Nullable;
 import org.rikka.data.Data;
 import org.rikka.script.data.StoredData;
 import org.rikka.script.data.TempData;
@@ -20,58 +22,67 @@ import java.util.Map;
 
 public class ScriptManager {
 
-    public static ScriptManager INSTANCE;
-    public static boolean STARTED = false;
+    /* 直接静态初始化 */
+    private static long lastLoad = 0L;
+    private static boolean started = false;
+    private static boolean shouldSave = false;
+    private static File scriptFolder = new File("saveFolder", "scripts");
+    private static File globalDataFile = new File(scriptFolder, "global_data.json");
+    private static ScriptEngineManager engineManager = new ScriptEngineManager();
+    /* Data 初始化 */
+    private static TempData globalTempData = new TempData();
+    private static NBTTagCompound globalDataCompound = new NBTTagCompound();
+    private static StoredData globalStoredData = new StoredData(globalDataCompound);
+    /* Map 未填充初始化 */
+    private static Map<String, String> langSuffixMap = new HashMap<>();
+    private static Map<String, String> fileScriptMap = new HashMap<>();
+    private static Map<String, ScriptEngineFactory> langFactoryMap = new HashMap<>();
 
-    private Map<String, String> langSuffixMap = new HashMap<>();
-    private Map<String, String> fileScriptMap = new HashMap<>();
-    private Map<String, ScriptEngineFactory> langFactoryMap = new HashMap<>();
-    private ScriptEngineManager engineManager;
-    private File scriptFolder, globalDataFile;
-    private long lastLoaded = 0L;
-    private boolean shouldSave = false;
-    // Data
-    private TempData globalTempData = new TempData();
-    private NBTTagCompound globalDataCompound = new NBTTagCompound();
-    private StoredData globalStoredData = new StoredData(globalDataCompound);
 
-    public ScriptManager(String saveFolder) {
-        INSTANCE = this;
-        engineManager = new ScriptEngineManager();
-        scriptFolder = new File(saveFolder, "scripts");
-        globalDataFile = new File(scriptFolder, "global_data.json");
+    static {
         for (ScriptEngineFactory factory : engineManager.getEngineFactories()) {
             if (!factory.getExtensions().isEmpty() &&
                     (factory.getScriptEngine() instanceof Invocable ||
                             factory.getLanguageName().equals("lua"))) {
                 String suffix = "." + factory.getExtensions().get(0).toLowerCase();
-                this.langSuffixMap.put(factory.getLanguageName(), suffix);
-                this.langFactoryMap.put(factory.getLanguageName().toLowerCase(), factory);
+                langSuffixMap.put(factory.getLanguageName(), suffix);
+                langFactoryMap.put(factory.getLanguageName().toLowerCase(), factory);
             }
         }
     }
 
-    public Data getTempData() {
+    public static boolean isStarted() {
+        return started;
+    }
+
+    public static void setStarted(boolean started) {
+        ScriptManager.started = started;
+    }
+
+    @Contract(pure = true)
+    public static Data getTempData() {
         return globalTempData;
     }
 
-    public Data getStoredData() {
+    @Contract(pure = true)
+    public static Data getStoredData() {
         return globalStoredData;
     }
 
-    public ScriptEngine getEngineByName(String language) {
-        ScriptEngineFactory factory = this.langFactoryMap.get(language.toLowerCase());
+    @Nullable
+    public static ScriptEngine getEngineByName(String language) {
+        ScriptEngineFactory factory = langFactoryMap.get(language.toLowerCase());
         return factory == null ? null : factory.getScriptEngine();
     }
 
-    public void reload() {
-        if (!this.scriptFolder.exists() && this.scriptFolder.mkdir()) {
+    public static void reload() {
+        if (!scriptFolder.exists() && scriptFolder.mkdir()) {
             // 未成功创建
             System.out.println("Folder was not created!");
         }
 
-        if (!this.globalDataFile.exists()) {
-            this.shouldSave = true;
+        if (!globalDataFile.exists()) {
+            shouldSave = true;
         }
         // clear data
         globalTempData.clear();
@@ -88,17 +99,17 @@ public class ScriptManager {
             }
         }
 
-        this.lastLoaded = System.currentTimeMillis();
+        lastLoad = System.currentTimeMillis();
     }
 
-    public boolean loadGlobalData() {
+    public static boolean loadGlobalData() {
 
         try {
             if (!globalDataFile.exists()) {
                 return false;
             } else {
-                this.globalDataCompound = NBTJsonUtil.LoadFile(globalDataFile);
-                this.shouldSave = false;
+                globalDataCompound = NBTJsonUtil.LoadFile(globalDataFile);
+                shouldSave = false;
                 return true;
             }
         } catch (Exception e) {
@@ -107,16 +118,16 @@ public class ScriptManager {
         }
     }
 
-    private void loadScriptFiles(File folder, String name, String suffix) {
+    private static void loadScriptFiles(File folder, String name, String suffix) {
         File[] files = folder.listFiles();
         if (files != null) {
             for (File file : files) {
                 String filename = name + file.getName().toLowerCase();
                 if (file.isDirectory()) {
-                    this.loadScriptFiles(file, filename + "/", suffix);
+                    loadScriptFiles(file, filename + "/", suffix);
                 } else if (filename.endsWith(suffix)) {
                     try {
-                        this.fileScriptMap.put(filename, FileUtils.readFileToString(file).trim());
+                        fileScriptMap.put(filename, FileUtils.readFileToString(file).trim());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -125,7 +136,7 @@ public class ScriptManager {
         }
     }
 
-    public List<String> getFileScripts(String language) {
+    public static List<String> getFileScripts(String language) {
         List<String> list = new ArrayList<>();
         String suffix = langSuffixMap.get(language);
         if (suffix == null) {
@@ -140,4 +151,7 @@ public class ScriptManager {
         }
     }
 
+    public static long getLastLoad() {
+        return lastLoad;
+    }
 }

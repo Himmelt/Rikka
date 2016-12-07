@@ -11,7 +11,7 @@ public abstract class Event extends net.minecraftforge.fml.common.eventhandler.E
      * @return the data
      */
     public Data getGTData() {
-        return ScriptManager.INSTANCE.getTempData();
+        return ScriptManager.getTempData();
     }
 
     /**
@@ -20,6 +20,6 @@ public abstract class Event extends net.minecraftforge.fml.common.eventhandler.E
      * @return the data
      */
     public Data getGSData() {
-        return ScriptManager.INSTANCE.getStoredData();
+        return ScriptManager.getStoredData();
     }
 }

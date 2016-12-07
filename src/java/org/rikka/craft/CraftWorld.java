@@ -37,6 +37,7 @@ public class CraftWorld implements World {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public void setBlock(int x, int y, int z, String name, int meta) {
         net.minecraft.block.Block block = net.minecraft.block.Block.getBlockFromName(name);
         if (block == null) {

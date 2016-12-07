@@ -1,9 +1,9 @@
 package org.rikka.craft.block;
 
-import org.rikka.craft.CraftWorld;
 import net.minecraft.util.math.BlockPos;
 import org.rikka.World;
 import org.rikka.block.Block;
+import org.rikka.craft.CraftWorld;
 
 public class CraftBlock implements Block {
 
@@ -38,6 +38,7 @@ public class CraftBlock implements Block {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public void setMetadata(int meta) {
         world.getMCWorld().setBlockState(pos, block.getStateFromMeta(meta), 2);
     }

@@ -28,7 +28,7 @@ public class TileScript extends TileEntity implements ITickable, Scriptable {
 
     @Override
     public void runScript(ScriptType type, Event event) {
-        if (enabled && ScriptManager.STARTED && !this.worldObj.isRemote) {
+        if (enabled && ScriptManager.isStarted() && !this.worldObj.isRemote) {
             if (!inited) {
                 inited = true;
                 EventHooks.onBlockScriptInit(this);
