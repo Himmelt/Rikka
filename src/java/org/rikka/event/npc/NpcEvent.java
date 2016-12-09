@@ -1,17 +1,11 @@
 package org.rikka.event.npc;
 
-import org.rikka.entity.CustomNpc;
+import org.rikka.entity.CNpc;
 import org.rikka.event.Event;
 
-public abstract class NpcEvent extends Event {
+public abstract class NpcEvent extends Event<CNpc> {
 
-    private final CustomNpc npc;
-
-    NpcEvent(CustomNpc npc){
-        this.npc = npc;
-    }
-
-    public CustomNpc getNpc() {
-        return npc;
+    public NpcEvent(CNpc npc) {
+        super(npc);
     }
 }

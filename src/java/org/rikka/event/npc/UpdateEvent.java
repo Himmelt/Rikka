@@ -1,9 +1,9 @@
 package org.rikka.event.npc;
 
-import org.rikka.entity.CustomNpc;
+import org.rikka.entity.CNpc;
 
 public class UpdateEvent extends NpcEvent {
-    UpdateEvent(CustomNpc npc) {
+    UpdateEvent(CNpc npc) {
         super(npc);
     }
 }

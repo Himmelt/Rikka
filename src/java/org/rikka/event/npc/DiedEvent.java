@@ -1,6 +1,6 @@
 package org.rikka.event.npc;
 
-import org.rikka.entity.CustomNpc;
+import org.rikka.entity.CNpc;
 import org.rikka.entity.Entity;
 
 public class DiedEvent extends NpcEvent {
@@ -9,7 +9,7 @@ public class DiedEvent extends NpcEvent {
     private final Entity source;
     private final net.minecraft.util.DamageSource damageSource;
 
-    DiedEvent(CustomNpc npc, Entity source, net.minecraft.util.DamageSource damageSource) {
+    DiedEvent(CNpc npc, Entity source, net.minecraft.util.DamageSource damageSource) {
         super(npc);
         this.damageType = damageSource.damageType;
         this.source = source;

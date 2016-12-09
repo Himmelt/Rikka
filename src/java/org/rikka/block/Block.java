@@ -14,6 +14,12 @@ public interface Block {
 
     void setMetadata(int meta);
 
+    void remove();
+
+    Block replace(String name);
+
+    Block replace(Block block);
+
     World getWorld();
 
     net.minecraft.block.Block getMCBlock();

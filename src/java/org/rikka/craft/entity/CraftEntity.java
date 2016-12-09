@@ -83,12 +83,12 @@ public class CraftEntity<T extends net.minecraft.entity.Entity> implements Entit
     }
 
     @Override
-    public Data getTempData() {
+    public Data getTData() {
         return tempData;
     }
 
     @Override
-    public Data getStoredData() {
+    public Data getSData() {
         return storedData;
     }
 

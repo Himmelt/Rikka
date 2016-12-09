@@ -2,8 +2,16 @@ package org.rikka.event;
 
 import org.rikka.data.Data;
 import org.rikka.script.ScriptManager;
+import org.rikka.script.Scriptable;
 
-public abstract class Event extends net.minecraftforge.fml.common.eventhandler.Event {
+public abstract class Event<T> extends net.minecraftforge.fml.common.eventhandler.Event {
+
+    private final T object;
+
+    public Event(T object){
+        super();
+        this.object = object;
+    }
 
     /**
      * Get global temp data.
@@ -21,5 +29,9 @@ public abstract class Event extends net.minecraftforge.fml.common.eventhandler.E
      */
     public Data getGSData() {
         return ScriptManager.getStoredData();
+    }
+
+    public T getObject(){
+        return object;
     }
 }

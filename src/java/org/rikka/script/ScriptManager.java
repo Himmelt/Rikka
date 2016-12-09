@@ -26,10 +26,7 @@ public class ScriptManager {
     private static long lastLoad = 0L;
     private static boolean started = false;
     private static boolean shouldSave = false;
-    private static File scriptFolder = new File("saveFolder", "scripts");
-    private static File globalDataFile = new File(scriptFolder, "global_data.json");
     private static ScriptEngineManager engineManager = new ScriptEngineManager();
-    /* Data 初始化 */
     private static TempData globalTempData = new TempData();
     private static NBTTagCompound globalDataCompound = new NBTTagCompound();
     private static StoredData globalStoredData = new StoredData(globalDataCompound);
@@ -37,9 +34,15 @@ public class ScriptManager {
     private static Map<String, String> langSuffixMap = new HashMap<>();
     private static Map<String, String> fileScriptMap = new HashMap<>();
     private static Map<String, ScriptEngineFactory> langFactoryMap = new HashMap<>();
+    /* init 初始化 */
+    private static File scriptFolder;
+    private static File globalDataFile;
 
+    public static void init(String saveFolder) {
 
-    static {
+        scriptFolder = new File(saveFolder, "scripts");
+        globalDataFile = new File(scriptFolder, "global_data.json");
+
         for (ScriptEngineFactory factory : engineManager.getEngineFactories()) {
             if (!factory.getExtensions().isEmpty() &&
                     (factory.getScriptEngine() instanceof Invocable ||
@@ -154,4 +157,5 @@ public class ScriptManager {
     public static long getLastLoad() {
         return lastLoad;
     }
+
 }

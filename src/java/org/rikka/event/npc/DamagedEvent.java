@@ -1,6 +1,6 @@
 package org.rikka.event.npc;
 
-import org.rikka.entity.CustomNpc;
+import org.rikka.entity.CNpc;
 import org.rikka.entity.Entity;
 
 @net.minecraftforge.fml.common.eventhandler.Cancelable
@@ -11,7 +11,7 @@ public class DamagedEvent extends NpcEvent {
     private float damage;
     private boolean clearTarget = false;
 
-    DamagedEvent(CustomNpc npc, Entity source, float damage, net.minecraft.util.DamageSource damageSource) {
+    DamagedEvent(CNpc npc, Entity source, float damage, net.minecraft.util.DamageSource damageSource) {
         super(npc);
         this.source = source;
         this.damage = damage;
