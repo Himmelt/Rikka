@@ -16,6 +16,7 @@ public class CraftWorld implements World {
     private final WorldServer world;
 
     public CraftWorld(net.minecraft.world.World world) {
+        //客户端与服务端区分转换!!!
         this.world = (WorldServer) world;
     }
 

@@ -1,4 +1,4 @@
-package org.rikka.script.tile;
+package org.rikka.craft.tile;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
@@ -6,13 +6,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import org.rikka.block.Block;
 import org.rikka.craft.block.CraftBlock;
-import org.rikka.data.Data;
-import org.rikka.script.EventHooks;
-import org.rikka.script.ScriptManager;
-import org.rikka.script.ScriptType;
-import org.rikka.script.Scriptable;
-import org.rikka.script.data.StoredData;
-import org.rikka.script.data.TempData;
+import org.rikka.craft.event.EventHooks;
+import org.rikka.craft.script.ScriptManager;
+import org.rikka.craft.script.ScriptType;
+import org.rikka.craft.script.Scriptable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +21,6 @@ public class TileScript extends TileEntity implements ITickable, Scriptable<Bloc
     private boolean inited = false;
     private boolean enabled = false;
     private Block block;
-    private final Data tempData = new TempData();
-    private final Data storedData = new StoredData(this.getTileData());
 
     @Override
     public void update() {
@@ -50,16 +45,6 @@ public class TileScript extends TileEntity implements ITickable, Scriptable<Bloc
     @Override
     public boolean getEnabled() {
         return enabled;
-    }
-
-    @Override
-    public Data getTData() {
-        return tempData;
-    }
-
-    @Override
-    public Data getSData() {
-        return storedData;
     }
 
     @Override

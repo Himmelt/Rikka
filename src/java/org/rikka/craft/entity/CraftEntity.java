@@ -1,25 +1,22 @@
 package org.rikka.craft.entity;
 
-import org.rikka.craft.CraftWorld;
 import net.minecraft.util.math.MathHelper;
 import org.rikka.World;
+import org.rikka.craft.capability.CapScript;
 import org.rikka.data.Data;
 import org.rikka.entity.Entity;
 import org.rikka.entity.EntityType;
-import org.rikka.script.data.StoredData;
-import org.rikka.script.data.TempData;
 
 public class CraftEntity<T extends net.minecraft.entity.Entity> implements Entity {
 
-    T entity;
+    final T entity;
     private World world;
-    private StoredData storedData;
-    private TempData tempData = new TempData();
+    private Data tData;
+    private Data sData;
 
-    CraftEntity(T entity) {
+    public CraftEntity(T entity) {
         this.entity = entity;
-        world = new CraftWorld(entity.worldObj);
-        storedData = new StoredData(this.entity.getEntityData().getCompoundTag("StoredData"));
+        //world = new CraftWorld(entity.worldObj);
     }
 
     @Override
@@ -83,13 +80,21 @@ public class CraftEntity<T extends net.minecraft.entity.Entity> implements Entit
     }
 
     @Override
-    public Data getTData() {
-        return tempData;
+    public final Data getTData() {
+        if (tData == null && entity.hasCapability(CapScript.ability, null)) {
+            CapScript capScript = entity.getCapability(CapScript.ability, null);
+            tData = capScript.getTData();
+        }
+        return tData;
     }
 
     @Override
-    public Data getSData() {
-        return storedData;
+    public final Data getSData() {
+        if (sData == null && entity.hasCapability(CapScript.ability, null)) {
+            CapScript capScript = entity.getCapability(CapScript.ability, null);
+            sData = capScript.getSData();
+        }
+        return sData;
     }
 
     @Override

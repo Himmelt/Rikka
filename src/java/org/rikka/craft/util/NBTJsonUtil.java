@@ -1,4 +1,4 @@
-package org.rikka.script.util;
+package org.rikka.craft.util;
 
 import net.minecraft.nbt.NBTTagCompound;
 
