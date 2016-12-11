@@ -1,5 +1,7 @@
 package org.rikka.data;
 
+import java.util.Set;
+
 /**
  * 脚本变量接口.
  */
@@ -40,5 +42,7 @@ public interface Data {
      * 清除所有变量({@link Data}).
      */
     void clear();
+
+    Set<String> keySet();
 
 }

@@ -3,14 +3,11 @@ package org.rikka.craft.data;
 import org.rikka.data.Data;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class CraftData implements Data {
 
-    private final HashMap<String, Object> dataMap;
-
-    public CraftData(HashMap<String, Object> dataMap) {
-        this.dataMap = dataMap;
-    }
+    private final HashMap<String, Object> dataMap = new HashMap<>();
 
     @Override
     public void put(String key, Object value) {
@@ -35,5 +32,10 @@ public class CraftData implements Data {
     @Override
     public void clear() {
         dataMap.clear();
+    }
+
+    @Override
+    public Set<String> keySet() {
+        return dataMap.keySet();
     }
 }

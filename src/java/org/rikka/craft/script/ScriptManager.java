@@ -1,7 +1,15 @@
 package org.rikka.craft.script;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.CapabilityInject;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
 import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.Nullable;
+import org.rikka.craft.capability.ScriptProvider;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -15,6 +23,9 @@ import java.util.List;
 import java.util.Map;
 
 public class ScriptManager {
+
+    @CapabilityInject(IScriptHandler.class)
+    public static Capability<IScriptHandler> capability;
 
     /* 直接静态初始化 */
     private static long lastLoad = 0L;
@@ -134,6 +145,14 @@ public class ScriptManager {
 
     public static long getLastLoad() {
         return lastLoad;
+    }
+
+    public static void attachEntity(AttachCapabilitiesEvent<Entity> event) {
+        ResourceLocation location = new ResourceLocation("rikka:capScript");
+        Entity entity = event.getObject();
+        if ((entity instanceof EntityCow || entity instanceof EntityPlayerMP) && !entity.worldObj.isRemote) {
+            event.addCapability(location, new ScriptProvider());
+        }
     }
 
 }

@@ -2,7 +2,8 @@ package org.rikka.craft.entity;
 
 import net.minecraft.util.math.MathHelper;
 import org.rikka.World;
-import org.rikka.craft.capability.CapScript;
+import org.rikka.craft.script.IScriptHandler;
+import org.rikka.craft.script.ScriptManager;
 import org.rikka.data.Data;
 import org.rikka.entity.Entity;
 import org.rikka.entity.EntityType;
@@ -81,18 +82,18 @@ public class CraftEntity<T extends net.minecraft.entity.Entity> implements Entit
 
     @Override
     public final Data getTData() {
-        if (tData == null && entity.hasCapability(CapScript.ability, null)) {
-            CapScript capScript = entity.getCapability(CapScript.ability, null);
-            tData = capScript.getTData();
+        if (tData == null && entity.hasCapability(ScriptManager.capability, null)) {
+            IScriptHandler handler = entity.getCapability(ScriptManager.capability, null);
+            tData = handler.getTData();
         }
         return tData;
     }
 
     @Override
     public final Data getSData() {
-        if (sData == null && entity.hasCapability(CapScript.ability, null)) {
-            CapScript capScript = entity.getCapability(CapScript.ability, null);
-            sData = capScript.getSData();
+        if (sData == null && entity.hasCapability(ScriptManager.capability, null)) {
+            IScriptHandler handler = entity.getCapability(ScriptManager.capability, null);
+            sData = handler.getSData();
         }
         return sData;
     }
