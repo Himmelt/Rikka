@@ -22,16 +22,55 @@ public class ScriptHandler implements IScriptHandler {
     private boolean enabled = false;
     private boolean errored = false;
     private boolean inited = false;
+    private boolean handlerInited = false;
+    private boolean engineInited = false;
     private boolean isClient = true;
     private String language = "ECMAScript";
     private List<String> scriptFiles = new ArrayList<>();
     private String script = "function", console = "console", fullscript = "full", suffix = ".js";
     private ScriptEngine engine = null;
 
+    private String getFullscript() {
+        if (!handlerInited) {
+            fullscript = script;
+            if (!fullscript.isEmpty()) {
+                fullscript = fullscript + "\n";
+            }
+
+            for (String filename : scriptFiles) {
+                String code = ScriptManager.fileScriptMap.get(filename);
+                if (code != null && !code.isEmpty()) {
+                    fullscript = fullscript + code + "\n";
+                }
+            }
+        }
+        return fullscript;
+    }
+
+    private void setEngine(String language) {
+        if (this.language == null || !this.language.equals(language)) {
+            this.engine = ScriptManager.getEngineByName(language);
+            if (this.engine == null) {
+                this.errored = true;
+            } else {
+                //this.engine.put("AnimationType", animations);
+                //this.engine.put("EntityType", entities);
+                //this.engine.put("RoleType", roles);
+                //this.engine.put("JobType", jobs);
+                //this.engine.put("SideType", sides);
+                //this.engine.put("TacticalVariantType", tacticalVariantTypes);
+                //this.engine.put("PotionEffectType", potionEffectTypes);
+                //this.engine.put("ParticleType", particleTypes);
+                this.language = language;
+                this.engineInited = false;
+            }
+        }
+    }
 
     @Override
     public void readFromNBT(NBTTagCompound compound) {
-        // <String>inner <String>files <String>console
+        enabled = compound.getBoolean("enabled");
+        language = compound.getString("language");
         script = compound.getString("inner");
         console = compound.getString("console");
         String[] files = compound.getString("files").split(",");
@@ -44,6 +83,8 @@ public class ScriptHandler implements IScriptHandler {
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+        compound.setBoolean("enabled", enabled);
+        compound.setString("language", language);
         compound.setString("inner", script);
         compound.setString("console", console);
         String files = "";
@@ -64,9 +105,9 @@ public class ScriptHandler implements IScriptHandler {
                 setEngine(language);
                 if (engine != null) {
                     try {
-                        if (!inited) {
+                        if (!engineInited) {
                             engine.eval(fullscript);
-                            inited = true;
+                            engineInited = true;
                         }
                         if (this.engine.getFactory().getLanguageName().equals("lua")) {
                             Object e = this.engine.get(type.function);
@@ -80,9 +121,9 @@ public class ScriptHandler implements IScriptHandler {
                         } else {
                             ((Invocable) this.engine).invokeFunction(type.function, event);
                         }
-                    } catch (NoSuchMethodException var8) {
+                    } catch (NoSuchMethodException e) {
                         //this.unknownFunctions.add(type.ordinal());
-                    } catch (Exception var9) {
+                    } catch (Exception e) {
                         this.errored = true;
                         //var9.printStackTrace(pw);
                         //NoppesUtilServer.NotifyOPs(handler.noticeString() + " script errored");
@@ -92,25 +133,6 @@ public class ScriptHandler implements IScriptHandler {
         }
     }
 
-    private void setEngine(String language) {
-        if (this.language == null || !this.language.equals(language)) {
-            this.engine = ScriptManager.getEngineByName(language);
-            if (this.engine == null) {
-                this.errored = true;
-            } else {
-                //this.engine.put("AnimationType", animations);
-                //this.engine.put("EntityType", entities);
-                //this.engine.put("RoleType", roles);
-                //this.engine.put("JobType", jobs);
-                //this.engine.put("SideType", sides);
-                //this.engine.put("TacticalVariantType", tacticalVariantTypes);
-                //this.engine.put("PotionEffectType", potionEffectTypes);
-                //this.engine.put("ParticleType", particleTypes);
-                this.language = language;
-                this.inited = false;
-            }
-        }
-    }
 
     @Override
     public boolean isClient() {

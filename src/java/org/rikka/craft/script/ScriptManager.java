@@ -34,7 +34,7 @@ public class ScriptManager {
     private static ScriptEngineManager engineManager = new ScriptEngineManager();
     /* Map 未填充初始化 */
     private static Map<String, String> langSuffixMap = new HashMap<>();
-    private static Map<String, String> fileScriptMap = new HashMap<>();
+    public static Map<String, String> fileScriptMap = new HashMap<>();
     private static Map<String, ScriptEngineFactory> langFactoryMap = new HashMap<>();
     /* init 初始化 */
     private static File scriptFolder;
