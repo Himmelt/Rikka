@@ -34,11 +34,12 @@ public class ScriptManager {
     private static ScriptEngineManager engineManager = new ScriptEngineManager();
     /* Map 未填充初始化 */
     private static Map<String, String> langSuffixMap = new HashMap<>();
-    public static Map<String, String> fileScriptMap = new HashMap<>();
+    static Map<String, String> fileScriptMap = new HashMap<>();
     private static Map<String, ScriptEngineFactory> langFactoryMap = new HashMap<>();
     /* init 初始化 */
     private static File scriptFolder;
     private static File globalDataFile;
+    static long lastLoaded;
 
     public static void init(String saveFolder) {
 
@@ -65,8 +66,8 @@ public class ScriptManager {
     }
 
     @Nullable
-    public static ScriptEngine getEngineByName(String language) {
-        ScriptEngineFactory factory = langFactoryMap.get(language.toLowerCase());
+    static ScriptEngine getEngineByName(String language) {
+        ScriptEngineFactory factory = langFactoryMap.get(language);
         return factory == null ? null : factory.getScriptEngine();
     }
 
@@ -151,7 +152,7 @@ public class ScriptManager {
         ResourceLocation location = new ResourceLocation("rikka:capScript");
         Entity entity = event.getObject();
         if ((entity instanceof EntityCow || entity instanceof EntityPlayerMP) && !entity.worldObj.isRemote) {
-            event.addCapability(location, new ScriptProvider());
+            event.addCapability(location, new ScriptProvider(entity));
         }
     }
 

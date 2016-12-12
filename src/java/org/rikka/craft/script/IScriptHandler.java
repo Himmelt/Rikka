@@ -12,8 +12,6 @@ public interface IScriptHandler {
 
     void run(ScriptType type, Event event);
 
-    boolean isClient();
-
     boolean getEnabled();
 
     void setEnabled(boolean enabled);
