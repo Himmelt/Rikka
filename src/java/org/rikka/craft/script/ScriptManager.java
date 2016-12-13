@@ -11,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 import org.rikka.craft.capability.ScriptProvider;
 
 import javax.annotation.Nullable;
-import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptEngineManager;
@@ -25,52 +24,36 @@ public class ScriptManager {
     @CapabilityInject(IScriptHandler.class)
     public static Capability<IScriptHandler> capability;
 
-    /* 直接静态初始化 */
-    private static long lastLoad = 0L;
-    private static boolean started = false;
-    private static boolean shouldSave = false;
-    private static ScriptEngineManager engineManager = new ScriptEngineManager();
-    /* Map 未填充初始化 */
-    private static Map<String, String> langSuffixMap = new HashMap<>();
-    static Map<String, String> fileScriptMap = new HashMap<>();
-    private static Map<String, ScriptEngineFactory> langFactoryMap = new HashMap<>();
-    /* init 初始化 */
+
+    public static long LASTLOAD = 0L;
+    public static boolean STARTED = false;
+    public static final Map<String, String> scriptFiles = new HashMap<>();
+    private static final Map<String, String> engineLanguages = new HashMap<>();
+    private static final Map<String, ScriptEngineFactory> engineFactories = new HashMap<>();
     private static File scriptFolder;
-    private static File globalDataFile;
-    static long lastLoaded;
 
-    public static void init(String saveFolder) {
 
+    public static void init(File saveFolder) {
         scriptFolder = new File(saveFolder, "scripts");
-        globalDataFile = new File(scriptFolder, "global_data.json");
-
-        for (ScriptEngineFactory factory : engineManager.getEngineFactories()) {
-            if (!factory.getExtensions().isEmpty() &&
-                    (factory.getScriptEngine() instanceof Invocable ||
-                            factory.getLanguageName().equals("lua"))) {
-                String suffix = "." + factory.getExtensions().get(0).toLowerCase();
-                langSuffixMap.put(factory.getLanguageName(), suffix);
-                langFactoryMap.put(factory.getLanguageName().toLowerCase(), factory);
+        for (ScriptEngineFactory factory : new ScriptEngineManager().getEngineFactories()) {
+            String lang = factory.getEngineName().toLowerCase();
+            if (lang.contains("nashorn")) {
+                engineFactories.put("Nashorn", factory);
+                engineLanguages.put("Nashorn", "javascript");
+            } else if (lang.contains("lua")) {
+                engineFactories.put("Luaj", factory);
+                engineLanguages.put("Luaj", "lua");
+            } else if (lang.contains("jython")) {
+                engineFactories.put("Jython", factory);
+                engineLanguages.put("Jython", "python");
+            } else if (lang.contains("ruby")) {
+                engineFactories.put("JRuby", factory);
+                engineLanguages.put("JRuby", "ruby");
+            } else {
+                engineFactories.put(factory.getEngineName(), factory);
+                engineLanguages.put(factory.getEngineName(), factory.getLanguageName());
             }
         }
-    }
-
-    public static boolean isStarted() {
-        return started;
-    }
-
-    public static void setStarted(boolean started) {
-        ScriptManager.started = started;
-    }
-
-    @Nullable
-    static ScriptEngine getEngineByName(String language) {
-        ScriptEngineFactory factory = langFactoryMap.get(language);
-        return factory == null ? null : factory.getScriptEngine();
-    }
-
-    static String getSuffixByName(String language) {
-        return langSuffixMap.get(language);
     }
 
     public static void reload() {
@@ -78,51 +61,29 @@ public class ScriptManager {
             // 未成功创建
             System.out.println("Folder was not created!");
         }
-
-        if (!globalDataFile.exists()) {
-            shouldSave = true;
-        }
         // clear data
-        fileScriptMap.clear();
-
-        for (String lang : langSuffixMap.keySet()) {
-            String suffix = langSuffixMap.get(lang);
-            File langFolder = new File(scriptFolder, lang.toLowerCase());
+        scriptFiles.clear();
+        for (String engineName : engineFactories.keySet()) {
+            File langFolder = new File(scriptFolder, engineName.toLowerCase());
             if (!langFolder.exists() && langFolder.mkdir()) {
                 // 创建失败
                 System.out.println("Folder was not created!");
             } else {
-                loadScriptFiles(langFolder, "", suffix);
+                loadFiles(langFolder);
             }
         }
-
-        lastLoad = System.currentTimeMillis();
+        LASTLOAD = System.currentTimeMillis();
     }
 
-    public static boolean loadGlobalData() {
-
-        try {
-            if (!globalDataFile.exists()) {
-                return false;
-            } else {
-                shouldSave = false;
-                return true;
-            }
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    private static void loadScriptFiles(File folder, String name, String suffix) {
+    private static void loadFiles(File folder) {
         File[] files = folder.listFiles();
         if (files != null) {
             for (File file : files) {
-                String filename = name + file.getName().toLowerCase();
                 if (file.isDirectory()) {
-                    loadScriptFiles(file, filename + "/", suffix);
-                } else if (filename.endsWith(suffix)) {
+                    loadFiles(file);
+                } else {
                     try {
-                        fileScriptMap.put(filename, FileUtils.readFileToString(file).trim());
+                        scriptFiles.put(file.getName(), FileUtils.readFileToString(file));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -131,8 +92,10 @@ public class ScriptManager {
         }
     }
 
-    public static long getLastLoad() {
-        return lastLoad;
+    @Nullable
+    static ScriptEngine getEngine(String engineName) {
+        ScriptEngineFactory factory = engineFactories.get(engineName);
+        return factory == null ? null : factory.getScriptEngine();
     }
 
     public static void attachEntity(AttachCapabilitiesEvent<Entity> event) {

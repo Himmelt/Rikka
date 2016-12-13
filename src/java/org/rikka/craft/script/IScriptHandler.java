@@ -6,9 +6,7 @@ import org.rikka.data.Data;
 
 public interface IScriptHandler {
 
-    void readFromNBT(NBTTagCompound compound);
-
-    NBTTagCompound writeToNBT(NBTTagCompound compound);
+    void reload();
 
     void run(ScriptType type, Event event);
 
@@ -16,9 +14,9 @@ public interface IScriptHandler {
 
     void setEnabled(boolean enabled);
 
-    String getLanguage();
+    String getEngineName();
 
-    void setLanguage(String language);
+    void setEngineName(String engineName);
 
     Data getTData();
 
@@ -27,5 +25,9 @@ public interface IScriptHandler {
     Object getObject();
 
     void setObject(Object object);
+
+    void readFromNBT(NBTTagCompound compound);
+
+    NBTTagCompound writeToNBT(NBTTagCompound compound);
 
 }
