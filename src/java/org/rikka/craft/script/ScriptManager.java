@@ -8,18 +8,16 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import org.apache.commons.io.FileUtils;
-import org.jetbrains.annotations.Nullable;
 import org.rikka.craft.capability.ScriptProvider;
 
+import javax.annotation.Nullable;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptEngineManager;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ScriptManager {
@@ -69,6 +67,10 @@ public class ScriptManager {
     static ScriptEngine getEngineByName(String language) {
         ScriptEngineFactory factory = langFactoryMap.get(language);
         return factory == null ? null : factory.getScriptEngine();
+    }
+
+    static String getSuffixByName(String language) {
+        return langSuffixMap.get(language);
     }
 
     public static void reload() {
@@ -126,21 +128,6 @@ public class ScriptManager {
                     }
                 }
             }
-        }
-    }
-
-    public static List<String> getFileScripts(String language) {
-        List<String> list = new ArrayList<>();
-        String suffix = langSuffixMap.get(language);
-        if (suffix == null) {
-            return list;
-        } else {
-            for (String filename : fileScriptMap.keySet()) {
-                if (filename.endsWith(suffix)) {
-                    list.add(filename);
-                }
-            }
-            return list;
         }
     }
 

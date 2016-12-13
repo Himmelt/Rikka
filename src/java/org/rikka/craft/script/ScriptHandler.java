@@ -1,9 +1,7 @@
 package org.rikka.craft.script;
 
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.*;
 import net.minecraftforge.fml.common.eventhandler.Event;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import org.rikka.craft.data.CraftData;
 import org.rikka.data.Data;
 
@@ -16,7 +14,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-@SideOnly(Side.SERVER)
+
 public class ScriptHandler implements IScriptHandler {
 
     private final Data tData = new CraftData();
@@ -43,6 +41,7 @@ public class ScriptHandler implements IScriptHandler {
     private boolean initEngine() {
         if (!inited) {
             engine = ScriptManager.getEngineByName(language);
+            suffix = ScriptManager.getSuffixByName(language);
             if (engine == null) {
                 errored = true;
                 return false;
@@ -71,29 +70,84 @@ public class ScriptHandler implements IScriptHandler {
 
     @Override
     public void readFromNBT(NBTTagCompound compound) {
-        enabled = compound.getBoolean("enabled");
-        language = compound.getString("language");
-        script = compound.getString("inner");
-        console = compound.getString("console");
-        String[] files = compound.getString("files").split(",");
-        for (String file : files) {
-            if (file != null && !file.isEmpty() && file.endsWith(suffix)) {
-                scriptFiles.add(file);
+        /*SData*/
+        {
+            NBTTagCompound comp = compound.getCompoundTag("SData");
+            sData.clear();
+            for (String key : comp.getKeySet()) {
+                NBTBase base = comp.getTag(key);
+                if (base instanceof NBTTagByte) {
+                    sData.put(key, ((NBTTagByte) base).getByte() != 0);
+                } else if (base instanceof NBTTagInt) {
+                    sData.put(key, ((NBTTagInt) base).getInt());
+                } else if (base instanceof NBTTagShort) {
+                    sData.put(key, ((NBTTagShort) base).getShort());
+                } else if (base instanceof NBTTagLong) {
+                    sData.put(key, ((NBTTagLong) base).getLong());
+                } else if (base instanceof NBTTagFloat) {
+                    sData.put(key, ((NBTTagFloat) base).getFloat());
+                } else if (base instanceof NBTTagDouble) {
+                    sData.put(key, ((NBTTagDouble) base).getDouble());
+                } else if (base instanceof NBTTagString) {
+                    sData.put(key, ((NBTTagString) base).getString());
+                }
+            }
+        }
+        /*Script*/
+        {
+            NBTTagCompound comp = compound.getCompoundTag("Script");
+            enabled = comp.getBoolean("enabled");
+            language = comp.getString("language");
+            script = comp.getString("inner");
+            console = comp.getString("console");
+            String[] files = comp.getString("files").split(",");
+            for (String file : files) {
+                if (file != null && !file.isEmpty() && file.endsWith(suffix)) {
+                    scriptFiles.add(file);
+                }
             }
         }
     }
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-        compound.setBoolean("enabled", enabled);
-        compound.setString("language", language);
-        compound.setString("inner", script);
-        compound.setString("console", console);
-        String files = "";
-        for (String file : scriptFiles) {
-            files = files + file + ",";
+        /*SData*/
+        {
+            NBTTagCompound comp = new NBTTagCompound();
+            for (String key : sData.keySet()) {
+                Object value = sData.get(key);
+                if (value instanceof Boolean) {
+                    comp.setBoolean(key, (Boolean) value);
+                } else if (value instanceof Integer) {
+                    comp.setInteger(key, (Integer) value);
+                } else if (value instanceof Short) {
+                    comp.setShort(key, (Short) value);
+                } else if (value instanceof Long) {
+                    comp.setLong(key, (Long) value);
+                } else if (value instanceof Float) {
+                    comp.setFloat(key, (Float) value);
+                } else if (value instanceof Double) {
+                    comp.setDouble(key, (Double) value);
+                } else if (value instanceof String) {
+                    comp.setString(key, (String) value);
+                }
+            }
+            compound.setTag("SData", comp);
         }
-        compound.setString("files", files);
+        /*Script*/
+        {
+            NBTTagCompound comp = new NBTTagCompound();
+            comp.setBoolean("enabled", enabled);
+            comp.setString("language", language);
+            comp.setString("inner", this.script);
+            comp.setString("console", console);
+            String files = "";
+            for (String file : scriptFiles) {
+                files = files + file + ",";
+            }
+            comp.setString("files", files);
+            compound.setTag("Script", comp);
+        }
         return compound;
     }
 
