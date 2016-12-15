@@ -1,15 +1,25 @@
 package org.rikka.event;
 
-public abstract class Event<T> extends net.minecraftforge.fml.common.eventhandler.Event {
+import org.rikka.craft.script.ScriptManager;
+import org.rikka.data.Data;
 
-    private final T object;
+public abstract class Event extends net.minecraftforge.fml.common.eventhandler.Event {
 
-    public Event(T object) {
+    public final Object object;
+    public final Data gtData = ScriptManager.getGTData();
+    public final Data gsData = ScriptManager.getGSData();
+
+    public Event(Object object) {
         super();
         this.object = object;
     }
 
-    public T getObject() {
-        return object;
+    public boolean cancel() {
+        if (this.isCancelable()) {
+            this.setCanceled(true);
+            return true;
+        }
+        return false;
     }
+
 }

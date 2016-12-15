@@ -22,6 +22,11 @@ public class CraftPlayer<T extends EntityPlayerMP> extends CraftEntity<T> implem
     }
 
     @Override
+    public T getMCEntity() {
+        return entity;
+    }
+
+    @Override
     public void message(String message) {
         // 需要进一步处理
         this.entity.addChatMessage(new TextComponentTranslation(String.format(message, this.entity)));

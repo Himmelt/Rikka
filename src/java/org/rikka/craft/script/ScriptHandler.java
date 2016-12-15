@@ -1,6 +1,10 @@
 package org.rikka.craft.script;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.*;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import org.rikka.craft.data.CraftData;
 import org.rikka.data.Data;
@@ -16,12 +20,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * The type Script handler.
+ */
 public class ScriptHandler implements IScriptHandler {
 
     private final Data tData = new CraftData();
     private final Data sData = new CraftData();
     private boolean inited = false;
     private boolean evaled = false;
+    private boolean editing = false;
     private boolean enabled = false;
     private boolean errored = false;
     private long LASTLOAD = 0L;
@@ -41,6 +49,7 @@ public class ScriptHandler implements IScriptHandler {
             initScript();
             inited = true;
         }
+        LASTLOAD = System.currentTimeMillis();
         return true;
     }
 
@@ -58,6 +67,21 @@ public class ScriptHandler implements IScriptHandler {
         evaled = false;
     }
 
+    private void updateHandlers() {
+        if (object instanceof EntityPlayer) {
+            if (enabled) ScriptManager.playerHandlers.put(object.hashCode(), this);
+            else ScriptManager.playerHandlers.remove(object.hashCode());
+        } else if (object instanceof Entity) {
+            if (enabled) ScriptManager.entityHandlers.put(object.hashCode(), this);
+            else ScriptManager.entityHandlers.remove(object.hashCode());
+        } else if (object instanceof TileEntity) {
+            if (enabled) ScriptManager.tileHandlers.put(object.hashCode(), this);
+            else ScriptManager.tileHandlers.remove(object.hashCode());
+        } else if (object instanceof World) {
+            if (enabled) ScriptManager.worldHandlers.put(object.hashCode(), this);
+            else ScriptManager.worldHandlers.remove(object.hashCode());
+        }
+    }
 
     @Override
     public void reload() {
@@ -65,7 +89,6 @@ public class ScriptHandler implements IScriptHandler {
         evaled = false;
         /* enabled */
         errored = false;
-        LASTLOAD = System.currentTimeMillis();
         /* engineName */
         /* script */
         /* scriptFiles */
@@ -73,8 +96,8 @@ public class ScriptHandler implements IScriptHandler {
     }
 
     @Override
-    public void run(ScriptType type, Event event) {
-        if (enabled && !errored && initEngine()) {
+    public void run(EnumHook hook, Event event) {
+        if (!editing && enabled && !errored && initEngine()) {
             if (ScriptManager.LASTLOAD > this.LASTLOAD) {
                 this.LASTLOAD = ScriptManager.LASTLOAD;
                 initScript();
@@ -90,19 +113,19 @@ public class ScriptHandler implements IScriptHandler {
                     evaled = true;
                 }
                 if (engine instanceof Invocable) {
-                    ((Invocable) engine).invokeFunction(type.function, event);
+                    ((Invocable) engine).invokeFunction(hook.name(), event);
                 } else {
-                    Object func = this.engine.get(type.function);
+                    Object func = this.engine.get(hook.name());
                     if (func != null) {
                         Method method = func.getClass().getMethod("call");
                         method.invoke(func);
                     } else {
-                        unknowns.add(type.ordinal());
+                        unknowns.add(hook.ordinal());
                     }
                 }
             } catch (NoSuchMethodException | ScriptException | IllegalAccessException | InvocationTargetException e) {
                 errored = true;
-                if (e instanceof NoSuchMethodException) unknowns.add(type.ordinal());
+                if (e instanceof NoSuchMethodException) unknowns.add(hook.ordinal());
                 e.printStackTrace(printer);
                 /* 通知OP */
             }
@@ -119,6 +142,7 @@ public class ScriptHandler implements IScriptHandler {
     @Override
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+        updateHandlers();
     }
 
     @Override
@@ -128,7 +152,7 @@ public class ScriptHandler implements IScriptHandler {
 
     @Override
     public void setEngineName(String engineName) {
-        this.engineName = engineName.toLowerCase();
+        this.engineName = engineName;
     }
 
     @Override
@@ -189,6 +213,7 @@ public class ScriptHandler implements IScriptHandler {
                 }
             }
         }
+        updateHandlers();
     }
 
     @Override
@@ -233,6 +258,16 @@ public class ScriptHandler implements IScriptHandler {
             compound.setTag("Script", comp);
         }
         return compound;
+    }
+
+    @Override
+    public boolean isEditing() {
+        return editing;
+    }
+
+    @Override
+    public void setEditing(boolean editing) {
+        this.editing = editing;
     }
 
 }
