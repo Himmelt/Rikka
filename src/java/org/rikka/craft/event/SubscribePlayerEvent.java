@@ -21,7 +21,7 @@ import org.rikka.event.entity.player.PlayerTossEvent;
 public class SubscribePlayerEvent {
 
     /**
-     * [客户端] 玩家重生(死亡后复活或者从末地返回主世界)事件.
+     * [服务端] 玩家重生(死亡后复活或者从末地返回主世界)事件.
      * 需要手动同步Capability数据.
      *
      * @param event 事件

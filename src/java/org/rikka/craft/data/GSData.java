@@ -4,6 +4,7 @@ import net.minecraft.nbt.*;
 import net.minecraft.world.WorldSavedData;
 import org.rikka.data.Data;
 
+import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -51,7 +52,7 @@ public class GSData extends WorldSavedData implements Data {
 
 
     @Override
-    public void readFromNBT(NBTTagCompound nbt) {
+    public void readFromNBT(@Nonnull NBTTagCompound nbt) {
         dataMap.clear();
         for (String key : nbt.getKeySet()) {
             NBTBase base = nbt.getTag(key);
@@ -73,8 +74,9 @@ public class GSData extends WorldSavedData implements Data {
         }
     }
 
+    @Nonnull
     @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+    public NBTTagCompound writeToNBT(@Nonnull NBTTagCompound compound) {
         for (String key : dataMap.keySet()) {
             Object value = dataMap.get(key);
             if (value instanceof Boolean) {
