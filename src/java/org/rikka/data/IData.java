@@ -5,10 +5,10 @@ import java.util.Set;
 /**
  * 脚本变量接口.
  */
-public interface Data {
+public interface IData {
 
     /**
-     * 存 变量({@link Data}).
+     * 存 变量({@link IData}).
      *
      * @param key   变量的键(key).
      * @param value 变量的值(value).
@@ -16,7 +16,7 @@ public interface Data {
     void put(String key, Object value);
 
     /**
-     * 取 变量({@link Data}).
+     * 取 变量({@link IData}).
      *
      * @param key 变量的键(key).
      * @return 变量的值(value).
@@ -24,14 +24,14 @@ public interface Data {
     Object get(String key);
 
     /**
-     * 移除指定键的变量({@link Data}).
+     * 移除指定键的变量({@link IData}).
      *
      * @param key 欲移除变量的键(key).
      */
     void remove(String key);
 
     /**
-     * 是否含有指定键的变量({@link Data}).
+     * 是否含有指定键的变量({@link IData}).
      *
      * @param key 变量的键(key).
      * @return 是否含有该变量.
@@ -39,7 +39,7 @@ public interface Data {
     boolean has(String key);
 
     /**
-     * 清除所有变量({@link Data}).
+     * 清除所有变量({@link IData}).
      */
     void clear();
 

@@ -1,6 +1,8 @@
 package org.rikka.entity;
 
-public interface Player<T extends net.minecraft.entity.player.EntityPlayerMP> extends EntityLivingBase<T> {
+import net.minecraft.entity.player.EntityPlayerMP;
+
+public interface IPlayer<T extends EntityPlayerMP> extends ILivingBase<T> {
 
     void message(String message);
 

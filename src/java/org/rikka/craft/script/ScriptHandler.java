@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import org.rikka.Rikka;
 import org.rikka.craft.data.CraftData;
-import org.rikka.data.Data;
+import org.rikka.data.IData;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -26,8 +26,8 @@ import java.util.List;
  */
 public class ScriptHandler implements IScriptHandler {
 
-    private final Data tData = new CraftData();
-    private final Data sData = new CraftData();
+    private final IData tData = new CraftData();
+    private final IData sData = new CraftData();
     private boolean inited = false;
     private boolean evaled = false;
     private boolean editing = false;
@@ -157,17 +157,17 @@ public class ScriptHandler implements IScriptHandler {
     }
 
     @Override
-    public final Data getTData() {
+    public IData getTData() {
         return tData;
     }
 
     @Override
-    public final Data getSData() {
+    public IData getSData() {
         return sData;
     }
 
     @Override
-    public final Rikka getRikka() {
+    public Rikka getRikka() {
         return rikka;
     }
 

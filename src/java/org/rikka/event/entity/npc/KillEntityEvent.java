@@ -1,15 +1,15 @@
 package org.rikka.event.entity.npc;
 
-import org.rikka.Rikka;
-import org.rikka.entity.EntityLivingBase;
-import org.rikka.event.Event;
+import org.rikka.entity.ILivingBase;
+import org.rikka.entity.INpc;
+import org.rikka.event.EventType;
 
-public class KillEntityEvent extends Event {
+public class KillEntityEvent extends CNpcEvent {
 
-    public final EntityLivingBase entity;
+    public final ILivingBase entity;
 
-    KillEntityEvent(Rikka rikka, EntityLivingBase entity) {
-        super(rikka);
+    KillEntityEvent(INpc npc, ILivingBase entity) {
+        super(npc, EventType.CNPC_KILL);
         this.entity = entity;
     }
 

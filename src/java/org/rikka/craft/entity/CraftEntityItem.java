@@ -1,9 +1,10 @@
 package org.rikka.craft.entity;
 
+import net.minecraft.entity.item.EntityItem;
 import org.rikka.RikkaType;
-import org.rikka.entity.EntityItem;
+import org.rikka.entity.IEntityItem;
 
-public class CraftEntityItem<T extends net.minecraft.entity.item.EntityItem> extends CraftEntity<T> implements EntityItem {
+public class CraftEntityItem<T extends EntityItem> extends CraftEntity<T> implements IEntityItem {
     public CraftEntityItem(T entity) {
         super(entity);
     }

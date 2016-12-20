@@ -1,20 +1,28 @@
 package org.rikka.event.entity.npc;
 
 import net.minecraft.util.DamageSource;
-import org.rikka.Rikka;
-import org.rikka.entity.Entity;
-import org.rikka.event.Event;
+import org.rikka.entity.IEntity;
+import org.rikka.entity.INpc;
+import org.rikka.event.EventType;
 
-public class DiedEvent extends Event {
+public class DiedEvent extends CNpcEvent {
 
-    public final String damageType;
-    public final Entity source;
-    public final DamageSource damageSource;
+    private final String damageType;
+    private final IEntity source;
+    private final DamageSource damageSource;
 
-    DiedEvent(Rikka rikka, Entity source, DamageSource damageSource) {
-        super(rikka);
+    DiedEvent(INpc npc, IEntity source, DamageSource damageSource) {
+        super(npc, EventType.CNPC_DIE);
         this.damageType = damageSource.damageType;
         this.source = source;
         this.damageSource = damageSource;
+    }
+
+    public IEntity getSource() {
+        return source;
+    }
+
+    public String getDamageType() {
+        return damageType;
     }
 }

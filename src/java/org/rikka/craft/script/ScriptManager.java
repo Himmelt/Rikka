@@ -11,7 +11,7 @@ import org.rikka.craft.capability.ScriptProvider;
 import org.rikka.craft.data.CraftData;
 import org.rikka.craft.data.GSData;
 import org.rikka.craft.entity.CraftPlayer;
-import org.rikka.data.Data;
+import org.rikka.data.IData;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
@@ -25,8 +25,8 @@ public final class ScriptManager {
 
     @CapabilityInject(IScriptHandler.class)
     public static Capability<IScriptHandler> capability;
-    private static final Data gtData = new CraftData();
-    private static final Data gsData = new GSData();
+    private static final IData gtData = new CraftData();
+    private static final IData gsData = new GSData();
     public static long LASTLOAD = 0L;
     public static boolean STARTED = false;
     public static final Map<String, String> scriptFiles = new HashMap<>();
@@ -111,11 +111,11 @@ public final class ScriptManager {
         }
     }
 
-    public static Data getGTData() {
+    public static IData getGTData() {
         return gtData;
     }
 
-    public static Data getGSData() {
+    public static IData getGSData() {
         return gsData;
     }
 }

@@ -1,27 +1,20 @@
 package org.rikka.event.block;
 
-import org.rikka.block.Block;
-import org.rikka.entity.Player;
+import org.rikka.block.IBlock;
+import org.rikka.entity.IPlayer;
+import org.rikka.event.EventType;
 
-@net.minecraftforge.fml.common.eventhandler.Cancelable
-public class ActivatedEvent extends BlockEvent {
+public class ActivatedEvent extends BlockPlayerEvent {
 
-    private final Player player;
     private final float hitX, hitY, hitZ;
     private final int side;
 
-    public ActivatedEvent(Block block, Player player, int side, float hitX, float hitY, float hitZ) {
-        super(block);
-        //this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
-        this.player = player;
+    public ActivatedEvent(IBlock block, IPlayer player, int side, float hitX, float hitY, float hitZ) {
+        super(block, EventType.BLOCK_ACTIVE, player);
         this.hitX = hitX;
         this.hitY = hitY;
         this.hitZ = hitZ;
         this.side = side;
-    }
-
-    public Player getPlayer() {
-        return player;
     }
 
     public float getHitX() {

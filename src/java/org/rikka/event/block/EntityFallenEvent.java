@@ -1,21 +1,21 @@
 package org.rikka.event.block;
 
-import org.rikka.block.Block;
-import org.rikka.entity.Entity;
+import org.rikka.block.IBlock;
+import org.rikka.entity.IEntity;
+import org.rikka.event.EventType;
 
-@net.minecraftforge.fml.common.eventhandler.Cancelable
 public class EntityFallenEvent extends BlockEvent {
 
-    private final Entity entity;
+    private final IEntity entity;
     private final float distance;
 
-    public EntityFallenEvent(Block block, Entity entity, float distance) {
-        super(block);
+    public EntityFallenEvent(IBlock block, IEntity entity, float distance) {
+        super(block, EventType.BLOCK_FALLEN);
         this.distance = distance;
         this.entity = entity;
     }
 
-    public Entity getEntity() {
+    public IEntity getEntity() {
         return entity;
     }
 

@@ -1,15 +1,20 @@
 package org.rikka.event.entity.player;
 
-import org.rikka.Rikka;
-import org.rikka.event.Event;
-import org.rikka.item.ItemStack;
+import org.rikka.entity.IPlayer;
+import org.rikka.event.EventType;
+import org.rikka.item.IItemStack;
 
-public class PlayerTossEvent extends Event {
+public class PlayerTossEvent extends PlayerEvent {
 
-    public final ItemStack itemStack;
+    private final IItemStack itemStack;
 
-    public PlayerTossEvent(Rikka rikka, ItemStack itemStack) {
-        super(rikka);
+    public PlayerTossEvent(IPlayer player, IItemStack itemStack) {
+        super(player, EventType.PLAYER_TOSS);
         this.itemStack = itemStack;
     }
+
+    public IItemStack getItemStack() {
+        return itemStack;
+    }
+
 }

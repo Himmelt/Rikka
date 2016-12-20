@@ -2,13 +2,13 @@ package org.rikka.craft.data;
 
 import net.minecraft.nbt.*;
 import net.minecraft.world.WorldSavedData;
-import org.rikka.data.Data;
+import org.rikka.data.IData;
 
 import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Set;
 
-public class GSData extends WorldSavedData implements Data {
+public class GSData extends WorldSavedData implements IData {
 
     private final HashMap<String, Object> dataMap = new HashMap<>();
 

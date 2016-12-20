@@ -1,19 +1,19 @@
 package org.rikka.event.entity.npc;
 
-import org.rikka.Rikka;
-import org.rikka.entity.Entity;
-import org.rikka.event.Event;
+import org.rikka.entity.IEntity;
+import org.rikka.entity.INpc;
+import org.rikka.event.EventType;
 
-public class CollideEvent extends Event {
+public class CollideEvent extends CNpcEvent {
 
-    private final Entity entity;
+    private final IEntity entity;
 
-    CollideEvent(Rikka rikka, Entity entity) {
-        super(rikka);
+    CollideEvent(INpc npc, IEntity entity) {
+        super(npc, EventType.CNPC_COLLIDE);
         this.entity = entity;
     }
 
-    public Entity getEntity() {
+    public IEntity getEntity() {
         return entity;
     }
 }

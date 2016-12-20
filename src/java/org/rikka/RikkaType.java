@@ -9,6 +9,7 @@ public enum RikkaType {
     LIVING,
     MONSTER,
     PLAYER,
+    TILE,
     UNKNOWN,
     WORLD
 }

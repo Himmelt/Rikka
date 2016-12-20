@@ -1,18 +1,19 @@
 package org.rikka.event.block;
 
-import org.rikka.block.Block;
-import org.rikka.entity.Entity;
+import org.rikka.block.IBlock;
+import org.rikka.entity.IEntity;
+import org.rikka.event.EventType;
 
 public class CollidedEvent extends BlockEvent {
 
-    private final Entity entity;
+    private final IEntity entity;
 
-    CollidedEvent(Block block, Entity entity) {
-        super(block);
+    CollidedEvent(IBlock block, IEntity entity) {
+        super(block, EventType.BLOCK_COLLIDE);
         this.entity = entity;
     }
 
-    public Entity getEntity() {
+    public IEntity getEntity() {
         return entity;
     }
 }

@@ -1,21 +1,21 @@
 package org.rikka.craft.util.math;
 
-import org.rikka.World;
+import org.rikka.world.IWorld;
 
 public class Location implements Cloneable {
 
-    private World world;
+    private IWorld world;
     private double x;
     private double y;
     private double z;
     private float pitch;
     private float yaw;
 
-    public Location(final World world, final double x, final double y, final double z) {
+    public Location(final IWorld world, final double x, final double y, final double z) {
         this(world, x, y, z, 0, 0);
     }
 
-    public Location(final World world, final double x, final double y, final double z, final float yaw, final float pitch) {
+    public Location(final IWorld world, final double x, final double y, final double z, final float yaw, final float pitch) {
         this.world = world;
         this.x = x;
         this.y = y;
@@ -24,12 +24,12 @@ public class Location implements Cloneable {
         this.yaw = yaw;
     }
 
-    public void setWorld(World world) {
+    public void setWorld(IWorld world) {
         this.world = world;
     }
 
 
-    public World getWorld() {
+    public IWorld getWorld() {
         return world;
     }
 

@@ -12,7 +12,7 @@ import org.rikka.craft.item.CraftItemStack;
 import org.rikka.craft.script.EnumHook;
 import org.rikka.craft.script.IScriptHandler;
 import org.rikka.craft.script.ScriptManager;
-import org.rikka.entity.Player;
+import org.rikka.entity.IPlayer;
 import org.rikka.event.entity.player.PlayerTossEvent;
 
 /**
@@ -145,8 +145,8 @@ public class SubscribePlayerEvent {
         if (player instanceof EntityPlayerMP && ScriptManager.playerHandlers.containsKey(player.hashCode())) {
             IScriptHandler handler = ScriptManager.playerHandlers.get(player.hashCode());
             Rikka rikka = handler.getRikka();
-            if (rikka instanceof Player) {
-                PlayerTossEvent tossEvent = new PlayerTossEvent(rikka, new CraftItemStack(itemStack));
+            if (rikka instanceof IPlayer) {
+                PlayerTossEvent tossEvent = new PlayerTossEvent((IPlayer) rikka, new CraftItemStack(itemStack));
                 handler.run(EnumHook.toss, tossEvent);
                 event.setCanceled(tossEvent.isCanceled());
             }

@@ -1,17 +1,15 @@
 package org.rikka.event.entity.npc;
 
-import net.minecraftforge.fml.common.eventhandler.Cancelable;
-import org.rikka.Rikka;
-import org.rikka.entity.Player;
-import org.rikka.event.Event;
+import org.rikka.entity.INpc;
+import org.rikka.entity.IPlayer;
+import org.rikka.event.EventType;
 
-@Cancelable
-public class InteractEvent extends Event {
+public class InteractEvent extends CNpcEvent {
 
-    public final Player player;
+    public final IPlayer player;
 
-    InteractEvent(Rikka rikka, Player player) {
-        super(rikka);
+    InteractEvent(INpc npc, IPlayer player) {
+        super(npc, EventType.CNPC_INTERACT);
         this.player = player;
     }
 }

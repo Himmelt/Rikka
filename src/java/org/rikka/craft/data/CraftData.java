@@ -1,11 +1,11 @@
 package org.rikka.craft.data;
 
-import org.rikka.data.Data;
+import org.rikka.data.IData;
 
 import java.util.HashMap;
 import java.util.Set;
 
-public class CraftData implements Data {
+public class CraftData implements IData {
 
     private final HashMap<String, Object> dataMap = new HashMap<>();
 

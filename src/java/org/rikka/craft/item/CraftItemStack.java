@@ -1,13 +1,13 @@
 package org.rikka.craft.item;
 
-import org.rikka.RikkaType;
-import org.rikka.item.ItemStack;
+import net.minecraft.item.ItemStack;
+import org.rikka.item.IItemStack;
 
-public class CraftItemStack implements ItemStack {
+public class CraftItemStack implements IItemStack {
 
-    private net.minecraft.item.ItemStack itemStack;
+    private ItemStack itemStack;
 
-    public CraftItemStack(net.minecraft.item.ItemStack itemStack) {
+    public CraftItemStack(ItemStack itemStack) {
         this.itemStack = itemStack;
     }
 
@@ -24,10 +24,5 @@ public class CraftItemStack implements ItemStack {
             size = 64;
         }
         this.itemStack.stackSize = size;
-    }
-
-    @Override
-    public RikkaType type() {
-        return RikkaType.ITEMSTACK;
     }
 }

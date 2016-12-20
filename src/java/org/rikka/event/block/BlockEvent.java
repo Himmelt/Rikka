@@ -1,12 +1,17 @@
 package org.rikka.event.block;
 
-import org.rikka.block.Block;
-import org.rikka.event.Event;
+import org.rikka.block.IBlock;
+import org.rikka.event.EventType;
+import org.rikka.event.REvent;
 
-public abstract class BlockEvent extends Event {
+public class BlockEvent extends REvent<IBlock> {
 
-    public BlockEvent(Block block) {
-        super(block);
+    BlockEvent(IBlock block, EventType type) {
+        super(block, type);
+    }
+
+    public IBlock getBlock() {
+        return rikka;
     }
 
 }
