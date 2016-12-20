@@ -4,6 +4,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
+import org.rikka.Rikka;
 import org.rikka.craft.script.IScriptHandler;
 import org.rikka.craft.script.ScriptHandler;
 import org.rikka.craft.script.ScriptManager;
@@ -14,8 +15,8 @@ public class ScriptProvider implements ICapabilitySerializable<NBTTagCompound> {
 
     private IScriptHandler handler = new ScriptHandler();
 
-    public ScriptProvider(Object object) {
-        handler.setObject(object);
+    public ScriptProvider(Rikka rikka) {
+        handler.setRikka(rikka);
     }
 
     @Override

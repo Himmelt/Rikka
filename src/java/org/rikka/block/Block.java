@@ -1,8 +1,9 @@
 package org.rikka.block;
 
+import org.rikka.Rikka;
 import org.rikka.World;
 
-public interface Block {
+public interface Block extends Rikka {
 
     int getX();
 

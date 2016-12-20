@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldServer;
+import org.rikka.RikkaType;
 import org.rikka.World;
 import org.rikka.block.Block;
 import org.rikka.craft.block.CraftBlock;
@@ -62,5 +63,10 @@ public class CraftWorld implements World {
     @Override
     public net.minecraft.world.World getMCWorld() {
         return world;
+    }
+
+    @Override
+    public RikkaType type() {
+        return RikkaType.WORLD;
     }
 }

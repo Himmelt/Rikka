@@ -1,5 +1,6 @@
 package org.rikka.event.entity.npc;
 
+import org.rikka.Rikka;
 import org.rikka.entity.Entity;
 import org.rikka.event.Event;
 
@@ -7,8 +8,8 @@ public class CollideEvent extends Event {
 
     private final Entity entity;
 
-    CollideEvent(Object object, Entity entity) {
-        super(object);
+    CollideEvent(Rikka rikka, Entity entity) {
+        super(rikka);
         this.entity = entity;
     }
 

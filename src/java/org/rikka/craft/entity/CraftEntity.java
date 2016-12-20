@@ -1,12 +1,12 @@
 package org.rikka.craft.entity;
 
 import net.minecraft.util.math.MathHelper;
+import org.rikka.RikkaType;
 import org.rikka.World;
 import org.rikka.craft.script.IScriptHandler;
 import org.rikka.craft.script.ScriptManager;
 import org.rikka.data.Data;
 import org.rikka.entity.Entity;
-import org.rikka.entity.EntityType;
 
 public class CraftEntity<T extends net.minecraft.entity.Entity> implements Entity {
 
@@ -119,7 +119,12 @@ public class CraftEntity<T extends net.minecraft.entity.Entity> implements Entit
     }
 
     @Override
-    public EntityType getType() {
-        return EntityType.UNKNOWN;
+    public RikkaType getType() {
+        return RikkaType.UNKNOWN;
+    }
+
+    @Override
+    public RikkaType type() {
+        return RikkaType.ENTITY;
     }
 }

@@ -3,6 +3,7 @@ package org.rikka.craft.entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.WorldSettings;
+import org.rikka.RikkaType;
 import org.rikka.entity.Player;
 
 public class CraftPlayer<T extends EntityPlayerMP> extends CraftEntity<T> implements Player {
@@ -24,6 +25,11 @@ public class CraftPlayer<T extends EntityPlayerMP> extends CraftEntity<T> implem
     @Override
     public T getMCEntity() {
         return entity;
+    }
+
+    @Override
+    public RikkaType type() {
+        return RikkaType.PLAYER;
     }
 
     @Override

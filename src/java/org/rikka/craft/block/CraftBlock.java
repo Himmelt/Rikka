@@ -3,6 +3,7 @@ package org.rikka.craft.block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import org.rikka.RikkaType;
 import org.rikka.World;
 import org.rikka.block.Block;
 import org.rikka.craft.CraftWorld;
@@ -12,7 +13,7 @@ public class CraftBlock implements Block {
     private final World world;
     private final BlockPos pos;
     private final net.minecraft.block.Block block;
-    final TileEntity tile;
+    private final TileEntity tile;
 
     public CraftBlock(net.minecraft.world.World world, net.minecraft.block.Block block, BlockPos pos) {
         this.world = new CraftWorld(world);
@@ -75,4 +76,8 @@ public class CraftBlock implements Block {
         return null;
     }
 
+    @Override
+    public RikkaType type() {
+        return RikkaType.BLOCK;
+    }
 }

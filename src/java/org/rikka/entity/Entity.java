@@ -1,5 +1,7 @@
 package org.rikka.entity;
 
+import org.rikka.Rikka;
+import org.rikka.RikkaType;
 import org.rikka.World;
 import org.rikka.data.Data;
 
@@ -8,7 +10,7 @@ import org.rikka.data.Data;
  *
  * @param <T> 泛型实体类.
  */
-public interface Entity<T extends net.minecraft.entity.Entity> {
+public interface Entity<T extends net.minecraft.entity.Entity> extends Rikka {
 
     /**
      * 获取实体注册名.
@@ -141,5 +143,5 @@ public interface Entity<T extends net.minecraft.entity.Entity> {
      *
      * @return 类型.
      */
-    EntityType getType();
+    RikkaType getType();
 }

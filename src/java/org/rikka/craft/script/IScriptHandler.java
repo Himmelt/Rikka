@@ -2,6 +2,7 @@ package org.rikka.craft.script;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.eventhandler.Event;
+import org.rikka.Rikka;
 import org.rikka.data.Data;
 
 /**
@@ -65,18 +66,18 @@ public interface IScriptHandler {
     Data getSData();
 
     /**
-     * Gets object.
+     * Gets rikka.
      *
-     * @return the object
+     * @return the rikka
      */
-    Object getObject();
+    Rikka getRikka();
 
     /**
-     * Sets object.
+     * Sets rikka.
      *
-     * @param object the object
+     * @param rikka the rikka
      */
-    void setObject(Object object);
+    void setRikka(Rikka rikka);
 
     /**
      * Read from nbt.

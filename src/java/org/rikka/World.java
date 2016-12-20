@@ -3,7 +3,7 @@ package org.rikka;
 import org.rikka.block.Block;
 import org.rikka.entity.Player;
 
-public interface World {
+public interface World extends Rikka {
 
     long getTime();
 

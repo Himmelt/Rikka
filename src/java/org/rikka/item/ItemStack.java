@@ -1,6 +1,8 @@
 package org.rikka.item;
 
-public interface ItemStack {
+import org.rikka.Rikka;
+
+public interface ItemStack extends Rikka {
 
     int getStackSize();
 

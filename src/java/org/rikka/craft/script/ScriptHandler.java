@@ -6,6 +6,7 @@ import net.minecraft.nbt.*;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.Event;
+import org.rikka.Rikka;
 import org.rikka.craft.data.CraftData;
 import org.rikka.data.Data;
 
@@ -34,7 +35,7 @@ public class ScriptHandler implements IScriptHandler {
     private boolean errored = false;
     private long LASTLOAD = 0L;
     private String engineName, script, fullscript;
-    private Object object;
+    private Rikka rikka;
     private ScriptEngine engine;
     private List<String> scriptFiles = new ArrayList<>();
     private List<Integer> unknowns = new ArrayList<>();
@@ -68,18 +69,18 @@ public class ScriptHandler implements IScriptHandler {
     }
 
     private void updateHandlers() {
-        if (object instanceof EntityPlayer) {
-            if (enabled) ScriptManager.playerHandlers.put(object.hashCode(), this);
-            else ScriptManager.playerHandlers.remove(object.hashCode());
-        } else if (object instanceof Entity) {
-            if (enabled) ScriptManager.entityHandlers.put(object.hashCode(), this);
-            else ScriptManager.entityHandlers.remove(object.hashCode());
-        } else if (object instanceof TileEntity) {
-            if (enabled) ScriptManager.tileHandlers.put(object.hashCode(), this);
-            else ScriptManager.tileHandlers.remove(object.hashCode());
-        } else if (object instanceof World) {
-            if (enabled) ScriptManager.worldHandlers.put(object.hashCode(), this);
-            else ScriptManager.worldHandlers.remove(object.hashCode());
+        if (rikka instanceof EntityPlayer) {
+            if (enabled) ScriptManager.playerHandlers.put(rikka.hashCode(), this);
+            else ScriptManager.playerHandlers.remove(rikka.hashCode());
+        } else if (rikka instanceof Entity) {
+            if (enabled) ScriptManager.entityHandlers.put(rikka.hashCode(), this);
+            else ScriptManager.entityHandlers.remove(rikka.hashCode());
+        } else if (rikka instanceof TileEntity) {
+            if (enabled) ScriptManager.tileHandlers.put(rikka.hashCode(), this);
+            else ScriptManager.tileHandlers.remove(rikka.hashCode());
+        } else if (rikka instanceof World) {
+            if (enabled) ScriptManager.worldHandlers.put(rikka.hashCode(), this);
+            else ScriptManager.worldHandlers.remove(rikka.hashCode());
         }
     }
 
@@ -166,13 +167,13 @@ public class ScriptHandler implements IScriptHandler {
     }
 
     @Override
-    public final Object getObject() {
-        return object;
+    public final Rikka getRikka() {
+        return rikka;
     }
 
     @Override
-    public void setObject(Object object) {
-        this.object = object;
+    public void setRikka(Rikka rikka) {
+        this.rikka = rikka;
     }
 
     @Override

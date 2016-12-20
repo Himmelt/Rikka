@@ -1,5 +1,6 @@
 package org.rikka.craft.item;
 
+import org.rikka.RikkaType;
 import org.rikka.item.ItemStack;
 
 public class CraftItemStack implements ItemStack {
@@ -23,5 +24,10 @@ public class CraftItemStack implements ItemStack {
             size = 64;
         }
         this.itemStack.stackSize = size;
+    }
+
+    @Override
+    public RikkaType type() {
+        return RikkaType.ITEMSTACK;
     }
 }

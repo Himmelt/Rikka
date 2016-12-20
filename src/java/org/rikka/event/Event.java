@@ -1,17 +1,18 @@
 package org.rikka.event;
 
+import org.rikka.Rikka;
 import org.rikka.craft.script.ScriptManager;
 import org.rikka.data.Data;
 
 public abstract class Event extends net.minecraftforge.fml.common.eventhandler.Event {
 
-    public final Object object;
+    public final Rikka rikka;
     public final Data gtData = ScriptManager.getGTData();
     public final Data gsData = ScriptManager.getGSData();
 
-    public Event(Object object) {
+    public Event(Rikka rikka) {
         super();
-        this.object = object;
+        this.rikka = rikka;
     }
 
     public boolean cancel() {

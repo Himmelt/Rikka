@@ -7,6 +7,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.player.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import org.rikka.Rikka;
 import org.rikka.craft.item.CraftItemStack;
 import org.rikka.craft.script.EnumHook;
 import org.rikka.craft.script.IScriptHandler;
@@ -143,9 +144,9 @@ public class SubscribePlayerEvent {
         ItemStack itemStack = event.getEntityItem().getEntityItem();
         if (player instanceof EntityPlayerMP && ScriptManager.playerHandlers.containsKey(player.hashCode())) {
             IScriptHandler handler = ScriptManager.playerHandlers.get(player.hashCode());
-            Object object = handler.getObject();
-            if (object instanceof Player) {
-                PlayerTossEvent tossEvent = new PlayerTossEvent(object, new CraftItemStack(itemStack));
+            Rikka rikka = handler.getRikka();
+            if (rikka instanceof Player) {
+                PlayerTossEvent tossEvent = new PlayerTossEvent(rikka, new CraftItemStack(itemStack));
                 handler.run(EnumHook.toss, tossEvent);
                 event.setCanceled(tossEvent.isCanceled());
             }
