@@ -22,7 +22,7 @@ import java.util.List;
 
 
 /**
- * The type Script handler.
+ * The getType Script handler.
  */
 public class ScriptHandler implements IScriptHandler {
 

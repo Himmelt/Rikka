@@ -25,4 +25,9 @@ public class CraftItemStack implements IItemStack {
         }
         this.itemStack.stackSize = size;
     }
+
+    @Override
+    public ItemStack getOriginal() {
+        return itemStack;
+    }
 }

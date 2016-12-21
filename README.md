@@ -1,5 +1,15 @@
 #Rikka
 
+主要封装对象
+```
+Rikka -> Entity -> PlayerMP
+                -> CNpc
+      -> TileEntity
+      -> Block
+      -> World
+IItemStack -> ItemStack
+```
+
 脚本执行顺序:
 1. 新生成
    attach capability -> ScriptProvider::new -> ScriptHandler::new & Storage::new

@@ -2,6 +2,7 @@ package org.rikka.entity;
 
 import net.minecraft.entity.Entity;
 import org.rikka.Rikka;
+import org.rikka.data.IData;
 
 /**
  * 实体(IEntity)接口.
@@ -25,46 +26,25 @@ public interface IEntity<T extends Entity> extends Rikka<T> {
     String getDisplayName();
 
     /**
-     * 获取实体 x 坐标.
-     *
-     * @return x 坐标.
-     */
-    double getX();
-
-    /**
      * 设置实体 x 坐标.
      *
      * @param x x 坐标.
      */
-    void setX(double x);
-
-    /**
-     * 获取实体 y 坐标.
-     *
-     * @return y 坐标.
-     */
-    double getY();
+    void setX(int x);
 
     /**
      * 设置实体 y 坐标.
      *
      * @param y y 坐标.
      */
-    void setY(double y);
-
-    /**
-     * 获取实体 z 坐标.
-     *
-     * @return z 坐标.
-     */
-    double getZ();
+    void setY(int y);
 
     /**
      * 设置实体 z 坐标.
      *
      * @param z z 坐标.
      */
-    void setZ(double z);
+    void setZ(int z);
 
     /**
      * 设置实体到指定坐标.
@@ -86,5 +66,19 @@ public interface IEntity<T extends Entity> extends Rikka<T> {
      * 消亡.
      */
     void despawn();
+
+    /**
+     * 获取缓存变量(TempData).
+     *
+     * @return 缓存变量.
+     */
+    IData getTData();
+
+    /**
+     * 获取存储变量(StoredData).
+     *
+     * @return 存储变量.
+     */
+    IData getSData();
 
 }

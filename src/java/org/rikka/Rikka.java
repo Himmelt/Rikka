@@ -1,7 +1,5 @@
 package org.rikka;
 
-import org.rikka.craft.script.IScriptHandler;
-import org.rikka.data.IData;
 import org.rikka.world.IWorld;
 
 /**
@@ -14,7 +12,7 @@ public interface Rikka<T> {
      *
      * @return 包装类型
      */
-    RikkaType type();
+    RikkaType getType();
 
     /**
      * 获取所在方块 x 坐标.
@@ -22,7 +20,7 @@ public interface Rikka<T> {
      *
      * @return x 坐标.
      */
-    int getBlockX();
+    int getX();
 
     /**
      * 获取所在方块 y 坐标.
@@ -30,7 +28,7 @@ public interface Rikka<T> {
      *
      * @return y 坐标.
      */
-    int getBlockY();
+    int getY();
 
     /**
      * 获取所在方块 z 坐标.
@@ -38,23 +36,7 @@ public interface Rikka<T> {
      *
      * @return z 坐标.
      */
-    int getBlockZ();
-
-    IScriptHandler getHandler();
-
-    /**
-     * 获取缓存变量(TempData).
-     *
-     * @return 缓存变量.
-     */
-    IData getTData();
-
-    /**
-     * 获取存储变量(StoredData).
-     *
-     * @return 存储变量.
-     */
-    IData getSData();
+    int getZ();
 
     IWorld getWorld();
 

@@ -9,6 +9,7 @@ import org.rikka.world.IWorld;
 
 public class CraftBlock extends CraftRikka<Block> implements IBlock {
 
+    private final IWorld world;
     private final BlockPos pos;
 
     public CraftBlock(IWorld world, Block block, BlockPos pos) {
@@ -18,45 +19,44 @@ public class CraftBlock extends CraftRikka<Block> implements IBlock {
     }
 
     @Override
-    public int getBlockX() {
+    public int getX() {
         return pos.getX();
     }
 
     @Override
-    public int getBlockY() {
+    public int getY() {
         return pos.getY();
     }
 
     @Override
-    public int getBlockZ() {
+    public int getZ() {
         return pos.getZ();
     }
 
     @Override
     public int getMetadata() {
-        return original.getMetaFromState(getWorld().getMCWorld().getBlockState(pos));
+        return original.getMetaFromState(world.getOriginal().getBlockState(pos));
     }
 
     @Override
     @SuppressWarnings("deprecation")
     public void setMetadata(int meta) {
-        getWorld().getMCWorld().setBlockState(pos, original.getStateFromMeta(meta), 2);
+        world.getOriginal().setBlockState(pos, original.getStateFromMeta(meta), 2);
     }
 
     @Override
     public void remove() {
-        getWorld().setBlock(pos.getX(), pos.getY(), pos.getZ(), "air", 0);
+        world.setBlock(pos.getX(), pos.getY(), pos.getZ(), "air", 0);
     }
 
     @Override
     public IBlock replace(String name) {
-        return getWorld().setBlock(pos.getX(), pos.getY(), pos.getZ(), name, -1);
+        return world.setBlock(pos.getX(), pos.getY(), pos.getZ(), name, -1);
     }
 
     @Override
     public IBlock replace(IBlock block) {
-        getWorld().setBlock(block);
-        return new CraftBlock(world, block.getMCBlock(), pos);
+        return world.setBlock(block);
     }
 
     @Override
@@ -65,12 +65,7 @@ public class CraftBlock extends CraftRikka<Block> implements IBlock {
     }
 
     @Override
-    public Block getMCBlock() {
-        return original;
-    }
-
-    @Override
-    public RikkaType type() {
+    public RikkaType getType() {
         return RikkaType.BLOCK;
     }
 }

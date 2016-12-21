@@ -15,6 +15,4 @@ public interface IBlock extends Rikka<Block> {
 
     IBlock replace(IBlock block);
 
-    Block getMCBlock();
-
 }

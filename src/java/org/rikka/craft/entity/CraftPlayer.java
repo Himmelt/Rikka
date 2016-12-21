@@ -4,12 +4,14 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.WorldSettings;
 import org.rikka.RikkaType;
+import org.rikka.craft.script.ScriptManager;
 import org.rikka.entity.IPlayer;
 
 public class CraftPlayer extends CraftEntity<EntityPlayerMP> implements IPlayer {
 
     public CraftPlayer(EntityPlayerMP player) {
         super(player);
+        ScriptManager.playerHandlers.put(original.hashCode(), getHandler());
     }
 
     @Override
@@ -23,7 +25,7 @@ public class CraftPlayer extends CraftEntity<EntityPlayerMP> implements IPlayer 
     }
 
     @Override
-    public RikkaType type() {
+    public RikkaType getType() {
         return RikkaType.PLAYER;
     }
 

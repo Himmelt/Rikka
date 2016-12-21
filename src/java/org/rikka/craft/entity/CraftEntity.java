@@ -1,17 +1,32 @@
 package org.rikka.craft.entity;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.MathHelper;
 import org.rikka.RikkaType;
 import org.rikka.craft.CraftRikka;
+import org.rikka.craft.script.IScriptHandler;
+import org.rikka.craft.script.ScriptHandler;
 import org.rikka.craft.script.ScriptManager;
+import org.rikka.data.IData;
 import org.rikka.entity.IEntity;
 import org.rikka.world.IWorld;
 
 public class CraftEntity<T extends Entity> extends CraftRikka<T> implements IEntity<T> {
 
+    private final IScriptHandler handler;
+
     public CraftEntity(T entity) {
         super(entity);
+        handler = new ScriptHandler(this);
+    }
+
+    @Override
+    public IData getTData() {
+        return handler.getTData();
+    }
+
+    @Override
+    public IData getSData() {
+        return handler.getSData();
     }
 
     @Override
@@ -25,48 +40,33 @@ public class CraftEntity<T extends Entity> extends CraftRikka<T> implements IEnt
     }
 
     @Override
-    public double getX() {
-        return original.posX;
-    }
-
-    @Override
-    public void setX(double x) {
+    public void setX(int x) {
         original.posX = x;
     }
 
     @Override
-    public double getY() {
-        return original.posY;
-    }
-
-    @Override
-    public void setY(double y) {
+    public void setY(int y) {
         original.posY = y;
     }
 
     @Override
-    public double getZ() {
-        return original.posZ;
-    }
-
-    @Override
-    public void setZ(double z) {
+    public void setZ(int z) {
         original.posZ = z;
     }
 
     @Override
-    public int getBlockX() {
-        return MathHelper.floor_double(original.posX);
+    public int getX() {
+        return (int) original.posX;
     }
 
     @Override
-    public int getBlockY() {
-        return MathHelper.floor_double(original.posY);
+    public int getY() {
+        return (int) original.posY;
     }
 
     @Override
-    public int getBlockZ() {
-        return MathHelper.floor_double(original.posZ);
+    public int getZ() {
+        return (int) original.posZ;
     }
 
     @Override
@@ -86,14 +86,15 @@ public class CraftEntity<T extends Entity> extends CraftRikka<T> implements IEnt
 
     @Override
     public IWorld getWorld() {
-        if (world == null && original.worldObj.hasCapability(ScriptManager.capability, null)) {
-            world = (IWorld) original.worldObj.getCapability(ScriptManager.capability, null).getRikka();
-        }
-        return world;
+        return (IWorld) ScriptManager.worldHandlers.get(original.worldObj.hashCode()).getRikka();
     }
 
     @Override
-    public RikkaType type() {
+    public RikkaType getType() {
         return RikkaType.ENTITY;
+    }
+
+    public IScriptHandler getHandler() {
+        return handler;
     }
 }

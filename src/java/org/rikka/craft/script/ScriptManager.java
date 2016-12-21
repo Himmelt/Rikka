@@ -2,7 +2,10 @@ package org.rikka.craft.script;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
@@ -11,6 +14,8 @@ import org.rikka.craft.capability.ScriptProvider;
 import org.rikka.craft.data.CraftData;
 import org.rikka.craft.data.GSData;
 import org.rikka.craft.entity.CraftPlayer;
+import org.rikka.craft.tile.CraftTileEntity;
+import org.rikka.craft.world.CraftWorld;
 import org.rikka.data.IData;
 
 import javax.script.ScriptEngine;
@@ -104,10 +109,24 @@ public final class ScriptManager {
         return factory == null ? null : factory.getScriptEngine();
     }
 
-    public static void attachEntityPlayer(AttachCapabilitiesEvent<Entity> event) {
+    public static void attachEntity(AttachCapabilitiesEvent<Entity> event) {
         Entity entity = event.getObject();
         if (entity instanceof EntityPlayerMP) {
             event.addCapability(location, new ScriptProvider(new CraftPlayer((EntityPlayerMP) entity)));
+        }
+    }
+
+    public static void attachTileEntity(AttachCapabilitiesEvent<TileEntity> event) {
+        TileEntity tile = event.getObject();
+        if (tile != null && !tile.getWorld().isRemote) {
+            event.addCapability(location, new ScriptProvider(new CraftTileEntity(tile)));
+        }
+    }
+
+    public static void attachWorld(AttachCapabilitiesEvent<World> event) {
+        World world = event.getObject();
+        if (world instanceof WorldServer) {
+            event.addCapability(location, new ScriptProvider(new CraftWorld((WorldServer) world)));
         }
     }
 

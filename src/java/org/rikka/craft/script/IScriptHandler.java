@@ -18,7 +18,7 @@ public interface IScriptHandler {
     /**
      * Run.
      *
-     * @param type  the type
+     * @param type  the getType
      * @param event the event
      */
     void run(EnumHook type, Event event);
