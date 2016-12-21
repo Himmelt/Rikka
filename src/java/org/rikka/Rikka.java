@@ -1,12 +1,13 @@
 package org.rikka;
 
+import org.rikka.craft.script.IScriptHandler;
 import org.rikka.data.IData;
 import org.rikka.world.IWorld;
 
 /**
  * The interface Rikka.
  */
-public interface Rikka {
+public interface Rikka<T> {
 
     /**
      * 获取Rikka包装类型.
@@ -39,6 +40,8 @@ public interface Rikka {
      */
     int getBlockZ();
 
+    IScriptHandler getHandler();
+
     /**
      * 获取缓存变量(TempData).
      *
@@ -54,5 +57,7 @@ public interface Rikka {
     IData getSData();
 
     IWorld getWorld();
+
+    T getOriginal();
 
 }

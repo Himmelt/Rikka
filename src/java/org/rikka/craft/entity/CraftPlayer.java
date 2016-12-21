@@ -6,10 +6,10 @@ import net.minecraft.world.WorldSettings;
 import org.rikka.RikkaType;
 import org.rikka.entity.IPlayer;
 
-public class CraftPlayer<T extends EntityPlayerMP> extends CraftEntity<T> implements IPlayer {
+public class CraftPlayer extends CraftEntity<EntityPlayerMP> implements IPlayer {
 
-    public CraftPlayer(T entity) {
-        super(entity);
+    public CraftPlayer(EntityPlayerMP player) {
+        super(player);
     }
 
     @Override
@@ -20,11 +20,6 @@ public class CraftPlayer<T extends EntityPlayerMP> extends CraftEntity<T> implem
     @Override
     public String getDisplayName() {
         return original.getDisplayNameString();
-    }
-
-    @Override
-    public T getMCEntity() {
-        return original;
     }
 
     @Override

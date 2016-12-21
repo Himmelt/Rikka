@@ -6,17 +6,17 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import org.rikka.Rikka;
 import org.rikka.craft.script.IScriptHandler;
-import org.rikka.craft.script.ScriptHandler;
 import org.rikka.craft.script.ScriptManager;
 
 import javax.annotation.Nullable;
 
 public class ScriptProvider implements ICapabilitySerializable<NBTTagCompound> {
 
-    private IScriptHandler handler = new ScriptHandler();
+    private final IScriptHandler handler;
+
 
     public ScriptProvider(Rikka rikka) {
-        handler.setRikka(rikka);
+        handler = rikka.getHandler();
     }
 
     @Override

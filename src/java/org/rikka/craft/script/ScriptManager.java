@@ -107,7 +107,7 @@ public final class ScriptManager {
     public static void attachEntityPlayer(AttachCapabilitiesEvent<Entity> event) {
         Entity entity = event.getObject();
         if (entity instanceof EntityPlayerMP) {
-            event.addCapability(location, new ScriptProvider(new CraftPlayer<>((EntityPlayerMP) entity)));
+            event.addCapability(location, new ScriptProvider(new CraftPlayer((EntityPlayerMP) entity)));
         }
     }
 

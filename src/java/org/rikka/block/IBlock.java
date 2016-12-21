@@ -3,7 +3,7 @@ package org.rikka.block;
 import net.minecraft.block.Block;
 import org.rikka.Rikka;
 
-public interface IBlock extends Rikka {
+public interface IBlock extends Rikka<Block> {
 
     int getMetadata();
 

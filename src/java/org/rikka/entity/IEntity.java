@@ -1,5 +1,6 @@
 package org.rikka.entity;
 
+import net.minecraft.entity.Entity;
 import org.rikka.Rikka;
 
 /**
@@ -7,7 +8,7 @@ import org.rikka.Rikka;
  *
  * @param <T> 泛型实体类.
  */
-public interface IEntity<T extends net.minecraft.entity.Entity> extends Rikka {
+public interface IEntity<T extends Entity> extends Rikka<T> {
 
     /**
      * 获取实体注册名.
@@ -85,12 +86,5 @@ public interface IEntity<T extends net.minecraft.entity.Entity> extends Rikka {
      * 消亡.
      */
     void despawn();
-
-    /**
-     * 获取 MC 实体(高级用法,不清楚勿用).
-     *
-     * @return MC 实体.
-     */
-    T getMCEntity();
 
 }

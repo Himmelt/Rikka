@@ -4,16 +4,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import org.rikka.RikkaType;
 import org.rikka.craft.CraftRikka;
-import org.rikka.craft.script.IScriptHandler;
 import org.rikka.craft.script.ScriptManager;
 import org.rikka.entity.IEntity;
 import org.rikka.world.IWorld;
 
-public class CraftEntity<T extends Entity> extends CraftRikka<T> implements IEntity {
-
-    private IWorld world;
-    private IScriptHandler handler;
-
+public class CraftEntity<T extends Entity> extends CraftRikka<T> implements IEntity<T> {
 
     public CraftEntity(T entity) {
         super(entity);
@@ -87,11 +82,6 @@ public class CraftEntity<T extends Entity> extends CraftRikka<T> implements IEnt
     @Override
     public void despawn() {
         original.setDead();
-    }
-
-    @Override
-    public T getMCEntity() {
-        return original;
     }
 
     @Override

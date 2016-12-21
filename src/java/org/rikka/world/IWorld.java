@@ -1,12 +1,13 @@
 package org.rikka.world;
 
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import org.rikka.Rikka;
 import org.rikka.block.IBlock;
 import org.rikka.entity.IPlayer;
 import org.rikka.tile.ITileEntity;
 
-public interface IWorld extends Rikka {
+public interface IWorld extends Rikka<WorldServer> {
 
     long getTime();
 

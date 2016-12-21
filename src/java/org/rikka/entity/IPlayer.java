@@ -2,7 +2,7 @@ package org.rikka.entity;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 
-public interface IPlayer<T extends EntityPlayerMP> extends ILivingBase<T> {
+public interface IPlayer extends ILivingBase<EntityPlayerMP> {
 
     void message(String message);
 
