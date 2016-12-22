@@ -9,9 +9,4 @@ public class BlockEvent extends REvent<IBlock> {
     BlockEvent(IBlock block, EventType type) {
         super(block, type);
     }
-
-    public IBlock getBlock() {
-        return rikka;
-    }
-
 }

@@ -1,100 +1,87 @@
 package org.rikka.craft.entity;
 
 import net.minecraft.entity.Entity;
-import org.rikka.RikkaType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.WorldServer;
 import org.rikka.craft.CraftRikka;
-import org.rikka.craft.script.IScriptHandler;
-import org.rikka.craft.script.ScriptHandler;
-import org.rikka.craft.script.ScriptManager;
-import org.rikka.data.IData;
+import org.rikka.craft.capability.DataHandler;
+import org.rikka.craft.world.CraftWorld;
 import org.rikka.entity.IEntity;
 import org.rikka.world.IWorld;
 
 public class CraftEntity<T extends Entity> extends CraftRikka<T> implements IEntity<T> {
 
-    private final IScriptHandler handler;
-
     public CraftEntity(T entity) {
         super(entity);
-        handler = new ScriptHandler(this);
-    }
-
-    @Override
-    public IData getTData() {
-        return handler.getTData();
-    }
-
-    @Override
-    public IData getSData() {
-        return handler.getSData();
     }
 
     @Override
     public String getName() {
-        return original.getName();
+        return origin.getName();
     }
 
     @Override
     public String getDisplayName() {
-        return original.getDisplayName().getFormattedText();
+        return origin.getDisplayName().getFormattedText();
     }
 
     @Override
     public void setX(int x) {
-        original.posX = x;
+        origin.posX = x;
     }
 
     @Override
     public void setY(int y) {
-        original.posY = y;
+        origin.posY = y;
     }
 
     @Override
     public void setZ(int z) {
-        original.posZ = z;
+        origin.posZ = z;
     }
 
     @Override
     public int getX() {
-        return (int) original.posX;
+        return (int) origin.posX;
     }
 
     @Override
     public int getY() {
-        return (int) original.posY;
+        return (int) origin.posY;
     }
 
     @Override
     public int getZ() {
-        return (int) original.posZ;
+        return (int) origin.posZ;
+    }
+
+    @Override
+    public BlockPos getPos() {
+        return new BlockPos(origin.posX, origin.posY, origin.posZ);
     }
 
     @Override
     public void setPosition(double x, double y, double z) {
-        original.setPosition(x, y, z);
+        origin.setPosition(x, y, z);
     }
 
     @Override
     public long getAge() {
-        return original.ticksExisted;
+        return origin.ticksExisted;
     }
 
     @Override
     public void despawn() {
-        original.setDead();
+        origin.setDead();
     }
 
     @Override
     public IWorld getWorld() {
-        return (IWorld) ScriptManager.worldHandlers.get(original.worldObj.hashCode()).getRikka();
+        if (origin.worldObj instanceof WorldServer) {
+            WorldServer world = (WorldServer) origin.worldObj;
+            return new CraftWorld(world, DataHandler.worldHandlers.get(world.hashCode()));
+        }
+        return null;
     }
 
-    @Override
-    public RikkaType getType() {
-        return RikkaType.ENTITY;
-    }
-
-    public IScriptHandler getHandler() {
-        return handler;
-    }
 }

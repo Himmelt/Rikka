@@ -3,11 +3,11 @@ package org.rikka.world;
 import net.minecraft.world.WorldServer;
 import org.rikka.Rikka;
 import org.rikka.block.IBlock;
-import org.rikka.data.IData;
 import org.rikka.entity.IPlayer;
-import org.rikka.tile.ITileEntity;
+import org.rikka.handler.IDataHandler;
+import org.rikka.tileentity.ITileEntity;
 
-public interface IWorld extends Rikka<WorldServer> {
+public interface IWorld extends Rikka<WorldServer>, IDataHandler {
 
     long getTime();
 
@@ -23,17 +23,4 @@ public interface IWorld extends Rikka<WorldServer> {
 
     IPlayer getPlayer(String name);
 
-    /**
-     * 获取缓存变量(TempData).
-     *
-     * @return 缓存变量.
-     */
-    IData getTData();
-
-    /**
-     * 获取存储变量(StoredData).
-     *
-     * @return 存储变量.
-     */
-    IData getSData();
 }

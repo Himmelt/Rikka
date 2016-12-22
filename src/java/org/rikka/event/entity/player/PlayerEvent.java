@@ -10,8 +10,4 @@ public class PlayerEvent extends REvent<IPlayer> {
         super(rikka, type);
     }
 
-    public IPlayer getPlayer() {
-        return rikka;
-    }
-
 }

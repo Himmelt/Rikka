@@ -4,15 +4,15 @@ import org.rikka.Rikka;
 
 public abstract class CraftRikka<T> implements Rikka<T> {
 
-    protected final T original;
+    protected final T origin;
 
-    protected CraftRikka(T original) {
-        this.original = original;
+    protected CraftRikka(T origin) {
+        this.origin = origin;
     }
 
     @Override
-    public T getOriginal() {
-        return original;
+    public T getOrigin() {
+        return origin;
     }
 
 }

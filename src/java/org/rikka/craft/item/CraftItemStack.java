@@ -12,12 +12,12 @@ public class CraftItemStack implements IItemStack {
     }
 
     @Override
-    public int getStackSize() {
+    public int getSize() {
         return itemStack.stackSize;
     }
 
     @Override
-    public void setStackSize(int size) {
+    public void setSize(int size) {
         if (size < 0) {
             size = 1;
         } else if (size > 64) {
@@ -27,7 +27,7 @@ public class CraftItemStack implements IItemStack {
     }
 
     @Override
-    public ItemStack getOriginal() {
+    public ItemStack getOrigin() {
         return itemStack;
     }
 }

@@ -2,14 +2,15 @@ package org.rikka.entity;
 
 import net.minecraft.entity.Entity;
 import org.rikka.Rikka;
-import org.rikka.data.IData;
+import org.rikka.handler.IPosHandler;
+import org.rikka.world.IWorld;
 
 /**
  * 实体(IEntity)接口.
  *
- * @param <T> 泛型实体类.
+ * @param <R> 泛型实体类.
  */
-public interface IEntity<T extends Entity> extends Rikka<T> {
+public interface IEntity<R extends Entity> extends Rikka<R>, IPosHandler {
 
     /**
      * 获取实体注册名.
@@ -67,18 +68,6 @@ public interface IEntity<T extends Entity> extends Rikka<T> {
      */
     void despawn();
 
-    /**
-     * 获取缓存变量(TempData).
-     *
-     * @return 缓存变量.
-     */
-    IData getTData();
-
-    /**
-     * 获取存储变量(StoredData).
-     *
-     * @return 存储变量.
-     */
-    IData getSData();
+    IWorld getWorld();
 
 }

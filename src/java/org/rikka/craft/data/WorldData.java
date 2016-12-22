@@ -8,13 +8,12 @@ import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Set;
 
-public class GSData extends WorldSavedData implements IData {
+public class WorldData extends WorldSavedData implements IData {
 
     private final HashMap<String, Object> dataMap = new HashMap<>();
 
-
-    public GSData() {
-        super("rikkaData");
+    public WorldData() {
+        super("rikkaWorldData");
     }
 
     @Override

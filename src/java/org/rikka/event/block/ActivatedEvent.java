@@ -17,6 +17,10 @@ public class ActivatedEvent extends BlockPlayerEvent {
         this.side = side;
     }
 
+    public int getSide() {
+        return side;
+    }
+
     public float getHitX() {
         return hitX;
     }
@@ -29,7 +33,4 @@ public class ActivatedEvent extends BlockPlayerEvent {
         return hitZ;
     }
 
-    public int getSide() {
-        return side;
-    }
 }

@@ -2,7 +2,6 @@ package org.rikka.craft.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
-import org.rikka.RikkaType;
 import org.rikka.block.IBlock;
 import org.rikka.craft.CraftRikka;
 import org.rikka.world.IWorld;
@@ -34,14 +33,19 @@ public class CraftBlock extends CraftRikka<Block> implements IBlock {
     }
 
     @Override
-    public int getMetadata() {
-        return original.getMetaFromState(world.getOriginal().getBlockState(pos));
+    public BlockPos getPos() {
+        return pos;
+    }
+
+    @Override
+    public int getmeta() {
+        return origin.getMetaFromState(world.getOrigin().getBlockState(pos));
     }
 
     @Override
     @SuppressWarnings("deprecation")
-    public void setMetadata(int meta) {
-        world.getOriginal().setBlockState(pos, original.getStateFromMeta(meta), 2);
+    public void setmeta(int meta) {
+        world.getOrigin().setBlockState(pos, origin.getStateFromMeta(meta), 2);
     }
 
     @Override
@@ -64,8 +68,4 @@ public class CraftBlock extends CraftRikka<Block> implements IBlock {
         return world;
     }
 
-    @Override
-    public RikkaType getType() {
-        return RikkaType.BLOCK;
-    }
 }

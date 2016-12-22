@@ -1,19 +1,14 @@
 package org.rikka.craft.event;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.player.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import org.rikka.Rikka;
-import org.rikka.craft.item.CraftItemStack;
-import org.rikka.craft.script.EnumHook;
-import org.rikka.craft.script.IScriptHandler;
-import org.rikka.craft.script.ScriptManager;
-import org.rikka.entity.IPlayer;
-import org.rikka.event.entity.player.PlayerTossEvent;
+import org.rikka.craft.capability.DataHandler;
+import org.rikka.craft.capability.ScriptHandler;
+import org.rikka.handler.IDataHandler;
+import org.rikka.handler.IScriptHandler;
 
 /**
  * 玩家事件订阅集合,用于玩家触发脚本.
@@ -29,12 +24,19 @@ public class SubscribePlayerEvent {
      */
     @SubscribeEvent
     public void on(PlayerEvent.Clone event) {
-        EntityPlayer o = event.getOriginal();
-        EntityPlayer p = event.getEntityPlayer();
-        if (o != null && p != null && o.hasCapability(ScriptManager.capability, null) && p.hasCapability(ScriptManager.capability, null)) {
-            IScriptHandler oh = o.getCapability(ScriptManager.capability, null);
-            IScriptHandler ph = p.getCapability(ScriptManager.capability, null);
-            ph.readFromNBT(oh.writeToNBT(new NBTTagCompound()));
+        EntityPlayer origin = event.getOriginal();
+        EntityPlayer player = event.getEntityPlayer();
+        IDataHandler old_data = DataHandler.playerHandlers.get(origin.hashCode());
+        IDataHandler new_data = DataHandler.playerHandlers.get(player.hashCode());
+        if (old_data != null && new_data != null) {
+            new_data.copy(old_data);
+            DataHandler.playerHandlers.remove(origin.hashCode());
+        }
+        IScriptHandler old_sc = ScriptHandler.playerHandlers.get(origin.hashCode());
+        IScriptHandler new_sc = ScriptHandler.playerHandlers.get(player.hashCode());
+        if (old_sc != null && new_sc != null) {
+            new_sc.deserializeNBT(old_sc.serializeNBT());
+            ScriptHandler.playerHandlers.remove(origin.hashCode());
         }
     }
 
@@ -141,16 +143,6 @@ public class SubscribePlayerEvent {
     public void on(ItemTossEvent event) {
         System.out.println("toss");
         EntityPlayer player = event.getPlayer();
-        ItemStack itemStack = event.getEntityItem().getEntityItem();
-        if (player instanceof EntityPlayerMP && ScriptManager.playerHandlers.containsKey(player.hashCode())) {
-            IScriptHandler handler = ScriptManager.playerHandlers.get(player.hashCode());
-            Rikka rikka = handler.getRikka();
-            if (rikka instanceof IPlayer) {
-                PlayerTossEvent tossEvent = new PlayerTossEvent((IPlayer) rikka, new CraftItemStack(itemStack));
-                handler.run(EnumHook.toss, tossEvent);
-                event.setCanceled(tossEvent.isCanceled());
-            }
-        }
     }
 
     /**

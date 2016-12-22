@@ -1,13 +1,12 @@
 package org.rikka.item;
 
 import net.minecraft.item.ItemStack;
+import org.rikka.Rikka;
 
-public interface IItemStack {
+public interface IItemStack extends Rikka<ItemStack> {
 
-    int getStackSize();
+    int getSize();
 
-    void setStackSize(int size);
-
-    ItemStack getOriginal();
+    void setSize(int size);
 
 }

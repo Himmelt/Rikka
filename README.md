@@ -1,5 +1,9 @@
 #Rikka
 
+1. 可编程对象 -> IScriptHandler
+2. 可存储变量 -> IDataHandler
+3. 可普通封装 -> Rikka
+
 主要封装对象
 ```
 Rikka -> Entity -> PlayerMP

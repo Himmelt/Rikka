@@ -10,8 +10,4 @@ public class CNpcEvent extends REvent<INpc> {
         super(npc, type);
     }
 
-    public INpc getNpc() {
-        return rikka;
-    }
-
 }
