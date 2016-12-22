@@ -1,11 +1,17 @@
 package org.rikka.craft.capability;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
 import org.apache.commons.io.FileUtils;
 import org.rikka.event.REvent;
 import org.rikka.handler.IScriptHandler;
@@ -30,7 +36,7 @@ public class ScriptHandler implements IScriptHandler, ICapabilitySerializable<NB
     private static final Map<String, String> fileScripts = new HashMap<>();
     private static final Map<String, String> engineLanguages = new HashMap<>();
     private static final Map<String, ScriptEngineFactory> engineFactories = new HashMap<>();
-    private static final ResourceLocation NBT = new ResourceLocation("rikkaScript");
+    private static final ResourceLocation NBT = new ResourceLocation("rikka:Script");
     /* 加载服务器时初始化 */
     public static final Map<Integer, IScriptHandler> worldHandlers = new HashMap<>();
     public static final Map<Integer, IScriptHandler> playerHandlers = new HashMap<>();
@@ -71,6 +77,14 @@ public class ScriptHandler implements IScriptHandler, ICapabilitySerializable<NB
 
     }
 
+    private ScriptHandler(String type, int hash) {
+        if (type.equals("world")) worldHandlers.put(hash, this);
+        else if (type.equals("player")) playerHandlers.put(hash, this);
+    }
+
+    private ScriptHandler() {
+    }
+
     @Override
     public void run(REvent event) {
         if (!editing && enabled && !errored && initEngine()) {
@@ -108,6 +122,21 @@ public class ScriptHandler implements IScriptHandler, ICapabilitySerializable<NB
             /* 写入控制台 */
             printer.close();
         }
+    }
+
+    @Override
+    public String getScript() {
+        return script;
+    }
+
+    @Override
+    public void setScript(String script) {
+        this.script = script;
+    }
+
+    @Override
+    public List<String> getList() {
+        return scriptList;
     }
 
     private boolean initEngine() {
@@ -253,4 +282,19 @@ public class ScriptHandler implements IScriptHandler, ICapabilitySerializable<NB
         return factory == null ? null : factory.getScriptEngine();
     }
 
+    public static void attachEntity(AttachCapabilitiesEvent<Entity> event) {
+        Entity entity = event.getObject();
+        if (entity instanceof EntityPlayerMP) {
+            event.addCapability(NBT, new ScriptHandler("player", entity.hashCode()));
+        } else if (entity instanceof EntityCreature) {
+            event.addCapability(NBT, new ScriptHandler());
+        }
+    }
+
+    public static void attachWorld(AttachCapabilitiesEvent<World> event) {
+        World world = event.getObject();
+        if (world instanceof WorldServer) {
+            event.addCapability(NBT, new ScriptHandler("world", world.hashCode()));
+        }
+    }
 }

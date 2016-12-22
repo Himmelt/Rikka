@@ -1,11 +1,17 @@
 package org.rikka.craft.capability;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.*;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
 import org.rikka.craft.data.CraftData;
 import org.rikka.craft.data.WorldData;
 import org.rikka.data.IData;
@@ -18,7 +24,7 @@ import java.util.Map;
 public class DataHandler implements IDataHandler, ICapabilitySerializable<NBTTagCompound> {
     @CapabilityInject(IDataHandler.class)
     public static Capability<IDataHandler> CAP;
-    public static final ResourceLocation NBT = new ResourceLocation("rikkaSData");
+    private static final ResourceLocation NBT = new ResourceLocation("rikka:SData");
     public static final IData GTData = new CraftData();
     public static final IData GSData = new WorldData();
     public static final Map<Integer, IDataHandler> worldHandlers = new HashMap<>();
@@ -26,6 +32,14 @@ public class DataHandler implements IDataHandler, ICapabilitySerializable<NBTTag
 
     private IData tData = new CraftData();
     private IData sData = new CraftData();
+
+    private DataHandler(String type, int hash) {
+        if (type.equals("world")) worldHandlers.put(hash, this);
+        else if (type.equals("player")) playerHandlers.put(hash, this);
+    }
+
+    private DataHandler() {
+    }
 
     @Override
     public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
@@ -99,6 +113,22 @@ public class DataHandler implements IDataHandler, ICapabilitySerializable<NBTTag
         if (data != null) {
             tData = data.getTData();
             sData = data.getSData();
+        }
+    }
+
+    public static void attachEntity(AttachCapabilitiesEvent<Entity> event) {
+        Entity entity = event.getObject();
+        if (entity instanceof EntityPlayerMP) {
+            event.addCapability(NBT, new DataHandler("player", entity.hashCode()));
+        } else if (entity instanceof EntityCreature) {
+            event.addCapability(NBT, new DataHandler());
+        }
+    }
+
+    public static void attachWorld(AttachCapabilitiesEvent<World> event) {
+        World world = event.getObject();
+        if (world instanceof WorldServer) {
+            event.addCapability(NBT, new DataHandler("world", world.hashCode()));
         }
     }
 }

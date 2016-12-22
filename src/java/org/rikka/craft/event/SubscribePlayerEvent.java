@@ -1,12 +1,17 @@
 package org.rikka.craft.event;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.player.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import org.rikka.craft.CraftRikka;
 import org.rikka.craft.capability.DataHandler;
 import org.rikka.craft.capability.ScriptHandler;
+import org.rikka.craft.item.CraftItemStack;
+import org.rikka.event.REvent;
+import org.rikka.event.entity.player.PlayerTossEvent;
 import org.rikka.handler.IDataHandler;
 import org.rikka.handler.IScriptHandler;
 
@@ -143,6 +148,16 @@ public class SubscribePlayerEvent {
     public void on(ItemTossEvent event) {
         System.out.println("toss");
         EntityPlayer player = event.getPlayer();
+        if (player instanceof EntityPlayerMP) {
+            ItemStack item = event.getEntityItem().getEntityItem();
+            int hash = player.hashCode();
+            IScriptHandler handler = ScriptHandler.playerHandlers.get(hash);
+            if (handler != null) {
+                REvent toss = new PlayerTossEvent(CraftRikka.players.get(hash), new CraftItemStack(item));
+                handler.run(toss);
+                event.setCanceled(toss.isCanceled());
+            }
+        }
     }
 
     /**

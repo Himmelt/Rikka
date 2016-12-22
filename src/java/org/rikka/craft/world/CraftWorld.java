@@ -25,6 +25,7 @@ public class CraftWorld extends CraftRikka<WorldServer> implements IWorld {
     public CraftWorld(WorldServer world, IDataHandler data) {
         super(world);
         copy(data);
+        worlds.put(origin.hashCode(), this);
     }
 
     @Override

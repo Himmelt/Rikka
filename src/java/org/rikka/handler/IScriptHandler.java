@@ -3,9 +3,17 @@ package org.rikka.handler;
 import net.minecraft.nbt.NBTTagCompound;
 import org.rikka.event.REvent;
 
+import java.util.List;
+
 public interface IScriptHandler {
 
     void run(REvent event);
+
+    String getScript();
+
+    void setScript(String script);
+
+    List<String> getList();
 
     boolean getEnabled();
 
@@ -22,4 +30,5 @@ public interface IScriptHandler {
     NBTTagCompound serializeNBT();
 
     void deserializeNBT(NBTTagCompound comp);
+
 }

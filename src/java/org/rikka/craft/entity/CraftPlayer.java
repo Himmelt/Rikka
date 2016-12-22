@@ -9,6 +9,7 @@ public class CraftPlayer extends CraftEntity<EntityPlayerMP> implements IPlayer 
 
     public CraftPlayer(EntityPlayerMP player) {
         super(player);
+        players.put(player.hashCode(), this);
     }
 
     @Override
