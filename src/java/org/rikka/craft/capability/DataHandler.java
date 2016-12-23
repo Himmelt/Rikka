@@ -33,12 +33,14 @@ public class DataHandler implements IDataHandler, ICapabilitySerializable<NBTTag
     private IData tData = new CraftData();
     private IData sData = new CraftData();
 
-    private DataHandler(String type, int hash) {
-        if (type.equals("world")) worldHandlers.put(hash, this);
-        else if (type.equals("player")) playerHandlers.put(hash, this);
+    public final DataHandler world(int hash) {
+        worldHandlers.put(hash, this);
+        return this;
     }
 
-    private DataHandler() {
+    public final DataHandler player(int hash) {
+        playerHandlers.put(hash, this);
+        return this;
     }
 
     @Override
@@ -119,7 +121,7 @@ public class DataHandler implements IDataHandler, ICapabilitySerializable<NBTTag
     public static void attachEntity(AttachCapabilitiesEvent<Entity> event) {
         Entity entity = event.getObject();
         if (entity instanceof EntityPlayerMP) {
-            event.addCapability(NBT, new DataHandler("player", entity.hashCode()));
+            event.addCapability(NBT, new DataHandler().player(entity.hashCode()));
         } else if (entity instanceof EntityCreature) {
             event.addCapability(NBT, new DataHandler());
         }
@@ -128,7 +130,7 @@ public class DataHandler implements IDataHandler, ICapabilitySerializable<NBTTag
     public static void attachWorld(AttachCapabilitiesEvent<World> event) {
         World world = event.getObject();
         if (world instanceof WorldServer) {
-            event.addCapability(NBT, new DataHandler("world", world.hashCode()));
+            event.addCapability(NBT, new DataHandler().world(world.hashCode()));
         }
     }
 }

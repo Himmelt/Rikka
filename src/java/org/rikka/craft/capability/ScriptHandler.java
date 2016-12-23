@@ -77,12 +77,14 @@ public class ScriptHandler implements IScriptHandler, ICapabilitySerializable<NB
 
     }
 
-    private ScriptHandler(String type, int hash) {
-        if (type.equals("world")) worldHandlers.put(hash, this);
-        else if (type.equals("player")) playerHandlers.put(hash, this);
+    public final ScriptHandler world(int hash) {
+        worldHandlers.put(hash, this);
+        return this;
     }
 
-    private ScriptHandler() {
+    public final ScriptHandler player(int hash) {
+        playerHandlers.put(hash, this);
+        return this;
     }
 
     @Override
@@ -285,7 +287,7 @@ public class ScriptHandler implements IScriptHandler, ICapabilitySerializable<NB
     public static void attachEntity(AttachCapabilitiesEvent<Entity> event) {
         Entity entity = event.getObject();
         if (entity instanceof EntityPlayerMP) {
-            event.addCapability(NBT, new ScriptHandler("player", entity.hashCode()));
+            event.addCapability(NBT, new ScriptHandler().player(entity.hashCode()));
         } else if (entity instanceof EntityCreature) {
             event.addCapability(NBT, new ScriptHandler());
         }
@@ -294,7 +296,7 @@ public class ScriptHandler implements IScriptHandler, ICapabilitySerializable<NB
     public static void attachWorld(AttachCapabilitiesEvent<World> event) {
         World world = event.getObject();
         if (world instanceof WorldServer) {
-            event.addCapability(NBT, new ScriptHandler("world", world.hashCode()));
+            event.addCapability(NBT, new ScriptHandler().world(world.hashCode()));
         }
     }
 }
