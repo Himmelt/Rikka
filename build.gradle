@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+group = 'org.soraworld.rikka'
+version = '0.0.1'
+archivesBaseName = "Rikka"
+
+sourceCompatibility = targetCompatibility = 1.8
+compileJava {
+    sourceCompatibility = targetCompatibility = 1.8
+}
+
+repositories {
+    jcenter()
+}
