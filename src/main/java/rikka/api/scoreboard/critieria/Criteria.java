@@ -24,8 +24,8 @@
  */
 package rikka.api.scoreboard.critieria;
 
-import org.soraworld.rikka.effect.potion.PotionEffectTypes;
-import org.soraworld.rikka.scoreboard.objective.Objective;
+import rikka.api.effect.potion.PotionEffectTypes;
+import rikka.api.scoreboard.objective.Objective;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 /**

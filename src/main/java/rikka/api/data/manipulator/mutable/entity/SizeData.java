@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableSizeData;
-import org.soraworld.rikka.entity.IEntity;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableSizeData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.IEntity;
 
 /**
  * Represents the base and height sizes of an entity if it has physical

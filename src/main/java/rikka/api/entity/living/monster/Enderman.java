@@ -1,6 +1,6 @@
 package rikka.api.entity.living.monster;
 
-import org.soraworld.rikka.item.inventory.ICarrier;
+import rikka.api.item.inventory.ICarrier;
 
 public interface Enderman extends Monster, ICarrier {
 

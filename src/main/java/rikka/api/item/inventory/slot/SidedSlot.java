@@ -24,10 +24,10 @@
  */
 package rikka.api.item.inventory.slot;
 
-import org.soraworld.rikka.util.Direction;
 import rikka.api.item.inventory.Inventory;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.Slot;
+import rikka.api.util.Direction;
 
 /**
  * A slot which belongs to a particular side of a "sided" inventory.

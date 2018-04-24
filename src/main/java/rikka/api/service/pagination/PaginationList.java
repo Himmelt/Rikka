@@ -24,10 +24,10 @@
  */
 package rikka.api.service.pagination;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
 import rikka.api.text.Text;
 import rikka.api.text.channel.MessageReceiver;
+import rikka.api.util.ResettableBuilder;
 
 import javax.annotation.Nullable;
 import java.util.List;

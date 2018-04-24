@@ -25,17 +25,16 @@
 package rikka.api.command.args;
 
 import com.google.common.collect.ImmutableList;
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.util.StartsWithPredicate;
+import rikka.api.command.ICommandSender;
+import rikka.api.text.Text;
+import rikka.api.util.StartsWithPredicate;
 
 import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static org.soraworld.rikka.command.args.GenericArguments.*;
-import static org.soraworld.rikka.util.SpongeApiTranslationHelper.t;
+import static rikka.api.util.SpongeApiTranslationHelper.t;
 
 public final class CommandFlags extends CommandElement {
     @Nullable

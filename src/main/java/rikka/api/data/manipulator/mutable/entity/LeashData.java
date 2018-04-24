@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableLeashData;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.ILiving;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableLeashData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.ILiving;
 
 /**
  * Signifies that an {@link IEntity} is currently "leashed" to

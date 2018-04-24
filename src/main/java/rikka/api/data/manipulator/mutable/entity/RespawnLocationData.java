@@ -24,14 +24,14 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableRespawnLocation;
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.util.RespawnLocation;
-import org.soraworld.rikka.world.World;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableRespawnLocation;
 import rikka.api.data.manipulator.mutable.MappedData;
 import rikka.api.data.value.mutable.MapValue;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.util.RespawnLocation;
+import rikka.api.world.World;
 
 import java.util.Optional;
 import java.util.UUID;

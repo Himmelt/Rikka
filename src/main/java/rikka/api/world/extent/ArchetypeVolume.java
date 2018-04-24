@@ -25,11 +25,11 @@
 package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.world.BlockChangeFlag;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
-import org.soraworld.rikka.world.extent.worker.MutableBlockVolumeWorker;
 import rikka.api.block.tileentity.TileEntityArchetype;
+import rikka.api.world.BlockChangeFlag;
+import rikka.api.world.Location;
+import rikka.api.world.World;
+import rikka.api.world.extent.worker.MutableBlockVolumeWorker;
 
 import java.util.Map;
 import java.util.Optional;

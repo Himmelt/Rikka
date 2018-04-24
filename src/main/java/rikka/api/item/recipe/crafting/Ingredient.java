@@ -24,12 +24,12 @@
  */
 package rikka.api.item.recipe.crafting;
 
-import org.soraworld.rikka.GameDictionary;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.GameDictionary;
+import rikka.api.Sponge;
+import rikka.api.item.ItemType;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
+import rikka.api.util.ResettableBuilder;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 import javax.annotation.Nullable;
@@ -111,7 +111,7 @@ public interface Ingredient extends Predicate<ItemStack> {
 
     /**
      * Creates a new {@link Ingredient} for the provided
-     * {@link org.soraworld.rikka.GameDictionary.Entry}s.
+     * {@link rikka.api.GameDictionary.Entry}s.
      *
      * @param entries The GameDictionary Entries
      * @return The new ingredient
@@ -145,7 +145,7 @@ public interface Ingredient extends Predicate<ItemStack> {
         /**
          * Adds a GameDictionary Entry as Predicate for matching the ingredient.
          * Also clears all previously set {@link #withDisplay} items and then
-         * adds {@link org.soraworld.rikka.GameDictionary.Entry#getTemplate()}
+         * adds {@link rikka.api.GameDictionary.Entry#getTemplate()}
          * to it.
          *
          * <p>All predicates and items are ORed together.</p>

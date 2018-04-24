@@ -24,9 +24,9 @@
  */
 package rikka.api.world.biome;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.world.World;
+import rikka.api.CatalogType;
 import rikka.api.util.annotation.CatalogedBy;
+import rikka.api.world.World;
 
 /**
  * Represents a biome.

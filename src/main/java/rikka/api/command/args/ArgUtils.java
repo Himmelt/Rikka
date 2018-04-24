@@ -24,8 +24,8 @@
  */
 package rikka.api.command.args;
 
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.text.TranslatableText;
+import rikka.api.text.Text;
+import rikka.api.text.TranslatableText;
 
 import javax.annotation.Nullable;
 

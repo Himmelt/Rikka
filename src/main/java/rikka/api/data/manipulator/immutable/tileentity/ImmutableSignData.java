@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.tileentity;
 
-import org.soraworld.rikka.data.manipulator.mutable.tileentity.SignData;
 import rikka.api.block.tileentity.Sign;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableListData;
+import rikka.api.data.manipulator.mutable.tileentity.SignData;
 import rikka.api.data.value.immutable.ImmutableListValue;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.text.Text;

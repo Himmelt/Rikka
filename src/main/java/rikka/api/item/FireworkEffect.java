@@ -24,10 +24,10 @@
  */
 package rikka.api.item;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.util.Color;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
 import rikka.api.data.DataSerializable;
+import rikka.api.util.Color;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.List;
 

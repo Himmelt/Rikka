@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.living.animal.ISheep;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.ShearedData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.living.animal.ISheep;
 
 /**
  * An {@link ImmutableDataManipulator} for the "sheared" state of a

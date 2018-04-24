@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.tileentity;
 
-import org.soraworld.rikka.effect.potion.PotionEffectType;
 import rikka.api.block.tileentity.carrier.Beacon;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.tileentity.BeaconData;
 import rikka.api.data.value.immutable.ImmutableOptionalValue;
+import rikka.api.effect.potion.PotionEffectType;
 import rikka.api.entity.IEntity;
 
 import java.util.Optional;

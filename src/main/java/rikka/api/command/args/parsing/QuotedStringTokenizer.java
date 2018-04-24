@@ -24,8 +24,8 @@
  */
 package rikka.api.command.args.parsing;
 
-import org.soraworld.rikka.text.Text;
 import rikka.api.command.args.ArgumentParseException;
+import rikka.api.text.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;

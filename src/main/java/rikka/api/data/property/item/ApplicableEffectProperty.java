@@ -26,9 +26,9 @@ package rikka.api.data.property.item;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.effect.potion.PotionEffect;
+import rikka.api.data.Property;
 import rikka.api.data.property.AbstractProperty;
+import rikka.api.effect.potion.PotionEffect;
 
 import javax.annotation.Nullable;
 import java.util.HashSet;

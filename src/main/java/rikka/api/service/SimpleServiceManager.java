@@ -26,12 +26,12 @@ package rikka.api.service;
 
 import com.google.common.collect.MapMaker;
 import com.google.inject.Singleton;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.event.CauseStackManager;
-import org.soraworld.rikka.event.SpongeEventFactory;
-import org.soraworld.rikka.event.cause.EventContextKeys;
-import org.soraworld.rikka.plugin.PluginContainer;
-import org.soraworld.rikka.plugin.PluginManager;
+import rikka.api.Sponge;
+import rikka.api.event.CauseStackManager;
+import rikka.api.event.SpongeEventFactory;
+import rikka.api.event.cause.EventContextKeys;
+import rikka.api.plugin.PluginContainer;
+import rikka.api.plugin.PluginManager;
 
 import javax.annotation.Nullable;
 import javax.inject.Inject;

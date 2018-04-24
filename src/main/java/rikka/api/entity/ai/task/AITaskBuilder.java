@@ -24,8 +24,8 @@
  */
 package rikka.api.entity.ai.task;
 
-import org.soraworld.rikka.entity.living.Agent;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.entity.living.Agent;
+import rikka.api.util.ResettableBuilder;
 
 /**
  * A utility to assist in building {@link AITask}s.

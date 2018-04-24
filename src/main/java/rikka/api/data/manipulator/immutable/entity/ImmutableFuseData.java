@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.data.manipulator.mutable.entity.FuseData;
-import org.soraworld.rikka.entity.explosive.FusedExplosive;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
+import rikka.api.data.manipulator.mutable.entity.FuseData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.explosive.FusedExplosive;
 
 /**
  * Represents information about a {@link FusedExplosive}'s fuse.

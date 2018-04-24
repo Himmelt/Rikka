@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.explosive.PrimedTNT;
-import org.soraworld.rikka.entity.living.monster.Endermite;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.ExpirableData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.explosive.PrimedTNT;
+import rikka.api.entity.living.monster.Endermite;
 
 /**
  * An {@link ImmutableDataManipulator} handling the "expiring" ticks remaining

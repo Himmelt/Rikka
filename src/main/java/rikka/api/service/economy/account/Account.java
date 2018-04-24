@@ -24,16 +24,16 @@
  */
 package rikka.api.service.economy.account;
 
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.player.User;
-import org.soraworld.rikka.event.cause.Cause;
-import org.soraworld.rikka.profile.GameProfile;
-import org.soraworld.rikka.service.economy.Currency;
-import org.soraworld.rikka.service.economy.EconomyService;
-import org.soraworld.rikka.service.economy.transaction.TransactionResult;
-import org.soraworld.rikka.service.economy.transaction.TransferResult;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.player.User;
+import rikka.api.event.cause.Cause;
+import rikka.api.profile.GameProfile;
 import rikka.api.service.context.Context;
 import rikka.api.service.context.Contextual;
+import rikka.api.service.economy.Currency;
+import rikka.api.service.economy.EconomyService;
+import rikka.api.service.economy.transaction.TransactionResult;
+import rikka.api.service.economy.transaction.TransferResult;
 import rikka.api.text.Text;
 
 import java.math.BigDecimal;

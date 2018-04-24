@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableFireworkRocketData;
-import org.soraworld.rikka.entity.projectile.Firework;
-import org.soraworld.rikka.item.ItemTypes;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableFireworkRocketData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
+import rikka.api.entity.projectile.Firework;
+import rikka.api.item.ItemTypes;
 
 /**
  * An {@link DataManipulator} representing the flight modifier of a

@@ -24,9 +24,9 @@
  */
 package rikka.api.data.property.item;
 
-import org.soraworld.rikka.item.ItemType;
 import rikka.api.block.tileentity.carrier.Furnace;
 import rikka.api.data.property.BooleanProperty;
+import rikka.api.item.ItemType;
 
 /**
  * Whether or not an {@link ItemType} can be smelted in a {@link Furnace}.

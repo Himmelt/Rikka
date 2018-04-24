@@ -24,8 +24,8 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.block.BlockTypes;
+import rikka.api.block.BlockState;
+import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.block.LayeredData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;

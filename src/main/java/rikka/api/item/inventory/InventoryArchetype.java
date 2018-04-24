@@ -24,12 +24,12 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.item.inventory.property.InventoryTitle;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.CatalogType;
+import rikka.api.Sponge;
+import rikka.api.item.inventory.property.InventoryTitle;
 import rikka.api.text.Text;
 import rikka.api.text.translation.Translation;
+import rikka.api.util.ResettableBuilder;
 import rikka.api.util.annotation.CatalogedBy;
 
 import java.util.List;

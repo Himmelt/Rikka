@@ -24,8 +24,8 @@
  */
 package rikka.api.data;
 
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 
 import java.util.Optional;
 

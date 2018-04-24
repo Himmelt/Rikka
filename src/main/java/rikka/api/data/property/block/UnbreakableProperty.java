@@ -41,7 +41,7 @@ public class UnbreakableProperty extends BooleanProperty {
     /**
      * Creates a new {@link UnbreakableProperty} with the provided
      * {@code value} and
-     * {@link org.soraworld.rikka.data.Property.Operator}.
+     * {@link rikka.api.data.Property.Operator}.
      *
      * @param value    The value whether something is unbreakable or not
      * @param operator The operator for comparisons

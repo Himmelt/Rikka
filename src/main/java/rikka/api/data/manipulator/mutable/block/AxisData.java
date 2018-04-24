@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable.block;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.block.ImmutableAxisData;
-import org.soraworld.rikka.util.Axis;
+import rikka.api.block.BlockTypes;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.immutable.block.ImmutableAxisData;
 import rikka.api.data.manipulator.mutable.VariantData;
 import rikka.api.data.type.LogAxes;
 import rikka.api.data.type.LogAxis;
+import rikka.api.util.Axis;
 
 /**
  * Represents the {@link Axis} aligned data for various "rotational" blocks

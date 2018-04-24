@@ -1,10 +1,10 @@
 package rikka.api.entity.projectile;
 
-import org.soraworld.rikka.entity.EntityType;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.entity.DamagingData;
 import rikka.api.data.value.mutable.MapValue;
 import rikka.api.data.value.mutable.MutableBoundedValue;
+import rikka.api.entity.EntityType;
 
 public interface DamagingProjectile extends Projectile {
 

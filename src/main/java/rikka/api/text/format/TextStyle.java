@@ -26,10 +26,10 @@ package rikka.api.text.format;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.util.OptBool;
+import rikka.api.CatalogType;
 import rikka.api.text.Text;
 import rikka.api.text.TextElement;
+import rikka.api.util.OptBool;
 import rikka.api.util.annotation.CatalogedBy;
 
 import javax.annotation.Nullable;

@@ -1,7 +1,7 @@
 package rikka.api.entity.projectile.source;
 
-import org.soraworld.rikka.util.math.Vector3d;
 import rikka.api.entity.projectile.Projectile;
+import rikka.api.util.math.Vector3d;
 
 import java.util.Optional;
 

@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableFlyingData;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.Humanoid;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableFlyingData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.Humanoid;
 
 /**
  * An {@link DataManipulator} for the "flying" state of an {@link IEntity}. This

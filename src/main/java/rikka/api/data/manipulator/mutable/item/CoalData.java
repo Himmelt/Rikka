@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.item.ImmutableCoalData;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.immutable.item.ImmutableCoalData;
 import rikka.api.data.manipulator.mutable.VariantData;
 import rikka.api.data.type.CoalType;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * A type of {@link VariantData} handling the {@link CoalType} of an

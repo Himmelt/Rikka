@@ -24,8 +24,8 @@
  */
 package rikka.api.service.ban;
 
-import org.soraworld.rikka.profile.GameProfile;
-import org.soraworld.rikka.util.ban.Ban;
+import rikka.api.profile.GameProfile;
+import rikka.api.util.ban.Ban;
 
 import java.net.InetAddress;
 import java.util.Collection;

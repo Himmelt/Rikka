@@ -24,8 +24,8 @@
  */
 package rikka.api.service.whitelist;
 
-import org.soraworld.rikka.Server;
-import org.soraworld.rikka.profile.GameProfile;
+import rikka.api.Server;
+import rikka.api.profile.GameProfile;
 
 import java.util.Collection;
 

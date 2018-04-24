@@ -24,10 +24,10 @@
  */
 package rikka.api.data.value;
 
-import org.soraworld.rikka.data.key.Key;
-import org.soraworld.rikka.data.value.mutable.Value;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.ILiving;
+import rikka.api.data.key.Key;
+import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.ILiving;
 
 import java.util.Optional;
 

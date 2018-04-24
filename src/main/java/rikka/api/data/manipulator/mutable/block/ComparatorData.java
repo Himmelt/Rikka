@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.block;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.block.ImmutableComparatorData;
-import org.soraworld.rikka.data.type.ComparatorType;
 import rikka.api.block.tileentity.Comparator;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.immutable.block.ImmutableComparatorData;
 import rikka.api.data.manipulator.mutable.VariantData;
+import rikka.api.data.type.ComparatorType;
 
 /**
  * Represents the {@link Comparator} data.

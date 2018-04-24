@@ -25,9 +25,9 @@
 package rikka.api.data.manipulator.mutable.tileentity;
 
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.data.manipulator.immutable.tileentity.ImmutableStructureData;
 import rikka.api.block.tileentity.Structure;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.tileentity.ImmutableStructureData;
 import rikka.api.data.type.StructureMode;
 import rikka.api.data.value.mutable.Value;
 

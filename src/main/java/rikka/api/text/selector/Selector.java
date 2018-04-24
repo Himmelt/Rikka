@@ -24,12 +24,12 @@
  */
 package rikka.api.text.selector;
 
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.util.ResettableBuilder;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
-import org.soraworld.rikka.world.extent.Extent;
+import rikka.api.command.ICommandSender;
+import rikka.api.entity.IEntity;
+import rikka.api.util.ResettableBuilder;
+import rikka.api.world.Location;
+import rikka.api.world.World;
+import rikka.api.world.extent.Extent;
 
 import java.util.Collection;
 import java.util.List;
@@ -242,7 +242,7 @@ public interface Selector {
     String toPlain();
 
     /**
-     * Returns a new {@link org.soraworld.rikka.text.selector.Selector.Builder}
+     * Returns a new {@link rikka.api.text.selector.Selector.Builder}
      * with the content of this selector. This can be used to edit an immutable
      * {@link Selector} instance.
      *

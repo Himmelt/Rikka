@@ -25,7 +25,7 @@
 package rikka.api.data.manipulator.mutable.common;
 
 import com.google.common.base.Objects;
-import org.soraworld.rikka.data.key.Key;
+import rikka.api.data.key.Key;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.value.BaseValue;

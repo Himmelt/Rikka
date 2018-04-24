@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.tileentity;
 
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.block.tileentity.carrier.TileEntityCarrier;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.tileentity.LockableData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} handling the "locking" information for a

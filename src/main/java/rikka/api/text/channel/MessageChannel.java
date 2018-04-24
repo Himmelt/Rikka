@@ -25,16 +25,16 @@
 package rikka.api.text.channel;
 
 import com.google.common.collect.ImmutableSet;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.text.channel.impl.DelegateMutableMessageChannel;
-import org.soraworld.rikka.text.channel.type.CombinedMessageChannel;
-import org.soraworld.rikka.text.channel.type.FixedMessageChannel;
-import org.soraworld.rikka.text.channel.type.PermissionMessageChannel;
-import org.soraworld.rikka.text.channel.type.WorldMessageChannel;
-import org.soraworld.rikka.world.World;
+import rikka.api.Sponge;
 import rikka.api.text.Text;
+import rikka.api.text.channel.impl.DelegateMutableMessageChannel;
+import rikka.api.text.channel.type.CombinedMessageChannel;
+import rikka.api.text.channel.type.FixedMessageChannel;
+import rikka.api.text.channel.type.PermissionMessageChannel;
+import rikka.api.text.channel.type.WorldMessageChannel;
 import rikka.api.text.chat.ChatType;
 import rikka.api.text.chat.ChatTypes;
+import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Collection;

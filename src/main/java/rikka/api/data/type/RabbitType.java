@@ -24,8 +24,8 @@
  */
 package rikka.api.data.type;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.entity.living.animal.IRabbit;
+import rikka.api.CatalogType;
+import rikka.api.entity.living.animal.IRabbit;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**

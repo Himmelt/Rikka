@@ -27,21 +27,20 @@ package rikka.api.command.spec;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
-import org.soraworld.rikka.command.*;
-import org.soraworld.rikka.command.args.*;
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
 import rikka.api.command.CommandCallable;
 import rikka.api.command.CommandException;
+import rikka.api.command.ICommandSender;
 import rikka.api.command.args.*;
 import rikka.api.command.args.parsing.InputTokenizer;
+import rikka.api.text.Text;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.*;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static org.soraworld.rikka.util.SpongeApiTranslationHelper.t;
+import static rikka.api.util.SpongeApiTranslationHelper.t;
 
 /**
  * Specification for how command arguments should be parsed.

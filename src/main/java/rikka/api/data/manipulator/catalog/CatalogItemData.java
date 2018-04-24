@@ -24,22 +24,21 @@
  */
 package rikka.api.data.manipulator.catalog;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.data.manipulator.DataManipulator;
-import org.soraworld.rikka.data.manipulator.mutable.*;
-import org.soraworld.rikka.data.manipulator.mutable.item.*;
-import org.soraworld.rikka.data.type.*;
-import org.soraworld.rikka.effect.potion.PotionEffect;
-import org.soraworld.rikka.entity.EntityType;
-import org.soraworld.rikka.item.FireworkEffect;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.enchantment.Enchantment;
-import org.soraworld.rikka.item.inventory.Inventory;
-import org.soraworld.rikka.item.inventory.ItemStack;
-import org.soraworld.rikka.util.Color;
+import rikka.api.block.BlockState;
 import rikka.api.block.tileentity.EnchantmentTable;
+import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.mutable.*;
+import rikka.api.data.manipulator.mutable.item.*;
 import rikka.api.data.type.*;
+import rikka.api.effect.potion.PotionEffect;
+import rikka.api.entity.EntityType;
+import rikka.api.item.FireworkEffect;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.enchantment.Enchantment;
+import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.ItemStack;
 import rikka.api.text.Text;
+import rikka.api.util.Color;
 
 /**
  * An enumeration of known {@link DataManipulator}s applicable to

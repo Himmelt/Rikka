@@ -26,7 +26,7 @@ package rikka.api.text.selector;
 
 import java.util.Set;
 
-import static org.soraworld.rikka.text.selector.ArgumentTypes.getFactory;
+import static rikka.api.text.selector.ArgumentTypes.getFactory;
 
 /**
  * Represents the argument of a {@link Selector selector}. An Argument is one or

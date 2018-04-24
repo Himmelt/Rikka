@@ -24,15 +24,15 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.data.manipulator.mutable.entity.DominantHandData;
-import org.soraworld.rikka.data.property.entity.DominantHandProperty;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.ILiving;
-import org.soraworld.rikka.entity.living.player.IPlayer;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
+import rikka.api.data.manipulator.mutable.entity.DominantHandData;
+import rikka.api.data.property.entity.DominantHandProperty;
 import rikka.api.data.type.HandPreference;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.ILiving;
+import rikka.api.entity.living.player.IPlayer;
 
 /**
  * A {@link ImmutableDataManipulator} representing the dominant {@link HandPreference}

@@ -26,10 +26,10 @@ package rikka.api.world;
 
 import com.flowpowered.math.vector.Vector3d;
 import org.slf4j.Logger;
-import org.soraworld.rikka.event.world.ChunkPreGenerationEvent;
-import org.soraworld.rikka.scheduler.Scheduler;
-import org.soraworld.rikka.util.ResettableBuilder;
 import rikka.api.Game;
+import rikka.api.event.world.ChunkPreGenerationEvent;
+import rikka.api.scheduler.Scheduler;
+import rikka.api.util.ResettableBuilder;
 import rikka.api.world.storage.WorldProperties;
 
 import javax.annotation.Nullable;

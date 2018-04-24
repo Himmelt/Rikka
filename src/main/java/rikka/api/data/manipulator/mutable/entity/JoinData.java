@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.Server;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableJoinData;
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.entity.living.player.User;
+import rikka.api.Server;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableJoinData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.player.User;
 
 import java.time.Instant;
 

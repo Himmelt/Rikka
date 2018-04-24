@@ -26,8 +26,8 @@ package rikka.api.world;
 
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.util.Direction;
+import rikka.api.Sponge;
+import rikka.api.util.Direction;
 import rikka.api.world.extent.Extent;
 import rikka.api.world.extent.worker.MutableBiomeVolumeWorker;
 import rikka.api.world.extent.worker.MutableBlockVolumeWorker;

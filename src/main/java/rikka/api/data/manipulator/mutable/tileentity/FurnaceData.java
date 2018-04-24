@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.tileentity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.tileentity.ImmutableFurnaceData;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.block.tileentity.carrier.Furnace;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.tileentity.ImmutableFurnaceData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * Represents the data for a {@link Furnace}.

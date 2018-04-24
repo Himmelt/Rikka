@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import org.soraworld.rikka.util.Direction;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
 import rikka.api.data.manipulator.mutable.block.RailDirectionData;
 import rikka.api.data.type.RailDirection;
+import rikka.api.util.Direction;
 
 /**
  * An {@link ImmutableVariantData} for the {@link RailDirection} of rails. The

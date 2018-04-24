@@ -24,15 +24,15 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableDamagingData;
-import org.soraworld.rikka.entity.EntityType;
-import org.soraworld.rikka.entity.living.ILiving;
-import org.soraworld.rikka.entity.projectile.Projectile;
-import org.soraworld.rikka.entity.projectile.arrow.Arrow;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableDamagingData;
 import rikka.api.data.value.mutable.MapValue;
 import rikka.api.data.value.mutable.MutableBoundedValue;
+import rikka.api.entity.EntityType;
+import rikka.api.entity.living.ILiving;
+import rikka.api.entity.projectile.Projectile;
+import rikka.api.entity.projectile.arrow.Arrow;
 
 /**
  * A {@link DataManipulator} for an owner that will deal a certain amount of

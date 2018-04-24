@@ -24,7 +24,7 @@
  */
 package rikka.api.text.serializer;
 
-import org.soraworld.rikka.Sponge;
+import rikka.api.Sponge;
 import rikka.api.text.Text;
 import rikka.api.text.action.ClickAction;
 import rikka.api.text.action.HoverAction;

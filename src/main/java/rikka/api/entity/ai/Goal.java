@@ -24,10 +24,10 @@
  */
 package rikka.api.entity.ai;
 
-import org.soraworld.rikka.entity.ai.task.AITask;
-import org.soraworld.rikka.entity.ai.task.AITaskType;
-import org.soraworld.rikka.entity.living.Agent;
-import org.soraworld.rikka.entity.living.monster.Monster;
+import rikka.api.entity.ai.task.AITask;
+import rikka.api.entity.ai.task.AITaskType;
+import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.monster.Monster;
 
 import java.util.List;
 

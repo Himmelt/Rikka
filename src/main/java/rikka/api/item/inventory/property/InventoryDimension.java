@@ -25,10 +25,10 @@
 package rikka.api.item.inventory.property;
 
 import com.flowpowered.math.vector.Vector2i;
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
 import rikka.api.item.inventory.type.GridInventory;
 import rikka.api.item.inventory.type.InventoryRow;
+import rikka.api.util.Coerce;
 
 /**
  * Property for inventories of a particular size. For example to allow querying

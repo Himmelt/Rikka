@@ -25,8 +25,8 @@
 package rikka.api.world;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
+import rikka.api.util.ResettableBuilder;
 
 /**
  * A world border is a square boundary, extending through the entire y-axis.

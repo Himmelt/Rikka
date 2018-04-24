@@ -24,12 +24,12 @@
  */
 package rikka.api.world.extent.worker;
 
-import org.soraworld.rikka.world.extent.worker.procedure.BlockVolumeMapper;
-import org.soraworld.rikka.world.extent.worker.procedure.BlockVolumeMerger;
-import org.soraworld.rikka.world.extent.worker.procedure.BlockVolumeReducer;
-import org.soraworld.rikka.world.extent.worker.procedure.BlockVolumeVisitor;
 import rikka.api.world.extent.BlockVolume;
 import rikka.api.world.extent.MutableBlockVolume;
+import rikka.api.world.extent.worker.procedure.BlockVolumeMapper;
+import rikka.api.world.extent.worker.procedure.BlockVolumeMerger;
+import rikka.api.world.extent.worker.procedure.BlockVolumeReducer;
+import rikka.api.world.extent.worker.procedure.BlockVolumeVisitor;
 
 import java.util.function.BiFunction;
 

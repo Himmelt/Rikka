@@ -24,7 +24,7 @@
  */
 package rikka.api.data.value.mutable;
 
-import org.soraworld.rikka.data.value.immutable.ImmutableCollectionValue;
+import rikka.api.data.value.immutable.ImmutableCollectionValue;
 
 import java.util.Collection;
 import java.util.function.Function;

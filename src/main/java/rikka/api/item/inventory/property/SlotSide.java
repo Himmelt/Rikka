@@ -24,9 +24,9 @@
  */
 package rikka.api.item.inventory.property;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.util.Coerce;
-import org.soraworld.rikka.util.Direction;
+import rikka.api.data.Property;
+import rikka.api.util.Coerce;
+import rikka.api.util.Direction;
 
 /**
  * property which represents a "side" for a particular slot, for use in querying

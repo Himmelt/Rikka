@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.data.manipulator.mutable.entity.PassengerData;
-import org.soraworld.rikka.entity.IEntity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableListData;
+import rikka.api.data.manipulator.mutable.entity.PassengerData;
 import rikka.api.data.value.immutable.ImmutableListValue;
+import rikka.api.entity.IEntity;
 
 import java.util.UUID;
 

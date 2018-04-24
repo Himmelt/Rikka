@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.living.Humanoid;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.FoodData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
+import rikka.api.entity.living.Humanoid;
 
 /**
  * An {@link ImmutableDataManipulator} handling the various aspects of "hunger"

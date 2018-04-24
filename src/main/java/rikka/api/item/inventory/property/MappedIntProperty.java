@@ -24,8 +24,8 @@
  */
 package rikka.api.item.inventory.property;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
+import rikka.api.util.Coerce;
 
 /**
  * An integer-mapped integer property. This is primarily used for supporting the

@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.living.animal.IRideableHorse;
-import org.soraworld.rikka.entity.living.animal.Pig;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.PigSaddleData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.living.animal.IRideableHorse;
+import rikka.api.entity.living.animal.Pig;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} for the current {@link ItemStack} that

@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.item;
 
-import org.soraworld.rikka.data.manipulator.mutable.item.LoreData;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableListData;
+import rikka.api.data.manipulator.mutable.item.LoreData;
 import rikka.api.data.value.immutable.ImmutableListValue;
+import rikka.api.item.inventory.ItemStack;
 import rikka.api.text.Text;
 
 /**

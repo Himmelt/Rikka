@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.EntitySnapshot;
-import org.soraworld.rikka.entity.IEntity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.VehicleData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.EntitySnapshot;
+import rikka.api.entity.IEntity;
 
 /**
  * An {@link ImmutableDataManipulator} that handles the current "passenger" if

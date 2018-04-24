@@ -24,8 +24,8 @@
  */
 package rikka.api.data.property;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
+import rikka.api.util.Coerce;
 
 /**
  * Represents an block property that has an integer value. Examples may include

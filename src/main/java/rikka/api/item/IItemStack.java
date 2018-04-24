@@ -1,7 +1,7 @@
 package rikka.api.item;
 
 import net.minecraft.item.ItemStack;
-import org.soraworld.rikka.Rikka;
+import rikka.api.Rikka;
 
 public interface IItemStack extends Rikka<ItemStack> {
 

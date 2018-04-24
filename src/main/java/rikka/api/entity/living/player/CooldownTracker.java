@@ -1,6 +1,6 @@
 package rikka.api.entity.living.player;
 
-import org.soraworld.rikka.item.ItemType;
+import rikka.api.item.ItemType;
 
 import java.util.OptionalDouble;
 import java.util.OptionalInt;

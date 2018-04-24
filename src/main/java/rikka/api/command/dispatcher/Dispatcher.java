@@ -25,9 +25,9 @@
 package rikka.api.command.dispatcher;
 
 import com.google.common.collect.Multimap;
-import org.soraworld.rikka.command.ICommandSender;
 import rikka.api.command.CommandCallable;
 import rikka.api.command.CommandMapping;
+import rikka.api.command.ICommandSender;
 
 import javax.annotation.Nullable;
 import java.util.Optional;

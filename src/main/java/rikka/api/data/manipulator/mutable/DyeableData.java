@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableDyeableData;
-import org.soraworld.rikka.entity.living.animal.ISheep;
-import org.soraworld.rikka.entity.living.animal.IWolf;
+import rikka.api.block.BlockTypes;
+import rikka.api.data.DataHolder;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.immutable.ImmutableDyeableData;
 import rikka.api.data.type.DyeColor;
+import rikka.api.entity.living.animal.ISheep;
+import rikka.api.entity.living.animal.IWolf;
 
 /**
  * An {@link VariantData} handling the {@link DyeColor} for a

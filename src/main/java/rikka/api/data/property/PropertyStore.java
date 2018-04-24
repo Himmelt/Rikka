@@ -24,10 +24,10 @@
  */
 package rikka.api.data.property;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.util.Direction;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
+import rikka.api.data.Property;
+import rikka.api.util.Direction;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 
 import java.util.Optional;
 

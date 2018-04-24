@@ -1,9 +1,9 @@
 package rikka.api.entity.projectile;
 
-import org.soraworld.rikka.util.math.Vector3d;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.TargetedLocationData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.util.math.Vector3d;
 
 public interface EyeOfEnder extends Projectile {
 

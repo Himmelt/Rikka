@@ -24,9 +24,9 @@
  */
 package rikka.api.data.type;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.item.ItemTypes;
+import rikka.api.CatalogType;
+import rikka.api.item.ItemType;
+import rikka.api.item.ItemTypes;
 import rikka.api.util.annotation.CatalogedBy;
 
 import java.util.Optional;

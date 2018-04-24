@@ -24,15 +24,15 @@
  */
 package rikka.api.data.manipulator.mutable.tileentity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.tileentity.ImmutableSignData;
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.block.tileentity.Sign;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.tileentity.ImmutableSignData;
 import rikka.api.data.manipulator.mutable.ListData;
 import rikka.api.data.value.mutable.ListValue;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 import rikka.api.text.Text;
 
 import java.util.List;

@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableCriticalHitData;
-import org.soraworld.rikka.entity.projectile.arrow.Arrow;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableCriticalHitData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.projectile.arrow.Arrow;
 
 /**
  * Signifies that an entity's next attack is considered a "critical" hit.

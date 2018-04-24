@@ -41,7 +41,7 @@ import java.util.function.Function;
 public class SpongeApiTranslationHelper {
 
     private static final Function<Locale, ResourceBundle> LOOKUP_FUNC = input ->
-            ResourceBundle.getBundle("org.soraworld.rikka.Translations", input);
+            ResourceBundle.getBundle("rikka.api.Translations", input);
 
     /**
      * Gets the translated text for a given string.

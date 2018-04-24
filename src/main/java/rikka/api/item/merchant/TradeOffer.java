@@ -24,8 +24,8 @@
  */
 package rikka.api.item.merchant;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.DataSerializable;
+import rikka.api.Sponge;
+import rikka.api.data.DataSerializable;
 import rikka.api.data.persistence.DataBuilder;
 import rikka.api.entity.living.Humanoid;
 import rikka.api.item.inventory.ItemStack;

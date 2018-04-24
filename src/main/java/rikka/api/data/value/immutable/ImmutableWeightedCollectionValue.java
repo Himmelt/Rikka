@@ -24,9 +24,9 @@
  */
 package rikka.api.data.value.immutable;
 
-import org.soraworld.rikka.util.weighted.TableEntry;
-import org.soraworld.rikka.util.weighted.WeightedTable;
 import rikka.api.data.value.mutable.WeightedCollectionValue;
+import rikka.api.util.weighted.TableEntry;
+import rikka.api.util.weighted.WeightedTable;
 
 import javax.annotation.Nullable;
 import java.util.List;

@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableShatteringData;
-import org.soraworld.rikka.entity.projectile.EyeOfEnder;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableShatteringData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.projectile.EyeOfEnder;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link DataManipulator} representing the "shattering" state of an

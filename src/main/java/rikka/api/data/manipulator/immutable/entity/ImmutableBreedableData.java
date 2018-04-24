@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.animal.IAnimal;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.BreedableData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.animal.IAnimal;
 
 /**
  * Represents an {@link ImmutableDataManipulator} for the "breedable" state of

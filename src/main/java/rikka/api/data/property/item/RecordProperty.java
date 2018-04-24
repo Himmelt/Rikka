@@ -24,11 +24,11 @@
  */
 package rikka.api.data.property.item;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.effect.sound.record.RecordType;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.data.Property;
 import rikka.api.data.property.AbstractProperty;
+import rikka.api.effect.sound.record.RecordType;
+import rikka.api.item.ItemType;
+import rikka.api.item.inventory.ItemStack;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

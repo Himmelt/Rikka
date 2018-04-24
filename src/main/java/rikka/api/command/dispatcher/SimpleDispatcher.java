@@ -25,18 +25,18 @@
 package rikka.api.command.dispatcher;
 
 import com.google.common.collect.*;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.command.*;
-import org.soraworld.rikka.plugin.PluginContainer;
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.text.action.TextActions;
-import org.soraworld.rikka.text.format.TextColors;
-import org.soraworld.rikka.text.format.TextStyles;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
+import rikka.api.Sponge;
 import rikka.api.command.CommandCallable;
 import rikka.api.command.CommandException;
 import rikka.api.command.CommandMapping;
+import rikka.api.command.ICommandSender;
+import rikka.api.plugin.PluginContainer;
+import rikka.api.text.Text;
+import rikka.api.text.action.TextActions;
+import rikka.api.text.format.TextColors;
+import rikka.api.text.format.TextStyles;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -44,8 +44,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static org.soraworld.rikka.command.CommandMessageFormatting.SPACE_TEXT;
-import static org.soraworld.rikka.util.SpongeApiTranslationHelper.t;
+import static rikka.api.command.CommandMessageFormatting.SPACE_TEXT;
+import static rikka.api.util.SpongeApiTranslationHelper.t;
 
 /**
  * A simple implementation of a {@link Dispatcher}.

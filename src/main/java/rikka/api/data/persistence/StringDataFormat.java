@@ -24,8 +24,8 @@
  */
 package rikka.api.data.persistence;
 
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataView;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataView;
 
 import java.io.IOException;
 import java.io.Reader;

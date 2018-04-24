@@ -1,6 +1,6 @@
 package rikka.api.effect.sound.record;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 import rikka.api.effect.sound.SoundType;
 import rikka.api.text.translation.Translatable;
 

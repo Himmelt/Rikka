@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.item;
 
-import org.soraworld.rikka.entity.EntityType;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
 import rikka.api.data.manipulator.mutable.item.SpawnableData;
+import rikka.api.entity.EntityType;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableVariantData} handling the {@link EntityType} that an

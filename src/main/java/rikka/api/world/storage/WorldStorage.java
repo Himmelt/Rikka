@@ -25,9 +25,9 @@
 package rikka.api.world.storage;
 
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.world.Chunk;
-import org.soraworld.rikka.world.World;
+import rikka.api.data.DataContainer;
+import rikka.api.world.Chunk;
+import rikka.api.world.World;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;

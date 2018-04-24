@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.immutable.item;
 
-import org.soraworld.rikka.block.BlockType;
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.entity.living.player.gamemode.GameMode;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.block.BlockType;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.item.BreakableData;
 import rikka.api.data.value.immutable.ImmutableSetValue;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.player.gamemode.GameMode;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} handling the list of {@link BlockType}s

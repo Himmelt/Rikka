@@ -24,7 +24,7 @@
  */
 package rikka.api.util.annotation;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 
 import javax.annotation.Nonnull;
 import java.lang.annotation.*;

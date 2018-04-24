@@ -2,7 +2,6 @@ package rikka.api.world;
 
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.Sponge;
 import rikka.api.effect.Viewer;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.IPlayer;

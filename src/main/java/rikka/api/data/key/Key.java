@@ -25,18 +25,18 @@
 package rikka.api.data.key;
 
 import com.google.common.reflect.TypeToken;
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.DataQuery;
-import org.soraworld.rikka.data.DataSerializable;
-import org.soraworld.rikka.event.EventListener;
-import org.soraworld.rikka.event.data.ChangeDataHolderEvent;
-import org.soraworld.rikka.util.ResettableBuilder;
-import org.soraworld.rikka.util.TypeTokens;
+import rikka.api.CatalogType;
+import rikka.api.Sponge;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataHolder;
+import rikka.api.data.DataQuery;
+import rikka.api.data.DataSerializable;
 import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.ValueContainer;
+import rikka.api.event.EventListener;
+import rikka.api.event.data.ChangeDataHolderEvent;
+import rikka.api.util.ResettableBuilder;
+import rikka.api.util.TypeTokens;
 
 import java.lang.reflect.Type;
 import java.util.Collection;

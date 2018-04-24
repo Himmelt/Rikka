@@ -24,7 +24,7 @@
  */
 package rikka.api.item.inventory.property;
 
-import org.soraworld.rikka.data.Property;
+import rikka.api.data.Property;
 
 /**
  * A property to define which GUI should be opened on the client

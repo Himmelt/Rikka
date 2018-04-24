@@ -25,8 +25,8 @@
 package rikka.api.command.args;
 
 import com.google.common.base.Strings;
-import org.soraworld.rikka.text.Text;
 import rikka.api.command.CommandException;
+import rikka.api.text.Text;
 
 /**
  * Exception thrown when an error occurs while parsing arguments.

@@ -30,12 +30,12 @@ import ninja.leaping.configurate.gson.GsonConfigurationLoader;
 import ninja.leaping.configurate.loader.HeaderMode;
 import ninja.leaping.configurate.objectmapping.ObjectMappingException;
 import ninja.leaping.configurate.objectmapping.serialize.TypeSerializer;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.data.Queries;
-import org.soraworld.rikka.data.persistence.AbstractDataBuilder;
-import org.soraworld.rikka.data.persistence.InvalidDataException;
+import rikka.api.Sponge;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataView;
+import rikka.api.data.Queries;
+import rikka.api.data.persistence.AbstractDataBuilder;
+import rikka.api.data.persistence.InvalidDataException;
 import rikka.api.text.Text;
 
 import java.io.*;

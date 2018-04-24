@@ -24,7 +24,7 @@
  */
 package rikka.api.data.type;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 import rikka.api.block.tileentity.Structure;
 import rikka.api.util.annotation.CatalogedBy;
 

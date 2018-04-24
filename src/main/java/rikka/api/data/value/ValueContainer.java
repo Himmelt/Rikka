@@ -25,12 +25,12 @@
 package rikka.api.data.value;
 
 import com.google.common.collect.ImmutableSet;
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.key.Key;
-import org.soraworld.rikka.data.manipulator.DataManipulator;
-import org.soraworld.rikka.data.value.immutable.ImmutableValue;
-import org.soraworld.rikka.data.value.immutable.ImmutableValueStore;
-import org.soraworld.rikka.data.value.mutable.CompositeValueStore;
+import rikka.api.data.DataHolder;
+import rikka.api.data.key.Key;
+import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.data.value.immutable.ImmutableValueStore;
+import rikka.api.data.value.mutable.CompositeValueStore;
 
 import javax.annotation.Nullable;
 import java.util.NoSuchElementException;

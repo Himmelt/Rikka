@@ -25,7 +25,7 @@
 package rikka.api.world;
 
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.Sponge;
+import rikka.api.Sponge;
 import rikka.api.block.BlockState;
 import rikka.api.data.ImmutableDataHolder;
 import rikka.api.data.persistence.DataBuilder;

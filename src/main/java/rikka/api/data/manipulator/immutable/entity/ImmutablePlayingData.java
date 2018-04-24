@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.living.Villager;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.PlayingData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.living.Villager;
 
 /**
  * An {@link ImmutableDataManipulator} for the "is playing" state of

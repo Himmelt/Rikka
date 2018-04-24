@@ -24,7 +24,7 @@
  */
 package rikka.api.util.ban;
 
-import org.soraworld.rikka.Sponge;
+import rikka.api.Sponge;
 import rikka.api.command.ICommandSender;
 import rikka.api.profile.GameProfile;
 import rikka.api.service.ban.BanService;

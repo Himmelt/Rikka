@@ -24,9 +24,9 @@
  */
 package rikka.api.item.recipe.crafting;
 
-import org.soraworld.rikka.world.World;
 import rikka.api.item.inventory.crafting.CraftingGridInventory;
 import rikka.api.item.recipe.RecipeRegistry;
+import rikka.api.world.World;
 
 import java.util.Optional;
 

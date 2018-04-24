@@ -24,16 +24,16 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableAreaEffectCloudData;
-import org.soraworld.rikka.effect.particle.ParticleType;
-import org.soraworld.rikka.effect.potion.PotionEffect;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.util.Color;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableAreaEffectCloudData;
 import rikka.api.data.value.mutable.ListValue;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.effect.particle.ParticleType;
+import rikka.api.effect.potion.PotionEffect;
+import rikka.api.entity.IEntity;
+import rikka.api.util.Color;
 
 public interface AreaEffectCloudData extends DataManipulator<AreaEffectCloudData, ImmutableAreaEffectCloudData> {
 

@@ -26,7 +26,7 @@ package rikka.api.data.value.mutable;
 
 import com.google.common.collect.ImmutableCollection;
 import com.google.common.collect.ImmutableSet;
-import org.soraworld.rikka.data.value.immutable.ImmutableMapValue;
+import rikka.api.data.value.immutable.ImmutableMapValue;
 
 import java.util.Map;
 import java.util.Map.Entry;

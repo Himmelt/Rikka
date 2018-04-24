@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import org.soraworld.rikka.data.manipulator.immutable.item.ImmutableMapItemData;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.item.ImmutableMapItemData;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * Represents an {@link DataManipulator} hosting the specific map

@@ -24,9 +24,9 @@
  */
 package rikka.api.world.gen;
 
-import org.soraworld.rikka.world.World;
-import org.soraworld.rikka.world.extent.ImmutableBiomeVolume;
-import org.soraworld.rikka.world.extent.MutableBlockVolume;
+import rikka.api.world.World;
+import rikka.api.world.extent.ImmutableBiomeVolume;
+import rikka.api.world.extent.MutableBlockVolume;
 
 /**
  * A populator which acts directly on the {@link MutableBlockVolume} during the

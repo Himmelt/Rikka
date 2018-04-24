@@ -24,9 +24,9 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
+import rikka.api.item.ItemType;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.Collection;
 import java.util.Random;

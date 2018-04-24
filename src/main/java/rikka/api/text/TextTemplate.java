@@ -30,9 +30,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import ninja.leaping.configurate.objectmapping.Setting;
 import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
-import org.soraworld.rikka.text.format.TextColor;
-import org.soraworld.rikka.text.format.TextFormat;
-import org.soraworld.rikka.text.format.TextStyle;
+import rikka.api.text.format.TextColor;
+import rikka.api.text.format.TextFormat;
+import rikka.api.text.format.TextStyle;
 
 import javax.annotation.Nullable;
 import java.util.*;

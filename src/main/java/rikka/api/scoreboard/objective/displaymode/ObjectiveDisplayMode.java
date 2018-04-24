@@ -24,8 +24,8 @@
  */
 package rikka.api.scoreboard.objective.displaymode;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.scoreboard.objective.Objective;
+import rikka.api.CatalogType;
+import rikka.api.scoreboard.objective.Objective;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**

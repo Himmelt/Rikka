@@ -25,13 +25,13 @@
 package rikka.api.data.manipulator.mutable;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableTargetedLocationData;
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.entity.projectile.EyeOfEnder;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableTargetedLocationData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.projectile.EyeOfEnder;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link DataManipulator} handling the a targeted {@link Vector3d}.

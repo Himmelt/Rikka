@@ -24,8 +24,8 @@
  */
 package rikka.api.service.economy.account;
 
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.player.User;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.player.User;
 
 /**
  * Represents an {@link Account} which is not tied to a particular {@link User}.

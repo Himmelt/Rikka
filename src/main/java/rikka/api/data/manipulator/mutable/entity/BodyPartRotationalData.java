@@ -25,14 +25,14 @@
 package rikka.api.data.manipulator.mutable.entity;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableBodyPartRotationalData;
-import org.soraworld.rikka.entity.living.ArmorStand;
-import org.soraworld.rikka.entity.living.Humanoid;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableBodyPartRotationalData;
 import rikka.api.data.type.BodyPart;
 import rikka.api.data.value.mutable.MapValue;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.ArmorStand;
+import rikka.api.entity.living.Humanoid;
 
 /**
  * Represents the mapped rotational data for all known body parts. Usually

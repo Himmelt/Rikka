@@ -1,7 +1,7 @@
 package rikka.api.entity.vehicle.minecart;
 
-import org.soraworld.rikka.util.math.Vector3d;
 import rikka.api.entity.IEntity;
+import rikka.api.util.math.Vector3d;
 
 public interface Minecart extends IEntity {
 

@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable;
 
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.block.tileentity.Skull;
 import rikka.api.data.manipulator.mutable.SkullData;
 import rikka.api.data.type.SkullType;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableVariantData} specializing in the {@link SkullType}

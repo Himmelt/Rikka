@@ -24,9 +24,9 @@
  */
 package rikka.api.world.biome;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.util.ResettableBuilder;
-import org.soraworld.rikka.world.World;
+import rikka.api.Sponge;
+import rikka.api.util.ResettableBuilder;
+import rikka.api.world.World;
 
 import java.util.function.Function;
 

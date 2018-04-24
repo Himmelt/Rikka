@@ -25,8 +25,8 @@
 package rikka.api.data.manipulator.immutable.common;
 
 import com.google.common.collect.ImmutableMap;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.key.Key;
+import rikka.api.Sponge;
+import rikka.api.data.key.Key;
 import rikka.api.data.manipulator.immutable.ImmutableMappedData;
 import rikka.api.data.manipulator.mutable.MappedData;
 import rikka.api.data.value.BaseValue;

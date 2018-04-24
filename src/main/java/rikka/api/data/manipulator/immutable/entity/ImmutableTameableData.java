@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.Tamer;
-import org.soraworld.rikka.entity.living.animal.IAnimal;
-import org.soraworld.rikka.entity.living.animal.IOcelot;
-import org.soraworld.rikka.entity.living.animal.IWolf;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.TameableData;
 import rikka.api.data.value.immutable.ImmutableOptionalValue;
+import rikka.api.entity.Tamer;
+import rikka.api.entity.living.animal.IAnimal;
+import rikka.api.entity.living.animal.IOcelot;
+import rikka.api.entity.living.animal.IWolf;
 
 import java.util.UUID;
 

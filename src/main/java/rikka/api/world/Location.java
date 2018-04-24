@@ -1,8 +1,5 @@
 package rikka.api.world;
 
-import org.soraworld.rikka.block.*;
-import org.soraworld.rikka.data.*;
-import org.soraworld.rikka.util.Direction;
 import rikka.api.block.*;
 import rikka.api.block.tileentity.TileEntity;
 import rikka.api.data.*;
@@ -14,6 +11,7 @@ import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.immutable.ImmutableValue;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
+import rikka.api.util.Direction;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.math.Vector3i;
 import rikka.api.world.biome.BiomeType;

@@ -25,8 +25,8 @@
 package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.world.extent.worker.MutableBlockVolumeWorker;
 import rikka.api.block.tileentity.TileEntity;
+import rikka.api.world.extent.worker.MutableBlockVolumeWorker;
 
 import java.util.Collection;
 import java.util.Optional;

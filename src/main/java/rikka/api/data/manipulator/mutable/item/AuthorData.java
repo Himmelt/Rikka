@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.item.ImmutableAuthorData;
-import org.soraworld.rikka.text.Text;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.item.ImmutableAuthorData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.text.Text;
 
 public interface AuthorData extends DataManipulator<AuthorData, ImmutableAuthorData> {
 

@@ -24,16 +24,16 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableMobSpawnerData;
-import org.soraworld.rikka.entity.EntityArchetype;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.util.weighted.WeightedSerializableObject;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableMobSpawnerData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.data.value.mutable.Value;
 import rikka.api.data.value.mutable.WeightedCollectionValue;
+import rikka.api.entity.EntityArchetype;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.util.weighted.WeightedSerializableObject;
 
 import java.util.Random;
 

@@ -24,11 +24,11 @@
  */
 package rikka.api.scoreboard;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
+import rikka.api.entity.living.player.IPlayer;
 import rikka.api.text.Text;
 import rikka.api.text.format.TextColor;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.Optional;
 import java.util.Set;

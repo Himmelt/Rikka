@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.immutable.item;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.block.BlockType;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.block.BlockState;
+import rikka.api.block.BlockType;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.item.BlockItemData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} handling the {@link BlockState}

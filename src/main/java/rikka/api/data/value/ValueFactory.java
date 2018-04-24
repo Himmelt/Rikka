@@ -24,8 +24,8 @@
  */
 package rikka.api.data.value;
 
-import org.soraworld.rikka.data.key.Key;
-import org.soraworld.rikka.data.value.mutable.*;
+import rikka.api.data.key.Key;
+import rikka.api.data.value.mutable.*;
 
 import javax.annotation.Nullable;
 import java.util.*;

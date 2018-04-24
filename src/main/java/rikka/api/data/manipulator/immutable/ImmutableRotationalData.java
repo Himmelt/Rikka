@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable;
 
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.entity.hanging.ItemFrame;
-import org.soraworld.rikka.util.rotation.Rotation;
+import rikka.api.data.DataHolder;
 import rikka.api.data.manipulator.mutable.RotationalData;
+import rikka.api.entity.hanging.ItemFrame;
+import rikka.api.util.rotation.Rotation;
 
 /**
  * An {@link ImmutableVariantData} handling the {@link Rotation} of a

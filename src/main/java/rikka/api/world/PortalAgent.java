@@ -90,12 +90,12 @@ public interface PortalAgent {
     /**
      * Tells this agent to create a new "portal" location at the suggested
      * {@link Location}.
-     * If {@link org.soraworld.rikka.event.block.ChangeBlockEvent.Place}
+     * If {@link rikka.api.event.block.ChangeBlockEvent.Place}
      * is cancelled, {@link Optional#empty()} is returned.
      *
      * </p>Note: In order to adjust or prevent the {@link Location}'s of each
      * {@link BlockState} set, listen to
-     * {@link org.soraworld.rikka.event.block.ChangeBlockEvent.Place} and
+     * {@link rikka.api.event.block.ChangeBlockEvent.Place} and
      * check for the root cause of this portal agent.
      *
      * @param targetLocation The targeted location

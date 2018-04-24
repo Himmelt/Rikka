@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.data.manipulator.mutable.block.BrickData;
+import rikka.api.block.BlockState;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
+import rikka.api.data.manipulator.mutable.block.BrickData;
 import rikka.api.data.type.BrickType;
 
 /**

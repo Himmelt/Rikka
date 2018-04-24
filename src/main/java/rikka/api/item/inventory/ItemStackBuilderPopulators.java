@@ -26,13 +26,7 @@ package rikka.api.item.inventory;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import org.soraworld.rikka.data.DataTransactionResult;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.item.enchantment.Enchantment;
-import org.soraworld.rikka.item.enchantment.EnchantmentType;
-import org.soraworld.rikka.util.Tuple;
-import org.soraworld.rikka.util.weighted.VariableAmount;
-import org.soraworld.rikka.util.weighted.WeightedTable;
+import rikka.api.data.DataTransactionResult;
 import rikka.api.data.key.Key;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
@@ -40,6 +34,12 @@ import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.mutable.ListValue;
 import rikka.api.data.value.mutable.SetValue;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.item.ItemType;
+import rikka.api.item.enchantment.Enchantment;
+import rikka.api.item.enchantment.EnchantmentType;
+import rikka.api.util.Tuple;
+import rikka.api.util.weighted.VariableAmount;
+import rikka.api.util.weighted.WeightedTable;
 
 import java.util.*;
 import java.util.function.BiConsumer;
@@ -49,8 +49,8 @@ import java.util.stream.Collectors;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static org.soraworld.rikka.util.weighted.VariableAmount.baseWithRandomAddition;
-import static org.soraworld.rikka.util.weighted.VariableAmount.fixed;
+import static rikka.api.util.weighted.VariableAmount.baseWithRandomAddition;
+import static rikka.api.util.weighted.VariableAmount.fixed;
 
 /**
  * A factory for generating {@link BiConsumer}s to apply to an

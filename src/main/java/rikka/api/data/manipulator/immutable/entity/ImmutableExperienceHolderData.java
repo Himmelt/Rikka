@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.entity.living.Humanoid;
-import org.soraworld.rikka.item.enchantment.Enchantment;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.data.DataHolder;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.ExperienceHolderData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
+import rikka.api.entity.living.Humanoid;
+import rikka.api.item.enchantment.Enchantment;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} handling the "experience" held by a

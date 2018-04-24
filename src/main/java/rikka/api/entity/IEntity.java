@@ -1,18 +1,18 @@
 package rikka.api.entity;
 
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.DataTransactionResult;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.event.cause.entity.damage.source.DamageSource;
-import org.soraworld.rikka.util.AABB;
-import org.soraworld.rikka.util.Identifiable;
-import org.soraworld.rikka.util.RelativePositions;
-import org.soraworld.rikka.util.math.Vector3d;
-import org.soraworld.rikka.world.Locatable;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
+import rikka.api.data.DataHolder;
+import rikka.api.data.DataTransactionResult;
+import rikka.api.data.key.Keys;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.event.cause.entity.damage.source.DamageSource;
 import rikka.api.text.translation.Translatable;
+import rikka.api.util.AABB;
+import rikka.api.util.Identifiable;
+import rikka.api.util.RelativePositions;
+import rikka.api.util.math.Vector3d;
+import rikka.api.world.Locatable;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

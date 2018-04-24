@@ -24,9 +24,9 @@
  */
 package rikka.api.data.manipulator.mutable.block;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.block.ImmutableAttachedData;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.block.ImmutableAttachedData;
 import rikka.api.data.value.mutable.Value;
 
 /**

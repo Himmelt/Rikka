@@ -24,10 +24,10 @@
  */
 package rikka.api.item.inventory.property;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.item.inventory.equipment.EquipmentType;
-import org.soraworld.rikka.item.inventory.equipment.EquipmentTypes;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
+import rikka.api.item.inventory.equipment.EquipmentType;
+import rikka.api.item.inventory.equipment.EquipmentTypes;
+import rikka.api.util.Coerce;
 
 /**
  * Inventory property which allows queries to be constructed for a particular

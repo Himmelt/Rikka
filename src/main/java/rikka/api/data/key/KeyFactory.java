@@ -25,9 +25,8 @@
 package rikka.api.data.key;
 
 import com.google.common.reflect.TypeToken;
-import org.soraworld.rikka.data.DataQuery;
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.data.value.mutable.*;
+import rikka.api.data.DataQuery;
+import rikka.api.data.DataView;
 import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.mutable.*;
 

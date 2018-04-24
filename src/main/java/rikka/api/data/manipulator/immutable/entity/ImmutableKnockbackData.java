@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.projectile.arrow.Arrow;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.KnockbackData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.projectile.arrow.Arrow;
 
 /**
  * An {@link ImmutableDataManipulator} for the "knockback" strength for an

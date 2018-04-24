@@ -1,6 +1,6 @@
 package rikka.api.entity;
 
-import org.soraworld.rikka.util.Identifiable;
+import rikka.api.util.Identifiable;
 
 public interface Tamer extends Identifiable {
     String getName();

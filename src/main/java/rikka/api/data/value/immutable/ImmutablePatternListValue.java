@@ -24,9 +24,9 @@
  */
 package rikka.api.data.value.immutable;
 
-import org.soraworld.rikka.data.type.BannerPatternShape;
-import org.soraworld.rikka.data.type.DyeColor;
 import rikka.api.data.meta.PatternLayer;
+import rikka.api.data.type.BannerPatternShape;
+import rikka.api.data.type.DyeColor;
 import rikka.api.data.value.mutable.PatternListValue;
 
 import java.util.List;

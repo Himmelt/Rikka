@@ -24,19 +24,15 @@
  */
 package rikka.api.data.manipulator.catalog;
 
-import org.soraworld.rikka.block.tileentity.*;
-import org.soraworld.rikka.block.tileentity.carrier.*;
-import org.soraworld.rikka.data.manipulator.mutable.*;
-import org.soraworld.rikka.data.manipulator.mutable.block.ComparatorData;
-import org.soraworld.rikka.data.manipulator.mutable.tileentity.*;
-import org.soraworld.rikka.item.inventory.ItemStack;
-import org.soraworld.rikka.profile.GameProfile;
 import rikka.api.block.tileentity.*;
 import rikka.api.block.tileentity.carrier.*;
 import rikka.api.data.manipulator.DataManipulator;
-import rikka.api.data.manipulator.mutable.CommandData;
-import rikka.api.data.manipulator.mutable.MobSpawnerData;
+import rikka.api.data.manipulator.mutable.*;
+import rikka.api.data.manipulator.mutable.block.ComparatorData;
+import rikka.api.data.manipulator.mutable.tileentity.*;
 import rikka.api.data.meta.PatternLayer;
+import rikka.api.item.inventory.ItemStack;
+import rikka.api.profile.GameProfile;
 
 /**
  * An enumeration of known vanilla {@link DataManipulator}s associated with

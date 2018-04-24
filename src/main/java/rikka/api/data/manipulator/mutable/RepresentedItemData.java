@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableRepresentedItemData;
-import org.soraworld.rikka.entity.hanging.ItemFrame;
-import org.soraworld.rikka.item.inventory.ItemStack;
-import org.soraworld.rikka.item.inventory.ItemStackSnapshot;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableRepresentedItemData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.hanging.ItemFrame;
+import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.ItemStackSnapshot;
 
 /**
  * An {@link DataManipulator} handling the representation of an

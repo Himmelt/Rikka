@@ -26,7 +26,7 @@ package rikka.api.service.permission;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableMap;
-import org.soraworld.rikka.util.Tristate;
+import rikka.api.util.Tristate;
 
 import java.util.HashMap;
 import java.util.Map;

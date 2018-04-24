@@ -1,6 +1,6 @@
 package rikka.api.effect.potion;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 import rikka.api.text.translation.Translatable;
 import rikka.api.text.translation.Translation;
 

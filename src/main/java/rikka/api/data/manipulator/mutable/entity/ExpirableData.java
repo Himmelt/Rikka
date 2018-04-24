@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableExpirableData;
-import org.soraworld.rikka.entity.Item;
-import org.soraworld.rikka.entity.living.monster.Endermite;
-import org.soraworld.rikka.world.weather.Weather;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableExpirableData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
+import rikka.api.entity.Item;
+import rikka.api.entity.living.monster.Endermite;
+import rikka.api.world.weather.Weather;
 
 /**
  * Signifies that an entity will expire after the value has

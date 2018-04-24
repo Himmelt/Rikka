@@ -24,8 +24,8 @@
  */
 package rikka.api.service.economy;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.registry.util.PluginProvidedRegistryModule;
+import rikka.api.CatalogType;
+import rikka.api.registry.util.PluginProvidedRegistryModule;
 import rikka.api.text.Text;
 
 import java.math.BigDecimal;

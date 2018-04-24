@@ -27,11 +27,11 @@ package rikka.api.text;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataSerializable;
-import org.soraworld.rikka.data.Queries;
-import org.soraworld.rikka.item.inventory.ItemStack;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataSerializable;
+import rikka.api.data.Queries;
+import rikka.api.item.inventory.ItemStack;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;

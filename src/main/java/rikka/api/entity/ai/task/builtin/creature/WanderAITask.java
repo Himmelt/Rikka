@@ -24,11 +24,11 @@
  */
 package rikka.api.entity.ai.task.builtin.creature;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.entity.living.Creature;
+import rikka.api.Sponge;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskBuilder;
+import rikka.api.entity.living.Creature;
 
 public interface WanderAITask extends AITask<Creature> {
 

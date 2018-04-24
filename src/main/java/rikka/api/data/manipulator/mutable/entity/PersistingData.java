@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutablePersistingData;
-import org.soraworld.rikka.entity.IEntity;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutablePersistingData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.IEntity;
 
 /**
  * An {@link DataManipulator} that marks the "persisting" state for an

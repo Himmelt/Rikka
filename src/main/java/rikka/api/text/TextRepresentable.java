@@ -24,8 +24,8 @@
  */
 package rikka.api.text;
 
-import org.soraworld.rikka.text.action.HoverAction;
-import org.soraworld.rikka.text.action.TextAction;
+import rikka.api.text.action.HoverAction;
+import rikka.api.text.action.TextAction;
 
 /**
  * Represents an instance that have a {@link Text} representation that should be

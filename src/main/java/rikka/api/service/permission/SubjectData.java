@@ -24,8 +24,8 @@
  */
 package rikka.api.service.permission;
 
-import org.soraworld.rikka.util.Tristate;
 import rikka.api.service.context.Context;
+import rikka.api.util.Tristate;
 
 import javax.annotation.Nullable;
 import java.util.Collections;

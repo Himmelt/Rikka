@@ -24,8 +24,8 @@
  */
 package rikka.api.data.value.mutable;
 
-import org.soraworld.rikka.data.value.immutable.ImmutableBoundedValue;
 import rikka.api.data.value.BoundedValue;
+import rikka.api.data.value.immutable.ImmutableBoundedValue;
 
 /**
  * A type of {@link BoundedValue} that is modifiable as a {@link Value}.

@@ -24,7 +24,7 @@
  */
 package rikka.api.entity.ai.task;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 import rikka.api.util.annotation.CatalogedBy;
 
 @CatalogedBy(AITaskTypes.class)

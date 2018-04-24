@@ -24,10 +24,10 @@
  */
 package rikka.api.block.trait;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.block.BlockType;
-import org.soraworld.rikka.block.BlockTypes;
+import rikka.api.CatalogType;
+import rikka.api.block.BlockState;
+import rikka.api.block.BlockType;
+import rikka.api.block.BlockTypes;
 
 import java.util.Collection;
 import java.util.Optional;

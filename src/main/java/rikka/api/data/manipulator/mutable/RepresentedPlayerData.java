@@ -24,15 +24,15 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableRepresentedPlayerData;
-import org.soraworld.rikka.item.inventory.ItemStack;
-import org.soraworld.rikka.profile.GameProfile;
 import rikka.api.block.tileentity.Skull;
 import rikka.api.block.tileentity.TileEntity;
+import rikka.api.data.DataHolder;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableRepresentedPlayerData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.item.inventory.ItemStack;
+import rikka.api.profile.GameProfile;
 
 /**
  * An {@link DataManipulator} handling the {@link GameProfile}

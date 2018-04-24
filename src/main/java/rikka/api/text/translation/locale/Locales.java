@@ -24,7 +24,7 @@
  */
 package rikka.api.text.translation.locale;
 
-import org.soraworld.rikka.Sponge;
+import rikka.api.Sponge;
 
 import java.util.Locale;
 

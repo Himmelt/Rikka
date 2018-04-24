@@ -24,8 +24,8 @@
  */
 package rikka.api.data.type;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.util.Cycleable;
+import rikka.api.CatalogType;
+import rikka.api.util.Cycleable;
 import rikka.api.util.annotation.CatalogedBy;
 
 @CatalogedBy(LogAxes.class)

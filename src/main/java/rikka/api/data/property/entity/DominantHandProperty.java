@@ -24,14 +24,14 @@
  */
 package rikka.api.data.property.entity;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
 import rikka.api.data.manipulator.mutable.entity.DominantHandData;
 import rikka.api.data.property.AbstractProperty;
 import rikka.api.data.type.HandPreference;
 import rikka.api.data.type.HandPreferences;
 import rikka.api.entity.living.ILiving;
 import rikka.api.entity.living.player.IPlayer;
+import rikka.api.util.Coerce;
 
 import javax.annotation.Nullable;
 
@@ -60,7 +60,7 @@ public class DominantHandProperty extends AbstractProperty<String, HandPreferenc
     /**
      * Creates a new {@link DominantHandProperty} with the provided
      * {@link HandPreference}
-     * and {@link org.soraworld.rikka.data.Property.Operator} value.
+     * and {@link rikka.api.data.Property.Operator} value.
      *
      * @param value The value
      * @param op    The operator for comparison

@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.living.Humanoid;
-import org.soraworld.rikka.entity.living.player.IPlayer;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.SkinData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.living.Humanoid;
+import rikka.api.entity.living.player.IPlayer;
 
 import java.util.UUID;
 

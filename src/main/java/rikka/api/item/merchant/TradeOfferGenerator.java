@@ -24,11 +24,11 @@
  */
 package rikka.api.item.merchant;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.util.ResettableBuilder;
-import org.soraworld.rikka.util.weighted.VariableAmount;
+import rikka.api.Sponge;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.ItemStackGenerator;
+import rikka.api.util.ResettableBuilder;
+import rikka.api.util.weighted.VariableAmount;
 
 import javax.annotation.Nullable;
 import java.util.List;

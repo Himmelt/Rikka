@@ -24,8 +24,8 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.item.inventory.property.AbstractInventoryProperty;
+import rikka.api.data.Property;
+import rikka.api.item.inventory.property.AbstractInventoryProperty;
 
 /**
  * Base interface for Inventory Properties. It is recommended that implementors

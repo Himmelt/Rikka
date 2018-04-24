@@ -24,11 +24,11 @@
  */
 package rikka.api.item.inventory.type;
 
-import org.soraworld.rikka.item.inventory.property.SlotIndex;
-import org.soraworld.rikka.item.inventory.transaction.InventoryTransactionResult;
 import rikka.api.item.inventory.Inventory;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.Slot;
+import rikka.api.item.inventory.property.SlotIndex;
+import rikka.api.item.inventory.transaction.InventoryTransactionResult;
 
 import java.util.Optional;
 

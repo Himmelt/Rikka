@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.item;
 
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.item.GenerationData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} handling the "generation" state of an

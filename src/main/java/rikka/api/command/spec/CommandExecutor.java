@@ -24,9 +24,9 @@
  */
 package rikka.api.command.spec;
 
-import org.soraworld.rikka.command.CommandResult;
-import org.soraworld.rikka.command.ICommandSender;
 import rikka.api.command.CommandException;
+import rikka.api.command.CommandResult;
+import rikka.api.command.ICommandSender;
 import rikka.api.command.args.CommandContext;
 
 /**

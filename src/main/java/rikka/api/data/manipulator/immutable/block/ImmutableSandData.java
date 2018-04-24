@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import org.soraworld.rikka.block.BlockTypes;
+import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
 import rikka.api.data.manipulator.mutable.block.SandData;
 import rikka.api.data.type.SandType;

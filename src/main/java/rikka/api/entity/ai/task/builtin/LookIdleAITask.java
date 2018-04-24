@@ -24,10 +24,10 @@
  */
 package rikka.api.entity.ai.task.builtin;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.entity.ai.task.AITaskBuilder;
-import org.soraworld.rikka.entity.living.Agent;
+import rikka.api.Sponge;
 import rikka.api.entity.ai.task.AITask;
+import rikka.api.entity.ai.task.AITaskBuilder;
+import rikka.api.entity.living.Agent;
 
 public interface LookIdleAITask extends AITask<Agent> {
 

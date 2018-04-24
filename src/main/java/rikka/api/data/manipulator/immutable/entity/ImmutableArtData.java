@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.hanging.Painting;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
 import rikka.api.data.manipulator.mutable.entity.ArtData;
 import rikka.api.data.type.Art;
+import rikka.api.entity.hanging.Painting;
 
 /**
  * An {@link ImmutableVariantData} for the {@link Art} type. Usually applicable

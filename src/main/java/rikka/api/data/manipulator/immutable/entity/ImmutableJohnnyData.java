@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.data.manipulator.mutable.entity.JohnnyData;
-import org.soraworld.rikka.entity.living.monster.Vindicator;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
+import rikka.api.data.manipulator.mutable.entity.JohnnyData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.living.monster.Vindicator;
 
 /**
  * Immutable data which represents if a mob is exhibiting "johnny" behavior.

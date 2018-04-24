@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.living.ILiving;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.AbsorptionData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.living.ILiving;
 
 /**
  * An {@link ImmutableDataManipulator} for representing the absorption

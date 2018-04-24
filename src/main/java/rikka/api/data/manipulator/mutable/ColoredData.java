@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableColoredData;
-import org.soraworld.rikka.util.Color;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableColoredData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.util.Color;
 
 /**
  * Represents item data that uses colors. Examples may include leather armor.

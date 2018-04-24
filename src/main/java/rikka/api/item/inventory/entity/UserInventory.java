@@ -24,9 +24,9 @@
  */
 package rikka.api.item.inventory.entity;
 
-import org.soraworld.rikka.item.inventory.equipment.EquipmentInventory;
 import rikka.api.entity.living.player.User;
 import rikka.api.item.inventory.Slot;
+import rikka.api.item.inventory.equipment.EquipmentInventory;
 import rikka.api.item.inventory.type.CarriedInventory;
 import rikka.api.item.inventory.type.GridInventory;
 

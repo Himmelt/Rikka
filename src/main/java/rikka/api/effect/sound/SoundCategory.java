@@ -1,6 +1,6 @@
 package rikka.api.effect.sound;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 
 public interface SoundCategory extends CatalogType {
     SoundCategory MASTER = null;

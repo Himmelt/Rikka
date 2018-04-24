@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.animal.IOcelot;
-import org.soraworld.rikka.entity.living.animal.IWolf;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.SittingData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.animal.IOcelot;
+import rikka.api.entity.living.animal.IWolf;
 
 /**
  * An {@link ImmutableDataManipulator} representing the "sitting" state of an

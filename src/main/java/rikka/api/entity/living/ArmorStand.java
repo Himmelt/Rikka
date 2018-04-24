@@ -1,10 +1,10 @@
 package rikka.api.entity.living;
 
-import org.soraworld.rikka.entity.ArmorEquipable;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.entity.ArmorStandData;
 import rikka.api.data.manipulator.mutable.entity.BodyPartRotationalData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.ArmorEquipable;
 
 public interface ArmorStand extends ILiving, ArmorEquipable {
 

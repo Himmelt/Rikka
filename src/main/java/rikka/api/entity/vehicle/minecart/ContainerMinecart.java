@@ -1,7 +1,7 @@
 package rikka.api.entity.vehicle.minecart;
 
-import org.soraworld.rikka.item.inventory.ICarrier;
-import org.soraworld.rikka.item.inventory.type.CarriedInventory;
+import rikka.api.item.inventory.ICarrier;
+import rikka.api.item.inventory.type.CarriedInventory;
 
 public interface ContainerMinecart<M extends ContainerMinecart<M>> extends Minecart, ICarrier, CarriedInventory<M> {
     @Override

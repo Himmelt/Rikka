@@ -24,9 +24,9 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.GameDictionary;
-import org.soraworld.rikka.data.ImmutableDataHolder;
-import org.soraworld.rikka.item.ItemType;
+import rikka.api.GameDictionary;
+import rikka.api.data.ImmutableDataHolder;
+import rikka.api.item.ItemType;
 import rikka.api.text.translation.Translatable;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
@@ -86,12 +86,12 @@ public interface ItemStackSnapshot extends ImmutableDataHolder<ItemStackSnapshot
     ItemStack createStack();
 
     /**
-     * Creates a {@link org.soraworld.rikka.GameDictionary.Entry} that
+     * Creates a {@link rikka.api.GameDictionary.Entry} that
      * compares stacks to this {@link ItemStackSnapshot}. Note that not all
      * data stored in this {@link ItemStackSnapshot} may be stored in the
      * returned entry.
      *
-     * @return A {@link org.soraworld.rikka.GameDictionary.Entry} based on this
+     * @return A {@link rikka.api.GameDictionary.Entry} based on this
      * {@link ItemStackSnapshot}
      */
     GameDictionary.Entry createGameDictionaryEntry();

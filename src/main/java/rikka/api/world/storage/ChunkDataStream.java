@@ -24,8 +24,8 @@
  */
 package rikka.api.world.storage;
 
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.world.Chunk;
+import rikka.api.data.DataContainer;
+import rikka.api.world.Chunk;
 
 import javax.annotation.Nullable;
 

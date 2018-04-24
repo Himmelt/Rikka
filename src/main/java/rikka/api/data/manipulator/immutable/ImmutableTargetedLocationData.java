@@ -25,12 +25,12 @@
 package rikka.api.data.manipulator.immutable;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.soraworld.rikka.entity.projectile.EnderPearl;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.TargetedLocationData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.projectile.EnderPearl;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} handling the supposed targeted

@@ -24,11 +24,11 @@
  */
 package rikka.api.entity.hanging;
 
-import org.soraworld.rikka.util.Direction;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.block.DirectionalData;
 import rikka.api.data.value.mutable.Value;
 import rikka.api.entity.IEntity;
+import rikka.api.util.Direction;
 
 /**
  * Represents a hanging entity, such as a {@link Painting}.

@@ -24,9 +24,9 @@
  */
 package rikka.api.data.type;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.player.IPlayer;
+import rikka.api.CatalogType;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.player.IPlayer;
 import rikka.api.text.translation.Translatable;
 import rikka.api.util.annotation.CatalogedBy;
 

@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.common;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.key.Key;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableVariantData;
+import rikka.api.CatalogType;
+import rikka.api.Sponge;
+import rikka.api.data.DataContainer;
+import rikka.api.data.key.Key;
+import rikka.api.data.manipulator.immutable.ImmutableVariantData;
 import rikka.api.data.manipulator.mutable.VariantData;
 import rikka.api.data.value.mutable.Value;
 

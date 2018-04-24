@@ -24,8 +24,8 @@
  */
 package rikka.api.command;
 
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.util.TextMessageException;
+import rikka.api.text.Text;
+import rikka.api.util.TextMessageException;
 
 /**
  * Thrown when an executed command raises an error or when execution of

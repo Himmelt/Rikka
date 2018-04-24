@@ -24,9 +24,9 @@
  */
 package rikka.api.world.schematic;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
+import rikka.api.data.DataView;
+import rikka.api.util.ResettableBuilder;
 import rikka.api.world.extent.ArchetypeVolume;
 import rikka.api.world.extent.Extent;
 import rikka.api.world.extent.worker.MutableBlockVolumeWorker;

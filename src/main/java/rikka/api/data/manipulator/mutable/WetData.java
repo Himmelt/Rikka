@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableWetData;
-import org.soraworld.rikka.entity.living.animal.IWolf;
+import rikka.api.block.BlockTypes;
+import rikka.api.data.DataHolder;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableWetData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.animal.IWolf;
 
 /**
  * An {@link DataManipulator} that handles the "wet" state of various

@@ -24,12 +24,12 @@
  */
 package rikka.api.world.extent.worker;
 
-import org.soraworld.rikka.world.extent.worker.procedure.BiomeVolumeMapper;
-import org.soraworld.rikka.world.extent.worker.procedure.BiomeVolumeMerger;
-import org.soraworld.rikka.world.extent.worker.procedure.BiomeVolumeReducer;
-import org.soraworld.rikka.world.extent.worker.procedure.BiomeVolumeVisitor;
 import rikka.api.world.extent.BiomeVolume;
 import rikka.api.world.extent.MutableBiomeVolume;
+import rikka.api.world.extent.worker.procedure.BiomeVolumeMapper;
+import rikka.api.world.extent.worker.procedure.BiomeVolumeMerger;
+import rikka.api.world.extent.worker.procedure.BiomeVolumeReducer;
+import rikka.api.world.extent.worker.procedure.BiomeVolumeVisitor;
 
 import java.util.function.BiFunction;
 

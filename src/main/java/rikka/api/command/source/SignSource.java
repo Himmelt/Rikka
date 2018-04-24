@@ -1,8 +1,8 @@
 package rikka.api.command.source;
 
-import org.soraworld.rikka.block.tileentity.Sign;
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.world.Locatable;
+import rikka.api.block.tileentity.Sign;
+import rikka.api.command.ICommandSender;
+import rikka.api.world.Locatable;
 
 public interface SignSource extends ICommandSender, Locatable {
 

@@ -24,10 +24,10 @@
  */
 package rikka.api.data.persistence;
 
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataSerializable;
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataSerializable;
+import rikka.api.data.DataView;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.Optional;
 

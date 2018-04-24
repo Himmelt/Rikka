@@ -24,7 +24,7 @@
  */
 package rikka.api.data.value.mutable;
 
-import org.soraworld.rikka.data.value.immutable.ImmutableListValue;
+import rikka.api.data.value.immutable.ImmutableListValue;
 
 import java.util.List;
 

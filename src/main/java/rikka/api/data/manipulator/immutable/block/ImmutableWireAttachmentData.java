@@ -24,14 +24,14 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.util.Direction;
+import rikka.api.block.BlockState;
+import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.block.WireAttachmentData;
 import rikka.api.data.type.WireAttachmentType;
 import rikka.api.data.value.immutable.ImmutableMapValue;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.util.Direction;
 
 /**
  * An {@link ImmutableDataManipulator} that handles the

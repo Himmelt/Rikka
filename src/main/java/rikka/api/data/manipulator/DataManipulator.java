@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator;
 
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.DataSerializable;
-import org.soraworld.rikka.data.key.Key;
-import org.soraworld.rikka.data.merge.MergeFunction;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataHolder;
+import rikka.api.data.DataSerializable;
+import rikka.api.data.key.Key;
+import rikka.api.data.merge.MergeFunction;
 import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.ValueContainer;
 import rikka.api.data.value.immutable.ImmutableValue;

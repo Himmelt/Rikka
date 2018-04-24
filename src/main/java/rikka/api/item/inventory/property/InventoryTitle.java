@@ -24,10 +24,10 @@
  */
 package rikka.api.item.inventory.property;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
 import rikka.api.item.inventory.Inventory;
 import rikka.api.text.Text;
+import rikka.api.util.Coerce;
 
 /**
  * The Title of an Inventory, viewable by players looking at the Inventory.

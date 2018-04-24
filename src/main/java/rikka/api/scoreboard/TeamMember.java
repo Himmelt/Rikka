@@ -24,8 +24,8 @@
  */
 package rikka.api.scoreboard;
 
-import org.soraworld.rikka.entity.living.ILiving;
-import org.soraworld.rikka.entity.living.player.IPlayer;
+import rikka.api.entity.living.ILiving;
+import rikka.api.entity.living.player.IPlayer;
 import rikka.api.text.Text;
 
 import java.util.UUID;

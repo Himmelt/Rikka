@@ -1,13 +1,13 @@
 package rikka.api.command.source;
 
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.mutable.CommandData;
-import org.soraworld.rikka.data.value.mutable.OptionalValue;
-import org.soraworld.rikka.data.value.mutable.Value;
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.world.Locatable;
+import rikka.api.command.ICommandSender;
+import rikka.api.data.DataHolder;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.mutable.CommandData;
+import rikka.api.data.value.mutable.OptionalValue;
+import rikka.api.data.value.mutable.Value;
+import rikka.api.text.Text;
+import rikka.api.world.Locatable;
 
 public interface CommandBlockSource extends Locatable, ICommandSender, DataHolder {
 

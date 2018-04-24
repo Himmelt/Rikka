@@ -24,11 +24,11 @@
  */
 package rikka.api.item.merchant;
 
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.world.Locatable;
+import rikka.api.data.DataHolder;
 import rikka.api.data.manipulator.mutable.entity.TradeOfferData;
 import rikka.api.entity.living.Humanoid;
 import rikka.api.item.inventory.ICarrier;
+import rikka.api.world.Locatable;
 
 import javax.annotation.Nullable;
 import java.util.Optional;

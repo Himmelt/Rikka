@@ -41,7 +41,7 @@ public class StatisticsTrackedProperty extends BooleanProperty {
 
     /**
      * Creates a new {@link StatisticsTrackedProperty} for the provided
-     * {@code value} and {@link org.soraworld.rikka.data.Property.Operator}.
+     * {@code value} and {@link rikka.api.data.Property.Operator}.
      * Usually applicable to blocks, whether those blocks are statistically
      * tracked.
      *

@@ -27,17 +27,17 @@ package rikka.api.command.args;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimaps;
-import org.soraworld.rikka.command.*;
-import org.soraworld.rikka.command.dispatcher.SimpleDispatcher;
-import org.soraworld.rikka.command.spec.CommandExecutor;
-import org.soraworld.rikka.command.spec.CommandSpec;
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.util.StartsWithPredicate;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
 import rikka.api.command.CommandCallable;
 import rikka.api.command.CommandException;
 import rikka.api.command.CommandMapping;
+import rikka.api.command.ICommandSender;
+import rikka.api.command.dispatcher.SimpleDispatcher;
+import rikka.api.command.spec.CommandExecutor;
+import rikka.api.command.spec.CommandSpec;
+import rikka.api.text.Text;
+import rikka.api.util.StartsWithPredicate;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -45,8 +45,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static org.soraworld.rikka.command.CommandMessageFormatting.error;
-import static org.soraworld.rikka.util.SpongeApiTranslationHelper.t;
+import static rikka.api.command.CommandMessageFormatting.error;
+import static rikka.api.util.SpongeApiTranslationHelper.t;
 
 public class ChildCommandElementExecutor extends CommandElement implements CommandExecutor {
     private static final AtomicInteger COUNTER = new AtomicInteger();

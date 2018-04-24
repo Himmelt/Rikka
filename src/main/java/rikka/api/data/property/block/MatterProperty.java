@@ -24,9 +24,9 @@
  */
 package rikka.api.data.property.block;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
 import rikka.api.data.property.AbstractProperty;
+import rikka.api.util.Coerce;
 
 import javax.annotation.Nullable;
 

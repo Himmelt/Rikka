@@ -1,9 +1,9 @@
 package rikka.api.entity.living.player.tab;
 
-import org.soraworld.rikka.entity.living.player.gamemode.GameMode;
-import org.soraworld.rikka.profile.GameProfile;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.entity.living.player.gamemode.GameMode;
+import rikka.api.profile.GameProfile;
 import rikka.api.text.Text;
+import rikka.api.util.ResettableBuilder;
 
 import javax.annotation.Nullable;
 import java.util.Optional;

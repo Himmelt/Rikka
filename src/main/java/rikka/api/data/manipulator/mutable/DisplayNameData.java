@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableDisplayNameData;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.block.tileentity.TileEntity;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableDisplayNameData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.IEntity;
+import rikka.api.item.inventory.ItemStack;
 import rikka.api.text.Text;
 
 /**

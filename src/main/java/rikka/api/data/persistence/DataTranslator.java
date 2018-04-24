@@ -25,11 +25,11 @@
 package rikka.api.data.persistence;
 
 import com.google.common.reflect.TypeToken;
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataQuery;
-import org.soraworld.rikka.data.DataSerializable;
-import org.soraworld.rikka.data.DataView;
+import rikka.api.CatalogType;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataQuery;
+import rikka.api.data.DataSerializable;
+import rikka.api.data.DataView;
 import rikka.api.util.annotation.CatalogedBy;
 
 import java.util.Map;

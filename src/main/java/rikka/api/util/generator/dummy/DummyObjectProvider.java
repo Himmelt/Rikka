@@ -27,7 +27,7 @@ package rikka.api.util.generator.dummy;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -39,7 +39,7 @@ import java.lang.reflect.InvocationTargetException;
  */
 public final class DummyObjectProvider {
 
-    static final DummyClassGeneratorProvider factoryProvider = new DummyClassGeneratorProvider("org.soraworld.rikka.util.dummy");
+    static final DummyClassGeneratorProvider factoryProvider = new DummyClassGeneratorProvider("rikka.api.util.dummy");
 
     private static final LoadingCache<Class<?>, Class<?>> factories = CacheBuilder.newBuilder().build(
             new CacheLoader<Class<?>, Class<?>>() {

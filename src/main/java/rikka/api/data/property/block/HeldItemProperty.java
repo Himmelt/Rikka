@@ -24,13 +24,13 @@
  */
 package rikka.api.data.property.block;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.block.BlockType;
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.item.inventory.ItemStack;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.block.BlockState;
+import rikka.api.block.BlockType;
+import rikka.api.data.Property;
 import rikka.api.data.property.AbstractProperty;
+import rikka.api.item.ItemType;
+import rikka.api.item.inventory.ItemStack;
+import rikka.api.util.Coerce;
 
 /**
  * A property that provides the {@link ItemType} representation of what a
@@ -50,7 +50,7 @@ public class HeldItemProperty extends AbstractProperty<String, ItemType> {
 
     /**
      * Creates a new {@link HeldItemProperty} with the provided {@link ItemType}
-     * and {@link org.soraworld.rikka.data.Property.Operator comparison operator}.
+     * and {@link rikka.api.data.Property.Operator comparison operator}.
      *
      * @param value The item value
      * @param op    The operator for comparisons

@@ -24,11 +24,11 @@
  */
 package rikka.api.world.extent.worker;
 
-import org.soraworld.rikka.world.extent.worker.procedure.BiomeVolumeFiller;
-import org.soraworld.rikka.world.extent.worker.procedure.BiomeVolumeMerger;
 import rikka.api.world.extent.BiomeVolume;
 import rikka.api.world.extent.MutableBiomeVolume;
+import rikka.api.world.extent.worker.procedure.BiomeVolumeFiller;
 import rikka.api.world.extent.worker.procedure.BiomeVolumeMapper;
+import rikka.api.world.extent.worker.procedure.BiomeVolumeMerger;
 
 /**
  * Similar to {@link BiomeVolumeWorker} but adds support for mutating the backing

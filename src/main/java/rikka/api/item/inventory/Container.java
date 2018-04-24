@@ -24,9 +24,9 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.item.inventory.type.Interactable;
-import org.soraworld.rikka.plugin.PluginContainer;
 import rikka.api.entity.living.player.IPlayer;
+import rikka.api.item.inventory.type.Interactable;
+import rikka.api.plugin.PluginContainer;
 
 import java.util.Set;
 

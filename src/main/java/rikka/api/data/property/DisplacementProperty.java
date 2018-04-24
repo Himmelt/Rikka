@@ -26,8 +26,8 @@ package rikka.api.data.property;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import org.soraworld.rikka.block.BlockType;
-import org.soraworld.rikka.data.Property;
+import rikka.api.block.BlockType;
+import rikka.api.data.Property;
 
 import javax.annotation.Nullable;
 import java.util.Set;

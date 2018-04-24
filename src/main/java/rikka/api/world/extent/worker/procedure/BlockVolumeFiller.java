@@ -24,7 +24,7 @@
  */
 package rikka.api.world.extent.worker.procedure;
 
-import org.soraworld.rikka.block.BlockState;
+import rikka.api.block.BlockState;
 
 /**
  * Produces a block for a coordinate triplet.

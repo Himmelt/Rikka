@@ -24,10 +24,10 @@
  */
 package rikka.api.text.format;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.util.Color;
+import rikka.api.CatalogType;
 import rikka.api.text.Text;
 import rikka.api.text.TextElement;
+import rikka.api.util.Color;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**

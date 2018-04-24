@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable.block;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.block.ImmutableConnectedDirectionData;
-import org.soraworld.rikka.util.Direction;
+import rikka.api.block.BlockTypes;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.block.ImmutableConnectedDirectionData;
 import rikka.api.data.value.mutable.SetValue;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.util.Direction;
 
 /**
  * Represents the "connected" {@link Direction}s that a block may have.

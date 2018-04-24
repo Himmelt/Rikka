@@ -24,10 +24,10 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.util.Direction;
-import org.soraworld.rikka.world.Locatable;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
+import rikka.api.util.Direction;
+import rikka.api.world.Locatable;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 
 /**
  * Represents a Block that is a carrier of an Inventory

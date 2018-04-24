@@ -1,9 +1,9 @@
 package rikka.api.entity;
 
-import org.soraworld.rikka.world.World;
 import rikka.api.data.ImmutableDataBuilder;
 import rikka.api.data.LocatableSnapshot;
 import rikka.api.util.math.Vector3d;
+import rikka.api.world.World;
 import rikka.api.world.storage.WorldProperties;
 
 import java.util.Optional;

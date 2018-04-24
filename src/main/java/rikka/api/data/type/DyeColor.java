@@ -24,9 +24,9 @@
  */
 package rikka.api.data.type;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.util.Color;
+import rikka.api.CatalogType;
 import rikka.api.text.translation.Translatable;
+import rikka.api.util.Color;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**

@@ -28,9 +28,9 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.reflect.TypeToken;
 import ninja.leaping.configurate.objectmapping.serialize.TypeSerializers;
-import org.soraworld.rikka.text.serializer.TextFormatConfigSerializer;
 import rikka.api.text.Text;
 import rikka.api.text.TextElement;
+import rikka.api.text.serializer.TextFormatConfigSerializer;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

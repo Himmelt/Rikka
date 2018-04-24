@@ -27,13 +27,13 @@ package rikka.api.world.extent;
 import com.flowpowered.math.imaginary.Quaterniond;
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.entity.EntitySnapshot;
-import org.soraworld.rikka.entity.EntityType;
-import org.soraworld.rikka.util.AABB;
+import rikka.api.data.DataContainer;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.property.entity.EyeLocationProperty;
+import rikka.api.entity.EntitySnapshot;
+import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
+import rikka.api.util.AABB;
 
 import java.util.Collection;
 import java.util.Optional;

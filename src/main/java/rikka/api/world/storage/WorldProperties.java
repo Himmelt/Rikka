@@ -26,14 +26,14 @@ package rikka.api.world.storage;
 
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.GameRegistry;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataQuery;
-import org.soraworld.rikka.data.DataSerializable;
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.world.*;
+import rikka.api.GameRegistry;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataQuery;
+import rikka.api.data.DataSerializable;
+import rikka.api.data.DataView;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.gamemode.GameMode;
+import rikka.api.world.*;
 import rikka.api.world.difficulty.Difficulty;
 import rikka.api.world.gen.WorldGeneratorModifier;
 

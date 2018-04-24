@@ -1,14 +1,14 @@
 package rikka.api.effect;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.effect.particle.ParticleEffect;
-import org.soraworld.rikka.effect.sound.SoundCategory;
-import org.soraworld.rikka.effect.sound.record.RecordType;
-import org.soraworld.rikka.util.math.Vector3i;
+import rikka.api.block.BlockState;
+import rikka.api.effect.particle.ParticleEffect;
+import rikka.api.effect.sound.SoundCategory;
 import rikka.api.effect.sound.SoundType;
+import rikka.api.effect.sound.record.RecordType;
 import rikka.api.text.BookView;
 import rikka.api.text.title.Title;
 import rikka.api.util.math.Vector3d;
+import rikka.api.util.math.Vector3i;
 
 public interface Viewer {
 

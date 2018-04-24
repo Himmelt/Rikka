@@ -26,11 +26,11 @@ package rikka.api.text.action;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
-import org.soraworld.rikka.entity.EntityType;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.item.inventory.ItemStackSnapshot;
-import org.soraworld.rikka.util.Identifiable;
+import rikka.api.entity.EntityType;
+import rikka.api.entity.IEntity;
+import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.text.Text;
+import rikka.api.util.Identifiable;
 
 import javax.annotation.Nullable;
 import java.util.Optional;

@@ -25,9 +25,9 @@
 package rikka.api.command.args;
 
 import com.google.common.collect.ImmutableList;
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.text.selector.Selector;
+import rikka.api.command.ICommandSender;
+import rikka.api.text.Text;
+import rikka.api.text.selector.Selector;
 
 import javax.annotation.Nullable;
 import java.util.List;

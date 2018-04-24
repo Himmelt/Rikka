@@ -28,18 +28,18 @@ import com.google.common.reflect.TypeToken;
 import ninja.leaping.configurate.ConfigurationNode;
 import ninja.leaping.configurate.objectmapping.ObjectMappingException;
 import ninja.leaping.configurate.objectmapping.serialize.TypeSerializer;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.DataQuery;
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.data.persistence.AbstractDataBuilder;
-import org.soraworld.rikka.data.persistence.InvalidDataException;
+import rikka.api.Sponge;
+import rikka.api.data.DataQuery;
+import rikka.api.data.DataView;
+import rikka.api.data.persistence.AbstractDataBuilder;
+import rikka.api.data.persistence.InvalidDataException;
 import rikka.api.text.BookView;
 import rikka.api.text.Text;
 
 import java.util.List;
 import java.util.Optional;
 
-import static org.soraworld.rikka.data.Queries.*;
+import static rikka.api.data.Queries.*;
 
 /**
  * An implementation of {@link AbstractDataBuilder} and {@link TypeSerializer} for {@link BookView}.

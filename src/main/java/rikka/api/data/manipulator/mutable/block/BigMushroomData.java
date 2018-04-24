@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.block;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.block.ImmutableBigMushroomData;
-import org.soraworld.rikka.data.type.BigMushroomType;
+import rikka.api.block.BlockTypes;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.immutable.block.ImmutableBigMushroomData;
 import rikka.api.data.manipulator.mutable.VariantData;
+import rikka.api.data.type.BigMushroomType;
 
 /**
  * Represents data related to {@link BlockTypes#BROWN_MUSHROOM_BLOCK} and

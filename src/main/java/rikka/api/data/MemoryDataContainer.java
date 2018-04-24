@@ -24,8 +24,8 @@
  */
 package rikka.api.data;
 
-import org.soraworld.rikka.data.value.BaseValue;
 import rikka.api.data.key.Key;
+import rikka.api.data.value.BaseValue;
 
 import java.util.Optional;
 
@@ -44,8 +44,8 @@ public class MemoryDataContainer extends MemoryDataView implements DataContainer
 
     /**
      * Creates a new {@link MemoryDataContainer} with a default
-     * {@link org.soraworld.rikka.data.DataView.SafetyMode} of
-     * {@link org.soraworld.rikka.data.DataView.SafetyMode#ALL_DATA_CLONED}.
+     * {@link rikka.api.data.DataView.SafetyMode} of
+     * {@link rikka.api.data.DataView.SafetyMode#ALL_DATA_CLONED}.
      *
      * @deprecated Use {@link DataContainer#createNew()}
      */
@@ -56,11 +56,11 @@ public class MemoryDataContainer extends MemoryDataView implements DataContainer
 
     /**
      * Creates a new {@link MemoryDataContainer} with the provided
-     * {@link org.soraworld.rikka.data.DataView.SafetyMode}.
+     * {@link rikka.api.data.DataView.SafetyMode}.
      *
      * @param safety The safety mode to use
-     * @see org.soraworld.rikka.data.DataView.SafetyMode
-     * @deprecated Use {@link DataContainer#createNew(org.soraworld.rikka.data.DataView.SafetyMode)}
+     * @see rikka.api.data.DataView.SafetyMode
+     * @deprecated Use {@link DataContainer#createNew(rikka.api.data.DataView.SafetyMode)}
      */
     @Deprecated
     public MemoryDataContainer(DataView.SafetyMode safety) {

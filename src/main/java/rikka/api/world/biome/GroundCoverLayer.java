@@ -25,9 +25,9 @@
 package rikka.api.world.biome;
 
 import com.google.common.base.MoreObjects;
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.util.weighted.SeededVariableAmount;
-import org.soraworld.rikka.util.weighted.VariableAmount;
+import rikka.api.block.BlockState;
+import rikka.api.util.weighted.SeededVariableAmount;
+import rikka.api.util.weighted.VariableAmount;
 
 import java.util.function.Function;
 

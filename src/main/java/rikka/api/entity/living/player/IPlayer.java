@@ -1,25 +1,25 @@
 package rikka.api.entity.living.player;
 
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.Humanoid;
-import org.soraworld.rikka.entity.living.player.gamemode.GameMode;
-import org.soraworld.rikka.entity.living.player.tab.TabList;
-import org.soraworld.rikka.event.cause.Cause;
-import org.soraworld.rikka.event.message.MessageChannelEvent;
-import org.soraworld.rikka.item.inventory.Container;
-import org.soraworld.rikka.item.inventory.Inventory;
-import org.soraworld.rikka.world.WorldBorder;
+import org.spongepowered.api.event.cause.Cause;
+import org.spongepowered.api.event.message.MessageChannelEvent;
+import rikka.api.command.ICommandSender;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.DisplayNameData;
 import rikka.api.data.manipulator.mutable.entity.GameModeData;
 import rikka.api.data.manipulator.mutable.entity.JoinData;
 import rikka.api.data.type.SkinPart;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.Humanoid;
+import rikka.api.entity.living.player.gamemode.GameMode;
+import rikka.api.entity.living.player.tab.TabList;
+import rikka.api.item.inventory.Container;
+import rikka.api.item.inventory.Inventory;
 import rikka.api.scoreboard.Scoreboard;
 import rikka.api.text.Text;
 import rikka.api.text.channel.ChatTypeMessageReceiver;
 import rikka.api.text.chat.ChatVisibility;
+import rikka.api.world.WorldBorder;
 
 import javax.annotation.Nullable;
 import java.time.Instant;

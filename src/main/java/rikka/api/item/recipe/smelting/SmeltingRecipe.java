@@ -24,12 +24,12 @@
  */
 package rikka.api.item.recipe.smelting;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
+import rikka.api.item.ItemType;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.item.recipe.Recipe;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.Optional;
 import java.util.function.Predicate;

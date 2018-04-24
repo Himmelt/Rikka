@@ -24,20 +24,20 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.block.BlockSnapshot;
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.block.BlockType;
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.item.ItemTypes;
+import rikka.api.Sponge;
+import rikka.api.block.BlockSnapshot;
+import rikka.api.block.BlockState;
+import rikka.api.block.BlockType;
 import rikka.api.block.tileentity.TileEntity;
+import rikka.api.data.DataHolder;
+import rikka.api.data.DataView;
 import rikka.api.data.key.Key;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.persistence.DataBuilder;
 import rikka.api.data.value.BaseValue;
+import rikka.api.item.ItemType;
+import rikka.api.item.ItemTypes;
 import rikka.api.text.translation.Translatable;
 
 import java.util.Map;

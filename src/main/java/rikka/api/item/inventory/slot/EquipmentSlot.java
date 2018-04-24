@@ -24,7 +24,7 @@
  */
 package rikka.api.item.inventory.slot;
 
-import org.soraworld.rikka.item.inventory.equipment.EquipmentType;
+import rikka.api.item.inventory.equipment.EquipmentType;
 
 /**
  * An inventory slot which can only contain equipment.

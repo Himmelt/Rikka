@@ -24,7 +24,7 @@
  */
 package rikka.api.item.enchantment;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 import rikka.api.block.tileentity.EnchantmentTable;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.text.translation.Translatable;

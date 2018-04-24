@@ -24,12 +24,12 @@
  */
 package rikka.api.world.explosion;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.util.ResettableBuilder;
-import org.soraworld.rikka.world.Locatable;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
+import rikka.api.Sponge;
 import rikka.api.entity.explosive.Explosive;
+import rikka.api.util.ResettableBuilder;
+import rikka.api.world.Locatable;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Optional;

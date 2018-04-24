@@ -25,7 +25,7 @@
 package rikka.api.data.property;
 
 import com.google.common.base.Objects;
-import org.soraworld.rikka.data.Property;
+import rikka.api.data.Property;
 
 import javax.annotation.Nullable;
 

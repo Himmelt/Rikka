@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.immutable.item;
 
-import org.soraworld.rikka.data.manipulator.mutable.item.StoredEnchantmentData;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.enchantment.Enchantment;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableListData;
+import rikka.api.data.manipulator.mutable.item.StoredEnchantmentData;
 import rikka.api.data.value.immutable.ImmutableListValue;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.enchantment.Enchantment;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} handling "stored"

@@ -24,7 +24,7 @@
  */
 package rikka.api.data.property.block;
 
-import org.soraworld.rikka.data.Property;
+import rikka.api.data.Property;
 
 import java.util.Collection;
 

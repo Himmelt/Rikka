@@ -24,7 +24,7 @@
  */
 package rikka.api.data;
 
-import static org.soraworld.rikka.data.DataQuery.of;
+import static rikka.api.data.DataQuery.of;
 
 public final class Queries {
 

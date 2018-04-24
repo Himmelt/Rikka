@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.data.manipulator.mutable.entity.StatisticData;
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.statistic.Statistic;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableMappedData;
+import rikka.api.data.manipulator.mutable.entity.StatisticData;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.statistic.Statistic;
 
 /**
  * An {@link ImmutableDataManipulator} handling all {@link Statistic}al

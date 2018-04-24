@@ -1,6 +1,6 @@
 package rikka.api.effect.potion;
 
-import org.soraworld.rikka.data.DataSerializable;
+import rikka.api.data.DataSerializable;
 import rikka.api.data.persistence.DataBuilder;
 import rikka.api.data.property.PropertyHolder;
 

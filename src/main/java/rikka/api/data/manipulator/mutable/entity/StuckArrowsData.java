@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableStuckArrowsData;
-import org.soraworld.rikka.entity.living.ILiving;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableStuckArrowsData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
+import rikka.api.entity.living.ILiving;
 
 /**
  * A {@link DataManipulator} for the number of "stuck arrows" in

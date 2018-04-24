@@ -628,7 +628,7 @@ public interface DataView {
     boolean isEmpty();
 
     /**
-     * Gets the {@link org.soraworld.rikka.data.DataView.SafetyMode} of this data view.
+     * Gets the {@link rikka.api.data.DataView.SafetyMode} of this data view.
      *
      * @return The safety mode
      */

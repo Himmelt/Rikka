@@ -26,10 +26,10 @@ package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector2i;
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.util.DiscreteTransform3;
-import org.soraworld.rikka.util.PositionOutOfBoundsException;
-import org.soraworld.rikka.world.extent.worker.MutableBiomeVolumeWorker;
+import rikka.api.util.DiscreteTransform3;
+import rikka.api.util.PositionOutOfBoundsException;
 import rikka.api.world.biome.BiomeType;
+import rikka.api.world.extent.worker.MutableBiomeVolumeWorker;
 
 /**
  * A volume containing biomes that can be accessed and modified.

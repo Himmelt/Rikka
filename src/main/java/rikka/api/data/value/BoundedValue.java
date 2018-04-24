@@ -24,7 +24,7 @@
  */
 package rikka.api.data.value;
 
-import org.soraworld.rikka.data.DataHolder;
+import rikka.api.data.DataHolder;
 
 import java.util.Comparator;
 

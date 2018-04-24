@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.data.manipulator.mutable.entity.MinecartBlockData;
-import org.soraworld.rikka.entity.vehicle.minecart.Minecart;
+import rikka.api.block.BlockState;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
+import rikka.api.data.manipulator.mutable.entity.MinecartBlockData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.vehicle.minecart.Minecart;
 
 public interface ImmutableMinecartBlockData extends ImmutableDataManipulator<ImmutableMinecartBlockData, MinecartBlockData> {
 

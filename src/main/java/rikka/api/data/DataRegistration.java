@@ -24,13 +24,13 @@
  */
 package rikka.api.data;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.plugin.PluginContainer;
-import org.soraworld.rikka.util.ResettableBuilder;
 import rikka.api.CatalogType;
+import rikka.api.Sponge;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.DataManipulatorBuilder;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
+import rikka.api.plugin.PluginContainer;
+import rikka.api.util.ResettableBuilder;
 
 public interface DataRegistration<T extends DataManipulator<T, I>, I extends ImmutableDataManipulator<I, T>> extends CatalogType {
 

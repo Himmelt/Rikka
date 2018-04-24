@@ -24,8 +24,8 @@
  */
 package rikka.api.data.manipulator.immutable.tileentity;
 
-import org.soraworld.rikka.data.key.Keys;
 import rikka.api.block.tileentity.Note;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.tileentity.NoteData;
 import rikka.api.data.type.NotePitch;

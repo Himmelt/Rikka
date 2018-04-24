@@ -24,15 +24,15 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableTradeOfferData;
-import org.soraworld.rikka.entity.living.Humanoid;
-import org.soraworld.rikka.entity.living.Villager;
-import org.soraworld.rikka.item.merchant.Merchant;
-import org.soraworld.rikka.item.merchant.TradeOffer;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableTradeOfferData;
 import rikka.api.data.manipulator.mutable.ListData;
 import rikka.api.data.value.mutable.ListValue;
+import rikka.api.entity.living.Humanoid;
+import rikka.api.entity.living.Villager;
+import rikka.api.item.merchant.Merchant;
+import rikka.api.item.merchant.TradeOffer;
 
 /**
  * An {@link DataManipulator} handling the {@link TradeOffer}s that

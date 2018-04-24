@@ -24,7 +24,7 @@
  */
 package rikka.api.entity.ai.task.builtin.creature.target;
 
-import org.soraworld.rikka.Sponge;
+import rikka.api.Sponge;
 import rikka.api.entity.living.ILiving;
 
 import java.util.function.Predicate;

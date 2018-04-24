@@ -24,8 +24,8 @@
  */
 package rikka.api.command.dispatcher;
 
-import org.soraworld.rikka.command.ICommandSender;
 import rikka.api.command.CommandMapping;
+import rikka.api.command.ICommandSender;
 
 import javax.annotation.Nullable;
 import java.util.List;

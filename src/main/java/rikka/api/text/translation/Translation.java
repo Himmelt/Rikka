@@ -24,8 +24,8 @@
  */
 package rikka.api.text.translation;
 
-import org.soraworld.rikka.text.translation.locale.Locales;
-import org.soraworld.rikka.text.translation.locale.NamedLocales;
+import rikka.api.text.translation.locale.Locales;
+import rikka.api.text.translation.locale.NamedLocales;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

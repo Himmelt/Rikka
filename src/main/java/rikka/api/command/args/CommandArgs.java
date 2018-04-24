@@ -24,8 +24,8 @@
  */
 package rikka.api.command.args;
 
-import org.soraworld.rikka.command.args.parsing.SingleArg;
-import org.soraworld.rikka.text.Text;
+import rikka.api.command.args.parsing.SingleArg;
+import rikka.api.text.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static org.soraworld.rikka.util.SpongeApiTranslationHelper.t;
+import static rikka.api.util.SpongeApiTranslationHelper.t;
 
 /**
  * Holder for command arguments.

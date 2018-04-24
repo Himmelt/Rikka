@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import org.soraworld.rikka.block.BlockType;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.item.ImmutableBreakableData;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.block.BlockType;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.item.ImmutableBreakableData;
 import rikka.api.data.value.mutable.SetValue;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * Represents an editable collection of {@link BlockType}s that can

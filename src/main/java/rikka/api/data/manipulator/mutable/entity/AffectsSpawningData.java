@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableAffectsSpawningData;
-import org.soraworld.rikka.entity.living.player.IPlayer;
 import rikka.api.block.tileentity.MobSpawner;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableAffectsSpawningData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.player.IPlayer;
 
 /**
  * A {@link DataManipulator} for the "affects spawning" state of a

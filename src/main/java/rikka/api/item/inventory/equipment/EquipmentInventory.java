@@ -24,13 +24,13 @@
  */
 package rikka.api.item.inventory.equipment;
 
-import org.soraworld.rikka.entity.ArmorEquipable;
-import org.soraworld.rikka.item.inventory.transaction.InventoryTransactionResult;
+import rikka.api.entity.ArmorEquipable;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.Inventory;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.Slot;
 import rikka.api.item.inventory.property.EquipmentSlotType;
+import rikka.api.item.inventory.transaction.InventoryTransactionResult;
 import rikka.api.item.inventory.type.CarriedInventory;
 import rikka.api.item.inventory.type.OrderedInventory;
 

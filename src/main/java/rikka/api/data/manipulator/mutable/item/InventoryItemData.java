@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import org.soraworld.rikka.data.manipulator.immutable.item.ImmutableInventoryItemData;
-import org.soraworld.rikka.item.inventory.ICarrier;
-import org.soraworld.rikka.item.inventory.Inventory;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.block.tileentity.carrier.TileEntityCarrier;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.item.ImmutableInventoryItemData;
+import rikka.api.item.inventory.ICarrier;
+import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link DataManipulator} acting as the {@link ICarrier} link to

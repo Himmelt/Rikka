@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.Item;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.DespawnDelayData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.Item;
 
 /**
  * An {@link ImmutableDataManipulator} for handling the "despawn delay" of an

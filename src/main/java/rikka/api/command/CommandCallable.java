@@ -1,8 +1,8 @@
 package rikka.api.command;
 
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
+import rikka.api.text.Text;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;

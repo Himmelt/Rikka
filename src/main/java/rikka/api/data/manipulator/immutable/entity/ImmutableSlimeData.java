@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.living.monster.Slime;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.SlimeData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.living.monster.Slime;
 
 /**
  * An {@link ImmutableDataManipulator} handling the "size" of a {@link Slime}.

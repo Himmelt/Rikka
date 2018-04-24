@@ -24,8 +24,8 @@
  */
 package rikka.api.data.persistence;
 
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.util.Updater;
+import rikka.api.data.DataView;
+import rikka.api.util.Updater;
 
 public interface DataContentUpdater extends Updater<DataView> {
 

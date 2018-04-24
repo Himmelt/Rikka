@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.item;
 
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
 import rikka.api.data.manipulator.mutable.item.FishData;
 import rikka.api.data.type.Fish;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * A type of {@link ImmutableVariantData} handling the {@link Fish} of an

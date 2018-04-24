@@ -24,16 +24,16 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.Nameable;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.event.item.inventory.InteractInventoryEvent;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.item.inventory.query.QueryOperation;
-import org.soraworld.rikka.item.inventory.query.QueryOperationTypes;
-import org.soraworld.rikka.item.inventory.transaction.InventoryTransactionResult;
-import org.soraworld.rikka.plugin.PluginContainer;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Nameable;
+import rikka.api.Sponge;
+import rikka.api.event.item.inventory.InteractInventoryEvent;
+import rikka.api.item.ItemType;
+import rikka.api.item.inventory.query.QueryOperation;
+import rikka.api.item.inventory.query.QueryOperationTypes;
+import rikka.api.item.inventory.transaction.InventoryTransactionResult;
+import rikka.api.plugin.PluginContainer;
 import rikka.api.text.translation.Translation;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -490,8 +490,8 @@ public interface Inventory extends Iterable<Inventory>, Nameable {
      * each child inventory which has the supplied property. Logical
      * <code>OR</code> is applied between operands. This method is effectively
      * the same as calling {@link #query} with an
-     * {@link org.soraworld.rikka.data.Property.Operator} of
-     * {@link org.soraworld.rikka.data.Property.Operator#EQUAL}.
+     * {@link rikka.api.data.Property.Operator} of
+     * {@link rikka.api.data.Property.Operator#EQUAL}.
      *
      * @param props inventory properties to query for
      * @param <T>   expected inventory type, specified as generic to allow easy

@@ -1,6 +1,6 @@
 package rikka.api.entity.projectile.explosive.fireball;
 
-import org.soraworld.rikka.entity.explosive.Explosive;
+import rikka.api.entity.explosive.Explosive;
 
 public interface LargeFireball extends Fireball, Explosive {
 }

@@ -24,9 +24,9 @@
  */
 package rikka.api.data.manipulator.mutable.tileentity;
 
-import org.soraworld.rikka.data.manipulator.immutable.tileentity.ImmutableBedData;
 import rikka.api.block.tileentity.Bed;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.tileentity.ImmutableBedData;
 import rikka.api.data.manipulator.mutable.DyeableData;
 import rikka.api.data.type.DyeColor;
 import rikka.api.data.value.mutable.Value;

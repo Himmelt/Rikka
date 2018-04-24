@@ -24,17 +24,16 @@
  */
 package rikka.api.data.manipulator.catalog;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.data.manipulator.DataManipulator;
-import org.soraworld.rikka.data.manipulator.mutable.DyeableData;
-import org.soraworld.rikka.data.manipulator.mutable.RotationalData;
-import org.soraworld.rikka.data.manipulator.mutable.WetData;
-import org.soraworld.rikka.data.manipulator.mutable.block.*;
-import org.soraworld.rikka.data.type.*;
-import org.soraworld.rikka.util.Axis;
-import org.soraworld.rikka.util.Direction;
-import org.soraworld.rikka.util.rotation.Rotation;
+import rikka.api.block.BlockTypes;
+import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.mutable.DyeableData;
+import rikka.api.data.manipulator.mutable.RotationalData;
+import rikka.api.data.manipulator.mutable.WetData;
+import rikka.api.data.manipulator.mutable.block.*;
 import rikka.api.data.type.*;
+import rikka.api.util.Axis;
+import rikka.api.util.Direction;
+import rikka.api.util.rotation.Rotation;
 
 /**
  * An enumeration of block related {@link DataManipulator}s.

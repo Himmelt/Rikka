@@ -24,11 +24,11 @@
  */
 package rikka.api.entity.ai.task;
 
-import org.soraworld.rikka.entity.living.Agent;
-import org.soraworld.rikka.entity.living.Creature;
-import org.soraworld.rikka.entity.living.Humanoid;
-import org.soraworld.rikka.entity.living.animal.IRideableHorse;
 import rikka.api.entity.IEntity;
+import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.Creature;
+import rikka.api.entity.living.Humanoid;
+import rikka.api.entity.living.animal.IRideableHorse;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 import java.util.function.Predicate;

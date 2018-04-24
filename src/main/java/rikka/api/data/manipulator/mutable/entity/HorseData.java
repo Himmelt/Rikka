@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableHorseData;
-import org.soraworld.rikka.entity.living.animal.IRideableHorse;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableHorseData;
 import rikka.api.data.type.HorseColor;
 import rikka.api.data.type.HorseStyle;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.animal.IRideableHorse;
 
 /**
  * An {@link DataManipulator} handling the various information for a

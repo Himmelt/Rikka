@@ -24,8 +24,8 @@
  */
 package rikka.api.data.property.block;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.data.Property;
+import rikka.api.block.BlockTypes;
+import rikka.api.data.Property;
 import rikka.api.data.property.AbstractProperty;
 import rikka.api.data.type.InstrumentType;
 

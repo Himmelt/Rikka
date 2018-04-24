@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.Humanoid;
-import org.soraworld.rikka.entity.living.monster.Enderman;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.GriefingData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.Humanoid;
+import rikka.api.entity.living.monster.Enderman;
 
 /**
  * An {@link ImmutableDataManipulator} handling the "griefing" state of an

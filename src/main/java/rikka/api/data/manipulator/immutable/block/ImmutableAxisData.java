@@ -24,15 +24,15 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.data.manipulator.mutable.block.AxisData;
-import org.soraworld.rikka.util.Axis;
+import rikka.api.block.BlockState;
+import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
+import rikka.api.data.manipulator.mutable.block.AxisData;
 import rikka.api.data.type.LogAxes;
 import rikka.api.data.type.LogAxis;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.util.Axis;
 
 /**
  * An {@link ImmutableDataManipulator} containing the {@link ImmutableValue}

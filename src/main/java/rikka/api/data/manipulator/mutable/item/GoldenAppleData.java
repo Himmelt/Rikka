@@ -24,8 +24,8 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.item.ImmutableGoldenAppleData;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.immutable.item.ImmutableGoldenAppleData;
 import rikka.api.data.manipulator.mutable.VariantData;
 import rikka.api.data.type.GoldenApple;
 

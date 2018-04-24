@@ -27,13 +27,13 @@ package rikka.api.text;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
-import org.soraworld.rikka.text.action.ClickAction;
-import org.soraworld.rikka.text.action.HoverAction;
-import org.soraworld.rikka.text.action.ShiftClickAction;
-import org.soraworld.rikka.text.format.TextColor;
-import org.soraworld.rikka.text.format.TextFormat;
-import org.soraworld.rikka.text.format.TextStyle;
-import org.soraworld.rikka.text.translation.Translation;
+import rikka.api.text.action.ClickAction;
+import rikka.api.text.action.HoverAction;
+import rikka.api.text.action.ShiftClickAction;
+import rikka.api.text.format.TextColor;
+import rikka.api.text.format.TextFormat;
+import rikka.api.text.format.TextStyle;
+import rikka.api.text.translation.Translation;
 
 import javax.annotation.Nullable;
 import java.util.Collection;
@@ -152,12 +152,12 @@ public final class TranslatableText extends Text {
 
         /**
          * Constructs a new unformatted {@link Builder} from the given
-         * {@link org.soraworld.rikka.text.translation.Translatable} .
+         * {@link rikka.api.text.translation.Translatable} .
          *
          * @param translatable The translatable for the builder
          * @param args         The arguments for the translation
          */
-        Builder(org.soraworld.rikka.text.translation.Translatable translatable, Object... args) {
+        Builder(rikka.api.text.translation.Translatable translatable, Object... args) {
             translation(translatable, args);
         }
 
@@ -178,13 +178,13 @@ public final class TranslatableText extends Text {
         /**
          * Constructs a new {@link Builder} with the formatting and actions of
          * the specified {@link Text} and the given
-         * {@link org.soraworld.rikka.text.translation.Translatable}.
+         * {@link rikka.api.text.translation.Translatable}.
          *
          * @param text         The text to apply the properties from
          * @param translatable The translatable for the builder
          * @param args         The arguments for the translation
          */
-        Builder(Text text, org.soraworld.rikka.text.translation.Translatable translatable, Object... args) {
+        Builder(Text text, rikka.api.text.translation.Translatable translatable, Object... args) {
             super(text);
             translation(translatable, args);
         }
@@ -241,7 +241,7 @@ public final class TranslatableText extends Text {
          * @param args         The arguments for the translation
          * @return This text builder
          */
-        public Builder translation(org.soraworld.rikka.text.translation.Translatable translatable, Object... args) {
+        public Builder translation(rikka.api.text.translation.Translatable translatable, Object... args) {
             return translation(checkNotNull(translatable, "translatable").getTranslation(), args);
         }
 

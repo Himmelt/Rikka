@@ -1,6 +1,6 @@
 package rikka.api.entity.living.animal;
 
-import org.soraworld.rikka.item.inventory.ICarrier;
+import rikka.api.item.inventory.ICarrier;
 
 public interface IHorse extends IAnimal, ICarrier {
 }

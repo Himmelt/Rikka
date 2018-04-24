@@ -24,7 +24,7 @@
  */
 package rikka.api.text.selector;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**

@@ -24,7 +24,7 @@
  */
 package rikka.api.world.schematic;
 
-import org.soraworld.rikka.block.BlockState;
+import rikka.api.block.BlockState;
 
 import java.util.Collection;
 import java.util.Optional;

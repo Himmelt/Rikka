@@ -24,9 +24,7 @@
  */
 package rikka.api.world.gamerule;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.entity.living.monster.*;
-import org.soraworld.rikka.entity.living.player.gamemode.GameModes;
+import rikka.api.block.BlockTypes;
 import rikka.api.block.tileentity.CommandBlock;
 import rikka.api.entity.living.Agent;
 import rikka.api.entity.living.Bat;
@@ -37,6 +35,7 @@ import rikka.api.entity.living.complex.EnderDragon;
 import rikka.api.entity.living.golem.SnowGolem;
 import rikka.api.entity.living.monster.*;
 import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.player.gamemode.GameModes;
 import rikka.api.entity.vehicle.Boat;
 import rikka.api.entity.vehicle.minecart.Minecart;
 

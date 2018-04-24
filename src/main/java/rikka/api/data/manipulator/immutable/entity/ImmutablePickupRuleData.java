@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.data.manipulator.mutable.entity.PickupRuleData;
-import org.soraworld.rikka.data.type.PickupRule;
-import org.soraworld.rikka.entity.projectile.arrow.Arrow;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
+import rikka.api.data.manipulator.mutable.entity.PickupRuleData;
+import rikka.api.data.type.PickupRule;
+import rikka.api.entity.projectile.arrow.Arrow;
 
 /**
  * An {@link ImmutableDataManipulator} for the "pickup" rule of an

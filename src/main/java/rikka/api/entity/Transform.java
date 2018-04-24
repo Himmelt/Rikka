@@ -1,7 +1,7 @@
 package rikka.api.entity;
 
-import org.soraworld.rikka.world.Location;
 import rikka.api.util.math.Vector3d;
+import rikka.api.world.Location;
 import rikka.api.world.extent.Extent;
 
 import javax.annotation.Nullable;

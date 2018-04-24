@@ -24,8 +24,8 @@
  */
 package rikka.api.data.manipulator.immutable;
 
-import org.soraworld.rikka.data.manipulator.mutable.DisplayNameData;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
+import rikka.api.data.manipulator.mutable.DisplayNameData;
 import rikka.api.data.value.immutable.ImmutableValue;
 import rikka.api.text.Text;
 

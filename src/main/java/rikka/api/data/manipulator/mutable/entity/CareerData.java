@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableCareerData;
-import org.soraworld.rikka.entity.living.Villager;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.immutable.entity.ImmutableCareerData;
 import rikka.api.data.manipulator.mutable.VariantData;
 import rikka.api.data.type.Career;
+import rikka.api.entity.living.Villager;
 
 /**
  * Represents the {@link Career} for a {@link Villager}.

@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.immutable;
 
-import org.soraworld.rikka.effect.potion.PotionEffect;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.PotionEffectData;
 import rikka.api.data.value.immutable.ImmutableListValue;
+import rikka.api.effect.potion.PotionEffect;
+import rikka.api.entity.IEntity;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} that handles the various

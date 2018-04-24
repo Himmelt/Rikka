@@ -24,10 +24,10 @@
  */
 package rikka.api.text.action;
 
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.entity.EntityType;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.item.inventory.ItemStackSnapshot;
+import rikka.api.command.ICommandSender;
+import rikka.api.entity.EntityType;
+import rikka.api.entity.IEntity;
+import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.text.Text;
 
 import javax.annotation.Nullable;

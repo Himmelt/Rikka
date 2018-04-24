@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableGameModeData;
-import org.soraworld.rikka.entity.living.Humanoid;
-import org.soraworld.rikka.entity.living.player.gamemode.GameMode;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.immutable.entity.ImmutableGameModeData;
 import rikka.api.data.manipulator.mutable.VariantData;
+import rikka.api.entity.living.Humanoid;
+import rikka.api.entity.living.player.gamemode.GameMode;
 
 /**
  * An {@link VariantData} for the current {@link GameMode} of a

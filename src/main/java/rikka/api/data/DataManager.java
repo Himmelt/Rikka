@@ -24,7 +24,6 @@
  */
 package rikka.api.data;
 
-import org.soraworld.rikka.plugin.PluginContainer;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.DataManipulatorBuilder;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
@@ -32,6 +31,7 @@ import rikka.api.data.manipulator.ImmutableDataManipulatorBuilder;
 import rikka.api.data.persistence.DataBuilder;
 import rikka.api.data.persistence.DataContentUpdater;
 import rikka.api.data.persistence.DataTranslator;
+import rikka.api.plugin.PluginContainer;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -212,8 +212,8 @@ public interface DataManager {
 
     /**
      * Creates a new {@link DataContainer} with a default
-     * {@link org.soraworld.rikka.data.DataView.SafetyMode} of
-     * {@link org.soraworld.rikka.data.DataView.SafetyMode#ALL_DATA_CLONED}.
+     * {@link rikka.api.data.DataView.SafetyMode} of
+     * {@link rikka.api.data.DataView.SafetyMode#ALL_DATA_CLONED}.
      *
      * @return A new data container
      */
@@ -221,11 +221,11 @@ public interface DataManager {
 
     /**
      * Creates a new {@link DataContainer} with the provided
-     * {@link org.soraworld.rikka.data.DataView.SafetyMode}.
+     * {@link rikka.api.data.DataView.SafetyMode}.
      *
      * @param safety The safety mode to use
      * @return A new data container with the provided safety mode
-     * @see org.soraworld.rikka.data.DataView.SafetyMode
+     * @see rikka.api.data.DataView.SafetyMode
      */
     DataContainer createContainer(DataView.SafetyMode safety);
 

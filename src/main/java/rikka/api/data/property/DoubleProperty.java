@@ -24,10 +24,10 @@
  */
 package rikka.api.data.property;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.data.property.item.FoodRestorationProperty;
-import org.soraworld.rikka.data.property.item.SaturationProperty;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
+import rikka.api.data.property.item.FoodRestorationProperty;
+import rikka.api.data.property.item.SaturationProperty;
+import rikka.api.util.Coerce;
 
 /**
  * Represents an item property that has an integer value. Examples may include

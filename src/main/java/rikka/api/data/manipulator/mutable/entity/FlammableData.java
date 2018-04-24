@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableFlammableData;
-import org.soraworld.rikka.entity.living.monster.Blaze;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableFlammableData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.monster.Blaze;
 
 /**
  * An {@link DataManipulator} for the "aflame" state of an entity. This state

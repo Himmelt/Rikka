@@ -25,7 +25,7 @@
 package rikka.api.util;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.soraworld.rikka.Sponge;
+import rikka.api.Sponge;
 import rikka.api.data.DataContainer;
 import rikka.api.data.DataSerializable;
 import rikka.api.data.DataView;

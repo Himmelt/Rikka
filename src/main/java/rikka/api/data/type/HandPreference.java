@@ -24,8 +24,8 @@
  */
 package rikka.api.data.type;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.entity.living.ILiving;
+import rikka.api.CatalogType;
+import rikka.api.entity.living.ILiving;
 import rikka.api.text.translation.Translatable;
 import rikka.api.util.annotation.CatalogedBy;
 

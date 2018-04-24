@@ -25,7 +25,7 @@
 package rikka.api.data.property.entity;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.soraworld.rikka.data.Property;
+import rikka.api.data.Property;
 import rikka.api.data.property.AbstractProperty;
 
 import javax.annotation.Nullable;
@@ -45,7 +45,7 @@ public class EyeLocationProperty extends AbstractProperty<String, Vector3d> {
     /**
      * Creates a new {@link EyeLocationProperty} based on the provided
      * {@link Vector3d position} and
-     * {@link org.soraworld.rikka.data.Property.Operator comparison operator}.
+     * {@link rikka.api.data.Property.Operator comparison operator}.
      *
      * @param value The position value
      * @param op    The comparison operator

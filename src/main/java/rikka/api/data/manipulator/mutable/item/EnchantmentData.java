@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.item.ImmutableEnchantmentData;
-import org.soraworld.rikka.item.enchantment.Enchantment;
-import org.soraworld.rikka.item.enchantment.EnchantmentType;
+import rikka.api.data.key.Keys;
+import rikka.api.data.manipulator.immutable.item.ImmutableEnchantmentData;
 import rikka.api.data.manipulator.mutable.ListData;
 import rikka.api.data.value.mutable.ListValue;
+import rikka.api.item.enchantment.Enchantment;
+import rikka.api.item.enchantment.EnchantmentType;
 
 /**
  * Represents item data related to an item having active {@link Enchantment}s

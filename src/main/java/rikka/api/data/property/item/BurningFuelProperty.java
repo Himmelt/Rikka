@@ -24,7 +24,7 @@
  */
 package rikka.api.data.property.item;
 
-import org.soraworld.rikka.data.Property;
+import rikka.api.data.Property;
 import rikka.api.data.property.IntProperty;
 
 /**

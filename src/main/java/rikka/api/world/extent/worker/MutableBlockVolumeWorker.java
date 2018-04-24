@@ -24,11 +24,11 @@
  */
 package rikka.api.world.extent.worker;
 
-import org.soraworld.rikka.world.extent.worker.procedure.BlockVolumeFiller;
-import org.soraworld.rikka.world.extent.worker.procedure.BlockVolumeMapper;
-import org.soraworld.rikka.world.extent.worker.procedure.BlockVolumeMerger;
 import rikka.api.world.extent.BlockVolume;
 import rikka.api.world.extent.MutableBlockVolume;
+import rikka.api.world.extent.worker.procedure.BlockVolumeFiller;
+import rikka.api.world.extent.worker.procedure.BlockVolumeMapper;
+import rikka.api.world.extent.worker.procedure.BlockVolumeMerger;
 
 /**
  * Similar to {@link BlockVolumeWorker} but adds support for mutating the

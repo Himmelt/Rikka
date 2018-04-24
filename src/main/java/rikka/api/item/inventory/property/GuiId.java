@@ -24,7 +24,7 @@
  */
 package rikka.api.item.inventory.property;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 import rikka.api.item.inventory.Container;
 import rikka.api.item.inventory.Inventory;
 import rikka.api.item.inventory.InventoryArchetype;

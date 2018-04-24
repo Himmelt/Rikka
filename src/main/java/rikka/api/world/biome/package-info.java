@@ -22,5 +22,5 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-@org.soraworld.rikka.util.annotation.NonnullByDefault
+@rikka.api.util.annotation.NonnullByDefault
 package rikka.api.world.biome;

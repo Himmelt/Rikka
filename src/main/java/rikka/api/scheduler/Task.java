@@ -24,10 +24,10 @@
  */
 package rikka.api.scheduler;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.plugin.PluginContainer;
-import org.soraworld.rikka.util.Identifiable;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
+import rikka.api.plugin.PluginContainer;
+import rikka.api.util.Identifiable;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;

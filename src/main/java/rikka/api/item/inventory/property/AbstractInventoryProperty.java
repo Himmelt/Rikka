@@ -24,7 +24,7 @@
  */
 package rikka.api.item.inventory.property;
 
-import org.soraworld.rikka.data.Property;
+import rikka.api.data.Property;
 import rikka.api.item.inventory.InventoryProperty;
 
 import javax.annotation.Nullable;

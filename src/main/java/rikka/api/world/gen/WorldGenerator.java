@@ -24,8 +24,8 @@
  */
 package rikka.api.world.gen;
 
-import org.soraworld.rikka.world.biome.BiomeGenerationSettings;
-import org.soraworld.rikka.world.biome.BiomeType;
+import rikka.api.world.biome.BiomeGenerationSettings;
+import rikka.api.world.biome.BiomeType;
 
 import java.util.List;
 

@@ -24,16 +24,16 @@
  */
 package rikka.api.world;
 
-import org.soraworld.rikka.GameRegistry;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.entity.living.player.gamemode.GameModes;
-import org.soraworld.rikka.registry.CatalogTypeAlreadyRegisteredException;
-import org.soraworld.rikka.util.ResettableBuilder;
 import rikka.api.CatalogType;
+import rikka.api.GameRegistry;
 import rikka.api.Server;
+import rikka.api.Sponge;
 import rikka.api.data.DataContainer;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.gamemode.GameMode;
+import rikka.api.entity.living.player.gamemode.GameModes;
+import rikka.api.registry.CatalogTypeAlreadyRegisteredException;
+import rikka.api.util.ResettableBuilder;
 import rikka.api.util.annotation.CatalogedBy;
 import rikka.api.world.difficulty.Difficulty;
 import rikka.api.world.gen.WorldGeneratorModifier;

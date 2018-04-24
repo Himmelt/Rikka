@@ -1,11 +1,11 @@
 package rikka.api;
 
-import org.soraworld.rikka.world.World;
 import rikka.api.command.source.ConsoleSource;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.scoreboard.Scoreboard;
 import rikka.api.text.Text;
 import rikka.api.text.channel.MessageChannel;
+import rikka.api.world.World;
 import rikka.api.world.storage.ChunkLayout;
 
 import java.util.Collection;

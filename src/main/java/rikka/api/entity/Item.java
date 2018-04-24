@@ -1,10 +1,10 @@
 package rikka.api.entity;
 
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.item.inventory.ItemStackSnapshot;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.RepresentedItemData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.item.ItemType;
+import rikka.api.item.inventory.ItemStackSnapshot;
 
 public interface Item extends IEntity {
     default RepresentedItemData getItemData() {

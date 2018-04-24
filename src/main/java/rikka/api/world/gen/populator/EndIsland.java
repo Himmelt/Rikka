@@ -24,10 +24,10 @@
  */
 package rikka.api.world.gen.populator;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.util.ResettableBuilder;
-import org.soraworld.rikka.util.weighted.VariableAmount;
+import rikka.api.Sponge;
+import rikka.api.block.BlockState;
+import rikka.api.util.ResettableBuilder;
+import rikka.api.util.weighted.VariableAmount;
 import rikka.api.world.gen.Populator;
 
 /**

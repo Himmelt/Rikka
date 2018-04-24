@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableExperienceHolderData;
-import org.soraworld.rikka.entity.living.Humanoid;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableExperienceHolderData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
 import rikka.api.data.value.mutable.MutableBoundedValue;
+import rikka.api.entity.living.Humanoid;
 
 /**
  * Represents the "gained" experience information. Usually experience can be

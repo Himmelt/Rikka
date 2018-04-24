@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable.tileentity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.tileentity.ImmutableCooldownData;
-import org.soraworld.rikka.item.inventory.Inventory;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.block.tileentity.carrier.Hopper;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.tileentity.ImmutableCooldownData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link DataManipulator} handling the "cooldown" information for

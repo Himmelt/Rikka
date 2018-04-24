@@ -26,10 +26,10 @@ package rikka.api.text.selector;
 
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.entity.EntityType;
-import org.soraworld.rikka.entity.living.player.gamemode.GameMode;
-import org.soraworld.rikka.scoreboard.Team;
+import rikka.api.Sponge;
+import rikka.api.entity.EntityType;
+import rikka.api.entity.living.player.gamemode.GameMode;
+import rikka.api.scoreboard.Team;
 
 import java.util.Collection;
 import java.util.Optional;

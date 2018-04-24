@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableShearedData;
-import org.soraworld.rikka.entity.living.animal.ISheep;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableShearedData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.animal.ISheep;
 
 /**
  * Signifies that an entity is currently "sheared" and will regrow at some

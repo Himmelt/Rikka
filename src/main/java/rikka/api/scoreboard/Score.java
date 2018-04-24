@@ -24,7 +24,7 @@
  */
 package rikka.api.scoreboard;
 
-import org.soraworld.rikka.scoreboard.objective.Objective;
+import rikka.api.scoreboard.objective.Objective;
 import rikka.api.text.Text;
 
 import java.util.Set;

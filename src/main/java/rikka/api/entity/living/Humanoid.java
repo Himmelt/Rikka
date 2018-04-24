@@ -1,10 +1,10 @@
 package rikka.api.entity.living;
 
-import org.soraworld.rikka.entity.ArmorEquipable;
-import org.soraworld.rikka.entity.Tamer;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.entity.FoodData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
+import rikka.api.entity.ArmorEquipable;
+import rikka.api.entity.Tamer;
 import rikka.api.entity.projectile.IProjectileLauncher;
 
 public interface Humanoid extends ILiving, IProjectileLauncher, ArmorEquipable, Tamer {

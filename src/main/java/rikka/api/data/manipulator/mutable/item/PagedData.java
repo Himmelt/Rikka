@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.item.ImmutablePagedData;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.item.ImmutablePagedData;
 import rikka.api.data.manipulator.mutable.ListData;
 import rikka.api.data.value.mutable.ListValue;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 import rikka.api.text.Text;
 
 import java.util.List;

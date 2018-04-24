@@ -24,9 +24,9 @@
  */
 package rikka.api.command.args;
 
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.text.TranslatableText;
+import rikka.api.command.ICommandSender;
+import rikka.api.text.Text;
+import rikka.api.text.TranslatableText;
 
 import javax.annotation.Nullable;
 import java.util.List;

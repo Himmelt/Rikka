@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.immutable;
 
-import org.soraworld.rikka.entity.projectile.Firework;
-import org.soraworld.rikka.item.FireworkEffect;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.FireworkEffectData;
 import rikka.api.data.value.immutable.ImmutableListValue;
+import rikka.api.entity.projectile.Firework;
+import rikka.api.item.FireworkEffect;
+import rikka.api.item.ItemTypes;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} handling the various

@@ -24,9 +24,9 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableVariantData;
+import rikka.api.CatalogType;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableVariantData;
 import rikka.api.data.value.mutable.Value;
 
 /**

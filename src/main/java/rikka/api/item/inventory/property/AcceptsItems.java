@@ -24,11 +24,11 @@
  */
 package rikka.api.item.inventory.property;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
+import rikka.api.item.ItemType;
 import rikka.api.item.inventory.InventoryProperty;
 import rikka.api.item.inventory.slot.InputSlot;
+import rikka.api.util.Coerce;
 
 import java.util.Collection;
 import java.util.List;

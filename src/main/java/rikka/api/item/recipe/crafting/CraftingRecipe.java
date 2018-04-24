@@ -24,15 +24,15 @@
  */
 package rikka.api.item.recipe.crafting;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.item.ItemTypes;
-import org.soraworld.rikka.world.World;
+import rikka.api.CatalogType;
+import rikka.api.Sponge;
+import rikka.api.item.ItemTypes;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.item.inventory.crafting.CraftingGridInventory;
 import rikka.api.item.recipe.Recipe;
 import rikka.api.util.annotation.CatalogedBy;
+import rikka.api.world.World;
 
 import java.util.List;
 import java.util.Optional;

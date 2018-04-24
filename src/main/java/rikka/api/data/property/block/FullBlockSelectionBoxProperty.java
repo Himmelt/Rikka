@@ -24,7 +24,7 @@
  */
 package rikka.api.data.property.block;
 
-import org.soraworld.rikka.block.BlockType;
+import rikka.api.block.BlockType;
 import rikka.api.data.property.BooleanProperty;
 
 /**

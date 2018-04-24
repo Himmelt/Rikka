@@ -24,7 +24,7 @@
  */
 package rikka.api.util.annotation.eventgen;
 
-import org.soraworld.rikka.event.entity.AffectEntityEvent;
+import rikka.api.event.entity.AffectEntityEvent;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

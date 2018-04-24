@@ -1,10 +1,10 @@
 package rikka.api.entity.living;
 
-import org.soraworld.rikka.data.type.Career;
-import org.soraworld.rikka.item.merchant.Merchant;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.entity.CareerData;
+import rikka.api.data.type.Career;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.item.merchant.Merchant;
 
 public interface Villager extends Ageable, Merchant {
 

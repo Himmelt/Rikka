@@ -1,11 +1,11 @@
 package rikka.api.entity.living.player;
 
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.entity.ArmorEquipable;
-import org.soraworld.rikka.entity.Tamer;
-import org.soraworld.rikka.profile.GameProfile;
-import org.soraworld.rikka.util.math.Vector3d;
+import rikka.api.data.DataHolder;
+import rikka.api.entity.ArmorEquipable;
+import rikka.api.entity.Tamer;
+import rikka.api.profile.GameProfile;
 import rikka.api.service.permission.Permissible;
+import rikka.api.util.math.Vector3d;
 
 import java.util.Optional;
 import java.util.UUID;

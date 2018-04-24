@@ -24,9 +24,9 @@
  */
 package rikka.api.text.channel.type;
 
-import org.soraworld.rikka.world.World;
 import rikka.api.text.channel.MessageChannel;
 import rikka.api.text.channel.MessageReceiver;
+import rikka.api.world.World;
 
 import java.util.Collection;
 import java.util.Collections;

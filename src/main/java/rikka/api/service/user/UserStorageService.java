@@ -24,10 +24,10 @@
  */
 package rikka.api.service.user;
 
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.entity.living.player.User;
-import org.soraworld.rikka.profile.GameProfile;
-import org.soraworld.rikka.profile.GameProfileManager;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.player.User;
+import rikka.api.profile.GameProfile;
+import rikka.api.profile.GameProfileManager;
 
 import java.util.Collection;
 import java.util.Optional;

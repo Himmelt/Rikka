@@ -25,8 +25,8 @@
 package rikka.api.item.inventory.property;
 
 import com.flowpowered.math.vector.Vector2i;
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.util.Coerce;
+import rikka.api.data.Property;
+import rikka.api.util.Coerce;
 
 /**
  * An inventory property which represents a position within a grid. Bear in mind

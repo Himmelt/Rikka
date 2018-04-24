@@ -26,9 +26,9 @@ package rikka.api.data.manipulator.immutable.common;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.Queries;
-import org.soraworld.rikka.data.key.Key;
+import rikka.api.data.DataContainer;
+import rikka.api.data.Queries;
+import rikka.api.data.key.Key;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.value.BaseValue;

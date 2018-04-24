@@ -24,7 +24,7 @@
  */
 package rikka.api.data.persistence;
 
-import org.soraworld.rikka.data.DataView;
+import rikka.api.data.DataView;
 
 import java.io.InputStream;
 

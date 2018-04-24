@@ -24,11 +24,11 @@
  */
 /**
  * A common abstract implementation of several types of
- * {@link org.soraworld.rikka.data.manipulator.ImmutableDataManipulator}s
+ * {@link rikka.api.data.manipulator.ImmutableDataManipulator}s
  * for simpler use with plugins. Common implementations of manipulators that
  * deal with single values can easily utilize
- * {@link org.soraworld.rikka.data.manipulator.immutable.common.AbstractImmutableSingleData}
+ * {@link rikka.api.data.manipulator.immutable.common.AbstractImmutableSingleData}
  * without having to implement all the required methods of a manipulator.
  */
-@org.soraworld.rikka.util.annotation.NonnullByDefault
+@rikka.api.util.annotation.NonnullByDefault
 package rikka.api.data.manipulator.immutable.common;

@@ -24,12 +24,12 @@
  */
 package rikka.api.item.inventory.query;
 
-import org.soraworld.rikka.Nameable;
-import org.soraworld.rikka.item.ItemType;
-import org.soraworld.rikka.item.inventory.property.InventoryTitle;
+import rikka.api.Nameable;
+import rikka.api.item.ItemType;
 import rikka.api.item.inventory.Inventory;
 import rikka.api.item.inventory.InventoryProperty;
 import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.property.InventoryTitle;
 import rikka.api.text.translation.Translation;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 

@@ -24,7 +24,7 @@
  */
 package rikka.api.world.gen;
 
-import org.soraworld.rikka.world.extent.MutableBiomeVolume;
+import rikka.api.world.extent.MutableBiomeVolume;
 
 /**
  * Manages the biome generation for an extent.

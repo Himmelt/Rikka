@@ -1,10 +1,10 @@
 package rikka.api.entity.projectile;
 
-import org.soraworld.rikka.entity.explosive.FusedExplosive;
-import org.soraworld.rikka.item.FireworkEffect;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.FireworkEffectData;
 import rikka.api.data.value.mutable.ListValue;
+import rikka.api.entity.explosive.FusedExplosive;
+import rikka.api.item.FireworkEffect;
 
 public interface Firework extends Projectile, FusedExplosive {
 

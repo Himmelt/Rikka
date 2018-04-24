@@ -24,7 +24,7 @@
  */
 package rikka.api.text.action;
 
-import org.soraworld.rikka.command.ICommandSender;
+import rikka.api.command.ICommandSender;
 import rikka.api.text.Text;
 
 import java.net.URL;

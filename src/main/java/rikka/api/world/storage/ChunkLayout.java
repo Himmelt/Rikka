@@ -25,8 +25,8 @@
 package rikka.api.world.storage;
 
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.util.Direction;
-import org.soraworld.rikka.util.Direction.Division;
+import rikka.api.util.Direction;
+import rikka.api.util.Direction.Division;
 
 import java.util.Optional;
 

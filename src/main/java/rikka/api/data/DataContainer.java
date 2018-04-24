@@ -24,8 +24,8 @@
  */
 package rikka.api.data;
 
-import org.soraworld.rikka.data.value.BaseValue;
 import rikka.api.data.key.Key;
+import rikka.api.data.value.BaseValue;
 
 /**
  * Represents a data structure that contains data. A DataContainer is
@@ -36,8 +36,8 @@ public interface DataContainer extends DataView {
 
     /**
      * Creates a new {@link DataContainer} with a default
-     * {@link org.soraworld.rikka.data.DataView.SafetyMode} of
-     * {@link org.soraworld.rikka.data.DataView.SafetyMode#ALL_DATA_CLONED}.
+     * {@link rikka.api.data.DataView.SafetyMode} of
+     * {@link rikka.api.data.DataView.SafetyMode#ALL_DATA_CLONED}.
      *
      * @return A new data container
      */
@@ -48,11 +48,11 @@ public interface DataContainer extends DataView {
 
     /**
      * Creates a new {@link DataContainer} with the provided
-     * {@link org.soraworld.rikka.data.DataView.SafetyMode}.
+     * {@link rikka.api.data.DataView.SafetyMode}.
      *
      * @param safety The safety mode to use
      * @return A new data container with the provided safety mode
-     * @see org.soraworld.rikka.data.DataView.SafetyMode
+     * @see rikka.api.data.DataView.SafetyMode
      */
     static DataContainer createNew(SafetyMode safety) {
         return new MemoryDataContainer(safety);

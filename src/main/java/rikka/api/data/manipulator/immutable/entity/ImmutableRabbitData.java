@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.living.animal.IRabbit;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
 import rikka.api.data.manipulator.mutable.entity.RabbitData;
 import rikka.api.data.type.RabbitType;
+import rikka.api.entity.living.animal.IRabbit;
 
 /**
  * A type of {@link ImmutableVariantData} for {@link RabbitType}s belonging

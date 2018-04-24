@@ -25,10 +25,10 @@
 package rikka.api.data.manipulator.immutable.entity;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.soraworld.rikka.entity.IEntity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.VelocityData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.IEntity;
 
 /**
  * An {@link ImmutableDataManipulator} representing the {@link Vector3d}

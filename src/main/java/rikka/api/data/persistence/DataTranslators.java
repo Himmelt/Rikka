@@ -30,8 +30,8 @@ import com.flowpowered.math.imaginary.Quaterniond;
 import com.flowpowered.math.imaginary.Quaternionf;
 import com.flowpowered.math.vector.*;
 import ninja.leaping.configurate.ConfigurationNode;
-import org.soraworld.rikka.world.schematic.Schematic;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
+import rikka.api.world.schematic.Schematic;
 
 import java.time.*;
 import java.util.UUID;

@@ -24,9 +24,9 @@
  */
 /**
  * A fallback API for handling traits of
- * {@link org.soraworld.rikka.block.BlockState}s such that the values that
+ * {@link rikka.api.block.BlockState}s such that the values that
  * are not directly supported by the API can still be represented with a
- * {@link org.soraworld.rikka.block.trait.BlockTrait}. Common cases where
+ * {@link rikka.api.block.trait.BlockTrait}. Common cases where
  * support only through a <code>BlockTrait</code> is when mods are introduced
  * to the game, providing custom content and custom states.
  */

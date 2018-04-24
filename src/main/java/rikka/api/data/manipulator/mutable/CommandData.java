@@ -24,15 +24,15 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableCommandData;
-import org.soraworld.rikka.entity.vehicle.minecart.CommandBlockMinecart;
-import org.soraworld.rikka.text.Text;
 import rikka.api.block.tileentity.CommandBlock;
+import rikka.api.data.DataHolder;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableCommandData;
 import rikka.api.data.value.mutable.OptionalValue;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.vehicle.minecart.CommandBlockMinecart;
+import rikka.api.text.Text;
 
 import java.util.Optional;
 

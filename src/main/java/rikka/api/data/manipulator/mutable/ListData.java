@@ -24,8 +24,8 @@
  */
 package rikka.api.data.manipulator.mutable;
 
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableListData;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableListData;
 import rikka.api.data.value.mutable.ListValue;
 
 import java.util.Collection;

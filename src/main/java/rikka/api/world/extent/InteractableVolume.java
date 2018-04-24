@@ -25,11 +25,11 @@
 package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.profile.GameProfile;
-import org.soraworld.rikka.util.Direction;
-import org.soraworld.rikka.world.extent.worker.MutableBlockVolumeWorker;
+import rikka.api.block.BlockState;
 import rikka.api.item.inventory.ItemStack;
+import rikka.api.profile.GameProfile;
+import rikka.api.util.Direction;
+import rikka.api.world.extent.worker.MutableBlockVolumeWorker;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

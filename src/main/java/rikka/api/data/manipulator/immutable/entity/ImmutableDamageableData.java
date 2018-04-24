@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.EntitySnapshot;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.living.ILiving;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.DamageableData;
 import rikka.api.data.value.immutable.ImmutableOptionalValue;
+import rikka.api.entity.EntitySnapshot;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.ILiving;
 
 import java.util.Optional;
 

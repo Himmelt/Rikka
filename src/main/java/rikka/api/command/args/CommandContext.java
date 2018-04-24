@@ -26,17 +26,17 @@ package rikka.api.command.args;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.text.Text;
-import org.soraworld.rikka.world.Location;
 import rikka.api.command.CommandException;
+import rikka.api.command.ICommandSender;
+import rikka.api.text.Text;
+import rikka.api.world.Location;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static org.soraworld.rikka.util.SpongeApiTranslationHelper.t;
+import static rikka.api.util.SpongeApiTranslationHelper.t;
 
 /**
  * Context that a command is executed in.

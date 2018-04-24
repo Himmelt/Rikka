@@ -24,8 +24,8 @@
  */
 package rikka.api.data.manipulator.immutable.common;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.key.Key;
+import rikka.api.Sponge;
+import rikka.api.data.key.Key;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.value.immutable.ImmutableValue;

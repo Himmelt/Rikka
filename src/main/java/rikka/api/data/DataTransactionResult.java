@@ -28,13 +28,13 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import org.soraworld.rikka.util.ResettableBuilder;
 import rikka.api.data.key.Key;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.immutable.ImmutableValue;
 import rikka.api.data.value.mutable.CompositeValueStore;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -395,7 +395,7 @@ public final class DataTransactionResult {
     /**
      * A type of builder for building {@link DataTransactionResult}s. The common
      * use is for both implementations of {@link DataHolder}s, and various
-     * {@link org.soraworld.rikka.event.data.ChangeDataHolderEvent.ValueChange}s.
+     * {@link rikka.api.event.data.ChangeDataHolderEvent.ValueChange}s.
      */
     public static final class Builder implements ResettableBuilder<DataTransactionResult, Builder> {
 

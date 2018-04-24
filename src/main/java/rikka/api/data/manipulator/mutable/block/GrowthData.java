@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.mutable.block;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.block.ImmutableGrowthData;
+import rikka.api.block.BlockTypes;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.block.ImmutableGrowthData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 
 /**

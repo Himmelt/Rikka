@@ -24,13 +24,13 @@
  */
 package rikka.api.scoreboard;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.entity.living.player.IPlayer;
-import org.soraworld.rikka.scoreboard.critieria.Criterion;
-import org.soraworld.rikka.scoreboard.displayslot.DisplaySlot;
-import org.soraworld.rikka.scoreboard.objective.Objective;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.scoreboard.critieria.Criterion;
+import rikka.api.scoreboard.displayslot.DisplaySlot;
+import rikka.api.scoreboard.objective.Objective;
 import rikka.api.text.Text;
+import rikka.api.util.ResettableBuilder;
 
 import javax.annotation.Nullable;
 import java.util.List;

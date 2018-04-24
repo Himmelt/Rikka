@@ -24,9 +24,9 @@
  */
 package rikka.api.data.value.mutable;
 
-import org.soraworld.rikka.data.DataTransactionResult;
-import org.soraworld.rikka.data.key.Key;
-import org.soraworld.rikka.data.merge.MergeFunction;
+import rikka.api.data.DataTransactionResult;
+import rikka.api.data.key.Key;
+import rikka.api.data.merge.MergeFunction;
 import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.ValueContainer;
 
@@ -366,7 +366,7 @@ public interface CompositeValueStore<S extends CompositeValueStore<S, H>, H exte
      * removed will be provided in
      * {@link DataTransactionResult#getReplacedData()}. If the data can not be
      * removed, the result will be an expected
-     * {@link org.soraworld.rikka.data.DataTransactionResult.Type#FAILURE}.
+     * {@link rikka.api.data.DataTransactionResult.Type#FAILURE}.
      *
      * @param containerClass The container class
      * @return The transaction result
@@ -378,7 +378,7 @@ public interface CompositeValueStore<S extends CompositeValueStore<S, H>, H exte
      * successfully removed will be provided in
      * {@link DataTransactionResult#getReplacedData()}. If the data can not be
      * removed, the result will be an expected
-     * {@link org.soraworld.rikka.data.DataTransactionResult.Type#FAILURE}.
+     * {@link rikka.api.data.DataTransactionResult.Type#FAILURE}.
      *
      * @param value The value to remove
      * @return The transaction result
@@ -392,7 +392,7 @@ public interface CompositeValueStore<S extends CompositeValueStore<S, H>, H exte
      * All values that were successfully removed will be provided in
      * {@link DataTransactionResult#getReplacedData()}. If the data can not be
      * removed, the result will be an expected
-     * {@link org.soraworld.rikka.data.DataTransactionResult.Type#FAILURE}.
+     * {@link rikka.api.data.DataTransactionResult.Type#FAILURE}.
      *
      * @param key The key of the data
      * @return The transaction result

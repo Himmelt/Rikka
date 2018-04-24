@@ -26,16 +26,16 @@ package rikka.api.data.manipulator.mutable.common;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Maps;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.key.Key;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableMappedData;
-import org.soraworld.rikka.util.CollectionUtils;
+import rikka.api.Sponge;
+import rikka.api.data.key.Key;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableMappedData;
 import rikka.api.data.manipulator.mutable.ListData;
 import rikka.api.data.manipulator.mutable.MappedData;
 import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.mutable.MapValue;
+import rikka.api.util.CollectionUtils;
 
 import java.util.Map;
 

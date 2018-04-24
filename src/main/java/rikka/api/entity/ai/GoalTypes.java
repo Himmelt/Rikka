@@ -24,7 +24,7 @@
  */
 package rikka.api.entity.ai;
 
-import org.soraworld.rikka.entity.living.Agent;
+import rikka.api.entity.living.Agent;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 public final class GoalTypes {

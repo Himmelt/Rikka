@@ -24,8 +24,8 @@
  */
 package rikka.api.item;
 
-import org.soraworld.rikka.GameDictionary;
 import rikka.api.CatalogType;
+import rikka.api.GameDictionary;
 import rikka.api.block.BlockType;
 import rikka.api.data.Property;
 import rikka.api.item.inventory.ItemStack;

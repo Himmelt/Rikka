@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableScreamingData;
-import org.soraworld.rikka.entity.living.monster.Enderman;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableScreamingData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.monster.Enderman;
 
 /**
  * An {@link DataManipulator} for the "screaming" state of an {@link Enderman}.

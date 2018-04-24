@@ -25,12 +25,12 @@
 package rikka.api.world.teleport;
 
 import com.flowpowered.math.vector.Vector3i;
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.util.Tristate;
-import org.soraworld.rikka.world.TeleportHelper;
-import org.soraworld.rikka.world.World;
+import rikka.api.CatalogType;
+import rikka.api.block.BlockState;
+import rikka.api.util.Tristate;
 import rikka.api.util.annotation.CatalogedBy;
+import rikka.api.world.TeleportHelper;
+import rikka.api.world.World;
 
 /**
  * A {@link TeleportHelperFilter} contains routines to determine whether a

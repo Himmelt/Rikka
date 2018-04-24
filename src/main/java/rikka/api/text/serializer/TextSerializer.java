@@ -24,8 +24,8 @@
  */
 package rikka.api.text.serializer;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.GameRegistry;
+import rikka.api.CatalogType;
+import rikka.api.GameRegistry;
 import rikka.api.text.Text;
 import rikka.api.util.annotation.CatalogedBy;
 

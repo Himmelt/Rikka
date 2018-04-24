@@ -24,12 +24,12 @@
  */
 package rikka.api.world.gen.populator;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.util.ResettableBuilder;
-import org.soraworld.rikka.util.weighted.VariableAmount;
-import org.soraworld.rikka.util.weighted.WeightedTable;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.extent.Extent;
+import rikka.api.Sponge;
+import rikka.api.util.ResettableBuilder;
+import rikka.api.util.weighted.VariableAmount;
+import rikka.api.util.weighted.WeightedTable;
+import rikka.api.world.Location;
+import rikka.api.world.extent.Extent;
 import rikka.api.world.gen.Populator;
 import rikka.api.world.gen.PopulatorObject;
 import rikka.api.world.gen.type.BiomeTreeType;

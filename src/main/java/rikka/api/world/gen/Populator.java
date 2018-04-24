@@ -24,10 +24,10 @@
  */
 package rikka.api.world.gen;
 
-import org.soraworld.rikka.world.World;
-import org.soraworld.rikka.world.extent.Extent;
-import org.soraworld.rikka.world.extent.ImmutableBiomeVolume;
-import org.soraworld.rikka.world.gen.populator.RandomObject;
+import rikka.api.world.World;
+import rikka.api.world.extent.Extent;
+import rikka.api.world.extent.ImmutableBiomeVolume;
+import rikka.api.world.gen.populator.RandomObject;
 
 import java.util.Random;
 

@@ -24,7 +24,7 @@
  */
 package rikka.api.data.type;
 
-import org.soraworld.rikka.entity.projectile.arrow.Arrow;
+import rikka.api.entity.projectile.arrow.Arrow;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 /**

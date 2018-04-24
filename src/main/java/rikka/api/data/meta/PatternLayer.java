@@ -24,12 +24,12 @@
  */
 package rikka.api.data.meta;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.DataSerializable;
-import org.soraworld.rikka.data.manipulator.mutable.tileentity.BannerData;
-import org.soraworld.rikka.data.persistence.DataBuilder;
-import org.soraworld.rikka.data.type.BannerPatternShape;
-import org.soraworld.rikka.data.type.DyeColor;
+import rikka.api.Sponge;
+import rikka.api.data.DataSerializable;
+import rikka.api.data.manipulator.mutable.tileentity.BannerData;
+import rikka.api.data.persistence.DataBuilder;
+import rikka.api.data.type.BannerPatternShape;
+import rikka.api.data.type.DyeColor;
 
 /**
  * A representation on a single layer of a {@link BannerData}'s pattern.

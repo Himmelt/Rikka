@@ -24,8 +24,8 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.data.manipulator.mutable.entity.ArmorStandData;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
+import rikka.api.data.manipulator.mutable.entity.ArmorStandData;
 import rikka.api.data.value.immutable.ImmutableValue;
 
 public interface ImmutableArmorStandData extends ImmutableDataManipulator<ImmutableArmorStandData, ArmorStandData> {

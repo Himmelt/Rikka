@@ -26,8 +26,8 @@ package rikka.api.command.args;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
-import org.soraworld.rikka.command.ICommandSender;
-import org.soraworld.rikka.text.Text;
+import rikka.api.command.ICommandSender;
+import rikka.api.text.Text;
 
 import javax.annotation.Nullable;
 import java.util.Collections;
@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-import static org.soraworld.rikka.util.SpongeApiTranslationHelper.t;
+import static rikka.api.util.SpongeApiTranslationHelper.t;
 
 /**
  * Abstract command element that matches values based on pattern.

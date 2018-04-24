@@ -46,7 +46,7 @@ public class ReplaceableProperty extends BooleanProperty {
     /**
      * Creates a new {@link ReplaceableProperty} with the provided
      * {@code value} and
-     * {@link org.soraworld.rikka.data.Property.Operator operator} for
+     * {@link rikka.api.data.Property.Operator operator} for
      * comparisons.
      *
      * @param value    The value

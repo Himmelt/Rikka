@@ -24,7 +24,7 @@
  */
 package rikka.api.data.property.item;
 
-import org.soraworld.rikka.data.Property;
+import rikka.api.data.Property;
 import rikka.api.data.property.AbstractProperty;
 import rikka.api.data.type.ToolType;
 
@@ -45,7 +45,7 @@ public class ToolTypeProperty extends AbstractProperty<String, ToolType> {
     /**
      * Creates a new {@link ToolTypeProperty} with the provided
      * {@link ToolType} value and
-     * {@link org.soraworld.rikka.data.Property.Operator}
+     * {@link rikka.api.data.Property.Operator}
      * for comparisons.
      *
      * @param value The value

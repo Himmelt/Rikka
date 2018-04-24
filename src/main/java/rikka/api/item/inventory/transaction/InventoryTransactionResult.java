@@ -25,9 +25,9 @@
 package rikka.api.item.inventory.transaction;
 
 import com.google.common.collect.ImmutableList;
-import org.soraworld.rikka.util.ResettableBuilder;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
+import rikka.api.util.ResettableBuilder;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;

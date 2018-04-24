@@ -24,13 +24,13 @@
  */
 package rikka.api.world.gen.populator;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.block.BlockType;
-import org.soraworld.rikka.util.ResettableBuilder;
-import org.soraworld.rikka.util.weighted.VariableAmount;
-import org.soraworld.rikka.world.Location;
-import org.soraworld.rikka.world.World;
+import rikka.api.Sponge;
+import rikka.api.block.BlockState;
+import rikka.api.block.BlockType;
+import rikka.api.util.ResettableBuilder;
+import rikka.api.util.weighted.VariableAmount;
+import rikka.api.world.Location;
+import rikka.api.world.World;
 import rikka.api.world.gen.Populator;
 
 import java.util.function.Predicate;

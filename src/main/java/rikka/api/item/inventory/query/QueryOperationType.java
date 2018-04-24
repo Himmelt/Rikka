@@ -24,7 +24,7 @@
  */
 package rikka.api.item.inventory.query;
 
-import org.soraworld.rikka.CatalogType;
+import rikka.api.CatalogType;
 import rikka.api.item.inventory.Inventory;
 import rikka.api.util.annotation.CatalogedBy;
 

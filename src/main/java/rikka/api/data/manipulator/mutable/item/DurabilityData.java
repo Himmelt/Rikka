@@ -24,13 +24,13 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.item.ImmutableDurabilityData;
-import org.soraworld.rikka.data.property.item.UseLimitProperty;
-import org.soraworld.rikka.item.inventory.ItemStack;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.item.ImmutableDurabilityData;
+import rikka.api.data.property.item.UseLimitProperty;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link DataManipulator} handling the "durability" of an {@link ItemStack}

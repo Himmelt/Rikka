@@ -25,11 +25,11 @@
 package rikka.api.data.manipulator.mutable.entity;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableVelocityData;
-import org.soraworld.rikka.entity.IEntity;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableVelocityData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.IEntity;
 
 /**
  * Represents the current velocity of an entity. Applicable to all

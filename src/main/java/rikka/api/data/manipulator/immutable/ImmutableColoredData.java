@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.immutable;
 
-import org.soraworld.rikka.block.BlockTypes;
-import org.soraworld.rikka.item.inventory.ItemStack;
-import org.soraworld.rikka.util.Color;
+import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.ColoredData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.item.inventory.ItemStack;
+import rikka.api.util.Color;
 
 /**
  * An {@link ImmutableDataManipulator} for handling the {@link Color} of

@@ -24,7 +24,7 @@
  */
 package rikka.api.service.permission;
 
-import org.soraworld.rikka.plugin.PluginContainer;
+import rikka.api.plugin.PluginContainer;
 import rikka.api.text.Text;
 
 import javax.annotation.Nullable;

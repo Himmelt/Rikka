@@ -24,12 +24,12 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableSleepingData;
-import org.soraworld.rikka.entity.living.Bat;
-import org.soraworld.rikka.entity.living.player.IPlayer;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableSleepingData;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.living.Bat;
+import rikka.api.entity.living.player.IPlayer;
 
 /**
  * An {@link DataManipulator} for the "sleeping" state of a

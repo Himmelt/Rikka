@@ -25,9 +25,9 @@
 package rikka.api.entity.ai.task;
 
 import com.google.common.base.Preconditions;
-import org.soraworld.rikka.GameRegistry;
-import org.soraworld.rikka.entity.living.Agent;
+import rikka.api.GameRegistry;
 import rikka.api.entity.ai.Goal;
+import rikka.api.entity.living.Agent;
 
 import java.util.Optional;
 

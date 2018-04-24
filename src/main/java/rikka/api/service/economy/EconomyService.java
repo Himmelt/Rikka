@@ -24,10 +24,10 @@
  */
 package rikka.api.service.economy;
 
-import org.soraworld.rikka.service.economy.account.UniqueAccount;
-import org.soraworld.rikka.service.economy.account.VirtualAccount;
 import rikka.api.service.context.ContextualService;
 import rikka.api.service.economy.account.Account;
+import rikka.api.service.economy.account.UniqueAccount;
+import rikka.api.service.economy.account.VirtualAccount;
 
 import java.util.Optional;
 import java.util.Set;

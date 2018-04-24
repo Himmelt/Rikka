@@ -1,8 +1,8 @@
 package rikka.api.entity.living.complex;
 
-import org.soraworld.rikka.entity.EnderCrystal;
-import org.soraworld.rikka.entity.living.monster.Boss;
+import rikka.api.entity.EnderCrystal;
 import rikka.api.entity.living.Aerial;
+import rikka.api.entity.living.monster.Boss;
 import rikka.api.entity.projectile.IProjectileLauncher;
 
 import java.util.Optional;

@@ -24,13 +24,13 @@
  */
 package rikka.api.scoreboard.objective;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.Sponge;
 import rikka.api.scoreboard.Score;
 import rikka.api.scoreboard.Scoreboard;
 import rikka.api.scoreboard.critieria.Criterion;
 import rikka.api.scoreboard.objective.displaymode.ObjectiveDisplayMode;
 import rikka.api.text.Text;
+import rikka.api.util.ResettableBuilder;
 
 import java.util.Map;
 import java.util.Optional;

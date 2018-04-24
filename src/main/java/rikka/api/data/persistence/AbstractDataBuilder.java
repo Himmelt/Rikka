@@ -24,11 +24,11 @@
  */
 package rikka.api.data.persistence;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.DataSerializable;
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.data.Queries;
-import org.soraworld.rikka.data.manipulator.DataManipulatorBuilder;
+import rikka.api.Sponge;
+import rikka.api.data.DataSerializable;
+import rikka.api.data.DataView;
+import rikka.api.data.Queries;
+import rikka.api.data.manipulator.DataManipulatorBuilder;
 
 import java.util.Optional;
 

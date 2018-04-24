@@ -26,17 +26,17 @@ package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
 import com.google.common.collect.ImmutableSet;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.DataTransactionResult;
-import org.soraworld.rikka.data.DataView;
-import org.soraworld.rikka.world.Location;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataHolder;
+import rikka.api.data.DataTransactionResult;
+import rikka.api.data.DataView;
 import rikka.api.data.key.Key;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.merge.MergeFunction;
 import rikka.api.data.persistence.InvalidDataException;
 import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.world.Location;
 
 import javax.annotation.Nullable;
 import java.util.Collection;

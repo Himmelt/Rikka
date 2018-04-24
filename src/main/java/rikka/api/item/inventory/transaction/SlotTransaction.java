@@ -24,7 +24,7 @@
  */
 package rikka.api.item.inventory.transaction;
 
-import org.soraworld.rikka.data.Transaction;
+import rikka.api.data.Transaction;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.item.inventory.Slot;

@@ -1,15 +1,15 @@
 package rikka.api.entity.living;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.entity.EntitySnapshot;
-import org.soraworld.rikka.entity.IEntity;
-import org.soraworld.rikka.entity.projectile.source.ProjectileSource;
-import org.soraworld.rikka.util.math.Vector3d;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.entity.DamageableData;
 import rikka.api.data.manipulator.mutable.entity.HealthData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.data.value.mutable.OptionalValue;
+import rikka.api.entity.EntitySnapshot;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.projectile.source.ProjectileSource;
 import rikka.api.scoreboard.TeamMember;
+import rikka.api.util.math.Vector3d;
 
 public interface ILiving extends IEntity, ProjectileSource, TeamMember {
 

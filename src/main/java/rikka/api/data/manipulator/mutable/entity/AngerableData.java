@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.mutable.entity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.entity.ImmutableAngerableData;
-import org.soraworld.rikka.entity.IEntity;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.entity.ImmutableAngerableData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
+import rikka.api.entity.IEntity;
 
 /**
  * An {@link DataManipulator} for representing the "anger" level. If an

@@ -24,9 +24,9 @@
  */
 package rikka.api.service.economy.account;
 
-import org.soraworld.rikka.entity.living.player.User;
-import org.soraworld.rikka.profile.GameProfile;
-import org.soraworld.rikka.util.Identifiable;
+import rikka.api.entity.living.player.User;
+import rikka.api.profile.GameProfile;
+import rikka.api.util.Identifiable;
 
 import java.util.UUID;
 

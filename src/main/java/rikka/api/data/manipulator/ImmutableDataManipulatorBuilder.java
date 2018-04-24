@@ -24,8 +24,8 @@
  */
 package rikka.api.data.manipulator;
 
-import org.soraworld.rikka.data.DataHolder;
-import org.soraworld.rikka.data.ImmutableDataHolder;
+import rikka.api.data.DataHolder;
+import rikka.api.data.ImmutableDataHolder;
 import rikka.api.data.persistence.DataBuilder;
 
 import java.util.Optional;

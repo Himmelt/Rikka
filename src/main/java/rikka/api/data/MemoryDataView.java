@@ -28,12 +28,12 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.*;
 import org.apache.commons.lang3.ArrayUtils;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.value.BaseValue;
-import org.soraworld.rikka.util.Coerce;
 import rikka.api.CatalogType;
+import rikka.api.Sponge;
 import rikka.api.data.key.Key;
 import rikka.api.data.persistence.DataTranslator;
+import rikka.api.data.value.BaseValue;
+import rikka.api.util.Coerce;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -42,7 +42,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.google.common.base.Preconditions.*;
-import static org.soraworld.rikka.data.DataQuery.of;
+import static rikka.api.data.DataQuery.of;
 
 /**
  * Default implementation of a {@link DataView} being used in memory.

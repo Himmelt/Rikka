@@ -24,14 +24,14 @@
  */
 package rikka.api.world.gen.populator;
 
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.entity.EntityArchetype;
-import org.soraworld.rikka.util.ResettableBuilder;
-import org.soraworld.rikka.util.weighted.LootTable;
-import org.soraworld.rikka.util.weighted.VariableAmount;
-import org.soraworld.rikka.util.weighted.WeightedTable;
+import rikka.api.Sponge;
 import rikka.api.data.manipulator.mutable.MobSpawnerData;
+import rikka.api.entity.EntityArchetype;
 import rikka.api.item.inventory.ItemStackSnapshot;
+import rikka.api.util.ResettableBuilder;
+import rikka.api.util.weighted.LootTable;
+import rikka.api.util.weighted.VariableAmount;
+import rikka.api.util.weighted.WeightedTable;
 import rikka.api.world.gen.Populator;
 
 import javax.annotation.Nullable;

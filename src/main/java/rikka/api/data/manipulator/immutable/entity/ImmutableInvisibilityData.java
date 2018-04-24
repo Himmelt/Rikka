@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.entity.IEntity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.InvisibilityData;
 import rikka.api.data.value.immutable.ImmutableValue;
 import rikka.api.data.value.mutable.Value;
+import rikka.api.entity.IEntity;
 
 /**
  * An {@link ImmutableDataManipulator} for the "vanish" state. If present,

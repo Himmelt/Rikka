@@ -24,7 +24,7 @@
  */
 package rikka.api.service;
 
-import org.soraworld.rikka.plugin.PluginContainer;
+import rikka.api.plugin.PluginContainer;
 
 /**
  * Represents the registration information for the provider of a service.

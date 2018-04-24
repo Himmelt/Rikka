@@ -26,11 +26,11 @@ package rikka.api.data.manipulator.mutable.common;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.data.key.Key;
-import org.soraworld.rikka.data.manipulator.immutable.ImmutableListData;
+import rikka.api.Sponge;
+import rikka.api.data.key.Key;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
+import rikka.api.data.manipulator.immutable.ImmutableListData;
 import rikka.api.data.manipulator.mutable.ListData;
 import rikka.api.data.value.BaseValue;
 import rikka.api.data.value.mutable.ListValue;

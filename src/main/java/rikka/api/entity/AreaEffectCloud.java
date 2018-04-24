@@ -1,13 +1,13 @@
 package rikka.api.entity;
 
-import org.soraworld.rikka.effect.potion.PotionEffect;
-import org.soraworld.rikka.util.Color;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.entity.AreaEffectCloudData;
 import rikka.api.data.value.mutable.ListValue;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.data.value.mutable.Value;
 import rikka.api.effect.particle.ParticleType;
+import rikka.api.effect.potion.PotionEffect;
+import rikka.api.util.Color;
 
 public interface AreaEffectCloud extends IEntity {
 

@@ -24,11 +24,11 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import org.soraworld.rikka.block.BlockState;
-import org.soraworld.rikka.entity.FallingBlock;
+import rikka.api.block.BlockState;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.FallingBlockData;
 import rikka.api.data.value.immutable.ImmutableValue;
+import rikka.api.entity.FallingBlock;
 
 /**
  * An {@link ImmutableDataManipulator} for a {@link FallingBlock} with all

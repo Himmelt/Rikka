@@ -24,10 +24,10 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.data.Property;
-import org.soraworld.rikka.item.ItemType;
+import rikka.api.data.Property;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.mutable.entity.DamageableData;
+import rikka.api.item.ItemType;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 import java.util.Comparator;

@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.mutable.tileentity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.tileentity.ImmutableBannerData;
 import rikka.api.block.tileentity.Banner;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.tileentity.ImmutableBannerData;
 import rikka.api.data.meta.PatternLayer;
 import rikka.api.data.type.DyeColor;
 import rikka.api.data.value.mutable.PatternListValue;

@@ -24,10 +24,10 @@
  */
 package rikka.api.data.manipulator.mutable.tileentity;
 
-import org.soraworld.rikka.data.key.Keys;
-import org.soraworld.rikka.data.manipulator.immutable.tileentity.ImmutableBrewingStandData;
 import rikka.api.block.tileentity.carrier.BrewingStand;
+import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
+import rikka.api.data.manipulator.immutable.tileentity.ImmutableBrewingStandData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 
 /**

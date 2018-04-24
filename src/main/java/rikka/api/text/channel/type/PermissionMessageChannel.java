@@ -25,8 +25,8 @@
 package rikka.api.text.channel.type;
 
 import com.google.common.collect.ImmutableSet;
-import org.soraworld.rikka.Sponge;
-import org.soraworld.rikka.service.permission.PermissionService;
+import rikka.api.Sponge;
+import rikka.api.service.permission.PermissionService;
 import rikka.api.text.channel.MessageChannel;
 import rikka.api.text.channel.MessageReceiver;
 

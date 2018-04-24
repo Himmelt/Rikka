@@ -24,10 +24,10 @@
  */
 package rikka.api.scoreboard.displayslot;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.util.ResettableBuilder;
+import rikka.api.CatalogType;
 import rikka.api.scoreboard.Team;
 import rikka.api.text.format.TextColor;
+import rikka.api.util.ResettableBuilder;
 import rikka.api.util.annotation.CatalogedBy;
 
 import java.util.Optional;

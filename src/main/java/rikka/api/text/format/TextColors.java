@@ -24,8 +24,8 @@
  */
 package rikka.api.text.format;
 
-import org.soraworld.rikka.util.Color;
 import rikka.api.text.Text;
+import rikka.api.util.Color;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 /**

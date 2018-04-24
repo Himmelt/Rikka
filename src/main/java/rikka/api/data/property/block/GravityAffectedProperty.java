@@ -24,8 +24,8 @@
  */
 package rikka.api.data.property.block;
 
-import org.soraworld.rikka.block.BlockType;
-import org.soraworld.rikka.data.Property;
+import rikka.api.block.BlockType;
+import rikka.api.data.Property;
 import rikka.api.data.property.BooleanProperty;
 
 /**
@@ -46,7 +46,7 @@ public class GravityAffectedProperty extends BooleanProperty {
 
     /**
      * Creates a new {@link GravityAffectedProperty} with the provided {@code value}
-     * and {@link org.soraworld.rikka.data.Property.Operator comparison operator}.
+     * and {@link rikka.api.data.Property.Operator comparison operator}.
      *
      * @param value    The value
      * @param operator The operator for comparisons

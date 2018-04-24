@@ -24,7 +24,7 @@
  */
 package rikka.api.data.property.item;
 
-import org.soraworld.rikka.data.Property;
+import rikka.api.data.Property;
 import rikka.api.data.property.AbstractProperty;
 import rikka.api.data.type.ArmorType;
 
@@ -45,7 +45,7 @@ public class ArmorTypeProperty extends AbstractProperty<String, ArmorType> {
     /**
      * Construct a new {@link ArmorTypeProperty} with the desired
      * {@link ArmorType} and
-     * {@link org.soraworld.rikka.data.Property.Operator}.
+     * {@link rikka.api.data.Property.Operator}.
      *
      * @param value The armor type to use
      * @param op    The operator to use for comparisons

@@ -24,9 +24,9 @@
  */
 package rikka.api.data.persistence;
 
-import org.soraworld.rikka.CatalogType;
-import org.soraworld.rikka.data.DataContainer;
-import org.soraworld.rikka.data.DataView;
+import rikka.api.CatalogType;
+import rikka.api.data.DataContainer;
+import rikka.api.data.DataView;
 import rikka.api.util.annotation.CatalogedBy;
 
 import java.io.IOException;

@@ -24,7 +24,7 @@
  */
 package rikka.api.item.inventory.slot;
 
-import org.soraworld.rikka.item.ItemType;
+import rikka.api.item.ItemType;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.Slot;
 

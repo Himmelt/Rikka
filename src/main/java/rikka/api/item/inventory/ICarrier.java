@@ -24,7 +24,7 @@
  */
 package rikka.api.item.inventory;
 
-import org.soraworld.rikka.item.inventory.type.CarriedInventory;
+import rikka.api.item.inventory.type.CarriedInventory;
 
 /**
  * A Carrier is simply something that carries an {@link Inventory}.
