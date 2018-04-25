@@ -1,4 +1,4 @@
 package rikka.api.entity.living;
 
-public interface Bat extends Ambient, IAerial {
+public interface Bat extends IAmbient, IAerial {
 }

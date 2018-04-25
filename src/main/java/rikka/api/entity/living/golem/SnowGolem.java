@@ -1,7 +1,7 @@
 package rikka.api.entity.living.golem;
 
-import rikka.api.entity.living.Ranger;
+import rikka.api.entity.living.IRanger;
 
-public interface SnowGolem extends Golem, Ranger {
+public interface SnowGolem extends Golem, IRanger {
 
 }

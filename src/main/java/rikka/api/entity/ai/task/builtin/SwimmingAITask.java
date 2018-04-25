@@ -27,9 +27,9 @@ package rikka.api.entity.ai.task.builtin;
 import rikka.api.Sponge;
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskBuilder;
-import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.IAgent;
 
-public interface SwimmingAITask extends AITask<Agent> {
+public interface SwimmingAITask extends AITask<IAgent> {
 
     /**
      * Creates a new {@link Builder} to build a new
@@ -42,7 +42,7 @@ public interface SwimmingAITask extends AITask<Agent> {
     }
 
     /**
-     * Gets the chance that the owning {@link Agent} will perform
+     * Gets the chance that the owning {@link IAgent} will perform
      * a "jump". The chance is limited between {@code 0} and {@code 1},
      * to where the higher the chance, the more likely the entity will
      * "jump" to appear "swimming".
@@ -52,7 +52,7 @@ public interface SwimmingAITask extends AITask<Agent> {
     float getSwimChance();
 
     /**
-     * Sets the chance that the owning {@link Agent} will perform
+     * Sets the chance that the owning {@link IAgent} will perform
      * a "jump". The chance is limited between {@code 0} and {@code 1},
      * to where the higher the chance, the more likely the entity will
      * "jump" to appear "swimming".
@@ -61,7 +61,7 @@ public interface SwimmingAITask extends AITask<Agent> {
      */
     void setSwimChance(float chance);
 
-    interface Builder extends AITaskBuilder<Agent, SwimmingAITask, Builder> {
+    interface Builder extends AITaskBuilder<IAgent, SwimmingAITask, Builder> {
 
         Builder swimChance(float chance);
 

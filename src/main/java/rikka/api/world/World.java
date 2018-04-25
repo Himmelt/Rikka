@@ -106,7 +106,7 @@ public interface World extends Extent, WeatherUniverse, Viewer, ContextSource, M
     Path getDirectory();
 
     @Override
-    default UUID getUniqueId() {
+    default UUID getUUID() {
         return getProperties().getUniqueId();
     }
 

@@ -1,6 +1,6 @@
 package rikka.api.entity.living.golem;
 
-import rikka.api.entity.living.Creature;
+import rikka.api.entity.living.ICreature;
 
-public interface Golem extends Creature {
+public interface Golem extends ICreature {
 }

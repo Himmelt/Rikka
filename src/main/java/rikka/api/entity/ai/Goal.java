@@ -26,13 +26,13 @@ package rikka.api.entity.ai;
 
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskType;
-import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.IAgent;
 import rikka.api.entity.living.monster.IMonster;
 
 import java.util.List;
 
 /**
- * Represents a set of tasks that will be updated together by an {@link Agent}.
+ * Represents a set of tasks that will be updated together by an {@link IAgent}.
  *
  * <p>In Minecraft, most agents have just one goal which is living or
  * simulating, or whichever term you want to call it. Other agents, such as
@@ -41,7 +41,7 @@ import java.util.List;
  *
  * @param <O> The type of agent
  */
-public interface Goal<O extends Agent> {
+public interface Goal<O extends IAgent> {
 
     /**
      * The type of this goal.
@@ -51,7 +51,7 @@ public interface Goal<O extends Agent> {
     GoalType getType();
 
     /**
-     * The {@link Agent} that owns this goal.
+     * The {@link IAgent} that owns this goal.
      *
      * @return The owner
      */

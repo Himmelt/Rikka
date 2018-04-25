@@ -24,7 +24,7 @@
  */
 package rikka.api.entity.ai.task;
 
-import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.IAgent;
 import rikka.api.util.ResettableBuilder;
 
 /**
@@ -34,7 +34,7 @@ import rikka.api.util.ResettableBuilder;
  * @param <A> The type of task
  * @param <B> The type of builder, self-referencing
  */
-public interface AITaskBuilder<O extends Agent, A extends AITask<O>, B extends AITaskBuilder<O, A, B>> extends ResettableBuilder<A, B> {
+public interface AITaskBuilder<O extends IAgent, A extends AITask<O>, B extends AITaskBuilder<O, A, B>> extends ResettableBuilder<A, B> {
 
     /**
      * Builds the {@link AITask}.

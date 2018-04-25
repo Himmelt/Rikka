@@ -28,9 +28,9 @@ import rikka.api.Sponge;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskBuilder;
-import rikka.api.entity.living.Creature;
+import rikka.api.entity.living.ICreature;
 
-public interface WanderAITask extends AITask<Creature> {
+public interface WanderAITask extends AITask<ICreature> {
 
     /**
      * Creates a new {@link Builder} to build a new
@@ -75,7 +75,7 @@ public interface WanderAITask extends AITask<Creature> {
      */
     WanderAITask setExecutionChance(int executionChance);
 
-    interface Builder extends AITaskBuilder<Creature, WanderAITask, Builder> {
+    interface Builder extends AITaskBuilder<ICreature, WanderAITask, Builder> {
 
         Builder speed(double speed);
 

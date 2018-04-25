@@ -5,7 +5,7 @@ import rikka.api.data.manipulator.mutable.entity.AgeableData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.data.value.mutable.Value;
 
-public interface Ageable extends Creature {
+public interface Ageable extends ICreature {
 
     void setScaleForAge();
 

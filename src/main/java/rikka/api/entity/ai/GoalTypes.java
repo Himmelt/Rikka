@@ -24,7 +24,7 @@
  */
 package rikka.api.entity.ai;
 
-import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.IAgent;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 public final class GoalTypes {
@@ -32,7 +32,7 @@ public final class GoalTypes {
     // SORTFIELDS:ON
 
     /**
-     * {@link Goal} that is the default set of tasks for most {@link Agent}s.
+     * {@link Goal} that is the default set of tasks for most {@link IAgent}s.
      */
     public static final GoalType NORMAL = DummyObjectProvider.createFor(GoalType.class, "NORMAL");
 
@@ -40,7 +40,7 @@ public final class GoalTypes {
      * {@link Goal} that is the "target" set of tasks.
      *
      * <p>In this goal, the objective is to formulate the target so that the
-     * {@link Agent} can act on it. The best example is how monsters like zombie
+     * {@link IAgent} can act on it. The best example is how monsters like zombie
      * and skeleton attack enemies: they seek out a target and if a task in
      * their normal goal sees that they have a target, they act accordingly.</p>
      */

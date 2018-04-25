@@ -324,13 +324,13 @@ public final class Location<E extends Extent> implements DataHolder {
         container.set(Queries.CONTENT_VERSION, getContentVersion());
         if (getExtent() instanceof World) {
             container.set(Queries.WORLD_NAME, ((World) getExtent()).getName());
-            container.set(Queries.WORLD_ID, getExtent().getUniqueId().toString());
+            container.set(Queries.WORLD_ID, getExtent().getUUID().toString());
         } else if (getExtent() instanceof Chunk) {
             container.set(Queries.CHUNK_X, ((Chunk) getExtent()).getPosition().getX())
                     .set(Queries.CHUNK_Y, ((Chunk) getExtent()).getPosition().getY())
                     .set(Queries.CHUNK_Z, ((Chunk) getExtent()).getPosition().getZ())
                     .set(Queries.WORLD_NAME, ((Chunk) getExtent()).getWorld().getName())
-                    .set(Queries.WORLD_ID, ((Chunk) getExtent()).getWorld().getUniqueId().toString());
+                    .set(Queries.WORLD_ID, ((Chunk) getExtent()).getWorld().getUUID().toString());
         }
         container.set(Queries.BLOCK_TYPE, this.getExtent().getBlockType(getBlockPosition()).getId())
                 .set(Queries.POSITION_X, this.getX())

@@ -1,6 +1,6 @@
 package rikka.api;
 
-import rikka.api.command.source.ConsoleSource;
+import rikka.api.command.source.IConsoleSender;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.scoreboard.Scoreboard;
 import rikka.api.text.Text;
@@ -55,7 +55,7 @@ public interface Server {
 
     void shutdown(Text kickMessage);
 
-    ConsoleSource getConsole();
+    IConsoleSender getConsole();
 
     double getTicksPerSecond();
 

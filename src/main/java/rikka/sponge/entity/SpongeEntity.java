@@ -1,14 +1,13 @@
 package rikka.sponge.entity;
 
-import org.soraworld.rikka.entity.IEntity;
 import org.spongepowered.api.entity.Entity;
+import rikka.api.entity.IEntity;
+import rikka.sponge.SpongeRikka;
 
-public class SpongeEntity<T extends Entity> implements IEntity {
-
-    protected final T source;
+public abstract class SpongeEntity<T extends Entity> extends SpongeRikka<T> implements IEntity {
 
     public SpongeEntity(T source) {
-        this.source = source;
+        super(source);
     }
 
 }

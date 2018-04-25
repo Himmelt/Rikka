@@ -69,17 +69,17 @@ public final class CatalogEntityData {
      */
     public static final Class<AgeableData> AGEABLE_DATA = AgeableData.class;
     /**
-     * The {@link AgentData} that signifies that an {@link Agent}'s AI is
+     * The {@link AgentData} that signifies that an {@link IAgent}'s AI is
      * enabled.
      */
     public static final Class<AgentData> AGENT_DATA = AgentData.class;
     /**
-     * The {@link AggressiveData} that signifies whether an {@link Agent} is
+     * The {@link AggressiveData} that signifies whether an {@link IAgent} is
      * considered aggressive, may attack other entities.
      */
     public static final Class<AggressiveData> AGGRESSIVE_DATA = AggressiveData.class;
     /**
-     * The {@link AngerableData} that signifies an {@link Agent} is angry but
+     * The {@link AngerableData} that signifies an {@link IAgent} is angry but
      * will calm down after a certain amount of time has passed.
      */
     public static final Class<AngerableData> ANGERABLE_DATA = AngerableData.class;

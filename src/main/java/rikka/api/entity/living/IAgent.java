@@ -10,7 +10,7 @@ import rikka.api.entity.ai.GoalType;
 import javax.annotation.Nullable;
 import java.util.Optional;
 
-public interface Agent extends ILiving {
+public interface IAgent extends ILiving {
 
     Optional<IEntity> getTarget();
 
@@ -24,5 +24,5 @@ public interface Agent extends ILiving {
         return getValue(Keys.AI_ENABLED).get();
     }
 
-    <T extends Agent> Optional<Goal<T>> getGoal(GoalType type);
+    <T extends IAgent> Optional<Goal<T>> getGoal(GoalType type);
 }

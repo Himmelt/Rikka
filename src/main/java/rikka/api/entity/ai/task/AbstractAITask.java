@@ -27,7 +27,7 @@ package rikka.api.entity.ai.task;
 import com.google.common.base.Preconditions;
 import rikka.api.GameRegistry;
 import rikka.api.entity.ai.Goal;
-import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.IAgent;
 
 import java.util.Optional;
 
@@ -60,7 +60,7 @@ import java.util.Optional;
  *
  * @param <O> The type of Agent
  */
-public abstract class AbstractAITask<O extends Agent> implements AITask<O> {
+public abstract class AbstractAITask<O extends IAgent> implements AITask<O> {
 
     private final AITaskType type;
 
@@ -106,7 +106,7 @@ public abstract class AbstractAITask<O extends Agent> implements AITask<O> {
 
     /**
      * Performs any customary logic for this "task" to modify the parent
-     * {@link Agent} in any way, including navigation, health, potion effects,
+     * {@link IAgent} in any way, including navigation, health, potion effects,
      * etc. Only called when {@link #shouldUpdate()} returns {@code true},
      * and after {@link #start()} has completed. Likewise, if
      * {@link #continueUpdating()}

@@ -25,9 +25,9 @@
 package rikka.api.entity.ai.task;
 
 import rikka.api.entity.IEntity;
-import rikka.api.entity.living.Agent;
-import rikka.api.entity.living.Creature;
 import rikka.api.entity.living.Humanoid;
+import rikka.api.entity.living.IAgent;
+import rikka.api.entity.living.ICreature;
 import rikka.api.entity.living.animal.IRideableHorse;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
@@ -38,7 +38,7 @@ public final class AITaskTypes {
     // SORTFIELDS:ON
 
     /**
-     * {@link AITask} where {@link Creature}s avoid other {@link Agent}s based on a {@link Predicate}.
+     * {@link AITask} where {@link ICreature}s avoid other {@link IAgent}s based on a {@link Predicate}.
      */
     public static final AITaskType AVOID_ENTITY = DummyObjectProvider.createFor(AITaskType.class, "AVOID_ENTITY");
 
@@ -48,17 +48,17 @@ public final class AITaskTypes {
     public static final AITaskType RUN_AROUND_LIKE_CRAZY = DummyObjectProvider.createFor(AITaskType.class, "RUN_AROUND_LIKE_CRAZY");
 
     /**
-     * {@link AITask} where {@link Agent}s swim in liquids.
+     * {@link AITask} where {@link IAgent}s swim in liquids.
      */
     public static final AITaskType SWIMMING = DummyObjectProvider.createFor(AITaskType.class, "SWIMMING");
 
     /**
-     * {@link AITask} where {@link Creature}s walk around.
+     * {@link AITask} where {@link ICreature}s walk around.
      */
     public static final AITaskType WANDER = DummyObjectProvider.createFor(AITaskType.class, "WANDER");
 
     /**
-     * {@link AITask} where {@link Agent}s will "watch" other {@link IEntity}s.
+     * {@link AITask} where {@link IAgent}s will "watch" other {@link IEntity}s.
      */
     public static final AITaskType WATCH_CLOSEST = DummyObjectProvider.createFor(AITaskType.class, "WATCH_CLOSEST");
 

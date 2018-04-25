@@ -28,13 +28,13 @@ import rikka.api.Sponge;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskBuilder;
-import rikka.api.entity.living.Ranger;
+import rikka.api.entity.living.IRanger;
 
 /**
  * An {@link AITask} which uses the ranging aspect of the Ranger to attack
  * the target.
  */
-public interface RangeAgentAITask extends AITask<Ranger> {
+public interface RangeAgentAITask extends AITask<IRanger> {
 
     /**
      * Creates a new {@link Builder} to build a new {@link RangeAgentAITask}.
@@ -71,7 +71,7 @@ public interface RangeAgentAITask extends AITask<Ranger> {
     int getDelayBetweenAttacks();
 
     /**
-     * The time, in ticks, this {@link Ranger} will wait before attacking
+     * The time, in ticks, this {@link IRanger} will wait before attacking
      * again.
      *
      * @param delay The delay, in ticks
@@ -80,7 +80,7 @@ public interface RangeAgentAITask extends AITask<Ranger> {
     RangeAgentAITask setDelayBetweenAttacks(int delay);
 
     /**
-     * Gets the radius of which the owning {@link Ranger} will attempt to
+     * Gets the radius of which the owning {@link IRanger} will attempt to
      * attack a targeted {@link IEntity}.
      *
      * @return The radius of which the owning entity will attempt to attack
@@ -88,7 +88,7 @@ public interface RangeAgentAITask extends AITask<Ranger> {
     float getAttackRadius();
 
     /**
-     * Sets the radius of which the owning {@link Ranger} will attempt to
+     * Sets the radius of which the owning {@link IRanger} will attempt to
      * attack a targeted {@link IEntity}.
      *
      * @param radius The radius of which the owning entity will attempt to
@@ -97,7 +97,7 @@ public interface RangeAgentAITask extends AITask<Ranger> {
      */
     RangeAgentAITask setAttackRadius(float radius);
 
-    interface Builder extends AITaskBuilder<Ranger, RangeAgentAITask, Builder> {
+    interface Builder extends AITaskBuilder<IRanger, RangeAgentAITask, Builder> {
 
         Builder moveSpeed(double speed);
 

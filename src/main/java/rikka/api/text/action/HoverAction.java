@@ -143,7 +143,7 @@ public abstract class HoverAction<R> extends TextAction<R> {
              * @param name   The name of the entity
              */
             public Ref(IEntity entity, String name) {
-                this(entity.getUniqueId(), name, entity.getType());
+                this(entity.getUUID(), name, entity.getType());
             }
 
             /**
@@ -165,7 +165,7 @@ public abstract class HoverAction<R> extends TextAction<R> {
              * @return The UUID
              */
             @Override
-            public UUID getUniqueId() {
+            public UUID getUUID() {
                 return this.uuid;
             }
 

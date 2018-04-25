@@ -47,7 +47,7 @@ public interface ImmutableRespawnLocation extends ImmutableMappedData<UUID, Resp
 
     /**
      * Gets the {@link ImmutableMapValue} for the "respawn" locations set for
-     * various {@link World#getUniqueId()} such that a {@link IPlayer} may not
+     * various {@link World#getUUID()} such that a {@link IPlayer} may not
      * have a respawn point for a particular {@link World}, but may have
      * multiple respawn points for other {@link World}s.
      *
@@ -66,7 +66,7 @@ public interface ImmutableRespawnLocation extends ImmutableMappedData<UUID, Resp
      * @return The {@link RespawnLocation}
      */
     default Optional<RespawnLocation> getForWorld(World world) {
-        return get(checkNotNull(world, "World cannot be null!").getUniqueId());
+        return get(checkNotNull(world, "World cannot be null!").getUUID());
     }
 
 }

@@ -28,15 +28,15 @@ import rikka.api.block.BlockType;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskBuilder;
-import rikka.api.entity.living.Agent;
-import rikka.api.entity.living.Creature;
+import rikka.api.entity.living.IAgent;
+import rikka.api.entity.living.ICreature;
 
-public interface TargetAITask<A extends TargetAITask<A>> extends AITask<Creature> {
+public interface TargetAITask<A extends TargetAITask<A>> extends AITask<ICreature> {
 
     /**
-     * Gets whether the owning {@link Agent} can visibly "see" the
+     * Gets whether the owning {@link IAgent} can visibly "see" the
      * {@link IEntity} being targeted such that any {@link BlockType}s that
-     * are visibly opaque will prevent the owning {@link Agent} from
+     * are visibly opaque will prevent the owning {@link IAgent} from
      * targeting that {@link IEntity}.
      *
      * @return Whether line of sight is required to target an entity
@@ -44,9 +44,9 @@ public interface TargetAITask<A extends TargetAITask<A>> extends AITask<Creature
     boolean shouldCheckSight();
 
     /**
-     * Sets whether the owning {@link Agent} can visibly "see" the
+     * Sets whether the owning {@link IAgent} can visibly "see" the
      * {@link IEntity} being targeted such that any {@link BlockType}s that
-     * are visibly opaque will prevent the owning {@link Agent} from
+     * are visibly opaque will prevent the owning {@link IAgent} from
      * targeting that {@link IEntity}.
      *
      * @param checkSight Whether line of sight is required to target
@@ -56,7 +56,7 @@ public interface TargetAITask<A extends TargetAITask<A>> extends AITask<Creature
 
     /**
      * Gets whether an {@link IEntity} can only be targeted within a "short"
-     * radius from the owning {@link Agent}.
+     * radius from the owning {@link IAgent}.
      *
      * @return Whether only nearby entities can be targeted
      */
@@ -64,14 +64,14 @@ public interface TargetAITask<A extends TargetAITask<A>> extends AITask<Creature
 
     /**
      * Sets whether an {@link IEntity} can only be targeted within a "short"
-     * radius from the owning {@link Agent}.
+     * radius from the owning {@link IAgent}.
      *
      * @param nearby Whether only nearby entities can be targeted
      * @return This task, for chaining
      */
     A setOnlyNearby(boolean nearby);
 
-    interface Builder<A extends TargetAITask<A>, B extends Builder<A, B>> extends AITaskBuilder<Creature, A, B> {
+    interface Builder<A extends TargetAITask<A>, B extends Builder<A, B>> extends AITaskBuilder<ICreature, A, B> {
 
         B checkSight();
 

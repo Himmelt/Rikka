@@ -28,10 +28,10 @@ import rikka.api.Sponge;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskBuilder;
-import rikka.api.entity.living.Agent;
-import rikka.api.entity.living.Creature;
+import rikka.api.entity.living.IAgent;
+import rikka.api.entity.living.ICreature;
 
-public interface AttackLivingAITask extends AITask<Creature> {
+public interface AttackLivingAITask extends AITask<ICreature> {
 
     /**
      * Creates a new {@link Builder} to build a new
@@ -52,7 +52,7 @@ public interface AttackLivingAITask extends AITask<Creature> {
     double getSpeed();
 
     /**
-     * Sets the movement speed modifier when the parent {@link Creature}
+     * Sets the movement speed modifier when the parent {@link ICreature}
      * is targeting an {@link IEntity}.
      *
      * @param speed The speed
@@ -75,7 +75,7 @@ public interface AttackLivingAITask extends AITask<Creature> {
 
     /**
      * Sets whether the task will continue to navigate the parent
-     * {@link Agent} to continue targeting an {@link IEntity} after the
+     * {@link IAgent} to continue targeting an {@link IEntity} after the
      * entity has moved to where a direct navigation path is no longer
      * available.
      *
@@ -84,10 +84,10 @@ public interface AttackLivingAITask extends AITask<Creature> {
      */
     AttackLivingAITask setLongMemory(boolean longMemory);
 
-    interface Builder extends AITaskBuilder<Creature, AttackLivingAITask, Builder> {
+    interface Builder extends AITaskBuilder<ICreature, AttackLivingAITask, Builder> {
 
         /**
-         * Sets the speed modifier at which the owning {@link Agent} will be
+         * Sets the speed modifier at which the owning {@link IAgent} will be
          * moving towards a targeted {@link IEntity}.
          *
          * @param speed The speed modifier
@@ -96,7 +96,7 @@ public interface AttackLivingAITask extends AITask<Creature> {
         Builder speed(double speed);
 
         /**
-         * Sets whether the task will force the owning {@link Agent} to
+         * Sets whether the task will force the owning {@link IAgent} to
          * persist targeting an {@link IEntity} after a direct path is
          * no longer available.
          *

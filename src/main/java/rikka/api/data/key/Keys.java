@@ -125,7 +125,7 @@ public final class Keys {
     public static final Key<MutableBoundedValue<Integer>> AGE = DummyObjectProvider.createExtendedFor(Key.class, "AGE");
 
     /**
-     * Represents the {@link Key} for whether an {@link Agent}s AI is enabled.
+     * Represents the {@link Key} for whether an {@link IAgent}s AI is enabled.
      *
      * @see AgentData#aiEnabled()
      */

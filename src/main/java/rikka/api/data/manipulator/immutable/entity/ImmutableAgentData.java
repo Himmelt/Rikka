@@ -27,10 +27,10 @@ package rikka.api.data.manipulator.immutable.entity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.AgentData;
 import rikka.api.data.value.immutable.ImmutableValue;
-import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.IAgent;
 
 /**
- * An {@link ImmutableDataManipulator} for toggling AI tasks on {@link Agent}s.
+ * An {@link ImmutableDataManipulator} for toggling AI tasks on {@link IAgent}s.
  */
 public interface ImmutableAgentData extends ImmutableDataManipulator<ImmutableAgentData, AgentData> {
 

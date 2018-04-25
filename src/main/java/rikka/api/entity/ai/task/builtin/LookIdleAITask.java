@@ -27,9 +27,9 @@ package rikka.api.entity.ai.task.builtin;
 import rikka.api.Sponge;
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskBuilder;
-import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.IAgent;
 
-public interface LookIdleAITask extends AITask<Agent> {
+public interface LookIdleAITask extends AITask<IAgent> {
 
     /**
      * Creates a new {@link Builder} to build a new {@link LookIdleAITask}.
@@ -40,7 +40,7 @@ public interface LookIdleAITask extends AITask<Agent> {
         return Sponge.getRegistry().createBuilder(Builder.class);
     }
 
-    interface Builder extends AITaskBuilder<Agent, LookIdleAITask, Builder> {
+    interface Builder extends AITaskBuilder<IAgent, LookIdleAITask, Builder> {
 
     }
 }

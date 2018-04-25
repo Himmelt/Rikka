@@ -1,7 +1,7 @@
 package rikka.api.block.tileentity;
 
-import rikka.api.command.source.CommandBlockSource;
+import rikka.api.command.source.IBlockSender;
 
-public interface CommandBlock extends TileEntity, CommandBlockSource {
+public interface CommandBlock extends TileEntity, IBlockSender {
     void execute();
 }

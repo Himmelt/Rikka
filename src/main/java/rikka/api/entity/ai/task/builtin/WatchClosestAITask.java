@@ -28,9 +28,9 @@ import rikka.api.Sponge;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskBuilder;
-import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.IAgent;
 
-public interface WatchClosestAITask extends AITask<Agent> {
+public interface WatchClosestAITask extends AITask<IAgent> {
 
     /**
      * Creates a new {@link Builder} to build a new
@@ -90,7 +90,7 @@ public interface WatchClosestAITask extends AITask<Agent> {
      */
     WatchClosestAITask setChance(float chance);
 
-    interface Builder extends AITaskBuilder<Agent, WatchClosestAITask, Builder> {
+    interface Builder extends AITaskBuilder<IAgent, WatchClosestAITask, Builder> {
 
         Builder watch(Class<? extends IEntity> watchClass);
 

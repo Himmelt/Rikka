@@ -1775,7 +1775,7 @@ public final class GenericArguments {
                 if (input instanceof IPlayer) {
                     return ((IPlayer) input).getName();
                 }
-                return input.getUniqueId().toString();
+                return input.getUUID().toString();
             }), Objects::nonNull);
         }
 

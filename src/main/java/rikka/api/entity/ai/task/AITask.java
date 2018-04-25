@@ -25,17 +25,17 @@
 package rikka.api.entity.ai.task;
 
 import rikka.api.entity.ai.Goal;
-import rikka.api.entity.living.Agent;
+import rikka.api.entity.living.IAgent;
 
 import java.util.Optional;
 
 /**
- * Represents a task performed by {@link Agent}s. If you desire to create your own, see
+ * Represents a task performed by {@link IAgent}s. If you desire to create your own, see
  * {@link AbstractAITask}.
  *
  * @param <O> The type of agent
  */
-public interface AITask<O extends Agent> {
+public interface AITask<O extends IAgent> {
 
     /**
      * Gets the {@link AITaskType} of this task.
@@ -52,7 +52,7 @@ public interface AITask<O extends Agent> {
     Optional<Goal<O>> getGoal();
 
     /**
-     * Gets the {@link Agent} that owns this task, if any.
+     * Gets the {@link IAgent} that owns this task, if any.
      *
      * @return The owner or {@link Optional#empty()} if not present
      */

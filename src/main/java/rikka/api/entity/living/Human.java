@@ -1,4 +1,4 @@
 package rikka.api.entity.living;
 
-public interface Human extends Creature, Humanoid {
+public interface Human extends ICreature, Humanoid {
 }

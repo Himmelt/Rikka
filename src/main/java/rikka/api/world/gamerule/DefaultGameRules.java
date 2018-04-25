@@ -26,8 +26,8 @@ package rikka.api.world.gamerule;
 
 import rikka.api.block.BlockTypes;
 import rikka.api.block.tileentity.CommandBlock;
-import rikka.api.entity.living.Agent;
 import rikka.api.entity.living.Bat;
+import rikka.api.entity.living.IAgent;
 import rikka.api.entity.living.Villager;
 import rikka.api.entity.living.animal.IRabbit;
 import rikka.api.entity.living.animal.ISheep;
@@ -101,14 +101,14 @@ public class DefaultGameRules {
     public static final String DO_LIMITED_CRAFTING = "doLimitedCrafting";
 
     /**
-     * Whether {@link Agent}s should drop items.
+     * Whether {@link IAgent}s should drop items.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
     public static final String DO_MOB_LOOT = "doMobLoot";
 
     /**
-     * Whether {@link Agent}s should naturally spawn.
+     * Whether {@link IAgent}s should naturally spawn.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
@@ -178,8 +178,8 @@ public class DefaultGameRules {
     public static final String MAX_ENTITY_CRAMMING = "maxEntityCramming";
 
     /**
-     * Whether {@link Agent}s should be able to change blocks, and whether
-     * {@link Agent}s can pick up items.
+     * Whether {@link IAgent}s should be able to change blocks, and whether
+     * {@link IAgent}s can pick up items.
      *
      * <p>In vanilla Minecraft, the following entities can change blocks when
      * this gamerule is {@code true}:

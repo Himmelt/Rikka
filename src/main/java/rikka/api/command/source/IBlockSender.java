@@ -9,7 +9,7 @@ import rikka.api.data.value.mutable.Value;
 import rikka.api.text.Text;
 import rikka.api.world.Locatable;
 
-public interface CommandBlockSource extends Locatable, ICommandSender, DataHolder {
+public interface IBlockSender extends Locatable, ICommandSender, DataHolder {
 
     default CommandData getCommandData() {
         return get(CommandData.class).get();

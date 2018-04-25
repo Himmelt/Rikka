@@ -28,12 +28,12 @@ import rikka.api.Sponge;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.ai.task.AITask;
 import rikka.api.entity.ai.task.AITaskBuilder;
-import rikka.api.entity.living.Agent;
-import rikka.api.entity.living.Creature;
+import rikka.api.entity.living.IAgent;
+import rikka.api.entity.living.ICreature;
 
 import java.util.function.Predicate;
 
-public interface AvoidEntityAITask extends AITask<Creature> {
+public interface AvoidEntityAITask extends AITask<ICreature> {
 
     /**
      * Creates a new {@link Builder} for creating a new {@link AvoidEntityAITask}.
@@ -46,7 +46,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
 
     /**
      * Gets the {@link Predicate} for filtering which {@link IEntity} instances
-     * are qualified to have the owning {@link Agent} move away from the
+     * are qualified to have the owning {@link IAgent} move away from the
      * {@link IEntity} of which the {@link Predicate#test(Object)} returns
      * {@code true}.
      *
@@ -56,7 +56,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
 
     /**
      * Sets the {@link Predicate} for filtering which {@link IEntity} instances
-     * are considered to be "avoided" by the owning {@link Agent}.
+     * are considered to be "avoided" by the owning {@link IAgent}.
      *
      * @param predicate The predicate
      * @return This task, for chaining
@@ -65,7 +65,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
 
     /**
      * Gets the search distance at which any {@link IEntity} instances in a
-     * radius of the parent {@link Agent} are considered for avoiding.
+     * radius of the parent {@link IAgent} are considered for avoiding.
      *
      * @return The search distance
      */
@@ -73,7 +73,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
 
     /**
      * Sets the search distance at which any {@link IEntity} instances in a
-     * radius of the parent {@link Agent} are considered for avoiding.
+     * radius of the parent {@link IAgent} are considered for avoiding.
      *
      * @param distance The search distance
      * @return This task, for chaining
@@ -81,7 +81,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
     AvoidEntityAITask setSearchDistance(float distance);
 
     /**
-     * Gets the speed "modifier" for which the parent {@link Agent} will
+     * Gets the speed "modifier" for which the parent {@link IAgent} will
      * move away from a found {@link IEntity} to "avoid" when in close
      * range. Close range is currently defined as {@code 7} blocks.
      *
@@ -90,7 +90,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
     double getCloseRangeSpeed();
 
     /**
-     * Sets the peed "modifier" for which the parent {@link Agent} will
+     * Sets the peed "modifier" for which the parent {@link IAgent} will
      * move away from a found {@link IEntity} to "avoid" when in close
      * range. Close range is currently defined as {@code 7} blocks.
      *
@@ -100,7 +100,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
     AvoidEntityAITask setCloseRangeSpeed(double speed);
 
     /**
-     * Gets the close range speed "modifier" for which the parent {@link Agent}
+     * Gets the close range speed "modifier" for which the parent {@link IAgent}
      * will move away from a found {@link IEntity} to "avoid" when in
      * a farther range than 7 blocks.
      *
@@ -109,7 +109,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
     double getFarRangeSpeed();
 
     /**
-     * Sets the close range speed "modifier" for which the parent {@link Agent}
+     * Sets the close range speed "modifier" for which the parent {@link IAgent}
      * will move away from a found {@link IEntity} to "avoid" when in
      * a farther range than 7 blocks.
      *
@@ -118,11 +118,11 @@ public interface AvoidEntityAITask extends AITask<Creature> {
      */
     AvoidEntityAITask setFarRangeSpeed(double speed);
 
-    interface Builder extends AITaskBuilder<Creature, AvoidEntityAITask, Builder> {
+    interface Builder extends AITaskBuilder<ICreature, AvoidEntityAITask, Builder> {
 
         /**
          * Sets the {@link Predicate} for filtering which {@link IEntity} instances
-         * are considered to be "avoided" by the owning {@link Agent}.
+         * are considered to be "avoided" by the owning {@link IAgent}.
          *
          * @param predicate The predicate
          * @return This builder, for chaining
@@ -131,7 +131,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
 
         /**
          * Sets the search distance at which any {@link IEntity} instances in a
-         * radius of the parent {@link Agent} are considered for avoiding.
+         * radius of the parent {@link IAgent} are considered for avoiding.
          *
          * @param distance The search distance
          * @return This builder, for chaining
@@ -139,7 +139,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
         Builder searchDistance(float distance);
 
         /**
-         * Sets the peed "modifier" for which the parent {@link Agent} will
+         * Sets the peed "modifier" for which the parent {@link IAgent} will
          * move away from a found {@link IEntity} to "avoid" when in close
          * range. Close range is currently defined as {@code 7} blocks.
          *
@@ -149,7 +149,7 @@ public interface AvoidEntityAITask extends AITask<Creature> {
         Builder closeRangeSpeed(double speed);
 
         /**
-         * Sets the close range speed "modifier" for which the parent {@link Agent}
+         * Sets the close range speed "modifier" for which the parent {@link IAgent}
          * will move away from a found {@link IEntity} to "avoid" when in
          * a farther range than 7 blocks.
          *
