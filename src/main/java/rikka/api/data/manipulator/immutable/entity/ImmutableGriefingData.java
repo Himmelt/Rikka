@@ -29,13 +29,13 @@ import rikka.api.data.manipulator.mutable.entity.GriefingData;
 import rikka.api.data.value.immutable.ImmutableValue;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.Humanoid;
-import rikka.api.entity.living.monster.Enderman;
+import rikka.api.entity.living.monster.IEnderman;
 
 /**
  * An {@link ImmutableDataManipulator} handling the "griefing" state of an
  * {@link IEntity}. Usually, when an entity can "grief", it can edit blocks
  * at will unabated by external forces. Usually applies to {@link Humanoid}s and
- * {@link Enderman}.
+ * {@link IEnderman}.
  */
 public interface ImmutableGriefingData extends ImmutableDataManipulator<ImmutableGriefingData, GriefingData> {
 

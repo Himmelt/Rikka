@@ -133,7 +133,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for how angry an {@link IEntity} is. This
-     * applies mostly to {@link ZombiePigman}.
+     * applies mostly to {@link IPigZombie}.
      *
      * <p>Unlike {@link #ANGRY}, the aggressiveness represented by this key may
      * fade over time and the entity will become peaceful again once its anger
@@ -424,8 +424,8 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for whether a {@link ILiving} entity may
-     * change blocks. This mostly applies to {@link Enderman} or
-     * {@link Creeper}s, but also to some projectiles like {@link Fireball}s.
+     * change blocks. This mostly applies to {@link IEnderman} or
+     * {@link ICreeper}s, but also to some projectiles like {@link Fireball}s.
      *
      * @see GriefingData#canGrief()
      */
@@ -552,7 +552,7 @@ public final class Keys {
     public static final Key<MutableBoundedValue<Integer>> COOLDOWN = DummyObjectProvider.createExtendedFor(Key.class, "COOLDOWN");
 
     /**
-     * Represents the {@link Key} for whether a {@link Creeper} is charged.
+     * Represents the {@link Key} for whether a {@link ICreeper} is charged.
      *
      * @see ChargedData#charged()
      */
@@ -749,7 +749,7 @@ public final class Keys {
      * Represents the {@link Key} for after how many ticks an entity or
      * {@link Weather} will last before expiring.
      *
-     * <p>Usually applies to {@link Endermite}s or {@link Item}s.</p>
+     * <p>Usually applies to {@link IEndermite}s or {@link Item}s.</p>
      *
      * @see ExpirableData#expireTicks()
      */
@@ -1142,7 +1142,7 @@ public final class Keys {
     public static final Key<Value<Boolean>> IS_ADULT = DummyObjectProvider.createExtendedFor(Key.class, "IS_ADULT");
 
     /**
-     * Represents the {@link Key} for whether a {@link Blaze} is currently
+     * Represents the {@link Key} for whether a {@link IBlaze} is currently
      * burning.
      *
      * <p>Unlike {@link #MAX_BURN_TIME}, the burning effect will not damage
@@ -1168,7 +1168,7 @@ public final class Keys {
      * Gets the {@link Value} for whether this mob is exhibiting
      * "johnny" behavior.
      *
-     * <p>In vanilla this currently only applies to {@link Vindicator}s.</p>
+     * <p>In vanilla this currently only applies to {@link IVindicator}s.</p>
      *
      * @see <a href="https://minecraft.gamepedia.com/Vindicator#Behavior">
      * The Minecraft Wiki for more information about "johnny" behavior</a>
@@ -1187,7 +1187,7 @@ public final class Keys {
     public static final Key<Value<Boolean>> IS_PLAYING = DummyObjectProvider.createExtendedFor(Key.class, "IS_PLAYING");
 
     /**
-     * Represents the {@link Key} for whether an {@link Enderman} is screaming.
+     * Represents the {@link Key} for whether an {@link IEnderman} is screaming.
      *
      * @see ScreamingData#screaming()
      */
@@ -1847,7 +1847,7 @@ public final class Keys {
     public static final Key<Value<SlabType>> SLAB_TYPE = DummyObjectProvider.createExtendedFor(Key.class, "SLAB_TYPE");
 
     /**
-     * Represents the {@link Key} for the size of a {@link Slime}.
+     * Represents the {@link Key} for the size of a {@link ISlime}.
      *
      * @see SlimeData#size()
      */

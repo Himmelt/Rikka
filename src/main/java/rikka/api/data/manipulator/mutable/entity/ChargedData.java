@@ -28,10 +28,10 @@ import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutableChargedData;
 import rikka.api.data.value.mutable.Value;
-import rikka.api.entity.living.monster.Creeper;
+import rikka.api.entity.living.monster.ICreeper;
 
 /**
- * A {@link DataManipulator} for the "charged" state of a {@link Creeper}.
+ * A {@link DataManipulator} for the "charged" state of a {@link ICreeper}.
  */
 public interface ChargedData extends DataManipulator<ChargedData, ImmutableChargedData> {
 

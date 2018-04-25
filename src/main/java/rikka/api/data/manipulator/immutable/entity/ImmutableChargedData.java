@@ -27,11 +27,11 @@ package rikka.api.data.manipulator.immutable.entity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.ChargedData;
 import rikka.api.data.value.immutable.ImmutableValue;
-import rikka.api.entity.living.monster.Creeper;
+import rikka.api.entity.living.monster.ICreeper;
 
 /**
  * A {@link ImmutableDataManipulator} for the "charged" state of a
- * {@link Creeper}.
+ * {@link ICreeper}.
  */
 public interface ImmutableChargedData extends ImmutableDataManipulator<ImmutableChargedData, ChargedData> {
 

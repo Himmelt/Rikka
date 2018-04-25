@@ -1,4 +1,4 @@
 package rikka.api.entity.living;
 
-public interface Squid extends Aquatic {
+public interface Squid extends IAquatic {
 }

@@ -27,11 +27,11 @@ package rikka.api.data.manipulator.immutable.entity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.SlimeData;
 import rikka.api.data.value.immutable.ImmutableValue;
-import rikka.api.entity.living.monster.Slime;
+import rikka.api.entity.living.monster.ISlime;
 
 /**
- * An {@link ImmutableDataManipulator} handling the "size" of a {@link Slime}.
- * Depending on the "size" of the {@link Slime}, it may have more health,
+ * An {@link ImmutableDataManipulator} handling the "size" of a {@link ISlime}.
+ * Depending on the "size" of the {@link ISlime}, it may have more health,
  * deal more damage, and appear larger in size.
  */
 public interface ImmutableSlimeData extends ImmutableDataManipulator<ImmutableSlimeData, SlimeData> {

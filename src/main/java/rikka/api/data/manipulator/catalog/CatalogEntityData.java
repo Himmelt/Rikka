@@ -96,12 +96,12 @@ public final class CatalogEntityData {
     public static final Class<BodyPartRotationalData> BODY_PART_ROTATIONAL_DATA = BodyPartRotationalData.class;
     /**
      * Entities that have {@link BreathingData} when under water. Usually
-     * applies to {@link ILiving} entities but not {@link Aquatic} entities.
+     * applies to {@link ILiving} entities but not {@link IAquatic} entities.
      */
     public static final Class<BreathingData> BREATHING_DATA = BreathingData.class;
     /**
      * Signifies an entity is ready to breed. Usually applies to
-     * {@link IAnimal}s, or sometimes for {@link Zombie}s to call
+     * {@link IAnimal}s, or sometimes for {@link IZombie}s to call
      * reinforcements.
      */
     public static final Class<BreedableData> BREEDABLE_DATA = BreedableData.class;
@@ -112,7 +112,7 @@ public final class CatalogEntityData {
     public static final Class<CareerData> CAREER_DATA = CareerData.class;
     /**
      * Represents whether an entity is considered "charged". Usually applies
-     * to {@link Creeper}s.
+     * to {@link ICreeper}s.
      */
     public static final Class<ChargedData> CHARGED_DATA = ChargedData.class;
     /**
@@ -154,7 +154,7 @@ public final class CatalogEntityData {
     public static final Class<ExperienceHolderData> EXPERIENCE_HOLDER_DATA = ExperienceHolderData.class;
     /**
      * Signifies that an entity can expire after a certain amount of time.
-     * Usually applies to {@link Weather}, {@link Endermite}s, and
+     * Usually applies to {@link Weather}, {@link IEndermite}s, and
      * {@link Item}s.
      */
     public static final Class<ExpirableData> EXPIRABLE_DATA_CLASS = ExpirableData.class;
@@ -210,7 +210,7 @@ public final class CatalogEntityData {
     public static final Class<GravityData> GRAVITY_DATA = GravityData.class;
     /**
      * Signifies that an entity can modify blocks in the world. Usually applies
-     * to {@link Enderman} and {@link Humanoid}s.
+     * to {@link IEnderman} and {@link Humanoid}s.
      */
     public static final Class<GriefingData> GRIEFING_DATA = GriefingData.class;
     /**
@@ -225,7 +225,7 @@ public final class CatalogEntityData {
     public static final Class<HorseData> HORSE_DATA = HorseData.class;
     /**
      * Represents that an entity is self igniting. Usually applies to
-     * {@link Blaze}.
+     * {@link IBlaze}.
      */
     public static final Class<IgniteableData> IGNITEABLE_DATA = IgniteableData.class;
     /**
@@ -235,7 +235,7 @@ public final class CatalogEntityData {
     public static final Class<InvisibilityData> INVISIBILITY_DATA = InvisibilityData.class;
     /**
      * Represents whether an entity is exhibiting "johnny" behavior. In vanilla
-     * this is only applicable to {@link Vindicator}s.
+     * this is only applicable to {@link IVindicator}s.
      */
     public static final Class<JohnnyData> JOHNNY_DATA = JohnnyData.class;
     /**
@@ -317,7 +317,7 @@ public final class CatalogEntityData {
     public static final Class<PigSaddleData> PIG_SADDLE_DATA = PigSaddleData.class;
     /**
      * Signifies that an entity is currently "screaming". Usually applicable
-     * to {@link Enderman}.
+     * to {@link IEnderman}.
      */
     public static final Class<ScreamingData> SCREAMING_DATA = ScreamingData.class;
     /**
@@ -351,8 +351,8 @@ public final class CatalogEntityData {
      */
     public static final Class<SleepingData> SLEEPING_DATA = SleepingData.class;
     /**
-     * Represents the size of a {@link Slime}. Usually applicable to all
-     * {@link Slime}s and {@link MagmaCube}s.
+     * Represents the size of a {@link ISlime}. Usually applicable to all
+     * {@link ISlime}s and {@link IMagmaCube}s.
      */
     public static final Class<SlimeData> SLIME_DATA = SlimeData.class;
     /**

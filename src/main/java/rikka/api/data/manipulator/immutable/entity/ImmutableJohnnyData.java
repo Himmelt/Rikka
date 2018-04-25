@@ -27,12 +27,12 @@ package rikka.api.data.manipulator.immutable.entity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.JohnnyData;
 import rikka.api.data.value.immutable.ImmutableValue;
-import rikka.api.entity.living.monster.Vindicator;
+import rikka.api.entity.living.monster.IVindicator;
 
 /**
  * Immutable data which represents if a mob is exhibiting "johnny" behavior.
  *
- * <p>In vanilla this currently only applies to {@link Vindicator}s.</p>
+ * <p>In vanilla this currently only applies to {@link IVindicator}s.</p>
  *
  * @see <a href="https://minecraft.gamepedia.com/Vindicator#Behavior">
  * The Minecraft Wiki for more information about "johnny" behavior</a>

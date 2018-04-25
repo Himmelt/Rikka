@@ -27,11 +27,11 @@ package rikka.api.data.manipulator.immutable.entity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.ScreamingData;
 import rikka.api.data.value.immutable.ImmutableValue;
-import rikka.api.entity.living.monster.Enderman;
+import rikka.api.entity.living.monster.IEnderman;
 
 /**
  * An {@link ImmutableDataManipulator} for the "screaming" state of an
- * {@link Enderman}. Usually, when an {@link Enderman} is "screaming", they
+ * {@link IEnderman}. Usually, when an {@link IEnderman} is "screaming", they
  * are standing still and "shaking".
  */
 public interface ImmutableScreamingData extends ImmutableDataManipulator<ImmutableScreamingData, ScreamingData> {

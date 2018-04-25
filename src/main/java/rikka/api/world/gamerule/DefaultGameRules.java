@@ -184,26 +184,26 @@ public class DefaultGameRules {
      * <p>In vanilla Minecraft, the following entities can change blocks when
      * this gamerule is {@code true}:
      * <ul>
-     * <li>{@link Creeper}</li>
-     * <li>{@link Zombie}</li>
-     * <li>{@link Enderman}</li>
-     * <li>{@link Ghast}</li>
-     * <li>{@link Wither}</li>
+     * <li>{@link ICreeper}</li>
+     * <li>{@link IZombie}</li>
+     * <li>{@link IEnderman}</li>
+     * <li>{@link IGhast}</li>
+     * <li>{@link IWither}</li>
      * <li>{@link EnderDragon}</li>
      * <li>{@link IRabbit}</li>
      * <li>{@link ISheep}</li>
      * <li>{@link Villager}</li>
      * <li>{@link SnowGolem}</li>
-     * <li>{@link Silverfish}</li>
+     * <li>{@link ISilverfish}</li>
      * </ul></p>
      *
      * <p>In vanilla Minecraft, the following entities can pick up items when
      * this gamerule is{@code true}:
      * <ul>
      * <li>{@link Villager}</li>
-     * <li>{@link Zombie}</li>
-     * <li>{@link Skeleton}</li>
-     * <li>{@link ZombiePigman}</li>
+     * <li>{@link IZombie}</li>
+     * <li>{@link ISkeleton}</li>
+     * <li>{@link IPigZombie}</li>
      * </ul></p>
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
