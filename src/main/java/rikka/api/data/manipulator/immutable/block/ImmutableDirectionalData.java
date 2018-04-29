@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.block.DirectionalData;
@@ -33,7 +33,7 @@ import rikka.api.util.Direction;
 
 /**
  * An {@link ImmutableDataManipulator} for the {@link Direction} state of a
- * {@link BlockState}. Usually applicable for {@link BlockTypes#STANDING_SIGN},
+ * {@link IBlockState}. Usually applicable for {@link BlockTypes#STANDING_SIGN},
  * {@link BlockTypes#WALL_SIGN}, {@link BlockTypes#WOODEN_DOOR}, etc.
  */
 public interface ImmutableDirectionalData extends ImmutableDataManipulator<ImmutableDirectionalData, DirectionalData> {

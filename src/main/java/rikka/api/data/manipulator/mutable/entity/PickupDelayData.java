@@ -29,11 +29,11 @@ import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutablePickupDelayData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.data.value.mutable.Value;
-import rikka.api.entity.Item;
+import rikka.api.entity.IEntityItem;
 
 /**
  * A {@link DataManipulator} for handling the "pickup delay" of an
- * {@link Item}.
+ * {@link IEntityItem}.
  */
 public interface PickupDelayData extends DataManipulator<PickupDelayData, ImmutablePickupDelayData> {
 

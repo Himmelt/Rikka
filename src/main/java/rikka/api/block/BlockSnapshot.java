@@ -23,11 +23,11 @@ public interface BlockSnapshot extends LocatableSnapshot<BlockSnapshot> {
         //Sponge.getRegistry().createBuilder(Builder.class);
     }
 
-    BlockState getState();
+    IBlockState getState();
 
-    BlockState getExtendedState();
+    IBlockState getExtendedState();
 
-    BlockSnapshot withState(BlockState blockState);
+    BlockSnapshot withState(IBlockState blockState);
 
     BlockSnapshot withContainer(DataContainer container);
 
@@ -54,12 +54,12 @@ public interface BlockSnapshot extends LocatableSnapshot<BlockSnapshot> {
         Builder world(WorldProperties worldProperties);
 
         /**
-         * Sets the {@link BlockState} for this {@link BlockSnapshot}.
+         * Sets the {@link IBlockState} for this {@link BlockSnapshot}.
          *
          * @param blockState The BlockState
          * @return This builder, for chaining
          */
-        Builder blockState(BlockState blockState);
+        Builder blockState(IBlockState blockState);
 
         /**
          * Sets the coordinates of this {@link BlockSnapshot} from a {@link Vector3i}.

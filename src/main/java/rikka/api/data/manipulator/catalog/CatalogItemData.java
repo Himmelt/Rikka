@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.catalog;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.tileentity.EnchantmentTable;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.mutable.*;
@@ -47,7 +47,7 @@ import rikka.api.util.Color;
 public final class CatalogItemData {
 
     /**
-     * Represents the {@link BlockState} that the item is representing.
+     * Represents the {@link IBlockState} that the item is representing.
      */
     public static final Class<BlockItemData> BLOCK_ITEM_DATA = BlockItemData.class;
     /**

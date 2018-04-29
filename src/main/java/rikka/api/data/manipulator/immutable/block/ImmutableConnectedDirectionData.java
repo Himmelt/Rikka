@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.block.ConnectedDirectionData;
 import rikka.api.data.value.immutable.ImmutableSetValue;
@@ -33,7 +33,7 @@ import rikka.api.util.Direction;
 
 /**
  * An {@link ImmutableDataManipulator} handling the values of the connected
- * {@link Direction}s a {@link BlockState} may have. Usually the connected
+ * {@link Direction}s a {@link IBlockState} may have. Usually the connected
  * directions are all cartesian directions (north, east, south, west).
  */
 public interface ImmutableConnectedDirectionData extends ImmutableDataManipulator<ImmutableConnectedDirectionData, ConnectedDirectionData> {

@@ -25,7 +25,7 @@
 package rikka.api.world.gen.populator;
 
 import rikka.api.Sponge;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.util.weighted.VariableAmount;
 import rikka.api.world.gen.Populator;
@@ -52,14 +52,14 @@ public interface Ore extends Populator {
      *
      * @return The ore block
      */
-    BlockState getOreBlock();
+    IBlockState getOreBlock();
 
     /**
      * Sets the block to place as ore.
      *
      * @param block The new ore block
      */
-    void setOreBlock(BlockState block);
+    void setOreBlock(IBlockState block);
 
     /**
      * Gets the size of deposit of ore. This is the number of blocks per clump
@@ -132,14 +132,14 @@ public interface Ore extends Populator {
      *
      * @return The placement conditions check
      */
-    Predicate<BlockState> getPlacementCondition();
+    Predicate<IBlockState> getPlacementCondition();
 
     /**
      * Sets a predicate which checks for the placement conditions for this ore.
      *
      * @param condition The new placement conditions check
      */
-    void setPlacementCondition(Predicate<BlockState> condition);
+    void setPlacementCondition(Predicate<IBlockState> condition);
 
     /**
      * A builder for constructing {@link Ore} populators.
@@ -152,7 +152,7 @@ public interface Ore extends Populator {
          * @param block The new ore block
          * @return This builder, for chaining
          */
-        Builder ore(BlockState block);
+        Builder ore(IBlockState block);
 
         /**
          * Sets the size of deposit of ore. This is the number of blocks per
@@ -209,7 +209,7 @@ public interface Ore extends Populator {
          * @param condition The new placement conditions check
          * @return This builder, for chaining
          */
-        Builder placementCondition(Predicate<BlockState> condition);
+        Builder placementCondition(Predicate<IBlockState> condition);
 
         /**
          * Builds a new instance of a {@link Ore} populator with the settings

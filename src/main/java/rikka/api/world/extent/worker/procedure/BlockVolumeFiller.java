@@ -24,7 +24,7 @@
  */
 package rikka.api.world.extent.worker.procedure;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 
 /**
  * Produces a block for a coordinate triplet.
@@ -40,6 +40,6 @@ public interface BlockVolumeFiller {
      * @param z The z coordinate
      * @return The produced block
      */
-    BlockState produce(int x, int y, int z);
+    IBlockState produce(int x, int y, int z);
 
 }

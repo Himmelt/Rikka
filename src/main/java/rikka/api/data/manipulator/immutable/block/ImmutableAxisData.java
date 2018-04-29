@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
@@ -36,7 +36,7 @@ import rikka.api.util.Axis;
 
 /**
  * An {@link ImmutableDataManipulator} containing the {@link ImmutableValue}
- * for the {@link Axis} a {@link BlockState} may have.
+ * for the {@link Axis} a {@link IBlockState} may have.
  *
  * <p>Note that {@link BlockTypes#LOG} and {@link BlockTypes#LOG2} do NOT
  * utilize {@link Axis} but instead use {@link LogAxis} due to their nature

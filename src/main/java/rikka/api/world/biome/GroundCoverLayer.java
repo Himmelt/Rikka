@@ -25,7 +25,7 @@
 package rikka.api.world.biome;
 
 import com.google.common.base.MoreObjects;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.util.weighted.SeededVariableAmount;
 import rikka.api.util.weighted.VariableAmount;
 
@@ -39,7 +39,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class GroundCoverLayer {
 
-    private Function<Double, BlockState> block;
+    private Function<Double, IBlockState> block;
     private SeededVariableAmount<Double> depth;
 
     /**
@@ -48,7 +48,7 @@ public class GroundCoverLayer {
      * @param block The block state to place down for the layer
      * @param depth The depth of the layer
      */
-    public GroundCoverLayer(BlockState block, SeededVariableAmount<Double> depth) {
+    public GroundCoverLayer(IBlockState block, SeededVariableAmount<Double> depth) {
         this((s) -> block, depth);
     }
 
@@ -59,17 +59,17 @@ public class GroundCoverLayer {
      *              place at this layer
      * @param depth The depth of the layer
      */
-    public GroundCoverLayer(Function<Double, BlockState> block, SeededVariableAmount<Double> depth) {
+    public GroundCoverLayer(Function<Double, IBlockState> block, SeededVariableAmount<Double> depth) {
         this.block = checkNotNull(block, "block");
         this.depth = checkNotNull(depth, "depth");
     }
 
     /**
-     * Gets the {@link BlockState} for this layer.
+     * Gets the {@link IBlockState} for this layer.
      *
      * @return The block state
      */
-    public Function<Double, BlockState> getBlockState() {
+    public Function<Double, IBlockState> getBlockState() {
         return this.block;
     }
 
@@ -79,16 +79,16 @@ public class GroundCoverLayer {
      *
      * @param block The block state function
      */
-    public void setBlockState(Function<Double, BlockState> block) {
+    public void setBlockState(Function<Double, IBlockState> block) {
         this.block = checkNotNull(block, "block");
     }
 
     /**
-     * Sets the {@link BlockState} for this layer.
+     * Sets the {@link IBlockState} for this layer.
      *
      * @param block The block state
      */
-    public void setBlockState(BlockState block) {
+    public void setBlockState(IBlockState block) {
         checkNotNull(block);
         this.block = (s) -> block;
     }

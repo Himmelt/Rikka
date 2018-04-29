@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.mutable.item;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
@@ -33,15 +33,15 @@ import rikka.api.data.value.mutable.Value;
 import rikka.api.item.inventory.ItemStack;
 
 /**
- * An {@link DataManipulator} handling the {@link BlockState}
+ * An {@link DataManipulator} handling the {@link IBlockState}
  * information for an {@link ItemStack} that is representing a
- * {@link BlockType}. Since the {@link BlockState} itself stores information
+ * {@link BlockType}. Since the {@link IBlockState} itself stores information
  * related to the actual block information, not all information can be
  * retrieved through the {@link ItemStack} itself.
  *
  * <p>Note that some block states have properties that are only defined by the
  * position the item block is placed. Some blocks may read some properties, and
- * others may not read all properties. {@link BlockState}s are not representing
+ * others may not read all properties. {@link IBlockState}s are not representing
  * complex data like inventories, if complex information is required, use a
  * different {@link DataManipulator} type.</p>
  */
@@ -49,11 +49,11 @@ public interface BlockItemData extends DataManipulator<BlockItemData, ImmutableB
 
     /**
      * Gets the {@link Value} for the currently represented
-     * {@link BlockState}.
+     * {@link IBlockState}.
      *
      * @return The value for the currently represented block state
      * @see Keys#ITEM_BLOCKSTATE
      */
-    Value<BlockState> state();
+    Value<IBlockState> state();
 
 }

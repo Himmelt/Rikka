@@ -25,7 +25,7 @@
 package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.util.DiscreteTransform3;
 import rikka.api.util.PositionOutOfBoundsException;
@@ -47,7 +47,7 @@ public interface MutableBlockVolume extends BlockVolume {
      * @throws PositionOutOfBoundsException If the position is outside of the
      *                                      bounds of the volume
      */
-    default boolean setBlock(Vector3i position, BlockState block) {
+    default boolean setBlock(Vector3i position, IBlockState block) {
         return setBlock(position.getX(), position.getY(), position.getZ(), block);
     }
 
@@ -62,7 +62,7 @@ public interface MutableBlockVolume extends BlockVolume {
      * @throws PositionOutOfBoundsException If the position is outside of the
      *                                      bounds of the volume
      */
-    boolean setBlock(int x, int y, int z, BlockState block);
+    boolean setBlock(int x, int y, int z, IBlockState block);
 
     /**
      * Replace the block at this position by a new type.

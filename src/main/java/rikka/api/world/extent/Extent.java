@@ -28,7 +28,7 @@ import com.flowpowered.math.vector.Vector2i;
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
 import rikka.api.block.BlockSnapshot;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.block.ScheduledBlockUpdate;
 import rikka.api.data.property.LocationBasePropertyHolder;
@@ -189,7 +189,7 @@ public interface Extent extends EntityUniverse, TileEntityVolume, InteractableVo
      * @throws PositionOutOfBoundsException If the position is outside of the
      *                                      bounds of the volume
      */
-    default boolean setBlock(Vector3i position, BlockState blockState, BlockChangeFlag flag) {
+    default boolean setBlock(Vector3i position, IBlockState blockState, BlockChangeFlag flag) {
         return setBlock(position.getX(), position.getY(), position.getZ(), blockState, flag);
     }
 
@@ -205,7 +205,7 @@ public interface Extent extends EntityUniverse, TileEntityVolume, InteractableVo
      * @throws PositionOutOfBoundsException If the position is outside of the
      *                                      bounds of the volume
      */
-    boolean setBlock(int x, int y, int z, BlockState blockState, BlockChangeFlag flag);
+    boolean setBlock(int x, int y, int z, IBlockState blockState, BlockChangeFlag flag);
 
     /**
      * Sets the block at the given position in the world.

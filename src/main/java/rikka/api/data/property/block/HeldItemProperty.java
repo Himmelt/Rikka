@@ -24,7 +24,7 @@
  */
 package rikka.api.data.property.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.data.Property;
 import rikka.api.data.property.AbstractProperty;
@@ -34,7 +34,7 @@ import rikka.api.util.Coerce;
 
 /**
  * A property that provides the {@link ItemType} representation of what a
- * {@link BlockState} or {@link BlockType} may present itself if it was
+ * {@link IBlockState} or {@link BlockType} may present itself if it was
  * represented as an {@link ItemStack}.
  */
 public class HeldItemProperty extends AbstractProperty<String, ItemType> {

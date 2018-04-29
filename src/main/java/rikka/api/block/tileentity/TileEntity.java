@@ -1,6 +1,6 @@
 package rikka.api.block.tileentity;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.DataHolder;
 import rikka.api.world.Locatable;
 import rikka.api.world.LocatableBlock;
@@ -12,7 +12,7 @@ public interface TileEntity extends DataHolder, Locatable {
 
     TileEntityType getType();
 
-    BlockState getBlock();
+    IBlockState getBlock();
 
     TileEntityArchetype createArchetype();
 

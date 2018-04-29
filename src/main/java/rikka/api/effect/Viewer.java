@@ -1,6 +1,6 @@
 package rikka.api.effect;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.effect.particle.ParticleEffect;
 import rikka.api.effect.sound.SoundCategory;
 import rikka.api.effect.sound.SoundType;
@@ -58,11 +58,11 @@ public interface Viewer {
 
     void sendBookView(BookView bookView);
 
-    default void sendBlockChange(Vector3i vec, BlockState state) {
+    default void sendBlockChange(Vector3i vec, IBlockState state) {
         this.sendBlockChange(vec.x, vec.y, vec.z, state);
     }
 
-    void sendBlockChange(int x, int y, int z, BlockState state);
+    void sendBlockChange(int x, int y, int z, IBlockState state);
 
     default void resetBlockChange(Vector3i vec) {
         this.resetBlockChange(vec.x, vec.y, vec.z);

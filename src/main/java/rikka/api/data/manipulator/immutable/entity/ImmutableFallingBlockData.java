@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.FallingBlockData;
 import rikka.api.data.value.immutable.ImmutableValue;
@@ -32,7 +32,7 @@ import rikka.api.entity.FallingBlock;
 
 /**
  * An {@link ImmutableDataManipulator} for a {@link FallingBlock} with all
- * relative information associated, such as the {@link BlockState}, the
+ * relative information associated, such as the {@link IBlockState}, the
  * {@link #fallDamagePerBlock()}, etc.
  */
 public interface ImmutableFallingBlockData extends ImmutableDataManipulator<ImmutableFallingBlockData, FallingBlockData> {
@@ -54,11 +54,11 @@ public interface ImmutableFallingBlockData extends ImmutableDataManipulator<Immu
     ImmutableValue<Double> maxFallDamage();
 
     /**
-     * Gets the {@link BlockState} the falling block is representing.
+     * Gets the {@link IBlockState} the falling block is representing.
      *
      * @return The falling block's block state
      */
-    ImmutableValue<BlockState> blockState();
+    ImmutableValue<IBlockState> blockState();
 
     /**
      * Gets whether this falling block will try to place itself where

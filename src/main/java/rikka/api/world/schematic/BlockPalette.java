@@ -24,7 +24,7 @@
  */
 package rikka.api.world.schematic;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -54,7 +54,7 @@ public interface BlockPalette {
      * @param id The identifier
      * @return The blockstate, if found
      */
-    Optional<BlockState> get(int id);
+    Optional<IBlockState> get(int id);
 
     /**
      * Gets the identifier for the given blockstate if it exists within the
@@ -63,7 +63,7 @@ public interface BlockPalette {
      * @param state The block state
      * @return The identifier, if found
      */
-    Optional<Integer> get(BlockState state);
+    Optional<Integer> get(IBlockState state);
 
     /**
      * Gets the identifier for the given blockstate from the mapping. If the
@@ -73,7 +73,7 @@ public interface BlockPalette {
      * @param state The blockstate
      * @return The identifier
      */
-    int getOrAssign(BlockState state);
+    int getOrAssign(IBlockState state);
 
     /**
      * Removes the given blockstate from the mapping.
@@ -84,13 +84,13 @@ public interface BlockPalette {
      * @param state The blockstate to remove
      * @return If the blockstate existed in the mapping
      */
-    boolean remove(BlockState state);
+    boolean remove(IBlockState state);
 
     /**
-     * Gets all {@link BlockState}s contained in this palette.
+     * Gets all {@link IBlockState}s contained in this palette.
      *
      * @return All contained block states
      */
-    Collection<BlockState> getEntries();
+    Collection<IBlockState> getEntries();
 
 }

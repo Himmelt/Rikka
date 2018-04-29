@@ -25,7 +25,7 @@
 package rikka.api.world.gen.populator;
 
 import rikka.api.Sponge;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.util.weighted.VariableAmount;
 import rikka.api.world.gen.Populator;
@@ -99,14 +99,14 @@ public interface EndIsland extends Populator {
      *
      * @return The island block state
      */
-    BlockState getIslandBlock();
+    IBlockState getIslandBlock();
 
     /**
      * Sets the block state that the island will be formed from.
      *
      * @param state The new island block state
      */
-    void setIslandBlock(BlockState state);
+    void setIslandBlock(IBlockState state);
 
     /**
      * Gets the radius around the center (0, 0) of the world that this populator
@@ -178,7 +178,7 @@ public interface EndIsland extends Populator {
          * @param state The new island block state
          * @return This builder, for chaining
          */
-        Builder islandBlock(BlockState state);
+        Builder islandBlock(IBlockState state);
 
         /**
          * Sets the radius around the center (0, 0) of the world that this

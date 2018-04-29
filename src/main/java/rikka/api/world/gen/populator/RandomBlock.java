@@ -25,7 +25,7 @@
 package rikka.api.world.gen.populator;
 
 import rikka.api.Sponge;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.util.weighted.VariableAmount;
@@ -51,18 +51,18 @@ public interface RandomBlock extends Populator {
     }
 
     /**
-     * Gets the {@link BlockState} that this populator will randomly distribute.
+     * Gets the {@link IBlockState} that this populator will randomly distribute.
      *
      * @return The block state
      */
-    BlockState getBlock();
+    IBlockState getBlock();
 
     /**
-     * Sets the {@link BlockState} that this populator will randomly distribute.
+     * Sets the {@link IBlockState} that this populator will randomly distribute.
      *
      * @param block The new block state
      */
-    void setBlock(BlockState block);
+    void setBlock(IBlockState block);
 
     /**
      * Gets the number of blocks to attempt to spawn per chunk, must be greater
@@ -126,13 +126,13 @@ public interface RandomBlock extends Populator {
     interface Builder extends ResettableBuilder<RandomBlock, Builder> {
 
         /**
-         * Sets the {@link BlockState} that this populator will randomly
+         * Sets the {@link IBlockState} that this populator will randomly
          * distribute.
          *
          * @param block The new block state
          * @return This builder, for chaining
          */
-        Builder block(BlockState block);
+        Builder block(IBlockState block);
 
         /**
          * Sets the number of blocks to attempt to spawn per chunk, must be

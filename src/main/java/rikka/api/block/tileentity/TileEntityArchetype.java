@@ -1,7 +1,7 @@
 package rikka.api.block.tileentity;
 
 import rikka.api.block.BlockSnapshot;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.Archetype;
 import rikka.api.data.DataContainer;
 import rikka.api.data.DataView;
@@ -20,7 +20,7 @@ public interface TileEntityArchetype extends Archetype<BlockSnapshot, TileEntity
         //Sponge.getRegistry().createBuilder(Builder.class);
     }
 
-    BlockState getState();
+    IBlockState getState();
 
     TileEntityType getTileEntityType();
 
@@ -43,12 +43,12 @@ public interface TileEntityArchetype extends Archetype<BlockSnapshot, TileEntity
         Builder from(Location<World> location);
 
         /**
-         * Sets the {@link BlockState} of the archetype.
+         * Sets the {@link IBlockState} of the archetype.
          *
          * @param state The new block state
          * @return This builder, for chaining
          */
-        Builder state(BlockState state);
+        Builder state(IBlockState state);
 
         Builder tile(TileEntityType tileEntityType);
 

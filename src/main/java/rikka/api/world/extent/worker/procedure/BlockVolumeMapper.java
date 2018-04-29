@@ -24,7 +24,7 @@
  */
 package rikka.api.world.extent.worker.procedure;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.world.extent.UnmodifiableBlockVolume;
 
 /**
@@ -44,6 +44,6 @@ public interface BlockVolumeMapper {
      * @param z      The z coordinate of the original block
      * @return The produced block
      */
-    BlockState map(UnmodifiableBlockVolume volume, int x, int y, int z);
+    IBlockState map(UnmodifiableBlockVolume volume, int x, int y, int z);
 
 }

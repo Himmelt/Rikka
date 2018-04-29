@@ -219,7 +219,7 @@ public final class Location<E extends Extent> implements DataHolder {
         return getExtent().getBlockType(getBlockPosition());
     }
 
-    public BlockState getBlock() {
+    public IBlockState getBlock() {
         return getExtent().getBlock(getBlockPosition());
     }
 
@@ -231,11 +231,11 @@ public final class Location<E extends Extent> implements DataHolder {
         return getExtent().getTileEntity(getBlockPosition());
     }
 
-    public boolean setBlock(BlockState state) {
+    public boolean setBlock(IBlockState state) {
         return getExtent().setBlock(getBlockPosition(), state);
     }
 
-    public boolean setBlock(BlockState state, BlockChangeFlag flag) {
+    public boolean setBlock(IBlockState state, BlockChangeFlag flag) {
         return getExtent().setBlock(getBlockPosition(), state, flag);
     }
 

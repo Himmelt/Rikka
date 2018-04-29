@@ -25,7 +25,7 @@
 package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.profile.GameProfile;
 import rikka.api.util.Direction;
@@ -129,7 +129,7 @@ public interface InteractableVolume extends MutableBlockVolume {
      * @param profile  The game profile of the player this is imitating
      * @return Whether the block was successfully set
      */
-    default boolean placeBlock(Vector3i position, BlockState block, Direction side, GameProfile profile) {
+    default boolean placeBlock(Vector3i position, IBlockState block, Direction side, GameProfile profile) {
         return placeBlock(checkNotNull(position, "position").getX(), position.getY(), position.getZ(), block, side, profile);
     }
 
@@ -145,7 +145,7 @@ public interface InteractableVolume extends MutableBlockVolume {
      * @param profile The game profile of the player this is imitating
      * @return Whether the block was successfully set
      */
-    boolean placeBlock(int x, int y, int z, BlockState block, Direction side, GameProfile profile);
+    boolean placeBlock(int x, int y, int z, IBlockState block, Direction side, GameProfile profile);
 
     /**
      * Simulate the digging of the block as if a player had done so.

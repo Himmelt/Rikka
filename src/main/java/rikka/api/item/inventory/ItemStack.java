@@ -26,7 +26,7 @@ package rikka.api.item.inventory;
 
 import rikka.api.Sponge;
 import rikka.api.block.BlockSnapshot;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.block.tileentity.TileEntity;
 import rikka.api.data.DataHolder;
@@ -259,13 +259,13 @@ public interface ItemStack extends DataHolder, Translatable {
         Builder fromItemStack(ItemStack itemStack);
 
         /**
-         * Sets the data to recreate a {@link BlockState} in a held {@link ItemStack}
+         * Sets the data to recreate a {@link IBlockState} in a held {@link ItemStack}
          * state.
          *
          * @param blockState The block state to use
          * @return This builder, for chaining
          */
-        default Builder fromBlockState(BlockState blockState) {
+        default Builder fromBlockState(IBlockState blockState) {
             checkNotNull(blockState);
             final BlockType blockType = blockState.getType();
             checkArgument(blockType.getItem().isPresent(), "Missing valid ItemType for BlockType: " + blockType.getId());

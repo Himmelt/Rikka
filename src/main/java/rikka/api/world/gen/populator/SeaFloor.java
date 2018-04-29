@@ -25,7 +25,7 @@
 package rikka.api.world.gen.populator;
 
 import rikka.api.Sponge;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.util.weighted.VariableAmount;
 import rikka.api.world.gen.Populator;
@@ -48,18 +48,18 @@ public interface SeaFloor extends Populator {
     }
 
     /**
-     * Gets the {@link BlockState} to place down.
+     * Gets the {@link IBlockState} to place down.
      *
      * @return The block to place
      */
-    BlockState getBlock();
+    IBlockState getBlock();
 
     /**
-     * Sets the {@link BlockState} to place down.
+     * Sets the {@link IBlockState} to place down.
      *
      * @param block The new block to place
      */
-    void setBlock(BlockState block);
+    void setBlock(IBlockState block);
 
     /**
      * Gets the number of discs to attempt to spawn per chunk, must be greater
@@ -134,21 +134,21 @@ public interface SeaFloor extends Populator {
     }
 
     /**
-     * Gets the predicate which is applied to determine what {@link BlockState}s
+     * Gets the predicate which is applied to determine what {@link IBlockState}s
      * this populator may replace.
      *
      * @return The replacement check
      */
-    Predicate<BlockState> getValidBlocksToReplace();
+    Predicate<IBlockState> getValidBlocksToReplace();
 
     /**
-     * Sets the predicate which will be applied to all {@link BlockState}s that
+     * Sets the predicate which will be applied to all {@link IBlockState}s that
      * this populator attempts to replace in order to determine if they are
      * valid.
      *
      * @param check The new replacement check
      */
-    void setValidBlocksToReplace(Predicate<BlockState> check);
+    void setValidBlocksToReplace(Predicate<IBlockState> check);
 
     /**
      * A builder for constructing {@link SeaFloor} populators.
@@ -156,12 +156,12 @@ public interface SeaFloor extends Populator {
     interface Builder extends ResettableBuilder<SeaFloor, Builder> {
 
         /**
-         * Sets the {@link BlockState} to place down.
+         * Sets the {@link IBlockState} to place down.
          *
          * @param block The new block to place
          * @return This builder, for chaining
          */
-        Builder block(BlockState block);
+        Builder block(IBlockState block);
 
         /**
          * Sets the number of discs to attempt to spawn per chunk, must be
@@ -220,14 +220,14 @@ public interface SeaFloor extends Populator {
         }
 
         /**
-         * Sets the predicate which will be applied to all {@link BlockState}s
+         * Sets the predicate which will be applied to all {@link IBlockState}s
          * that this populator attempts to replace in order to determine if they
          * are valid.
          *
          * @param check The new replacement check
          * @return This builder, for chaining
          */
-        Builder replace(Predicate<BlockState> check);
+        Builder replace(Predicate<IBlockState> check);
 
         /**
          * Builds a new instance of a {@link SeaFloor} populator with the

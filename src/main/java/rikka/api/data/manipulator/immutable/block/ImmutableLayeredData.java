@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.block.LayeredData;
@@ -32,7 +32,7 @@ import rikka.api.data.value.immutable.ImmutableBoundedValue;
 
 /**
  * An {@link ImmutableDataManipulator} for the "layer" of a block. Usually this
- * means that the {@link BlockState} has varying "layers". Usually applies to
+ * means that the {@link IBlockState} has varying "layers". Usually applies to
  * {@link BlockTypes#SNOW_LAYER} or {@link BlockTypes#CAKE}. This is different
  * data from {@link ImmutableFluidLevelData}.
  */

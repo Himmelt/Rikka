@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.mutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockTypes;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
@@ -33,7 +33,7 @@ import rikka.api.data.value.mutable.Value;
 
 /**
  * An {@link DataManipulator} for the "in-wall" state. Usually means that a
- * {@link BlockState} will show up graphically as being "attached" to another
+ * {@link IBlockState} will show up graphically as being "attached" to another
  * block. Usually applies to {@link BlockTypes#FENCE}s and
  * {@link BlockTypes#FENCE_GATE}s.
  */

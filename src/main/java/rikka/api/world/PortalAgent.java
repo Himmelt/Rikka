@@ -24,7 +24,7 @@
  */
 package rikka.api.world;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 
 import java.util.Optional;
 
@@ -94,7 +94,7 @@ public interface PortalAgent {
      * is cancelled, {@link Optional#empty()} is returned.
      *
      * </p>Note: In order to adjust or prevent the {@link Location}'s of each
-     * {@link BlockState} set, listen to
+     * {@link IBlockState} set, listen to
      * {@link rikka.api.event.block.ChangeBlockEvent.Place} and
      * check for the root cause of this portal agent.
      *

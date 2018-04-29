@@ -25,7 +25,7 @@
 package rikka.api.world.gen.populator;
 
 import rikka.api.Sponge;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.util.weighted.VariableAmount;
 import rikka.api.world.gen.Populator;
@@ -48,20 +48,20 @@ public interface BlockBlob extends Populator {
     }
 
     /**
-     * Gets the {@link BlockState} that this populator will place down to form
+     * Gets the {@link IBlockState} that this populator will place down to form
      * the blob.
      *
      * @return The block state
      */
-    BlockState getBlock();
+    IBlockState getBlock();
 
     /**
-     * Sets the {@link BlockState} that this populator will place down to form
+     * Sets the {@link IBlockState} that this populator will place down to form
      * the blob.
      *
      * @param state The new block state
      */
-    void setBlock(BlockState state);
+    void setBlock(IBlockState state);
 
     /**
      * Gets the radius of the area for the blob.
@@ -115,13 +115,13 @@ public interface BlockBlob extends Populator {
     interface Builder extends ResettableBuilder<BlockBlob, Builder> {
 
         /**
-         * Sets the {@link BlockState} that this populator will place down to
+         * Sets the {@link IBlockState} that this populator will place down to
          * form the blob.
          *
          * @param block the new block state
          * @return This builder, for chaining
          */
-        Builder block(BlockState block);
+        Builder block(IBlockState block);
 
         /**
          * Sets the radius of the area for the blob, cannot be negative.

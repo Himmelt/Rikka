@@ -28,11 +28,11 @@ import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.DespawnDelayData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
 import rikka.api.data.value.immutable.ImmutableValue;
-import rikka.api.entity.Item;
+import rikka.api.entity.IEntityItem;
 
 /**
  * An {@link ImmutableDataManipulator} for handling the "despawn delay" of an
- * {@link Item}.
+ * {@link IEntityItem}.
  */
 public interface ImmutableDespawnDelayData extends ImmutableDataManipulator<ImmutableDespawnDelayData, DespawnDelayData> {
 

@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableVariantData;
 import rikka.api.data.manipulator.mutable.block.ComparatorData;
@@ -32,7 +32,7 @@ import rikka.api.data.type.ComparatorType;
 
 /**
  * An {@link ImmutableDataManipulator} handling the value of the
- * {@link ComparatorType} of a {@link BlockState} at a location.
+ * {@link ComparatorType} of a {@link IBlockState} at a location.
  */
 public interface ImmutableComparatorData extends ImmutableVariantData<ComparatorType, ImmutableComparatorData, ComparatorData> {
 

@@ -1,6 +1,6 @@
 package rikka.api.entity;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.entity.FallingBlockData;
 import rikka.api.data.value.mutable.Value;
@@ -19,7 +19,7 @@ public interface FallingBlock extends IEntity {
         return getValue(Keys.MAX_FALL_DAMAGE).get();
     }
 
-    default Value<BlockState> blockState() {
+    default Value<IBlockState> blockState() {
         return getValue(Keys.FALLING_BLOCK_STATE).get();
     }
 

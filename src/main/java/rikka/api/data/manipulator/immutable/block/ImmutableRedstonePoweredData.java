@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.block.RedstonePoweredData;
@@ -32,8 +32,8 @@ import rikka.api.data.value.immutable.ImmutableBoundedValue;
 
 /**
  * An {@link ImmutableDataManipulator} for the current output of "redstone
- * power". The mechanics of this and a {@link BlockState} is that the
- * {@link BlockState} must support defining the current "redstone power output"
+ * power". The mechanics of this and a {@link IBlockState} is that the
+ * {@link IBlockState} must support defining the current "redstone power output"
  * such that blocks nearby may become affected. Usually applicable to
  * {@link BlockTypes#REDSTONE_WIRE},
  * {@link BlockTypes#LIGHT_WEIGHTED_PRESSURE_PLATE},

@@ -26,7 +26,7 @@ package rikka.api.world;
 
 import com.flowpowered.math.vector.Vector3i;
 import rikka.api.Sponge;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.ImmutableDataHolder;
 import rikka.api.data.persistence.DataBuilder;
 
@@ -42,11 +42,11 @@ public interface LocatableBlock extends ImmutableDataHolder<LocatableBlock>, Loc
     }
 
     /**
-     * Gets the {@link BlockState} for this locatable block.
+     * Gets the {@link IBlockState} for this locatable block.
      *
      * @return The block state
      */
-    BlockState getBlockState();
+    IBlockState getBlockState();
 
     /**
      * Gets the {@link Vector3i position} for this locatable block.
@@ -60,15 +60,15 @@ public interface LocatableBlock extends ImmutableDataHolder<LocatableBlock>, Loc
     interface Builder extends DataBuilder<LocatableBlock> {
 
         /**
-         * Sets the {@link BlockState} for this builder.
+         * Sets the {@link IBlockState} for this builder.
          *
          * @param blockState The block state
          * @return This builder, for chaining
          */
-        Builder state(BlockState blockState);
+        Builder state(IBlockState blockState);
 
         /**
-         * Sets the {@link BlockState} and {@link Vector3i position} for this
+         * Sets the {@link IBlockState} and {@link Vector3i position} for this
          * builder.
          *
          * @param location The location containing the block state and position
@@ -95,7 +95,7 @@ public interface LocatableBlock extends ImmutableDataHolder<LocatableBlock>, Loc
         Builder position(int x, int y, int z);
 
         /**
-         * Sets the {@link World} for this builder, used to get the {@link BlockState}
+         * Sets the {@link World} for this builder, used to get the {@link IBlockState}
          * for a desired position.
          *
          * @param world The world

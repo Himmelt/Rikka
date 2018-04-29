@@ -25,7 +25,7 @@
 package rikka.api.block.trait;
 
 import rikka.api.CatalogType;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.block.BlockTypes;
 
@@ -34,11 +34,11 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 /**
- * Represents a possible trait in a {@link BlockType}s {@link BlockState}.
+ * Represents a possible trait in a {@link BlockType}s {@link IBlockState}.
  *
- * <p>A {@link BlockState} can include zero or more {@link BlockTrait}s. Each
- * {@link BlockTrait} within a {@link BlockState} is mapped to a value which
- * represents the current value at the time the {@link BlockState} was taken.
+ * <p>A {@link IBlockState} can include zero or more {@link BlockTrait}s. Each
+ * {@link BlockTrait} within a {@link IBlockState} is mapped to a value which
+ * represents the current value at the time the {@link IBlockState} was taken.
  * </p>
  *
  * <p>For example, a {@link BlockTypes#BED} contains three possible
@@ -69,7 +69,7 @@ import java.util.function.Predicate;
  * </ul>
  *
  * <p>To determine the current value of a {@link BlockTrait}, you would call
- * {@link BlockState#getTraitValue(BlockTrait)}. To determine all possible
+ * {@link IBlockState#getTraitValue(BlockTrait)}. To determine all possible
  * values of a {@link BlockTrait}, you would call
  * {@link BlockType#getTraits()}.</p>
  *

@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.mutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockTypes;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
@@ -33,7 +33,7 @@ import rikka.api.data.value.mutable.MutableBoundedValue;
 
 /**
  * A {@link DataManipulator} that handles the "moisture" state of a
- * {@link BlockState}. The "moisture" value usually involves mechanics to do
+ * {@link IBlockState}. The "moisture" value usually involves mechanics to do
  * with crops and growth. Usually applies to {@link BlockTypes#FARMLAND}.
  */
 public interface MoistureData extends DataManipulator<MoistureData, ImmutableMoistureData> {

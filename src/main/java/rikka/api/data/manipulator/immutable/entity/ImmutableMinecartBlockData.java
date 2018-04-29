@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.entity;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.MinecartBlockData;
 import rikka.api.data.value.immutable.ImmutableValue;
@@ -33,11 +33,11 @@ import rikka.api.entity.vehicle.minecart.Minecart;
 public interface ImmutableMinecartBlockData extends ImmutableDataManipulator<ImmutableMinecartBlockData, MinecartBlockData> {
 
     /**
-     * Gets the {@link BlockState} represented by the {@link Minecart}.
+     * Gets the {@link IBlockState} represented by the {@link Minecart}.
      *
      * @return The represented block
      */
-    ImmutableValue<BlockState> block();
+    ImmutableValue<IBlockState> block();
 
     /**
      * Gets the offset of the represented block, in "pixels".

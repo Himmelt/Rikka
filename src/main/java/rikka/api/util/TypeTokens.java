@@ -27,7 +27,7 @@ package rikka.api.util;
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
 import com.google.common.reflect.TypeToken;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.data.meta.PatternLayer;
 import rikka.api.data.type.*;
@@ -76,11 +76,11 @@ public final class TypeTokens {
         private static final long serialVersionUID = -1;
     };
 
-    public static final TypeToken<BlockState> BLOCK_TOKEN = new TypeToken<BlockState>() {
+    public static final TypeToken<IBlockState> BLOCK_TOKEN = new TypeToken<IBlockState>() {
         private static final long serialVersionUID = -1;
     };
 
-    public static final TypeToken<Value<BlockState>> BLOCK_VALUE_TOKEN = new TypeToken<Value<BlockState>>() {
+    public static final TypeToken<Value<IBlockState>> BLOCK_VALUE_TOKEN = new TypeToken<Value<IBlockState>>() {
         private static final long serialVersionUID = -1;
     };
 

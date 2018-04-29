@@ -26,7 +26,7 @@ package rikka.api.world.teleport;
 
 import com.flowpowered.math.vector.Vector3i;
 import rikka.api.CatalogType;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.util.Tristate;
 import rikka.api.util.annotation.CatalogedBy;
 import rikka.api.world.TeleportHelper;
@@ -43,22 +43,22 @@ public interface TeleportHelperFilter extends CatalogType {
      * Tests whether the location in question is valid, regardless of whether
      * the block is safe or not. This is <em>only</em> intended to be used by
      * kernels that blacklist/whitelist certain locations, and any block checks
-     * should be performed by {@link #isSafeFloorMaterial(BlockState)} and
-     * {@link #isSafeBodyMaterial(BlockState)} instead, to obtain the full
+     * should be performed by {@link #isSafeFloorMaterial(IBlockState)} and
+     * {@link #isSafeBodyMaterial(IBlockState)} instead, to obtain the full
      * benefits of the {@link TeleportHelper}.
      *
      * <ul>
      * <li>Returning {@link Tristate#UNDEFINED} denotes that the filter
      * does not regard the location as valid or otherwise, and that the
      * helper should determine if the location is suitable using the
-     * {@link #isSafeBodyMaterial(BlockState)} and
-     * {@link #isSafeFloorMaterial(BlockState)} methods. Implementations
+     * {@link #isSafeBodyMaterial(IBlockState)} and
+     * {@link #isSafeFloorMaterial(IBlockState)} methods. Implementations
      * should generally return this result.</li>
      *
      * <li>Returning {@link Tristate#TRUE} marks the location as valid and
      * will causes the parent {@link TeleportHelper} to return this
-     * location. No checks using {@link #isSafeBodyMaterial(BlockState)}
-     * and {@link #isSafeFloorMaterial(BlockState)} will be performed.</li>
+     * location. No checks using {@link #isSafeBodyMaterial(IBlockState)}
+     * and {@link #isSafeFloorMaterial(IBlockState)} will be performed.</li>
      *
      * <li>Returning {@link Tristate#FALSE} marks the location as invalid
      * and causes the parent {@link TeleportHelper} to move onto the next
@@ -83,24 +83,24 @@ public interface TeleportHelperFilter extends CatalogType {
     }
 
     /**
-     * Tests whether a {@link BlockState} should be considered a safe block
+     * Tests whether a {@link IBlockState} should be considered a safe block
      * to land on.
      *
-     * @param blockState The {@link BlockState} to check
+     * @param blockState The {@link IBlockState} to check
      * @return <code>true</code> if the material should be safe to land on
      */
-    boolean isSafeFloorMaterial(BlockState blockState);
+    boolean isSafeFloorMaterial(IBlockState blockState);
 
     /**
-     * Tests whether a {@link BlockState} should be considered a safe block
+     * Tests whether a {@link IBlockState} should be considered a safe block
      * for the body to be inside of.
      *
      * <p>Generally, you want this to be a passable block!</p>
      *
-     * @param blockState The {@link BlockState} to check
+     * @param blockState The {@link IBlockState} to check
      * @return <code>true</code> if the material should be safe for the body to
      * be inside of
      */
-    boolean isSafeBodyMaterial(BlockState blockState);
+    boolean isSafeBodyMaterial(IBlockState blockState);
 
 }

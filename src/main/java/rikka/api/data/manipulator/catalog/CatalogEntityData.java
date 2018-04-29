@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.catalog;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.mutable.*;
 import rikka.api.data.manipulator.mutable.entity.*;
@@ -33,7 +33,7 @@ import rikka.api.effect.potion.PotionEffect;
 import rikka.api.entity.ExperienceOrb;
 import rikka.api.entity.FallingBlock;
 import rikka.api.entity.IEntity;
-import rikka.api.entity.Item;
+import rikka.api.entity.IEntityItem;
 import rikka.api.entity.explosive.Explosive;
 import rikka.api.entity.hanging.ItemFrame;
 import rikka.api.entity.hanging.Painting;
@@ -155,7 +155,7 @@ public final class CatalogEntityData {
     /**
      * Signifies that an entity can expire after a certain amount of time.
      * Usually applies to {@link Weather}, {@link IEndermite}s, and
-     * {@link Item}s.
+     * {@link IEntityItem}s.
      */
     public static final Class<ExpirableData> EXPIRABLE_DATA_CLASS = ExpirableData.class;
     /**
@@ -259,7 +259,7 @@ public final class CatalogEntityData {
      */
     public static final Class<TargetedLocationData> LOCATION_DATA = TargetedLocationData.class;
     /**
-     * Represents a {@link Minecart} with a {@link BlockState} shown inside.
+     * Represents a {@link Minecart} with a {@link IBlockState} shown inside.
      */
     public static final Class<MinecartBlockData> MINECART_BLOCK_DATA = MinecartBlockData.class;
     /**
@@ -302,7 +302,7 @@ public final class CatalogEntityData {
     public static final Class<RabbitData> RABBIT_DATA = RabbitData.class;
     /**
      * Signifies that an entity is representing an {@link ItemStack}.
-     * Usually applicable to {@link Item}s and {@link ItemFrame}s.
+     * Usually applicable to {@link IEntityItem}s and {@link ItemFrame}s.
      */
     public static final Class<RepresentedItemData> REPRESENTED_ITEM_DATA = RepresentedItemData.class;
     /**

@@ -1,6 +1,6 @@
 package rikka.api.entity.living.complex;
 
-import rikka.api.entity.EnderCrystal;
+import rikka.api.entity.IEnderCrystal;
 import rikka.api.entity.living.IAerial;
 import rikka.api.entity.living.monster.IBoss;
 import rikka.api.entity.projectile.IProjectileLauncher;
@@ -13,6 +13,6 @@ public interface EnderDragon extends ComplexLiving, IBoss, IAerial, IProjectileL
     @Override
     Set<EnderDragonPart> getParts();
 
-    Optional<EnderCrystal> getHealingCrystal();
+    Optional<IEnderCrystal> getHealingCrystal();
 
 }

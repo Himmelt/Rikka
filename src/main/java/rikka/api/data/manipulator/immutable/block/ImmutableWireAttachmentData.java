@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.block.WireAttachmentData;
@@ -36,7 +36,7 @@ import rikka.api.util.Direction;
 /**
  * An {@link ImmutableDataManipulator} that handles the
  * {@link ImmutableMapValue} of {@link Direction} to {@link WireAttachmentType}
- * for a {@link BlockState}. Usually applicable to
+ * for a {@link IBlockState}. Usually applicable to
  * {@link BlockTypes#REDSTONE_WIRE} and {@link BlockTypes#TRIPWIRE}.
  */
 public interface ImmutableWireAttachmentData extends ImmutableDataManipulator<ImmutableWireAttachmentData, WireAttachmentData> {

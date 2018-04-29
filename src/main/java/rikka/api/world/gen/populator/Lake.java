@@ -25,7 +25,7 @@
 package rikka.api.world.gen.populator;
 
 import rikka.api.Sponge;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.util.weighted.VariableAmount;
 import rikka.api.world.gen.Populator;
@@ -46,18 +46,18 @@ public interface Lake extends Populator {
     }
 
     /**
-     * Gets the {@link BlockState} of the liquid to fill the lake with.
+     * Gets the {@link IBlockState} of the liquid to fill the lake with.
      *
      * @return The lake block state
      */
-    BlockState getLiquidType();
+    IBlockState getLiquidType();
 
     /**
-     * Sets the {@link BlockState} of the liquid to fill the lake with.
+     * Sets the {@link IBlockState} of the liquid to fill the lake with.
      *
      * @param liquid The new lake block state
      */
-    void setLiquidType(BlockState liquid);
+    void setLiquidType(IBlockState liquid);
 
     /**
      * Gets the probability of a lake spawning in a chunk.
@@ -93,12 +93,12 @@ public interface Lake extends Populator {
     interface Builder extends ResettableBuilder<Lake, Builder> {
 
         /**
-         * Sets the {@link BlockState} of the liquid to fill the lake with.
+         * Sets the {@link IBlockState} of the liquid to fill the lake with.
          *
          * @param liquid The new lake block state
          * @return This builder, for chaining
          */
-        Builder liquidType(BlockState liquid);
+        Builder liquidType(IBlockState liquid);
 
         /**
          * Sets the probability of a lake spawning in a chunk.

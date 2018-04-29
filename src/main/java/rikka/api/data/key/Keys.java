@@ -24,7 +24,7 @@
  */
 package rikka.api.data.key;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.block.BlockTypes;
 import rikka.api.block.tileentity.*;
@@ -273,7 +273,7 @@ public final class Keys {
     public static final Key<Value<Art>> ART = DummyObjectProvider.createExtendedFor(Key.class, "ART");
 
     /**
-     * Represents the {@link Key} for representing whether a {@link BlockState}
+     * Represents the {@link Key} for representing whether a {@link IBlockState}
      * is "attached" to another block.
      *
      * @see AttachedData#attached()
@@ -290,7 +290,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link Axis} direction
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see AxisData
      */
@@ -347,7 +347,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link BigMushroomType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see BigMushroomData
      */
@@ -391,7 +391,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link BrickType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see BrickData
      */
@@ -481,7 +481,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link ComparatorType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see ComparatorData
      */
@@ -489,7 +489,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the connected directions
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see ConnectedDirectionData#connectedDirections()
      */
@@ -497,7 +497,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "connected to the east"
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see ConnectedDirectionData#connectedEast()
      */
@@ -505,7 +505,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "connected to the north"
-     * state of a {@link BlockState}.
+     * state of a {@link IBlockState}.
      *
      * @see ConnectedDirectionData#connectedNorth()
      */
@@ -513,7 +513,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "connected to the south"
-     * state of a {@link BlockState}.
+     * state of a {@link IBlockState}.
      *
      * @see ConnectedDirectionData#connectedSouth()
      */
@@ -521,7 +521,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "connected to the west"
-     * state of a {@link BlockState}.
+     * state of a {@link IBlockState}.
      *
      * @see ConnectedDirectionData#connectedWest()
      */
@@ -584,7 +584,7 @@ public final class Keys {
     public static final Key<MapValue<EntityType, Double>> DAMAGE_ENTITY_MAP = DummyObjectProvider.createExtendedFor(Key.class, "DAMAGE_ENTITY_MAP");
 
     /**
-     * Represents the {@link Key} for representing whether a {@link BlockState}
+     * Represents the {@link Key} for representing whether a {@link IBlockState}
      * will decay. This usually applies to {@link BlockTypes#LEAVES}.
      *
      * @see DecayableData#decayable()
@@ -600,7 +600,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the despawn delay
-     * of an {@link Item}.
+     * of an {@link IEntityItem}.
      *
      * @see DespawnDelayData#delay()
      */
@@ -608,7 +608,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link Direction}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see DirectionalData#direction()
      */
@@ -616,7 +616,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link DirtType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see DirtData
      */
@@ -624,7 +624,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "disarmed" state
-     * of a {@link BlockState}. This usually applies to
+     * of a {@link IBlockState}. This usually applies to
      * {@link BlockTypes#TRIPWIRE}s and {@link BlockTypes#TRIPWIRE_HOOK}s.
      *
      * @see DisarmedData#disarmed()
@@ -633,7 +633,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link DisguisedBlockType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see DisguisedBlockData
      */
@@ -664,7 +664,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link DoublePlantType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see DoublePlantData
      */
@@ -749,7 +749,7 @@ public final class Keys {
      * Represents the {@link Key} for after how many ticks an entity or
      * {@link Weather} will last before expiring.
      *
-     * <p>Usually applies to {@link IEndermite}s or {@link Item}s.</p>
+     * <p>Usually applies to {@link IEndermite}s or {@link IEntityItem}s.</p>
      *
      * @see ExpirableData#expireTicks()
      */
@@ -784,12 +784,12 @@ public final class Keys {
     public static final Key<Value<Boolean>> FALLING_BLOCK_CAN_HURT_ENTITIES = DummyObjectProvider.createExtendedFor(Key.class, "FALLING_BLOCK_CAN_HURT_ENTITIES");
 
     /**
-     * Represents the {@link Key} for the {@link BlockState} of a
+     * Represents the {@link Key} for the {@link IBlockState} of a
      * {@link FallingBlock}.
      *
      * @see FallingBlockData#blockState()
      */
-    public static final Key<Value<BlockState>> FALLING_BLOCK_STATE = DummyObjectProvider.createExtendedFor(Key.class, "FALLING_BLOCK_STATE");
+    public static final Key<Value<IBlockState>> FALLING_BLOCK_STATE = DummyObjectProvider.createExtendedFor(Key.class, "FALLING_BLOCK_STATE");
 
     /**
      * Represents the {@link Key} for how much damage a {@link FallingBlock}
@@ -819,7 +819,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "filled" state
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * <p>Usually applies to {@link BlockTypes#END_PORTAL_FRAME}s.</p>
      *
@@ -872,7 +872,7 @@ public final class Keys {
     public static final Key<Value<Instant>> FIRST_DATE_PLAYED = DummyObjectProvider.createExtendedFor(Key.class, "FIRST_DATE_PLAYED");
 
     /**
-     * Represents the {@link Key} for the {@link Fish} type an {@link Item} or
+     * Represents the {@link Key} for the {@link Fish} type an {@link IEntityItem} or
      * {@link ItemStack} may have.
      *
      * <p>Only for {@link ItemTypes#FISH}, for {@link ItemTypes#COOKED_FISH}
@@ -893,7 +893,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "fluid level" state
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see FluidLevelData#level()
      */
@@ -964,7 +964,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "growth stage" state
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see GrowthData#growthStage()
      */
@@ -1062,7 +1062,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link Hinge}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see HingeData
      */
@@ -1083,7 +1083,7 @@ public final class Keys {
     public static final Key<Value<HorseStyle>> HORSE_STYLE = DummyObjectProvider.createExtendedFor(Key.class, "HORSE_STYLE");
 
     /**
-     * Represents the {@link Key} for whether an {@link Item} will not despawn
+     * Represents the {@link Key} for whether an {@link IEntityItem} will not despawn
      * for an infinite time.
      *
      * @see DespawnDelayData#infinite()
@@ -1092,7 +1092,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "is infinite" state
-     * of the pickup delay of an {@link Item}.
+     * of the pickup delay of an {@link IEntityItem}.
      *
      * @see PickupDelayData#infinite()
      */
@@ -1248,7 +1248,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for whether a {@link IWolf}, a
-     * {@link BlockState} of {@link BlockTypes#SPONGE} or an {@link ItemStack}
+     * {@link IBlockState} of {@link BlockTypes#SPONGE} or an {@link ItemStack}
      * of {@link ItemTypes#SPONGE} is wet.
      *
      * @see WetData#wet()
@@ -1256,12 +1256,12 @@ public final class Keys {
     public static final Key<Value<Boolean>> IS_WET = DummyObjectProvider.createExtendedFor(Key.class, "IS_WET");
 
     /**
-     * Represents the {@link Key} for the {@link BlockState} represented by
+     * Represents the {@link Key} for the {@link IBlockState} represented by
      * an {@link ItemStack}.
      *
      * @see BlockItemData#state()
      */
-    public static final Key<Value<BlockState>> ITEM_BLOCKSTATE = DummyObjectProvider.createExtendedFor(Key.class, "ITEM_BLOCKSTATE");
+    public static final Key<Value<IBlockState>> ITEM_BLOCKSTATE = DummyObjectProvider.createExtendedFor(Key.class, "ITEM_BLOCKSTATE");
 
     /**
      * Represents the {@link Key} for the durability of an {@link ItemStack}.
@@ -1552,7 +1552,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the pickup delay
-     * of an {@link Item}.
+     * of an {@link IEntityItem}.
      *
      * @see PickupDelayData#delay()
      */
@@ -1590,7 +1590,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link PlantType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see PlantData
      */
@@ -1606,7 +1606,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link PortionType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see PortionData
      */
@@ -1622,7 +1622,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "power" state
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * <p>Applies to blocks that may emit a Redstone signal of variable
      * strength, such as {@link BlockTypes#REDSTONE_WIRE},
@@ -1635,7 +1635,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "powered" state
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * <p>Applies to blocks that may be powered in order to emit a
      * Redstone signal of consistently maximum strength, such as
@@ -1649,7 +1649,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link PrismarineType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see PrismarineData
      */
@@ -1657,7 +1657,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link QuartzType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see QuartzData
      */
@@ -1672,7 +1672,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link RailDirection}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see RailDirectionData
      */
@@ -1696,12 +1696,12 @@ public final class Keys {
     public static final Key<MutableBoundedValue<Integer>> REMAINING_BREW_TIME = DummyObjectProvider.createExtendedFor(Key.class, "REMAINING_BREW_TIME");
 
     /**
-     * Represents the {@link Key} for representing the {@link BlockState}
+     * Represents the {@link Key} for representing the {@link IBlockState}
      * inside a {@link Minecart}.
      *
      * @see MinecartBlockData#block()
      */
-    public static final Key<Value<BlockState>> REPRESENTED_BLOCK = DummyObjectProvider.createExtendedFor(Key.class, "REPRESENTED_BLOCK");
+    public static final Key<Value<IBlockState>> REPRESENTED_BLOCK = DummyObjectProvider.createExtendedFor(Key.class, "REPRESENTED_BLOCK");
 
     /**
      * Represents the {@link Key} for the item displayed in an
@@ -1756,7 +1756,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link SandstoneType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see SandstoneData
      */
@@ -1764,7 +1764,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link SandType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see SandData
      */
@@ -1790,7 +1790,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "seamless" state
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see SeamlessData#seamless()
      */
@@ -1798,7 +1798,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "should drop" state
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see DropData#willDrop()
      */
@@ -1806,7 +1806,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link ShrubType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see ShrubData
      */
@@ -1840,7 +1840,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link SlabType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see SlabData
      */
@@ -1855,7 +1855,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "snowed" state
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see SnowedData#hasSnow()
      */
@@ -1952,7 +1952,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link StairShape}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see StairShapeData
      */
@@ -1967,7 +1967,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link StoneType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see StoneData
      */
@@ -2074,7 +2074,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the "suspended" state
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      */
     public static final Key<Value<Boolean>> SUSPENDED = DummyObjectProvider.createExtendedFor(Key.class, "SUSPENDED");
 
@@ -2134,7 +2134,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link TreeType}
-     * of a {@link BlockState}.
+     * of a {@link IBlockState}.
      *
      * @see TreeData
      */

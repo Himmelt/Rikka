@@ -25,14 +25,14 @@
 package rikka.api.util;
 
 import rikka.api.CatalogType;
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.data.type.BrickType;
 import rikka.api.data.type.DyeColor;
 
 /**
  * Represents a type of {@link Enum} or pseudo enum, such as a
  * {@link CatalogType}, that can be "cycled" for the "next" value. The uses are
- * varying, but usually related to cycling {@link BlockState}s. Note that
+ * varying, but usually related to cycling {@link IBlockState}s. Note that
  * {@link Cycleable} is <b>NOT</b> intended to cycle between "types" that have
  * no particular ordering, such as {@link DyeColor}, {@link BrickType}, etc.
  * due to their non-ordered nature. Applying an ordering on such types is not

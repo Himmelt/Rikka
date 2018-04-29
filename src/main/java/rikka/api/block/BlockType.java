@@ -16,9 +16,9 @@ public interface BlockType extends CatalogType, Translatable, PropertyHolder {
     @Override
     String getName();
 
-    BlockState getDefaultState();
+    IBlockState getDefaultState();
 
-    Collection<BlockState> getAllBlockStates();
+    Collection<IBlockState> getAllBlockStates();
 
     Optional<ItemType> getItem();
 

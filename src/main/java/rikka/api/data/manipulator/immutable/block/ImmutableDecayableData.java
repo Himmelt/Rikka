@@ -24,7 +24,7 @@
  */
 package rikka.api.data.manipulator.immutable.block;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.block.BlockTypes;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.block.DecayableData;
@@ -32,7 +32,7 @@ import rikka.api.data.value.immutable.ImmutableValue;
 
 /**
  * An {@link ImmutableDataManipulator} for the "decayable" state of a
- * {@link BlockState}. Usually applicable for {@link BlockTypes#LEAVES}.
+ * {@link IBlockState}. Usually applicable for {@link BlockTypes#LEAVES}.
  */
 public interface ImmutableDecayableData extends ImmutableDataManipulator<ImmutableDecayableData, DecayableData> {
 

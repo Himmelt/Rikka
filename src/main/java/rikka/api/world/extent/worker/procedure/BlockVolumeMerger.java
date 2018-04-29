@@ -24,7 +24,7 @@
  */
 package rikka.api.world.extent.worker.procedure;
 
-import rikka.api.block.BlockState;
+import rikka.api.block.IBlockState;
 import rikka.api.world.extent.UnmodifiableBlockVolume;
 
 /**
@@ -48,7 +48,7 @@ public interface BlockVolumeMerger {
      * @param zSecond      The z coordinate for the second block
      * @return The produced block
      */
-    BlockState merge(UnmodifiableBlockVolume firstVolume, int xFirst, int yFirst, int zFirst,
-                     UnmodifiableBlockVolume secondVolume, int xSecond, int ySecond, int zSecond);
+    IBlockState merge(UnmodifiableBlockVolume firstVolume, int xFirst, int yFirst, int zFirst,
+                      UnmodifiableBlockVolume secondVolume, int xSecond, int ySecond, int zSecond);
 
 }

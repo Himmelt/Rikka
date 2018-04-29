@@ -28,14 +28,14 @@ import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutableExpirableData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
-import rikka.api.entity.Item;
+import rikka.api.entity.IEntityItem;
 import rikka.api.entity.living.monster.IEndermite;
 import rikka.api.world.weather.Weather;
 
 /**
  * Signifies that an entity will expire after the value has
  * decayed to the minimum. Usually applicable to {@link Weather},
- * {@link IEndermite}s and {@link Item}s.
+ * {@link IEndermite}s and {@link IEntityItem}s.
  */
 public interface ExpirableData extends DataManipulator<ExpirableData, ImmutableExpirableData> {
 
