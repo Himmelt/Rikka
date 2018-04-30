@@ -25,17 +25,17 @@
 package rikka.api.world.explosion;
 
 import rikka.api.Sponge;
-import rikka.api.entity.explosive.Explosive;
+import rikka.api.entity.explosive.IExplosive;
 import rikka.api.util.ResettableBuilder;
+import rikka.api.world.IWorld;
 import rikka.api.world.Locatable;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 
 /**
- * Represents an explosion in a {@link World}.
+ * Represents an explosion in a {@link IWorld}.
  */
 public interface Explosion extends Locatable {
 
@@ -49,11 +49,11 @@ public interface Explosion extends Locatable {
     }
 
     /**
-     * Gets the source {@link Explosive} of the explosion.
+     * Gets the source {@link IExplosive} of the explosion.
      *
      * @return The source explosive or null if there is no source
      */
-    Optional<Explosive> getSourceExplosive();
+    Optional<IExplosive> getSourceExplosive();
 
     /**
      * Gets the radius of the explosion.
@@ -101,7 +101,7 @@ public interface Explosion extends Locatable {
          * @param location Origin of explosion
          * @return The builder, for chaining
          */
-        Builder location(Location<World> location);
+        Builder location(Location<IWorld> location);
 
         /**
          * Sets the source explosive of the explosion.
@@ -109,7 +109,7 @@ public interface Explosion extends Locatable {
          * @param source The source entity
          * @return The builder, for chaining
          */
-        Builder sourceExplosive(@Nullable Explosive source);
+        Builder sourceExplosive(@Nullable IExplosive source);
 
         /**
          * Sets the radius of the explosion.

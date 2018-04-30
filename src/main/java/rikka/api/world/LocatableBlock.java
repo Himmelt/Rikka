@@ -74,7 +74,7 @@ public interface LocatableBlock extends ImmutableDataHolder<LocatableBlock>, Loc
          * @param location The location containing the block state and position
          * @return This builder, for chaining
          */
-        Builder location(Location<World> location);
+        Builder location(Location<IWorld> location);
 
         /**
          * Sets the {@link Vector3i position} for this builder.
@@ -95,13 +95,13 @@ public interface LocatableBlock extends ImmutableDataHolder<LocatableBlock>, Loc
         Builder position(int x, int y, int z);
 
         /**
-         * Sets the {@link World} for this builder, used to get the {@link IBlockState}
+         * Sets the {@link IWorld} for this builder, used to get the {@link IBlockState}
          * for a desired position.
          *
          * @param world The world
          * @return This builder, for chaining
          */
-        Builder world(World world);
+        Builder world(IWorld world);
 
         @Override
         Builder reset();

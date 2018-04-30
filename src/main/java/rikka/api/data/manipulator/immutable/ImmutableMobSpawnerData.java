@@ -33,14 +33,14 @@ import rikka.api.data.value.immutable.ImmutableWeightedCollectionValue;
 import rikka.api.entity.EntityArchetype;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.IPlayer;
-import rikka.api.entity.vehicle.minecart.MobSpawnerMinecart;
+import rikka.api.entity.vehicle.minecart.IMobSpawnerMinecart;
 import rikka.api.util.weighted.WeightedSerializableObject;
 
 import java.util.Random;
 
 /**
  * An {@link ImmutableDataManipulator} for all information surrounding a
- * {@link MobSpawner} and {@link MobSpawnerMinecart}. The data defined will
+ * {@link MobSpawner} and {@link IMobSpawnerMinecart}. The data defined will
  * provide new {@link IEntity} spawns with varying types and data.
  */
 public interface ImmutableMobSpawnerData extends ImmutableDataManipulator<ImmutableMobSpawnerData, MobSpawnerData> {

@@ -36,8 +36,8 @@ import rikka.api.command.spec.CommandExecutor;
 import rikka.api.command.spec.CommandSpec;
 import rikka.api.text.Text;
 import rikka.api.util.StartsWithPredicate;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -147,7 +147,7 @@ public class ChildCommandElementExecutor extends CommandElement implements Comma
             try {
                 return child.get()
                         .getCallable()
-                        .getSuggestions(src, arguments, context.<Location<World>>getOne(CommandContext.TARGET_BLOCK_ARG).orElse(null));
+                        .getSuggestions(src, arguments, context.<Location<IWorld>>getOne(CommandContext.TARGET_BLOCK_ARG).orElse(null));
             } catch (CommandException e) {
                 Text eText = e.getText();
                 if (eText != null) {

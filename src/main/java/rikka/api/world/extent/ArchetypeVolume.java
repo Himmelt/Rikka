@@ -27,8 +27,8 @@ package rikka.api.world.extent;
 import com.flowpowered.math.vector.Vector3i;
 import rikka.api.block.tileentity.TileEntityArchetype;
 import rikka.api.world.BlockChangeFlag;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 import rikka.api.world.extent.worker.MutableBlockVolumeWorker;
 
 import java.util.Map;
@@ -48,7 +48,7 @@ public interface ArchetypeVolume extends MutableBlockVolume {
      * @param changeFlag The flag to use for toggling various operations on
      *                   block placement
      */
-    void apply(Location<World> location, BlockChangeFlag changeFlag);
+    void apply(Location<IWorld> location, BlockChangeFlag changeFlag);
 
     /**
      * Gets the {@link TileEntityArchetype} for the tile entity carrying block

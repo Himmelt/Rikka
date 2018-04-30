@@ -30,13 +30,13 @@ import rikka.api.data.value.immutable.ImmutableMapValue;
 import rikka.api.data.value.immutable.ImmutableValue;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
-import rikka.api.entity.projectile.Projectile;
-import rikka.api.entity.projectile.arrow.Arrow;
+import rikka.api.entity.projectile.IProjectile;
+import rikka.api.entity.projectile.arrow.IArrow;
 
 /**
  * A {@link ImmutableDataManipulator} for an owner that will deal a certain amount of
- * damage on the next "attack". Usually applicable to {@link Arrow}s and other
- * {@link Projectile}s.
+ * damage on the next "attack". Usually applicable to {@link IArrow}s and other
+ * {@link IProjectile}s.
  */
 public interface ImmutableDamagingData extends ImmutableDataManipulator<ImmutableDamagingData, DamagingData> {
 

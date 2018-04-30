@@ -24,9 +24,9 @@
  */
 package rikka.api.data.key;
 
-import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
 import rikka.api.block.BlockTypes;
+import rikka.api.block.IBlockState;
 import rikka.api.block.tileentity.*;
 import rikka.api.block.tileentity.carrier.*;
 import rikka.api.data.manipulator.mutable.*;
@@ -42,8 +42,8 @@ import rikka.api.effect.particle.ParticleType;
 import rikka.api.effect.potion.PotionEffect;
 import rikka.api.effect.potion.PotionEffectType;
 import rikka.api.entity.*;
-import rikka.api.entity.explosive.Explosive;
-import rikka.api.entity.explosive.FusedExplosive;
+import rikka.api.entity.explosive.IExplosive;
+import rikka.api.entity.explosive.IFusedExplosive;
 import rikka.api.entity.hanging.ItemFrame;
 import rikka.api.entity.hanging.Painting;
 import rikka.api.entity.living.*;
@@ -53,13 +53,13 @@ import rikka.api.entity.living.monster.*;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.entity.living.player.User;
 import rikka.api.entity.living.player.gamemode.GameMode;
-import rikka.api.entity.projectile.DamagingProjectile;
-import rikka.api.entity.projectile.EyeOfEnder;
-import rikka.api.entity.projectile.Firework;
-import rikka.api.entity.projectile.arrow.Arrow;
-import rikka.api.entity.projectile.explosive.fireball.Fireball;
-import rikka.api.entity.vehicle.minecart.CommandBlockMinecart;
-import rikka.api.entity.vehicle.minecart.Minecart;
+import rikka.api.entity.projectile.IDamagingProjectile;
+import rikka.api.entity.projectile.IEyeOfEnder;
+import rikka.api.entity.projectile.IFirework;
+import rikka.api.entity.projectile.arrow.IArrow;
+import rikka.api.entity.projectile.explosive.fireball.IFireball;
+import rikka.api.entity.vehicle.minecart.ICommandBlockMinecart;
+import rikka.api.entity.vehicle.minecart.IMinecart;
 import rikka.api.extra.fluid.FluidStackSnapshot;
 import rikka.api.extra.fluid.data.manipulator.mutable.FluidItemData;
 import rikka.api.extra.fluid.data.manipulator.mutable.FluidTankData;
@@ -282,7 +282,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for the damage dealt by a
-     * {@link DamagingProjectile}, e.g. an {@link Arrow}.
+     * {@link IDamagingProjectile}, e.g. an {@link IArrow}.
      *
      * @see DamagingData#damage()
      */
@@ -425,7 +425,7 @@ public final class Keys {
     /**
      * Represents the {@link Key} for whether a {@link ILiving} entity may
      * change blocks. This mostly applies to {@link IEnderman} or
-     * {@link ICreeper}s, but also to some projectiles like {@link Fireball}s.
+     * {@link ICreeper}s, but also to some projectiles like {@link IFireball}s.
      *
      * @see GriefingData#canGrief()
      */
@@ -473,7 +473,7 @@ public final class Keys {
 
     /**
      * Represents a key for the stored command, mostly related to
-     * {@link CommandBlock}s and {@link CommandBlockMinecart}s.
+     * {@link CommandBlock}s and {@link ICommandBlockMinecart}s.
      *
      * @see CommandData#storedCommand()
      */
@@ -757,11 +757,11 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for the radius of the {@link Explosion} to
-     * be created by detonating an {@link Explosive}.
+     * be created by detonating an {@link IExplosive}.
      *
      * <p>May be absent if the explosion radius is unknown because it is either
      * determined randomly at the time of the explosion or computed from the
-     * context in which the {@link Explosive} explodes.</p>
+     * context in which the {@link IExplosive} explodes.</p>
      *
      * @see ExplosionRadiusData#explosionRadius()
      */
@@ -830,7 +830,7 @@ public final class Keys {
     /**
      * Represents the {@link Key} for the {@link FireworkEffect}s of a
      * {@link ItemTypes#FIREWORK_CHARGE}, {@link ItemTypes#FIREWORKS} or a
-     * {@link Firework}.
+     * {@link IFirework}.
      *
      * @see FireworkEffectData#effects()
      */
@@ -922,7 +922,7 @@ public final class Keys {
     public static final Key<MutableBoundedValue<Integer>> FOOD_LEVEL = DummyObjectProvider.createExtendedFor(Key.class, "FOOD_LEVEL");
 
     /**
-     * Represents the {@link Key} for the time a {@link FusedExplosive}'s fuse
+     * Represents the {@link Key} for the time a {@link IFusedExplosive}'s fuse
      * will burn before the explosion.
      *
      * @see FuseData#fuseDuration()
@@ -1310,7 +1310,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for the knockback strength applied by an
-     * {@link Arrow}.
+     * {@link IArrow}.
      *
      * <p>For the knockback provided by hits with a weapon according to the
      * enchantment of the same name, see {@link #ITEM_ENCHANTMENTS}.</p>
@@ -1484,7 +1484,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing a block's offset when inside
-     * a {@link Minecart}.
+     * a {@link IMinecart}.
      *
      * @see MinecartBlockData#offset()
      */
@@ -1559,7 +1559,7 @@ public final class Keys {
     public static final Key<MutableBoundedValue<Integer>> PICKUP_DELAY = DummyObjectProvider.createExtendedFor(Key.class, "PICKUP_DELAY");
 
     /**
-     * Represents the {@link Key} for the "pickup rule" of an {@link Arrow}.
+     * Represents the {@link Key} for the "pickup rule" of an {@link IArrow}.
      *
      * @see PickupRuleData
      */
@@ -1697,7 +1697,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for representing the {@link IBlockState}
-     * inside a {@link Minecart}.
+     * inside a {@link IMinecart}.
      *
      * @see MinecartBlockData#block()
      */
@@ -2066,7 +2066,7 @@ public final class Keys {
 
     /**
      * Represents a key for the amount of successful executions of a command
-     * stored in a {@link CommandBlock} or {@link CommandBlockMinecart}.
+     * stored in a {@link CommandBlock} or {@link ICommandBlockMinecart}.
      *
      * @see CommandData#successCount()
      */
@@ -2090,7 +2090,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for the location targeted by an
-     * {@link EyeOfEnder} or a {@link IPlayer}'s compass.
+     * {@link IEyeOfEnder} or a {@link IPlayer}'s compass.
      *
      * @see TargetedLocationData#target()
      */
@@ -2098,7 +2098,7 @@ public final class Keys {
 
     /**
      * Represents the {@link Key} for the remaining fuse time in ticks of a
-     * {@link FusedExplosive}. This value may be set to an arbitrary value
+     * {@link IFusedExplosive}. This value may be set to an arbitrary value
      * if the explosive is not primed.
      *
      * @see FuseData#ticksRemaining()
@@ -2223,7 +2223,7 @@ public final class Keys {
     public static final Key<Value<WallType>> WALL_TYPE = DummyObjectProvider.createExtendedFor(Key.class, "WALL_TYPE");
 
     /**
-     * Represents the {@link Key} for whether a thrown {@link EyeOfEnder} will
+     * Represents the {@link Key} for whether a thrown {@link IEyeOfEnder} will
      * shatter.
      *
      * @see ShatteringData#willShatter()

@@ -35,8 +35,8 @@ import rikka.api.text.Text;
 import rikka.api.text.action.TextActions;
 import rikka.api.text.format.TextColors;
 import rikka.api.text.format.TextStyles;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -331,7 +331,7 @@ public final class SimpleDispatcher implements Dispatcher {
     }
 
     @Override
-    public List<String> getSuggestions(ICommandSender src, final String arguments, @Nullable Location<World> location) throws CommandException {
+    public List<String> getSuggestions(ICommandSender src, final String arguments, @Nullable Location<IWorld> location) throws CommandException {
         final String[] argSplit = arguments.split(" ", 2);
         Optional<CommandMapping> cmdOptional = get(argSplit[0], src);
         if (argSplit.length == 1) {

@@ -28,13 +28,13 @@ import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.ExpirableData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
 import rikka.api.entity.IEntity;
-import rikka.api.entity.explosive.PrimedTNT;
+import rikka.api.entity.explosive.IPrimedTNT;
 import rikka.api.entity.living.monster.IEndermite;
 
 /**
  * An {@link ImmutableDataManipulator} handling the "expiring" ticks remaining
  * for an {@link IEntity} to "remain" existing in a world. Usually applicable to
- * {@link IEndermite}s, {@link PrimedTNT}, etc.
+ * {@link IEndermite}s, {@link IPrimedTNT}, etc.
  */
 public interface ImmutableExpirableData extends ImmutableDataManipulator<ImmutableExpirableData, ExpirableData> {
 

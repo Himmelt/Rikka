@@ -25,8 +25,8 @@
 package rikka.api.item.inventory;
 
 import rikka.api.util.Direction;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import java.util.List;
 import java.util.Optional;
@@ -42,7 +42,7 @@ public interface MultiBlockCarrier extends BlockCarrier {
      *
      * @return The Locations of the Blocks
      */
-    List<Location<World>> getLocations();
+    List<Location<IWorld>> getLocations();
 
     /**
      * Returns the Inventory at given location if owned by this Carrier.
@@ -50,7 +50,7 @@ public interface MultiBlockCarrier extends BlockCarrier {
      * @param at The location
      * @return The inventory at given location
      */
-    Optional<Inventory> getInventory(Location<World> at);
+    Optional<Inventory> getInventory(Location<IWorld> at);
 
     /**
      * Returns the Inventory at given location if owned by this Carrier and
@@ -63,6 +63,6 @@ public interface MultiBlockCarrier extends BlockCarrier {
      * @param from The Direction
      * @return The inventory at the location when accessed from given direction
      */
-    Optional<Inventory> getInventory(Location<World> at, Direction from);
+    Optional<Inventory> getInventory(Location<IWorld> at, Direction from);
 
 }

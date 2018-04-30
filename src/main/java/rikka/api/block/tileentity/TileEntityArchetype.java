@@ -10,8 +10,8 @@ import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.persistence.DataBuilder;
 import rikka.api.data.persistence.InvalidDataException;
 import rikka.api.data.value.BaseValue;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 public interface TileEntityArchetype extends Archetype<BlockSnapshot, TileEntity> {
 
@@ -40,7 +40,7 @@ public interface TileEntityArchetype extends Archetype<BlockSnapshot, TileEntity
         @Override
         Builder from(TileEntityArchetype value);
 
-        Builder from(Location<World> location);
+        Builder from(Location<IWorld> location);
 
         /**
          * Sets the {@link IBlockState} of the archetype.

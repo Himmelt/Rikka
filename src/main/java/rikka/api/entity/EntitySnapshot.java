@@ -3,7 +3,7 @@ package rikka.api.entity;
 import rikka.api.data.ImmutableDataBuilder;
 import rikka.api.data.LocatableSnapshot;
 import rikka.api.util.math.Vector3d;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 import rikka.api.world.storage.WorldProperties;
 
 import java.util.Optional;
@@ -17,7 +17,7 @@ public interface EntitySnapshot extends LocatableSnapshot<EntitySnapshot> {
 
     Optional<UUID> getUniqueId();
 
-    Optional<Transform<World>> getTransform();
+    Optional<Transform<IWorld>> getTransform();
 
     EntityType getType();
 

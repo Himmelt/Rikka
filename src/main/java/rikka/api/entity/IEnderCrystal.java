@@ -1,6 +1,6 @@
 package rikka.api.entity;
 
-import rikka.api.entity.explosive.Explosive;
+import rikka.api.entity.explosive.IExplosive;
 
-public interface IEnderCrystal extends Explosive {
+public interface IEnderCrystal extends IExplosive {
 }

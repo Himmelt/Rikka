@@ -27,14 +27,14 @@ package rikka.api.data.manipulator.immutable;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.FireworkEffectData;
 import rikka.api.data.value.immutable.ImmutableListValue;
-import rikka.api.entity.projectile.Firework;
+import rikka.api.entity.projectile.IFirework;
 import rikka.api.item.FireworkEffect;
 import rikka.api.item.ItemTypes;
 import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} handling the various
- * {@link FireworkEffect}s associated with a {@link Firework} and
+ * {@link FireworkEffect}s associated with a {@link IFirework} and
  * an {@link ItemStack} that is of the {@link ItemTypes#FIREWORKS} or {@link ItemTypes#FIREWORK_CHARGE}.
  */
 public interface ImmutableFireworkEffectData extends ImmutableListData<FireworkEffect, ImmutableFireworkEffectData, FireworkEffectData> {

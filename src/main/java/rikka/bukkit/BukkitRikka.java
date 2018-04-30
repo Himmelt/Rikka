@@ -1,21 +1,27 @@
 package rikka.bukkit;
 
+import org.bukkit.World;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.command.RemoteConsoleCommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.minecart.CommandMinecart;
 import rikka.api.Rikka;
 import rikka.api.command.ICommandSender;
+import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.IPlayer;
+import rikka.api.world.IWorld;
 import rikka.bukkit.command.BukkitBlockSender;
 import rikka.bukkit.command.BukkitConsoleSender;
 import rikka.bukkit.command.BukkitMinecartSender;
 import rikka.bukkit.command.BukkitRconSender;
 import rikka.bukkit.entity.BukkitPlayer;
+import rikka.bukkit.world.BukkitWorld;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 public class BukkitRikka<T> implements Rikka<T> {
 
@@ -25,17 +31,23 @@ public class BukkitRikka<T> implements Rikka<T> {
         this.source = source;
     }
 
-    private static final HashMap<CommandSender, ICommandSender> senders = new HashMap<>();
-    private static final HashMap<Player, IPlayer> players = new HashMap<>();
+
+    public final T getSource() {
+        return source;
+    }
+
+    private static final HashMap<String, ICommandSender> senders = new HashMap<>();
+    private static final HashMap<UUID, IPlayer> players = new HashMap<>();
+    private static final HashMap<UUID, IWorld> worlds = new HashMap<>();
 
     public static ICommandSender getCommandSender(CommandSender source) {
         if (source == null) return null;
         ICommandSender sender;
         if (source instanceof Player) {
-            sender = players.get(source);
+            sender = players.get(((Player) source).getUniqueId());
             if (sender != null) return sender;
         } else {
-            sender = senders.get(source);
+            sender = senders.get(source.getName());
             if (sender != null) return sender;
         }
         if (source instanceof Player)
@@ -49,12 +61,35 @@ public class BukkitRikka<T> implements Rikka<T> {
         } else if (source instanceof RemoteConsoleCommandSender) {
             sender = new BukkitRconSender<>((RemoteConsoleCommandSender) source);
         } else return null;
-        senders.put(source, sender);
+        senders.put(source.getName(), sender);
         return sender;
     }
 
-    public T getSource() {
-        return source;
+    public static IWorld getWorld(World world) {
+        IWorld iWorld = worlds.get(world.getUID());
+        if (iWorld == null) {
+            iWorld = new BukkitWorld(world);
+            worlds.put(world.getUID(), iWorld);
+        }
+        return iWorld;
+    }
+
+    public static IPlayer getPlayer(Player player) {
+        IPlayer iPlayer = players.get(player.getUniqueId());
+        if (iPlayer == null) {
+            iPlayer = new BukkitPlayer<>(player);
+            players.put(player.getUniqueId(), iPlayer);
+        }
+        return iPlayer;
+    }
+
+    public static IEntity getEntity(Entity entity) {
+        if (entity instanceof Player) {
+            return getPlayer((Player) entity);
+        } else {
+            // TODO entity
+            return null;
+        }
     }
 
 }

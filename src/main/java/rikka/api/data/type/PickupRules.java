@@ -24,11 +24,11 @@
  */
 package rikka.api.data.type;
 
-import rikka.api.entity.projectile.arrow.Arrow;
+import rikka.api.entity.projectile.arrow.IArrow;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 /**
- * An enumeration of the vanilla pickup rules for an {@link Arrow}.
+ * An enumeration of the vanilla pickup rules for an {@link IArrow}.
  */
 public final class PickupRules {
 

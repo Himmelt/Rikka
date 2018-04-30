@@ -27,19 +27,19 @@ package rikka.api.data.manipulator.immutable.entity;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.entity.ShatteringData;
 import rikka.api.data.value.immutable.ImmutableValue;
-import rikka.api.entity.projectile.EnderPearl;
+import rikka.api.entity.projectile.IEnderPearl;
 import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link ImmutableDataManipulator} representing the "shattering" state of
- * an {@link EnderPearl}. Usually, if an {@link EnderPearl} will "shatter" at
+ * an {@link IEnderPearl}. Usually, if an {@link IEnderPearl} will "shatter" at
  * the end of it's travel duration such that no {@link ItemStack} will drop.
  */
 public interface ImmutableShatteringData extends ImmutableDataManipulator<ImmutableShatteringData, ShatteringData> {
 
     /**
      * Gets the {@link ImmutableValue} for the "shattering" state of an
-     * {@link EnderPearl}.
+     * {@link IEnderPearl}.
      *
      * @return The immutable value for the "shattering" state
      */

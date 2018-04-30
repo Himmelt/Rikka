@@ -25,11 +25,11 @@
 package rikka.api.data.type;
 
 import rikka.api.CatalogType;
-import rikka.api.entity.projectile.arrow.Arrow;
+import rikka.api.entity.projectile.arrow.IArrow;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**
- * Represents a pickup rule used by {@link Arrow}s.
+ * Represents a pickup rule used by {@link IArrow}s.
  */
 @CatalogedBy(PickupRules.class)
 public interface PickupRule extends CatalogType {

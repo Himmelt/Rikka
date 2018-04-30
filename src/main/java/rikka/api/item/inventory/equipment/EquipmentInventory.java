@@ -24,7 +24,7 @@
  */
 package rikka.api.item.inventory.equipment;
 
-import rikka.api.entity.ArmorEquipable;
+import rikka.api.entity.IArmorEquipable;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.Inventory;
 import rikka.api.item.inventory.ItemStack;
@@ -40,7 +40,7 @@ import java.util.Optional;
  * Equipment inventory for {@link ICarrier}s
  * that can carry equipment.
  */
-public interface EquipmentInventory extends OrderedInventory, CarriedInventory<ArmorEquipable> {
+public interface EquipmentInventory extends OrderedInventory, CarriedInventory<IArmorEquipable> {
 
     /**
      * Gets and remove the stack for the specified equipment type in this

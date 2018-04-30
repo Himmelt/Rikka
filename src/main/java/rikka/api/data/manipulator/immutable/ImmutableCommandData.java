@@ -30,7 +30,7 @@ import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.CommandData;
 import rikka.api.data.value.immutable.ImmutableOptionalValue;
 import rikka.api.data.value.immutable.ImmutableValue;
-import rikka.api.entity.vehicle.minecart.CommandBlockMinecart;
+import rikka.api.entity.vehicle.minecart.ICommandBlockMinecart;
 import rikka.api.text.Text;
 
 import java.util.Optional;
@@ -38,7 +38,7 @@ import java.util.Optional;
 /**
  * An {@link ImmutableDataManipulator} handling all related
  * {@link ImmutableValue}s for command related {@link DataHolder}s, such as
- * {@link CommandBlock}s and {@link CommandBlockMinecart}s.
+ * {@link CommandBlock}s and {@link ICommandBlockMinecart}s.
  */
 public interface ImmutableCommandData extends ImmutableDataManipulator<ImmutableCommandData, CommandData> {
 

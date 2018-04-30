@@ -29,8 +29,8 @@ import rikka.api.CatalogType;
 import rikka.api.block.IBlockState;
 import rikka.api.util.Tristate;
 import rikka.api.util.annotation.CatalogedBy;
+import rikka.api.world.IWorld;
 import rikka.api.world.TeleportHelper;
-import rikka.api.world.World;
 
 /**
  * A {@link TeleportHelperFilter} contains routines to determine whether a
@@ -74,11 +74,11 @@ public interface TeleportHelperFilter extends CatalogType {
      * performed, this is the first check performed when investigating a
      * location.</p>
      *
-     * @param world    The {@link World} to check
+     * @param world    The {@link IWorld} to check
      * @param position The {@link Vector3i} (block position) to check
      * @return A {@link Tristate}
      */
-    default Tristate isValidLocation(World world, Vector3i position) {
+    default Tristate isValidLocation(IWorld world, Vector3i position) {
         return Tristate.UNDEFINED;
     }
 

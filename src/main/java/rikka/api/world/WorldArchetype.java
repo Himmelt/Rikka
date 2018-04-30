@@ -42,7 +42,7 @@ import rikka.api.world.storage.WorldProperties;
 import java.util.Collection;
 
 /**
- * A representation of the settings which define a {@link World} for creation.
+ * A representation of the settings which define a {@link IWorld} for creation.
  */
 @CatalogedBy(WorldArchetypes.class)
 public interface WorldArchetype extends CatalogType {
@@ -147,7 +147,7 @@ public interface WorldArchetype extends CatalogType {
     /**
      * Gets whether the bonus chest should be generated.
      *
-     * <p>This only applies on the initial load of the {@link World}
+     * <p>This only applies on the initial load of the {@link IWorld}
      * created via the {@link WorldProperties} created from this settings.</p>
      *
      * @return True if bonus chest is generated, false if not
@@ -374,7 +374,7 @@ public interface WorldArchetype extends CatalogType {
 
         /**
          * Builds the {@link WorldArchetype} which can be used to create
-         * a {@link World} in {@link Server#createWorldProperties(String, WorldArchetype)}.
+         * a {@link IWorld} in {@link Server#createWorldProperties(String, WorldArchetype)}.
          *
          * <p>This will also register the settings as a new type in the
          * {@link GameRegistry}.</p>

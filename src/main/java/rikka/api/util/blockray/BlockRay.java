@@ -35,8 +35,8 @@ import rikka.api.data.property.entity.EyeLocationProperty;
 import rikka.api.entity.IEntity;
 import rikka.api.util.Functional;
 import rikka.api.util.Tuple;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 import rikka.api.world.extent.Extent;
 
 import java.util.Iterator;
@@ -538,11 +538,11 @@ public class BlockRay<E extends Extent> implements Iterator<BlockRayHit<E>> {
      * @param entity The entity
      * @return A new block ray builder
      */
-    public static BlockRayBuilder<World> from(IEntity entity) {
+    public static BlockRayBuilder<IWorld> from(IEntity entity) {
         checkNotNull(entity, "entity");
         final Vector3d rotation = entity.getRotation();
         final Vector3d direction = Quaterniond.fromAxesAnglesDeg(rotation.getX(), -rotation.getY(), rotation.getZ()).getDirection();
-        final Location<World> location = entity.getLocation();
+        final Location<IWorld> location = entity.getLocation();
         final Optional<EyeLocationProperty> data = entity.getProperty(EyeLocationProperty.class);
         final Vector3d position = data.map(EyeLocationProperty::getValue).orElse(location.getPosition());
         return from(location.getExtent(), position).direction(direction);

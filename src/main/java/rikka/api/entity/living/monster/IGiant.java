@@ -1,6 +1,6 @@
 package rikka.api.entity.living.monster;
 
-import rikka.api.entity.ArmorEquipable;
+import rikka.api.entity.IArmorEquipable;
 
-public interface IGiant extends IMonster, ArmorEquipable {
+public interface IGiant extends IMonster, IArmorEquipable {
 }

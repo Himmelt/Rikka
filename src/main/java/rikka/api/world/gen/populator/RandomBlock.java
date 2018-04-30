@@ -25,12 +25,12 @@
 package rikka.api.world.gen.populator;
 
 import rikka.api.Sponge;
-import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
+import rikka.api.block.IBlockState;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.util.weighted.VariableAmount;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 import rikka.api.world.gen.Populator;
 
 import java.util.function.Predicate;
@@ -110,7 +110,7 @@ public interface RandomBlock extends Populator {
      *
      * @return The targeted block predicate
      */
-    Predicate<Location<World>> getPlacementTarget();
+    Predicate<Location<IWorld>> getPlacementTarget();
 
     /**
      * Sets the {@link Predicate} that this populator used to determine of a
@@ -118,7 +118,7 @@ public interface RandomBlock extends Populator {
      *
      * @param target The new targeted block predicate
      */
-    void getPlacementTarget(Predicate<Location<World>> target);
+    void getPlacementTarget(Predicate<Location<IWorld>> target);
 
     /**
      * A builder for constructing {@link RandomBlock} populators.
@@ -162,7 +162,7 @@ public interface RandomBlock extends Populator {
          * @param target The new targeted block predicate
          * @return This builder, for chaining
          */
-        Builder placementTarget(Predicate<Location<World>> target);
+        Builder placementTarget(Predicate<Location<IWorld>> target);
 
         /**
          * Sets the height range of the random block placement.

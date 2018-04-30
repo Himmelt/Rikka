@@ -26,7 +26,7 @@ package rikka.api.world.gen;
 
 import rikka.api.CatalogType;
 import rikka.api.util.annotation.CatalogedBy;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 
 import java.util.Random;
 
@@ -47,7 +47,7 @@ public interface PopulatorObject extends CatalogType {
      * @param z     The Z position
      * @return Whether the placement is valid
      */
-    boolean canPlaceAt(World world, int x, int y, int z);
+    boolean canPlaceAt(IWorld world, int x, int y, int z);
 
     /**
      * Places the object into the world at the given location.
@@ -59,6 +59,6 @@ public interface PopulatorObject extends CatalogType {
      * @param y      The Y position
      * @param z      The Z position
      */
-    void placeObject(World world, Random random, int x, int y, int z);
+    void placeObject(IWorld world, Random random, int x, int y, int z);
 
 }

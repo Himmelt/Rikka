@@ -31,22 +31,22 @@ public class WorldArchetypes {
     // SORTFIELDS:ON
 
     /**
-     * Represents a typical default {@link World}.
+     * Represents a typical default {@link IWorld}.
      */
     public static final WorldArchetype OVERWORLD = DummyObjectProvider.createFor(WorldArchetype.class, "overworld");
 
     /**
-     * Represents a typical nether-style {@link World}.
+     * Represents a typical nether-style {@link IWorld}.
      */
     public static final WorldArchetype THE_NETHER = DummyObjectProvider.createFor(WorldArchetype.class, "the_nether");
 
     /**
-     * Represents a typical the end-style {@link World}.
+     * Represents a typical the end-style {@link IWorld}.
      */
     public static final WorldArchetype THE_END = DummyObjectProvider.createFor(WorldArchetype.class, "the_end");
 
     /**
-     * Represents a typical Sponge easter egg skylands-style {@link World}.
+     * Represents a typical Sponge easter egg skylands-style {@link IWorld}.
      *
      * @deprecated Will be removed from the api
      */
@@ -54,7 +54,7 @@ public class WorldArchetypes {
     public static final WorldArchetype THE_SKYLANDS = DummyObjectProvider.createFor(WorldArchetype.class, "the_skylands");
 
     /**
-     * Represents a typical Sponge void-style {@link World}.
+     * Represents a typical Sponge void-style {@link IWorld}.
      */
     public static final WorldArchetype THE_VOID = DummyObjectProvider.createFor(WorldArchetype.class, "the_void");
 

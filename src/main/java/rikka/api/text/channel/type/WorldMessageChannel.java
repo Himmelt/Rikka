@@ -26,7 +26,7 @@ package rikka.api.text.channel.type;
 
 import rikka.api.text.channel.MessageChannel;
 import rikka.api.text.channel.MessageReceiver;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -34,7 +34,7 @@ import java.util.Collections;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
- * A message channel that targets all subjects within the given {@link World}.
+ * A message channel that targets all subjects within the given {@link IWorld}.
  */
 public class WorldMessageChannel implements MessageChannel {
 
@@ -42,11 +42,11 @@ public class WorldMessageChannel implements MessageChannel {
 
     /**
      * Creates a new {@link MessageChannel channel} specific to the provided
-     * {@link World world}.
+     * {@link IWorld world}.
      *
      * @param world The world to target
      */
-    public WorldMessageChannel(World world) {
+    public WorldMessageChannel(IWorld world) {
         checkNotNull(world, "world");
         this.members = Collections.singleton(world);
     }

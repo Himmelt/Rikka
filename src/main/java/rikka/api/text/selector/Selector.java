@@ -27,8 +27,8 @@ package rikka.api.text.selector;
 import rikka.api.command.ICommandSender;
 import rikka.api.entity.IEntity;
 import rikka.api.util.ResettableBuilder;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 import rikka.api.world.extent.Extent;
 
 import java.util.Collection;
@@ -195,7 +195,7 @@ public interface Selector {
      * @param location The location to resolve the selector around
      * @return The matched entities
      */
-    Set<IEntity> resolve(Location<World> location);
+    Set<IEntity> resolve(Location<IWorld> location);
 
     /**
      * Resolves this {@link Selector} to a list of entities around the origin.
@@ -231,7 +231,7 @@ public interface Selector {
      * @param location The location to resolve the selector around
      * @return The matched entities
      */
-    Set<IEntity> resolveForce(Location<World> location);
+    Set<IEntity> resolveForce(Location<IWorld> location);
 
     /**
      * Converts this {@link Selector} to a valid selector string.

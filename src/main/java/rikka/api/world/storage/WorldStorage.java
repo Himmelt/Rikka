@@ -27,13 +27,13 @@ package rikka.api.world.storage;
 import com.flowpowered.math.vector.Vector3i;
 import rikka.api.data.DataContainer;
 import rikka.api.world.Chunk;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * Represents the storage manager of a particular {@link World}.
+ * Represents the storage manager of a particular {@link IWorld}.
  *
  * <p>It should be noted that this can have direct access to the underlying
  * storage system of the world and interface with deleting and modifying

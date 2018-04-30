@@ -25,8 +25,8 @@
 package rikka.api.data;
 
 import com.flowpowered.math.vector.Vector3i;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -64,7 +64,7 @@ public interface LocatableSnapshot<T extends LocatableSnapshot<T>> extends Immut
      *
      * @return The location of where the snapshot was taken, if available
      */
-    Optional<Location<World>> getLocation();
+    Optional<Location<IWorld>> getLocation();
 
     /**
      * Creates a copy of the snapshot with the provided
@@ -73,5 +73,5 @@ public interface LocatableSnapshot<T extends LocatableSnapshot<T>> extends Immut
      * @param location The location
      * @return The new snapshot
      */
-    T withLocation(Location<World> location);
+    T withLocation(Location<IWorld> location);
 }

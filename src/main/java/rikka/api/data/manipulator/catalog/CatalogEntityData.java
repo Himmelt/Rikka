@@ -34,7 +34,7 @@ import rikka.api.entity.ExperienceOrb;
 import rikka.api.entity.FallingBlock;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.IEntityItem;
-import rikka.api.entity.explosive.Explosive;
+import rikka.api.entity.explosive.IExplosive;
 import rikka.api.entity.hanging.ItemFrame;
 import rikka.api.entity.hanging.Painting;
 import rikka.api.entity.living.*;
@@ -44,12 +44,12 @@ import rikka.api.entity.living.monster.*;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.entity.living.player.User;
 import rikka.api.entity.living.player.gamemode.GameMode;
-import rikka.api.entity.projectile.EyeOfEnder;
-import rikka.api.entity.projectile.Firework;
-import rikka.api.entity.projectile.Projectile;
-import rikka.api.entity.projectile.Snowball;
-import rikka.api.entity.projectile.arrow.Arrow;
-import rikka.api.entity.vehicle.minecart.Minecart;
+import rikka.api.entity.projectile.IEyeOfEnder;
+import rikka.api.entity.projectile.IFirework;
+import rikka.api.entity.projectile.IProjectile;
+import rikka.api.entity.projectile.ISnowball;
+import rikka.api.entity.projectile.arrow.IArrow;
+import rikka.api.entity.vehicle.minecart.IMinecart;
 import rikka.api.item.FireworkEffect;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.merchant.TradeOffer;
@@ -117,7 +117,7 @@ public final class CatalogEntityData {
     public static final Class<ChargedData> CHARGED_DATA = ChargedData.class;
     /**
      * Signifies that an entity will perform a "critical hit" the next attack.
-     * Usually applies to {@link Arrow}s.
+     * Usually applies to {@link IArrow}s.
      */
     public static final Class<CriticalHitData> CRITICAL_HIT_DATA = CriticalHitData.class;
     /**
@@ -127,8 +127,8 @@ public final class CatalogEntityData {
     public static final Class<DamageableData> DAMAGEABLE_DATA = DamageableData.class;
     /**
      * Signifies that an owner is going to deal a certain amount of damage
-     * on the next "attack". Usually applicable to {@link Arrow}s and other
-     * {@link Projectile}s.
+     * on the next "attack". Usually applicable to {@link IArrow}s and other
+     * {@link IProjectile}s.
      */
     public static final Class<DamagingData> DAMAGING_DATA = DamagingData.class;
     /**
@@ -160,7 +160,7 @@ public final class CatalogEntityData {
     public static final Class<ExpirableData> EXPIRABLE_DATA_CLASS = ExpirableData.class;
     /**
      * Represents the "explosion radius" that an entity will have upon
-     * detonation. Usually applies to all {@link Explosive}s.
+     * detonation. Usually applies to all {@link IExplosive}s.
      */
     public static final Class<ExplosionRadiusData> EXPLOSIVE_RADIUS_DATA = ExplosionRadiusData.class;
     /**
@@ -169,12 +169,12 @@ public final class CatalogEntityData {
      */
     public static final Class<FallingBlockData> FALLING_BLOCK_DATA = FallingBlockData.class;
     /**
-     * Represents the {@link FireworkEffect}s that a {@link Firework} will have
+     * Represents the {@link FireworkEffect}s that a {@link IFirework} will have
      * upon detonation.
      */
     public static final Class<FireworkEffectData> FIREWORK_EFFECT_DATA = FireworkEffectData.class;
     /**
-     * Represents the flight time of a {@link Firework}.
+     * Represents the flight time of a {@link IFirework}.
      */
     public static final Class<FireworkRocketData> FIREWORK_ROCKET_DATA = FireworkRocketData.class;
     /**
@@ -189,7 +189,7 @@ public final class CatalogEntityData {
     public static final Class<FoodData> FOOD_DATA = FoodData.class;
     /**
      * Represents the expiring "fuse" duration on an explosive entity before
-     * the {@link Explosive} detonates.
+     * the {@link IExplosive} detonates.
      */
     public static final Class<FuseData> FUSE_DATA = FuseData.class;
     /**
@@ -199,7 +199,7 @@ public final class CatalogEntityData {
     public static final Class<GameModeData> GAME_MODE_DATA = GameModeData.class;
     /**
      * Represents that an entity has a glowing outline. Few entities, such
-     * as {@link Snowball}, do not show this glow.
+     * as {@link ISnowball}, do not show this glow.
      * <!-- TODO: Find all non-effected entities -->
      */
     public static final Class<GlowingData> GLOWING_DATA = GlowingData.class;
@@ -245,7 +245,7 @@ public final class CatalogEntityData {
     public static final Class<JoinData> JOIN_DATA = JoinData.class;
     /**
      * Represents the "level" of knockback an entity will perform in the
-     * next attack. Usually applicable to {@link Arrow}s.
+     * next attack. Usually applicable to {@link IArrow}s.
      */
     public static final Class<KnockbackData> KNOCKBACK_DATA = KnockbackData.class;
     /**
@@ -255,11 +255,11 @@ public final class CatalogEntityData {
     public static final Class<LeashData> LEASH_DATA = LeashData.class;
     /**
      * Represents the target location an entity is either guided or aiming
-     * towards. Usually applicable for {@link EyeOfEnder}s.
+     * towards. Usually applicable for {@link IEyeOfEnder}s.
      */
     public static final Class<TargetedLocationData> LOCATION_DATA = TargetedLocationData.class;
     /**
-     * Represents a {@link Minecart} with a {@link IBlockState} shown inside.
+     * Represents a {@link IMinecart} with a {@link IBlockState} shown inside.
      */
     public static final Class<MinecartBlockData> MINECART_BLOCK_DATA = MinecartBlockData.class;
     /**
@@ -327,7 +327,7 @@ public final class CatalogEntityData {
     public static final Class<SilentData> SILENT_DATA = SilentData.class;
     /**
      * Signifies that an entity will "shatter" upon expiration. Usually
-     * applicable to {@link EyeOfEnder}.
+     * applicable to {@link IEyeOfEnder}.
      */
     public static final Class<ShatteringData> SHATTERING_DATA = ShatteringData.class;
     /**

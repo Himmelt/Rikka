@@ -24,7 +24,7 @@
  */
 package rikka.api.world.gen;
 
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 import rikka.api.world.extent.Extent;
 import rikka.api.world.extent.ImmutableBiomeVolume;
 import rikka.api.world.gen.populator.RandomObject;
@@ -70,7 +70,7 @@ public interface Populator {
      *
      * <p>Due to their transitive nature virtual biomes cannot be fetched from
      * the given extent, instead your populator should override
-     * {@link #populate(World, Extent, Random, ImmutableBiomeVolume)} to make use
+     * {@link #populate(IWorld, Extent, Random, ImmutableBiomeVolume)} to make use
      * of the ImmutableBiomeArea which does contain virtual biome types.</p>
      *
      * @param world  The World within which the generation in happening
@@ -79,7 +79,7 @@ public interface Populator {
      *               based on the world seed and the chunk position. It is shared with
      *               with other populators
      */
-    void populate(World world, Extent volume, Random random);
+    void populate(IWorld world, Extent volume, Random random);
 
     /**
      * Applies the populator to the given {@link Extent} volume. The entire volume
@@ -93,7 +93,7 @@ public interface Populator {
      * @param virtualBiomes A biome volume for the extent being populated which
      *                      includes any virtual biomes not persisted to the world
      */
-    default void populate(World world, Extent volume, Random random, ImmutableBiomeVolume virtualBiomes) {
+    default void populate(IWorld world, Extent volume, Random random, ImmutableBiomeVolume virtualBiomes) {
         populate(world, volume, random);
     }
 

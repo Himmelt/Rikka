@@ -24,8 +24,8 @@
  */
 package rikka.api.data;
 
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import java.util.Optional;
 
@@ -42,7 +42,7 @@ public interface Archetype<S extends LocatableSnapshot<S>, E> extends DataHolder
      * @param location The location to create the new instance at
      * @return The created type, if successful
      */
-    Optional<E> apply(Location<World> location);
+    Optional<E> apply(Location<IWorld> location);
 
     /**
      * Creates a new immutable snapshot based on this archetype.
@@ -50,6 +50,6 @@ public interface Archetype<S extends LocatableSnapshot<S>, E> extends DataHolder
      * @param location The location for the snapshot to be specified as at
      * @return The snapshot
      */
-    S toSnapshot(Location<World> location);
+    S toSnapshot(Location<IWorld> location);
 
 }

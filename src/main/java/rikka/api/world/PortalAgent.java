@@ -31,7 +31,7 @@ import java.util.Optional;
 /**
  * An agent that handles teleportation between {@link Location}'s. This can be
  * understood as an agent that handles the creation of "portals" between
- * {@link World}'s.
+ * {@link IWorld}'s.
  *
  * <p>An example is the agent handling nether portals.</p>
  */
@@ -76,7 +76,7 @@ public interface PortalAgent {
      * @param targetLocation The suggested location
      * @return The found location of the "portal", if available
      */
-    Optional<Location<World>> findOrCreatePortal(Location<World> targetLocation);
+    Optional<Location<IWorld>> findOrCreatePortal(Location<IWorld> targetLocation);
 
     /**
      * Attempts to find a "portal" location. Returns {@link Optional#empty()} if
@@ -85,7 +85,7 @@ public interface PortalAgent {
      * @param targetLocation The suggested location
      * @return The found location of the "portal", if available
      */
-    Optional<Location<World>> findPortal(Location<World> targetLocation);
+    Optional<Location<IWorld>> findPortal(Location<IWorld> targetLocation);
 
     /**
      * Tells this agent to create a new "portal" location at the suggested
@@ -101,7 +101,7 @@ public interface PortalAgent {
      * @param targetLocation The targeted location
      * @return The newly created "portal" location, if available
      */
-    Optional<Location<World>> createPortal(Location<World> targetLocation);
+    Optional<Location<IWorld>> createPortal(Location<IWorld> targetLocation);
 
     /**
      * Gets the type of {@link PortalAgent}.

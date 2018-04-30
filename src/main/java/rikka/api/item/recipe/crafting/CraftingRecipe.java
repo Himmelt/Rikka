@@ -32,7 +32,7 @@ import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.item.inventory.crafting.CraftingGridInventory;
 import rikka.api.item.recipe.Recipe;
 import rikka.api.util.annotation.CatalogedBy;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 
 import java.util.List;
 import java.util.Optional;
@@ -61,11 +61,11 @@ public interface CraftingRecipe extends Recipe, CatalogType {
      * @param world The world this recipe would be used in
      * @return True if the given input matches this recipe's requirements
      */
-    boolean isValid(CraftingGridInventory grid, World world);
+    boolean isValid(CraftingGridInventory grid, IWorld world);
 
     /**
      * This method should only be called if
-     * {@link #isValid(CraftingGridInventory, World)} returns {@code true}.
+     * {@link #isValid(CraftingGridInventory, IWorld)} returns {@code true}.
      *
      * <p>This method is preferred over the
      * {@link CraftingRecipe#getExemplaryResult()} method, as it customizes
@@ -82,25 +82,25 @@ public interface CraftingRecipe extends Recipe, CatalogType {
 
     /**
      * Returns the {@link CraftingResult} for the current crafting grid
-     * configuration and the {@link World} the player is in.
+     * configuration and the {@link IWorld} the player is in.
      *
      * <p>Returns
      * {@link Optional#empty()} if the arguments do not satisfy
-     * {@link #isValid(CraftingGridInventory, World)}.</p>
+     * {@link #isValid(CraftingGridInventory, IWorld)}.</p>
      *
      * @param grid  The crafting input, typically 3x3 or 2x2
      * @param world The world this recipe would be used in
      * @return A {@link CraftingResult} if the arguments satisfy
-     * {@link #isValid(CraftingGridInventory, World)}, or
+     * {@link #isValid(CraftingGridInventory, IWorld)}, or
      * {@link Optional#empty()} if not
      */
-    default Optional<CraftingResult> getResult(CraftingGridInventory grid, World world) {
+    default Optional<CraftingResult> getResult(CraftingGridInventory grid, IWorld world) {
         return isValid(grid, world) ? Optional.of(new CraftingResult(getResult(grid), getRemainingItems(grid))) : Optional.empty();
     }
 
     /**
      * This method should only be called if
-     * {@link #isValid(CraftingGridInventory, World)} returns {@code true}.
+     * {@link #isValid(CraftingGridInventory, IWorld)} returns {@code true}.
      *
      * <p>A list of items to be added to the inventory of the player when they
      * craft the result. For example, if a player crafts a

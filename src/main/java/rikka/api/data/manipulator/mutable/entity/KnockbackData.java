@@ -29,11 +29,11 @@ import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutableKnockbackData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.entity.IEntity;
-import rikka.api.entity.projectile.arrow.Arrow;
+import rikka.api.entity.projectile.arrow.IArrow;
 
 /**
  * An {@link DataManipulator} for the "knockback" strength for an
- * {@link IEntity}'s next attack. Usually applicable to {@link Arrow}s, the
+ * {@link IEntity}'s next attack. Usually applicable to {@link IArrow}s, the
  * level of "knockback" such that the higher the knockback, the further the
  * attacked {@link IEntity} will be "knocked back".
  */

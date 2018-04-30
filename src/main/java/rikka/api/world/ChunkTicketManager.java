@@ -64,7 +64,7 @@ public interface ChunkTicketManager {
      * @return The new LoadingTicket, or Optional.empty() if a ticket could not
      * be created
      */
-    Optional<LoadingTicket> createTicket(Object plugin, World world);
+    Optional<LoadingTicket> createTicket(Object plugin, IWorld world);
 
     /**
      * Attempts to create a new loading ticket for a plugin to load chunks in a
@@ -82,7 +82,7 @@ public interface ChunkTicketManager {
      * @return The new LoadingTicket, or Optional.empty() if a ticket could not
      * be created
      */
-    Optional<EntityLoadingTicket> createEntityTicket(Object plugin, World world);
+    Optional<EntityLoadingTicket> createEntityTicket(Object plugin, IWorld world);
 
 
     /**
@@ -97,7 +97,7 @@ public interface ChunkTicketManager {
      * @return The new LoadingTicket, or Optional.empty() if a ticket could not
      * be created
      */
-    Optional<PlayerLoadingTicket> createPlayerTicket(Object plugin, World world, UUID player);
+    Optional<PlayerLoadingTicket> createPlayerTicket(Object plugin, IWorld world, UUID player);
 
 
     /**
@@ -117,7 +117,7 @@ public interface ChunkTicketManager {
      * @return The new LoadingTicket, or Optional.empty() if a ticket could not
      * be created
      */
-    Optional<PlayerEntityLoadingTicket> createPlayerEntityTicket(Object plugin, World world, UUID player);
+    Optional<PlayerEntityLoadingTicket> createPlayerEntityTicket(Object plugin, IWorld world, UUID player);
 
     /**
      * Gets the maximum allowed per-world tickets for a plugin.
@@ -136,7 +136,7 @@ public interface ChunkTicketManager {
      * @param world  The world to get the remaining count in
      * @return The remaining tickets the plugin has available in the world
      */
-    int getAvailableTickets(Object plugin, World world);
+    int getAvailableTickets(Object plugin, IWorld world);
 
     /**
      * Gets the amount of tickets remaining available for a player.
@@ -153,7 +153,7 @@ public interface ChunkTicketManager {
      * @return The set of all force-loaded chunk coordinates and the tickets
      * that are loading those chunks
      */
-    ImmutableSetMultimap<Vector3i, LoadingTicket> getForcedChunks(World world);
+    ImmutableSetMultimap<Vector3i, LoadingTicket> getForcedChunks(IWorld world);
 
     /**
      * Represents a handle which allows you to force a set of chunks to remain
@@ -186,11 +186,11 @@ public interface ChunkTicketManager {
         int getMaxNumChunks();
 
         /**
-         * Gets the {@link World} passed when creating this ticket.
+         * Gets the {@link IWorld} passed when creating this ticket.
          *
          * @return The World object given to this ticket upon its creation
          */
-        World getWorld();
+        IWorld getWorld();
 
         /**
          * Gets the companion data stored in a {@link DataContainer}. Note that
@@ -339,7 +339,7 @@ public interface ChunkTicketManager {
          * @param tickets The list of tickets that need chunks registered
          * @param world   The world tickets were loaded for
          */
-        void onLoaded(ImmutableList<LoadingTicket> tickets, World world);
+        void onLoaded(ImmutableList<LoadingTicket> tickets, IWorld world);
     }
 
     /**
@@ -360,7 +360,7 @@ public interface ChunkTicketManager {
          * @param maxTickets The maximum tickets allowed for this plugin
          * @return A list of all tickets you wish to keep
          */
-        List<LoadingTicket> onLoaded(ImmutableList<LoadingTicket> tickets, World world, int maxTickets);
+        List<LoadingTicket> onLoaded(ImmutableList<LoadingTicket> tickets, IWorld world, int maxTickets);
     }
 
     /**
@@ -379,6 +379,6 @@ public interface ChunkTicketManager {
          * @param world   The world tickets were loaded for
          * @return All tickets per-player that you wish to keep
          */
-        ListMultimap<UUID, LoadingTicket> onPlayerLoaded(ImmutableListMultimap<UUID, LoadingTicket> tickets, World world);
+        ListMultimap<UUID, LoadingTicket> onPlayerLoaded(ImmutableListMultimap<UUID, LoadingTicket> tickets, IWorld world);
     }
 }

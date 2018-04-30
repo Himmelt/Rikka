@@ -4,9 +4,9 @@ import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.entity.ArmorStandData;
 import rikka.api.data.manipulator.mutable.entity.BodyPartRotationalData;
 import rikka.api.data.value.mutable.Value;
-import rikka.api.entity.ArmorEquipable;
+import rikka.api.entity.IArmorEquipable;
 
-public interface ArmorStand extends ILiving, ArmorEquipable {
+public interface ArmorStand extends ILiving, IArmorEquipable {
 
     default BodyPartRotationalData getBodyPartRotationalData() {
         return get(BodyPartRotationalData.class).get();

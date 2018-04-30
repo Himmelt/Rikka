@@ -218,7 +218,7 @@ public interface WorldBorder {
      * @return The builder for the chunk pre-generate task
      * @see ChunkPreGenerate
      */
-    ChunkPreGenerate.Builder newChunkPreGenerate(World world);
+    ChunkPreGenerate.Builder newChunkPreGenerate(IWorld world);
 
     /**
      * Copies the properties of the passed border onto this border.

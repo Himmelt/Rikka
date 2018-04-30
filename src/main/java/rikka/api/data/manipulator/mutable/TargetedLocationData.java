@@ -30,14 +30,14 @@ import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.ImmutableTargetedLocationData;
 import rikka.api.data.value.mutable.Value;
 import rikka.api.entity.living.player.IPlayer;
-import rikka.api.entity.projectile.EyeOfEnder;
+import rikka.api.entity.projectile.IEyeOfEnder;
 import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link DataManipulator} handling the a targeted {@link Vector3d}.
  *
- * <p>Usually for the case of a {@link EyeOfEnder}, the targeted {@link Vector3d}
- * is where the {@link EyeOfEnder} will move towards until its expiration time.
+ * <p>Usually for the case of a {@link IEyeOfEnder}, the targeted {@link Vector3d}
+ * is where the {@link IEyeOfEnder} will move towards until its expiration time.
  * <p>
  * In the case of a {@link IPlayer}, the targeted {@link Vector3d} is where any
  * compass seen by the player will point towards. Note that it is not possible

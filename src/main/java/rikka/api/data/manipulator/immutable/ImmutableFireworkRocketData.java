@@ -27,12 +27,12 @@ package rikka.api.data.manipulator.immutable;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.FireworkRocketData;
 import rikka.api.data.value.immutable.ImmutableBoundedValue;
-import rikka.api.entity.projectile.Firework;
+import rikka.api.entity.projectile.IFirework;
 import rikka.api.item.ItemTypes;
 
 /**
  * An {@link ImmutableDataManipulator} representing the flight modifier of a
- * {@link Firework} or {@link ItemTypes#FIREWORKS} item.
+ * {@link IFirework} or {@link ItemTypes#FIREWORKS} item.
  */
 public interface ImmutableFireworkRocketData extends ImmutableDataManipulator<ImmutableFireworkRocketData, FireworkRocketData> {
 

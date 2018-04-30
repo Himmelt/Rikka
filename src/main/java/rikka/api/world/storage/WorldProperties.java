@@ -43,7 +43,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 /**
- * Represents the properties of a {@link World} which are persisted across runtime instances.
+ * Represents the properties of a {@link IWorld} which are persisted across runtime instances.
  */
 public interface WorldProperties extends DataSerializable {
 
@@ -368,7 +368,7 @@ public interface WorldProperties extends DataSerializable {
     /**
      * Gets whether the bonus chest should be generated.
      *
-     * <p>This only applies on the initial load of the {@link World}
+     * <p>This only applies on the initial load of the {@link IWorld}
      * created via this properties.</p>
      *
      * @return True if bonus chest is generated, false if not

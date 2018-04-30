@@ -28,11 +28,11 @@ import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutableCriticalHitData;
 import rikka.api.data.value.mutable.Value;
-import rikka.api.entity.projectile.arrow.Arrow;
+import rikka.api.entity.projectile.arrow.IArrow;
 
 /**
  * Signifies that an entity's next attack is considered a "critical" hit.
- * Usually applicable to {@link Arrow}s.
+ * Usually applicable to {@link IArrow}s.
  */
 public interface CriticalHitData extends DataManipulator<CriticalHitData, ImmutableCriticalHitData> {
 

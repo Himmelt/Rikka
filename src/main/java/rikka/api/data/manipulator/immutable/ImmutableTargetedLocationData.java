@@ -28,7 +28,7 @@ import com.flowpowered.math.vector.Vector3d;
 import rikka.api.data.manipulator.ImmutableDataManipulator;
 import rikka.api.data.manipulator.mutable.TargetedLocationData;
 import rikka.api.data.value.immutable.ImmutableValue;
-import rikka.api.entity.projectile.EnderPearl;
+import rikka.api.entity.projectile.IEnderPearl;
 import rikka.api.item.ItemTypes;
 import rikka.api.item.inventory.ItemStack;
 
@@ -36,8 +36,8 @@ import rikka.api.item.inventory.ItemStack;
  * An {@link ImmutableDataManipulator} handling the supposed targeted
  * {@link Vector3d}.
  *
- * <p>Usually for the case of {@link EnderPearl}s, the targeted {@link Vector3d}
- * is where the {@link EnderPearl} will move towards until it's expiration time.
+ * <p>Usually for the case of {@link IEnderPearl}s, the targeted {@link Vector3d}
+ * is where the {@link IEnderPearl} will move towards until it's expiration time.
  * In the case of {@link ItemStack}s of type {@link ItemTypes#COMPASS}, the
  * targeted {@link Vector3d} is where the compass will point towards.</p>
  */

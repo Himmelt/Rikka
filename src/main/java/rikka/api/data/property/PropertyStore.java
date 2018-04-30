@@ -26,8 +26,8 @@ package rikka.api.data.property;
 
 import rikka.api.data.Property;
 import rikka.api.util.Direction;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import java.util.Optional;
 
@@ -60,7 +60,7 @@ public interface PropertyStore<T extends Property<?, ?>> {
      * @param location The location of the block
      * @return The type of property
      */
-    Optional<T> getFor(Location<World> location);
+    Optional<T> getFor(Location<IWorld> location);
 
     /**
      * Gets the desired property for the provided {@link Location} at present
@@ -70,7 +70,7 @@ public interface PropertyStore<T extends Property<?, ?>> {
      * @param direction The direction in relation to
      * @return The type of property
      */
-    Optional<T> getFor(Location<World> location, Direction direction);
+    Optional<T> getFor(Location<IWorld> location, Direction direction);
 
     /**
      * Gets the priority of which this {@link PropertyStore} is used for

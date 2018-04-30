@@ -26,7 +26,7 @@ package rikka.api.item.recipe.crafting;
 
 import rikka.api.item.inventory.crafting.CraftingGridInventory;
 import rikka.api.item.recipe.RecipeRegistry;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 
 import java.util.Optional;
 
@@ -44,7 +44,7 @@ public interface CraftingRecipeRegistry extends RecipeRegistry<CraftingRecipe> {
      * @return The found {@link CraftingRecipe}, or {@link Optional#empty()}
      * if no recipe was found for this configuration
      */
-    Optional<CraftingRecipe> findMatchingRecipe(CraftingGridInventory grid, World world);
+    Optional<CraftingRecipe> findMatchingRecipe(CraftingGridInventory grid, IWorld world);
 
     /**
      * Finds the matching recipe and creates the {@link CraftingResult},
@@ -55,7 +55,7 @@ public interface CraftingRecipeRegistry extends RecipeRegistry<CraftingRecipe> {
      * @return The {@link CraftingResult} if a recipe was found, or
      * {@link Optional#empty()} if not
      */
-    default Optional<CraftingResult> getResult(CraftingGridInventory grid, World world) {
+    default Optional<CraftingResult> getResult(CraftingGridInventory grid, IWorld world) {
         return findMatchingRecipe(grid, world)
                 .flatMap(recipe -> recipe.getResult(grid, world));
     }

@@ -58,9 +58,9 @@ import rikka.api.util.Tristate;
 import rikka.api.util.blockray.BlockRay;
 import rikka.api.util.blockray.BlockRayHit;
 import rikka.api.world.DimensionType;
+import rikka.api.world.IWorld;
 import rikka.api.world.Locatable;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 import rikka.api.world.extent.EntityUniverse;
 import rikka.api.world.storage.WorldProperties;
 
@@ -1343,7 +1343,7 @@ public final class GenericArguments {
                 yStr = split[1];
                 zStr = split[2];
             } else if (xStr.equals("#target") && source instanceof IEntity) {
-                Optional<BlockRayHit<World>> hit = BlockRay
+                Optional<BlockRayHit<IWorld>> hit = BlockRay
                         .from(((IEntity) source))
                         .stopFilter(BlockRay.continueAfterFilter(BlockRay.onlyAirFilter(), 1))
                         .build()
@@ -1463,7 +1463,7 @@ public final class GenericArguments {
                 world = ((Collection<?>) world).iterator().next();
             }
             WorldProperties targetWorldProps = ((WorldProperties) world);
-            Optional<World> targetWorld = Sponge.getGame().getServer().getWorld(targetWorldProps.getUniqueId());
+            Optional<IWorld> targetWorld = Sponge.getGame().getServer().getWorld(targetWorldProps.getUniqueId());
             Vector3d vector = (Vector3d) vec;
             return new Location<>(targetWorld.get(), vector);
         }
@@ -1764,7 +1764,7 @@ public final class GenericArguments {
 
         @Override
         protected Iterable<String> getChoices(ICommandSender source) {
-            Set<Iterable<IEntity>> worldEntities = Sponge.getServer().getWorlds().stream().map(World::getEntities).collect(Collectors.toSet());
+            Set<Iterable<IEntity>> worldEntities = Sponge.getServer().getWorlds().stream().map(IWorld::getEntities).collect(Collectors.toSet());
             return Iterables.filter(Iterables.transform(Iterables.concat(worldEntities), input -> {
                 if (input == null) {
                     return null;
@@ -1783,7 +1783,7 @@ public final class GenericArguments {
         protected Object getValue(String choice) throws IllegalArgumentException {
             UUID uuid = UUID.fromString(choice);
             boolean found = false;
-            for (World world : Sponge.getServer().getWorlds()) {
+            for (IWorld world : Sponge.getServer().getWorlds()) {
                 Optional<IEntity> ret = world.getEntity(uuid);
                 if (ret.isPresent()) {
                     IEntity entity = ret.get();

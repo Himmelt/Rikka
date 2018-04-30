@@ -28,19 +28,19 @@ import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutableShatteringData;
 import rikka.api.data.value.mutable.Value;
-import rikka.api.entity.projectile.EyeOfEnder;
+import rikka.api.entity.projectile.IEyeOfEnder;
 import rikka.api.item.inventory.ItemStack;
 
 /**
  * An {@link DataManipulator} representing the "shattering" state of an
- * {@link EyeOfEnder}. Usually, if an {@link EyeOfEnder} will "shatter" at
+ * {@link IEyeOfEnder}. Usually, if an {@link IEyeOfEnder} will "shatter" at
  * the end of it's travel duration such that no {@link ItemStack} will drop.
  */
 public interface ShatteringData extends DataManipulator<ShatteringData, ImmutableShatteringData> {
 
     /**
      * Gets the {@link Value} for the "shattering" state of an
-     * {@link EyeOfEnder}.
+     * {@link IEyeOfEnder}.
      *
      * @return The immutable value for the "shattering" state
      * @see Keys#WILL_SHATTER

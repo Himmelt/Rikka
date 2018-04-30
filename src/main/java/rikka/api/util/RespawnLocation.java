@@ -33,8 +33,8 @@ import rikka.api.data.Queries;
 import rikka.api.data.manipulator.mutable.entity.RespawnLocationData;
 import rikka.api.data.persistence.AbstractDataBuilder;
 import rikka.api.data.persistence.InvalidDataException;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -104,8 +104,8 @@ public final class RespawnLocation implements DataSerializable {
      *
      * @return The position object, if available.
      */
-    public Optional<Location<World>> asLocation() {
-        Optional<World> world = Sponge.getServer().getWorld(getWorldUniqueId());
+    public Optional<Location<IWorld>> asLocation() {
+        Optional<IWorld> world = Sponge.getServer().getWorld(getWorldUniqueId());
         if (!world.isPresent()) {
             return Optional.empty();
         }
@@ -175,18 +175,18 @@ public final class RespawnLocation implements DataSerializable {
         }
 
         /**
-         * Sets the {@link UUID} of the provided {@link World} into this
+         * Sets the {@link UUID} of the provided {@link IWorld} into this
          * builder.
          *
          * @param world The world to get the uuid from
          * @return This builder, for chaining
          */
-        public Builder world(World world) {
+        public Builder world(IWorld world) {
             return world(checkNotNull(world, "World cannot be null!").getUUID());
         }
 
         /**
-         * Sets the {@link UUID} of the desired {@link World}. There are no
+         * Sets the {@link UUID} of the desired {@link IWorld}. There are no
          * validation checks to whether a world exists with the provided uuid,
          * mainly for reasons when multiple worlds are loaded and unloaded.
          *
@@ -199,16 +199,16 @@ public final class RespawnLocation implements DataSerializable {
         }
 
         /**
-         * Sets the {@link UUID} of the {@link Location} provided {@link World},
+         * Sets the {@link UUID} of the {@link Location} provided {@link IWorld},
          * and the {@link Vector3d} position to respawn at.
          *
          * @param location The location desired
          * @return This builder, for chaining
          * @throws IllegalStateException If the location's extent is null
          */
-        public Builder location(Location<World> location) {
+        public Builder location(Location<IWorld> location) {
             checkNotNull(location, "Location cannot be null!");
-            final World world = location.getExtent();
+            final IWorld world = location.getExtent();
             position(location.getPosition());
             world(world.getUUID());
             return this;

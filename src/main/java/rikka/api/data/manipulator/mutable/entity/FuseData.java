@@ -28,15 +28,15 @@ import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutableFuseData;
 import rikka.api.data.value.mutable.Value;
-import rikka.api.entity.explosive.FusedExplosive;
+import rikka.api.entity.explosive.IFusedExplosive;
 
 /**
- * Represents information about a {@link FusedExplosive}'s fuse.
+ * Represents information about a {@link IFusedExplosive}'s fuse.
  */
 public interface FuseData extends DataManipulator<FuseData, ImmutableFuseData> {
 
     /**
-     * The amount of ticks before the {@link FusedExplosive} detonates when
+     * The amount of ticks before the {@link IFusedExplosive} detonates when
      * primed.
      *
      * @return Amount of ticks before detonation when primed
@@ -45,7 +45,7 @@ public interface FuseData extends DataManipulator<FuseData, ImmutableFuseData> {
     Value<Integer> fuseDuration();
 
     /**
-     * The amount of ticks before {@link FusedExplosive} detonates. Setting
+     * The amount of ticks before {@link IFusedExplosive} detonates. Setting
      * this value has no effect if the explosive is not currently
      * primed and is set to an arbitrary value that differs from explosive to
      * explosive when not-primed. Therefore, this value should be ignored when

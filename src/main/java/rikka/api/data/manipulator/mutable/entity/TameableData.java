@@ -28,7 +28,7 @@ import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutableTameableData;
 import rikka.api.data.value.mutable.OptionalValue;
-import rikka.api.entity.Tamer;
+import rikka.api.entity.ITamer;
 import rikka.api.entity.living.animal.IAnimal;
 import rikka.api.entity.living.animal.IOcelot;
 import rikka.api.entity.living.animal.IWolf;
@@ -37,7 +37,7 @@ import java.util.UUID;
 
 /**
  * An {@link DataManipulator} that handles the link to the {@link UUID} of the
- * {@link Tamer} that has "tamed" an {@link IAnimal}. Usually {@link IAnimal}s
+ * {@link ITamer} that has "tamed" an {@link IAnimal}. Usually {@link IAnimal}s
  * can not be tamed, however, certain few can. Such as {@link IWolf} and
  * {@link IOcelot}s.
  */
@@ -45,7 +45,7 @@ public interface TameableData extends DataManipulator<TameableData, ImmutableTam
 
     /**
      * Gets the {@link OptionalValue} for the {@link UUID} of the
-     * {@link Tamer}.
+     * {@link ITamer}.
      *
      * @return The optional value for the uuid of the tamer
      * @see Keys#TAMED_OWNER

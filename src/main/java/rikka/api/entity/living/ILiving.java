@@ -7,11 +7,11 @@ import rikka.api.data.value.mutable.MutableBoundedValue;
 import rikka.api.data.value.mutable.OptionalValue;
 import rikka.api.entity.EntitySnapshot;
 import rikka.api.entity.IEntity;
-import rikka.api.entity.projectile.source.ProjectileSource;
+import rikka.api.entity.projectile.source.IProjectileSource;
 import rikka.api.scoreboard.TeamMember;
 import rikka.api.util.math.Vector3d;
 
-public interface ILiving extends IEntity, ProjectileSource, TeamMember {
+public interface ILiving extends IEntity, IProjectileSource, TeamMember {
 
     default HealthData getHealthData() {
         return get(HealthData.class).get();

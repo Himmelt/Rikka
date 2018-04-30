@@ -34,7 +34,7 @@ import rikka.api.text.channel.type.PermissionMessageChannel;
 import rikka.api.text.channel.type.WorldMessageChannel;
 import rikka.api.text.chat.ChatType;
 import rikka.api.text.chat.ChatTypes;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 
 import javax.annotation.Nullable;
 import java.util.Collection;
@@ -140,7 +140,7 @@ public interface MessageChannel {
      * @return The channel
      * @see WorldMessageChannel
      */
-    static MessageChannel world(World world) {
+    static MessageChannel world(IWorld world) {
         return new WorldMessageChannel(world);
     }
 

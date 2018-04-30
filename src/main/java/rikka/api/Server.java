@@ -5,7 +5,7 @@ import rikka.api.entity.living.player.IPlayer;
 import rikka.api.scoreboard.Scoreboard;
 import rikka.api.text.Text;
 import rikka.api.text.channel.MessageChannel;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 import rikka.api.world.storage.ChunkLayout;
 
 import java.util.Collection;
@@ -21,17 +21,17 @@ public interface Server {
 
     IPlayer getPlayer(String name);
 
-    Collection<World> getWorlds();
+    Collection<IWorld> getWorlds();
 
-    World getWorld(UUID uuid);
+    IWorld getWorld(UUID uuid);
 
-    World getWorld(String name);
+    IWorld getWorld(String name);
 
-    World loadWorld(String name);
+    IWorld loadWorld(String name);
 
-    World loadWorld(UUID uuid);
+    IWorld loadWorld(UUID uuid);
 
-    boolean unloadWorld(World world);
+    boolean unloadWorld(IWorld world);
 
     Scoreboard getServerScoreboard();
 

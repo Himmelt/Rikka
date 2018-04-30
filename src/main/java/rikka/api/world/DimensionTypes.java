@@ -39,7 +39,7 @@ public final class DimensionTypes {
     public static final DimensionType NETHER = DummyObjectProvider.createFor(DimensionType.class, "NETHER");
 
     /**
-     * Represents the default dimension type of a {@link World}.
+     * Represents the default dimension type of a {@link IWorld}.
      */
     public static final DimensionType OVERWORLD = DummyObjectProvider.createFor(DimensionType.class, "OVERWORLD");
 

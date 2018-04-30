@@ -33,8 +33,8 @@ import rikka.api.command.ICommandSender;
 import rikka.api.command.args.*;
 import rikka.api.command.args.parsing.InputTokenizer;
 import rikka.api.text.Text;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -375,7 +375,7 @@ public final class CommandSpec implements CommandCallable {
     }
 
     @Override
-    public List<String> getSuggestions(ICommandSender source, String arguments, @Nullable Location<World> location) throws CommandException {
+    public List<String> getSuggestions(ICommandSender source, String arguments, @Nullable Location<IWorld> location) throws CommandException {
         CommandArgs args = new CommandArgs(arguments, getInputTokenizer().tokenize(arguments, true));
         CommandContext ctx = new CommandContext();
         if (location != null) {

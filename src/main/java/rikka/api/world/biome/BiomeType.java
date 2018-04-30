@@ -26,7 +26,7 @@ package rikka.api.world.biome;
 
 import rikka.api.CatalogType;
 import rikka.api.util.annotation.CatalogedBy;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 
 /**
  * Represents a biome.
@@ -54,6 +54,6 @@ public interface BiomeType extends CatalogType {
      * @param world The world the settings are being made for
      * @return The default generation settings
      */
-    BiomeGenerationSettings createDefaultGenerationSettings(World world);
+    BiomeGenerationSettings createDefaultGenerationSettings(IWorld world);
 
 }

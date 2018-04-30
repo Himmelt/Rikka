@@ -3,11 +3,11 @@ package rikka.api.entity.living;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.entity.FoodData;
 import rikka.api.data.value.mutable.MutableBoundedValue;
-import rikka.api.entity.ArmorEquipable;
-import rikka.api.entity.Tamer;
+import rikka.api.entity.IArmorEquipable;
+import rikka.api.entity.ITamer;
 import rikka.api.entity.projectile.IProjectileLauncher;
 
-public interface Humanoid extends ILiving, IProjectileLauncher, ArmorEquipable, Tamer {
+public interface Humanoid extends ILiving, IProjectileLauncher, IArmorEquipable, ITamer {
 
     default FoodData getFoodData() {
         return get(FoodData.class).get();

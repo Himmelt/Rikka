@@ -29,12 +29,12 @@ import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutableMinecartBlockData;
 import rikka.api.data.value.mutable.Value;
-import rikka.api.entity.vehicle.minecart.Minecart;
+import rikka.api.entity.vehicle.minecart.IMinecart;
 
 public interface MinecartBlockData extends DataManipulator<MinecartBlockData, ImmutableMinecartBlockData> {
 
     /**
-     * Gets the {@link IBlockState} represented by the {@link Minecart}.
+     * Gets the {@link IBlockState} represented by the {@link IMinecart}.
      *
      * @return The represented block
      * @see Keys#REPRESENTED_BLOCK

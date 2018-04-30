@@ -2,8 +2,8 @@ package rikka.api.command;
 
 import rikka.api.command.dispatcher.Dispatcher;
 import rikka.api.plugin.PluginContainer;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -33,5 +33,5 @@ public interface CommandManager extends Dispatcher {
     boolean process(ICommandSender source, String arguments);
 
     @Override
-    List<String> getSuggestions(ICommandSender source, String arguments, @Nullable Location<World> location);
+    List<String> getSuggestions(ICommandSender source, String arguments, @Nullable Location<IWorld> location);
 }

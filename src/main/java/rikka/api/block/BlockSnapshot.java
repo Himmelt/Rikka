@@ -7,8 +7,8 @@ import rikka.api.data.ImmutableDataBuilder;
 import rikka.api.data.LocatableSnapshot;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 import rikka.api.world.BlockChangeFlag;
+import rikka.api.world.IWorld;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 import rikka.api.world.storage.WorldProperties;
 
 import java.util.Optional;
@@ -75,7 +75,7 @@ public interface BlockSnapshot extends LocatableSnapshot<BlockSnapshot> {
          * @param location The Location to copy from
          * @return This builder, for chaining
          */
-        Builder from(Location<World> location);
+        Builder from(Location<IWorld> location);
 
         /**
          * Sets the {@link UUID} of the user who created this

@@ -30,7 +30,7 @@ import rikka.api.data.manipulator.mutable.entity.RespawnLocationData;
 import rikka.api.data.value.immutable.ImmutableMapValue;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.util.RespawnLocation;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -40,16 +40,16 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * An {@link ImmutableDataManipulator} for the "respawn" location of a
  * {@link IPlayer}. A {@link IPlayer} may have multiple respawn locations, but can
- * only have a single respawn location per {@link World}. A location can be
+ * only have a single respawn location per {@link IWorld}. A location can be
  * "forced", which means they will spawn there even if it's not a valid bed.
  */
 public interface ImmutableRespawnLocation extends ImmutableMappedData<UUID, RespawnLocation, ImmutableRespawnLocation, RespawnLocationData> {
 
     /**
      * Gets the {@link ImmutableMapValue} for the "respawn" locations set for
-     * various {@link World#getUUID()} such that a {@link IPlayer} may not
-     * have a respawn point for a particular {@link World}, but may have
-     * multiple respawn points for other {@link World}s.
+     * various {@link IWorld#getUUID()} such that a {@link IPlayer} may not
+     * have a respawn point for a particular {@link IWorld}, but may have
+     * multiple respawn points for other {@link IWorld}s.
      *
      * @return The immutable map for the respawn locations per world id
      */
@@ -65,7 +65,7 @@ public interface ImmutableRespawnLocation extends ImmutableMappedData<UUID, Resp
      * @param world The world to check
      * @return The {@link RespawnLocation}
      */
-    default Optional<RespawnLocation> getForWorld(World world) {
+    default Optional<RespawnLocation> getForWorld(IWorld world) {
         return get(checkNotNull(world, "World cannot be null!").getUUID());
     }
 

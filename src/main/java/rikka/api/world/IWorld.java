@@ -1,26 +1,35 @@
 package rikka.api.world;
 
-import net.minecraft.world.WorldServer;
-import org.rikka.Rikka;
-import org.rikka.block.IBlock;
-import org.rikka.entity.IPlayer;
-import org.rikka.handler.IDataHandler;
-import org.rikka.tileentity.ITileEntity;
+import rikka.api.entity.IEntity;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.util.math.Vector3d;
+import rikka.api.util.math.Vector3i;
 
-public interface IWorld extends Rikka<WorldServer>, IDataHandler {
+import java.util.Collection;
+import java.util.UUID;
 
-    long getTime();
+public interface IWorld {
 
-    void setTime(long time);
+    Collection<IPlayer> getPlayers();
 
-    IBlock getBlock(int x, int y, int z);
+    default Location getLocation(Vector3i block) {
+        return new Location(this, block);
+    }
 
-    ITileEntity getTile(int x, int y, int z);
+    default Location getLocation(int x, int y, int z) {
+        return new Location(this, x, y, z);
+    }
 
-    IBlock setBlock(int x, int y, int z, String name, int meta);
+    default Location getLocation(Vector3d pos) {
+        return new Location(this, pos);
+    }
 
-    IBlock setBlock(IBlock block);
+    default Location getLocation(double x, double y, double z) {
+        return new Location(this, x, y, z);
+    }
 
-    IPlayer getPlayer(String name);
+    IEntity getEntity(UUID uuid);
+
+    Collection<IEntity> getNearbyEntities(Vector3d position, double distance);
 
 }

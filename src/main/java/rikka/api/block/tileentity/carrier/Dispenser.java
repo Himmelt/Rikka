@@ -1,6 +1,6 @@
 package rikka.api.block.tileentity.carrier;
 
-import rikka.api.entity.projectile.source.BlockProjectileSource;
+import rikka.api.entity.projectile.source.IBlockProjectileSource;
 
-public interface Dispenser extends TileEntityCarrier, BlockProjectileSource {
+public interface Dispenser extends TileEntityCarrier, IBlockProjectileSource {
 }

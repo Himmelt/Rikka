@@ -36,8 +36,8 @@ import rikka.api.entity.living.golem.SnowGolem;
 import rikka.api.entity.living.monster.*;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.entity.living.player.gamemode.GameModes;
-import rikka.api.entity.vehicle.Boat;
-import rikka.api.entity.vehicle.minecart.Minecart;
+import rikka.api.entity.vehicle.IBoat;
+import rikka.api.entity.vehicle.minecart.IMinecart;
 
 /**
  * An enumeration of all possible GameRule names in vanilla minecraft.
@@ -169,7 +169,7 @@ public class DefaultGameRules {
      * {@link GameModes#ADVENTURE adventure mode} {@link IPlayer}s, and all
      * mobs but bats. Pushable entities include non-spectator-mode
      * {@link IPlayer}, any mob except {@link Bat}s, as well as
-     * {@link Boat}s and {@link Minecart}.</p>
+     * {@link IBoat}s and {@link IMinecart}.</p>
      *
      * <p>Setting to {@code 0} disables the rule.</p>
      *

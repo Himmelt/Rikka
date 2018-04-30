@@ -26,7 +26,7 @@ package rikka.api.world.biome;
 
 import rikka.api.Sponge;
 import rikka.api.util.ResettableBuilder;
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 
 import java.util.function.Function;
 
@@ -99,7 +99,7 @@ public interface VirtualBiomeType extends BiomeType {
          * @param settingsBuilder The settings builder function
          * @return This builder, for chaining
          */
-        Builder settingsBuilder(Function<World, BiomeGenerationSettings> settingsBuilder);
+        Builder settingsBuilder(Function<IWorld, BiomeGenerationSettings> settingsBuilder);
 
         /**
          * Builds a new {@link VirtualBiomeType} with the given unique id.

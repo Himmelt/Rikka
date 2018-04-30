@@ -25,9 +25,9 @@
 package rikka.api.item.inventory;
 
 import rikka.api.util.Direction;
+import rikka.api.world.IWorld;
 import rikka.api.world.Locatable;
 import rikka.api.world.Location;
-import rikka.api.world.World;
 
 /**
  * Represents a Block that is a carrier of an Inventory
@@ -40,7 +40,7 @@ public interface BlockCarrier extends ICarrier, Locatable {
      *
      * @return The Location of the Block
      */
-    Location<World> getLocation();
+    Location<IWorld> getLocation();
 
     /**
      * Returns the Inventory owned by this Carrier and accessible from

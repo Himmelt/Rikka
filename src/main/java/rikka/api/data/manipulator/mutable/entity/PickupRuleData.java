@@ -29,11 +29,11 @@ import rikka.api.data.manipulator.DataManipulator;
 import rikka.api.data.manipulator.immutable.entity.ImmutablePickupRuleData;
 import rikka.api.data.manipulator.mutable.VariantData;
 import rikka.api.data.type.PickupRule;
-import rikka.api.entity.projectile.arrow.Arrow;
+import rikka.api.entity.projectile.arrow.IArrow;
 
 /**
  * A {@link DataManipulator} for the "pickup" rule of an
- * {@link Arrow}.
+ * {@link IArrow}.
  *
  * @see Keys#PICKUP_RULE
  */

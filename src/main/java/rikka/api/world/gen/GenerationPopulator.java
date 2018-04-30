@@ -24,7 +24,7 @@
  */
 package rikka.api.world.gen;
 
-import rikka.api.world.World;
+import rikka.api.world.IWorld;
 import rikka.api.world.extent.ImmutableBiomeVolume;
 import rikka.api.world.extent.MutableBlockVolume;
 
@@ -46,6 +46,6 @@ public interface GenerationPopulator {
      *               any size.
      * @param biomes The biomes for generation
      */
-    void populate(World world, MutableBlockVolume buffer, ImmutableBiomeVolume biomes);
+    void populate(IWorld world, MutableBlockVolume buffer, ImmutableBiomeVolume biomes);
 
 }

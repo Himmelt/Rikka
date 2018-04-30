@@ -103,8 +103,8 @@ public interface ChunkPreGenerate {
      * <p>Chunk order is not defined but a proper implementation should use and
      * "inside-out" strategy for better results if the task is cancelled.</p>
      *
-     * @see WorldBorder#newChunkPreGenerate(World)
-     * @see World#newChunkPreGenerate(Vector3d, double)
+     * @see WorldBorder#newChunkPreGenerate(IWorld)
+     * @see IWorld#newChunkPreGenerate(Vector3d, double)
      */
     interface Builder extends ResettableBuilder<ChunkPreGenerate, Builder> {
 
