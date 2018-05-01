@@ -27,15 +27,15 @@ package rikka.api.item.merchant;
 import rikka.api.Sponge;
 import rikka.api.data.DataSerializable;
 import rikka.api.data.persistence.DataBuilder;
-import rikka.api.entity.living.Humanoid;
+import rikka.api.entity.living.IHumanoid;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 
 import java.util.Optional;
 
 /**
- * <p>Represents a trade offer that a {@link Merchant} may offer a
- * {@link Humanoid}.</p>
+ * <p>Represents a trade offer that a {@link IMerchant} may offer a
+ * {@link IHumanoid}.</p>
  *
  * <p>TradeOffers usually have a limited amount of times they can be used.</p>
  *
@@ -81,7 +81,7 @@ public interface TradeOffer extends DataSerializable {
     Optional<ItemStackSnapshot> getSecondBuyingItem();
 
     /**
-     * Gets the selling item the {@link Merchant} will give to the customer
+     * Gets the selling item the {@link IMerchant} will give to the customer
      * often in exchange for a single item or sometimes, two items from the
      * following methods: {@link #getFirstBuyingItem()} and
      * {@link #getSecondBuyingItem}.

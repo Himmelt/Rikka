@@ -26,7 +26,7 @@ package rikka.api.world;
 
 import com.flowpowered.math.vector.Vector3d;
 import org.slf4j.Logger;
-import rikka.api.Game;
+import rikka.api.IGame;
 import rikka.api.event.world.ChunkPreGenerationEvent;
 import rikka.api.scheduler.Scheduler;
 import rikka.api.util.ResettableBuilder;
@@ -103,7 +103,7 @@ public interface ChunkPreGenerate {
      * <p>Chunk order is not defined but a proper implementation should use and
      * "inside-out" strategy for better results if the task is cancelled.</p>
      *
-     * @see WorldBorder#newChunkPreGenerate(IWorld)
+     * @see IWorldBorder#newChunkPreGenerate(IWorld)
      * @see IWorld#newChunkPreGenerate(Vector3d, double)
      */
     interface Builder extends ResettableBuilder<ChunkPreGenerate, Builder> {
@@ -188,7 +188,7 @@ public interface ChunkPreGenerate {
         Builder addListener(Consumer<ChunkPreGenerationEvent> listener);
 
         /**
-         * Schedules the task with the {@link Game#getScheduler()}.
+         * Schedules the task with the {@link IGame#getScheduler()}.
          *
          * @return The resulting {@link ChunkPreGenerate} that can be used
          * obtain progress

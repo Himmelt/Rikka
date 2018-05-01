@@ -125,7 +125,7 @@ public interface VillagerRegistry {
      * @param random   The random
      * @return The generated list of trade offers
      */
-    default Collection<TradeOffer> generateTradeOffers(Merchant merchant, Career career, int level, Random random) {
+    default Collection<TradeOffer> generateTradeOffers(IMerchant merchant, Career career, int level, Random random) {
         checkNotNull(random, "Random cannot be null!");
         List<TradeOffer> generatedList = new ArrayList<>();
         this.getMutatorsForCareer(career, level)
@@ -147,7 +147,7 @@ public interface VillagerRegistry {
      * @param random        The random to use
      * @return The list of offers modified
      */
-    default List<TradeOffer> populateOffers(Merchant merchant, List<TradeOffer> currentOffers, Career career, int level, Random random) {
+    default List<TradeOffer> populateOffers(IMerchant merchant, List<TradeOffer> currentOffers, Career career, int level, Random random) {
         this.getMutatorsForCareer(career, level)
                 .forEach(mutator -> mutator.accept(merchant, currentOffers, random));
         return currentOffers;

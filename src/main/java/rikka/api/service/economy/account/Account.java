@@ -25,7 +25,7 @@
 package rikka.api.service.economy.account;
 
 import rikka.api.entity.IEntity;
-import rikka.api.entity.living.player.User;
+import rikka.api.entity.living.player.IUser;
 import rikka.api.event.cause.Cause;
 import rikka.api.profile.GameProfile;
 import rikka.api.service.context.Context;
@@ -48,7 +48,7 @@ import java.util.UUID;
  * and {@link VirtualAccount} virtual accounts.
  * <p>
  * Unique accounts are bound to a {@link UUID}, usually of a particular
- * {@link User}'s {@link GameProfile}.
+ * {@link IUser}'s {@link GameProfile}.
  * <p>
  * Virtual accounts are identified by a String identifier, which may have any
  * value. They are not tied to any {@link IEntity}, player or otherwise. Virtual

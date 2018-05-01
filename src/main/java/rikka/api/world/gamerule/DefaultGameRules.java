@@ -26,13 +26,13 @@ package rikka.api.world.gamerule;
 
 import rikka.api.block.BlockTypes;
 import rikka.api.block.tileentity.CommandBlock;
-import rikka.api.entity.living.Bat;
 import rikka.api.entity.living.IAgent;
-import rikka.api.entity.living.Villager;
+import rikka.api.entity.living.IBat;
+import rikka.api.entity.living.IVillager;
 import rikka.api.entity.living.animal.IRabbit;
 import rikka.api.entity.living.animal.ISheep;
-import rikka.api.entity.living.complex.EnderDragon;
-import rikka.api.entity.living.golem.SnowGolem;
+import rikka.api.entity.living.complex.IEnderDragon;
+import rikka.api.entity.living.golem.ISnowGolem;
 import rikka.api.entity.living.monster.*;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.entity.living.player.gamemode.GameModes;
@@ -168,7 +168,7 @@ public class DefaultGameRules {
      * <p>Damage affects {@link GameModes#SURVIVAL survival mode} or
      * {@link GameModes#ADVENTURE adventure mode} {@link IPlayer}s, and all
      * mobs but bats. Pushable entities include non-spectator-mode
-     * {@link IPlayer}, any mob except {@link Bat}s, as well as
+     * {@link IPlayer}, any mob except {@link IBat}s, as well as
      * {@link IBoat}s and {@link IMinecart}.</p>
      *
      * <p>Setting to {@code 0} disables the rule.</p>
@@ -189,18 +189,18 @@ public class DefaultGameRules {
      * <li>{@link IEnderman}</li>
      * <li>{@link IGhast}</li>
      * <li>{@link IWither}</li>
-     * <li>{@link EnderDragon}</li>
+     * <li>{@link IEnderDragon}</li>
      * <li>{@link IRabbit}</li>
      * <li>{@link ISheep}</li>
-     * <li>{@link Villager}</li>
-     * <li>{@link SnowGolem}</li>
+     * <li>{@link IVillager}</li>
+     * <li>{@link ISnowGolem}</li>
      * <li>{@link ISilverfish}</li>
      * </ul></p>
      *
      * <p>In vanilla Minecraft, the following entities can pick up items when
      * this gamerule is{@code true}:
      * <ul>
-     * <li>{@link Villager}</li>
+     * <li>{@link IVillager}</li>
      * <li>{@link IZombie}</li>
      * <li>{@link ISkeleton}</li>
      * <li>{@link IPigZombie}</li>

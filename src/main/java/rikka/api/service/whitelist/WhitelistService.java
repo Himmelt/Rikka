@@ -24,7 +24,7 @@
  */
 package rikka.api.service.whitelist;
 
-import rikka.api.Server;
+import rikka.api.IServer;
 import rikka.api.profile.GameProfile;
 
 import java.util.Collection;
@@ -32,7 +32,7 @@ import java.util.Collection;
 /**
  * Represents the service for managing a whitelist of {@link GameProfile}s.
  *
- * <p>In Vanilla, the service is controlled by {@link Server#hasWhitelist()}.
+ * <p>In Vanilla, the service is controlled by {@link IServer#hasWhitelist()}.
  * Additionally, operators are always allowed to join, regardless of their
  * absence or presence on the whitelist service.</p>
  */
