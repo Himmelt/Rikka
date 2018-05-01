@@ -4,25 +4,25 @@ import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
 import rikka.api.world.extent.Extent;
 
-public interface Chunk extends Extent {
+public interface IChunk extends Extent {
 
     @Override
-    default Location<Chunk> getLocation(Vector3i position) {
-        return new Location<>(this, position);
+    default Location getLocation(Vector3i position) {
+        return new Location(this, position);
     }
 
     @Override
-    default Location<Chunk> getLocation(int x, int y, int z) {
+    default Location getLocation(int x, int y, int z) {
         return getLocation(new Vector3i(x, y, z));
     }
 
     @Override
-    default Location<Chunk> getLocation(Vector3d position) {
-        return new Location<>(this, position);
+    default Location getLocation(Vector3d position) {
+        return new Location(this, position);
     }
 
     @Override
-    default Location<Chunk> getLocation(double x, double y, double z) {
+    default Location getLocation(double x, double y, double z) {
         return getLocation(new Vector3d(x, y, z));
     }
 

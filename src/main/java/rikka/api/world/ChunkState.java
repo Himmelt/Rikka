@@ -51,7 +51,7 @@
 package rikka.api.world;
 
 /**
- * Represents the state of a {@link Chunk}.
+ * Represents the state of a {@link IChunk}.
  */
 public enum ChunkState {
 

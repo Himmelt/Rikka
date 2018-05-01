@@ -26,7 +26,7 @@ package rikka.api.world.storage;
 
 import com.flowpowered.math.vector.Vector3i;
 import rikka.api.data.DataContainer;
-import rikka.api.world.Chunk;
+import rikka.api.world.IChunk;
 import rikka.api.world.IWorld;
 
 import java.util.Optional;
@@ -70,7 +70,7 @@ public interface WorldStorage {
 
     /**
      * Gets a {@link DataContainer} including all data related to a
-     * {@link Chunk}.
+     * {@link IChunk}.
      *
      * <p>The container is a read only instance of the data, and therefor should
      * not be considered as mutable data. Changes are NOT saved, and the data

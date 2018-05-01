@@ -30,5 +30,4 @@ public interface BlockType extends CatalogType, Translatable, PropertyHolder {
 
     Optional<BlockTrait<?>> getTrait(String blockTrait);
 
-    BlockSoundGroup getSoundGroup();
 }

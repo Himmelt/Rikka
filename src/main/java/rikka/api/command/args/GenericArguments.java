@@ -61,7 +61,7 @@ import rikka.api.world.DimensionType;
 import rikka.api.world.IWorld;
 import rikka.api.world.Locatable;
 import rikka.api.world.Location;
-import rikka.api.world.extent.EntityUniverse;
+import rikka.api.world.extent.IEntityUniverse;
 import rikka.api.world.storage.WorldProperties;
 
 import javax.annotation.Nullable;
@@ -1815,7 +1815,7 @@ public final class GenericArguments {
         private IEntity tryReturnTarget(ICommandSender source, CommandArgs args) throws ArgumentParseException {
             IEntity entity = tryReturnSource(source, args, false);
             return entity.getWorld().getIntersectingEntities(entity, 10).stream()
-                    .filter(e -> !e.getEntity().equals(entity)).map(EntityUniverse.EntityHit::getEntity)
+                    .filter(e -> !e.getEntity().equals(entity)).map(IEntityUniverse.EntityHit::getEntity)
                     .filter(this::checkEntity).findFirst()
                     .orElseThrow(() -> args.createError(t("No entities matched and source was not looking at a valid entity!")));
         }

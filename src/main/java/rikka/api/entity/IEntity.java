@@ -1,7 +1,5 @@
 package rikka.api.entity;
 
-import rikka.api.data.DataHolder;
-import rikka.api.data.key.Keys;
 import rikka.api.text.translation.Translatable;
 import rikka.api.util.Identifiable;
 import rikka.api.util.RelativePositions;
@@ -13,9 +11,8 @@ import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.EnumSet;
 import java.util.List;
-import java.util.Optional;
 
-public interface IEntity extends Identifiable, Locatable, DataHolder, Translatable {
+public interface IEntity extends Identifiable, Locatable, Translatable {
 
     EntityType getType();
 
@@ -84,11 +81,6 @@ public interface IEntity extends Identifiable, Locatable, DataHolder, Translatab
     void remove();
 
     Collection<IEntity> getNearbyEntities(double distance);
-
-    default boolean canSee(IEntity entity) {
-        Optional<Boolean> optional = entity.get(Keys.VANISH);
-        return !optional.isPresent() || !optional.get();
-    }
 
     boolean hasGravity();
 

@@ -28,8 +28,8 @@ import com.flowpowered.math.vector.Vector2i;
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
 import rikka.api.block.BlockSnapshot;
-import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
+import rikka.api.block.IBlockState;
 import rikka.api.block.ScheduledBlockUpdate;
 import rikka.api.data.property.LocationBasePropertyHolder;
 import rikka.api.entity.IEntity;
@@ -50,7 +50,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * A mutable object containing blocks, tile entities, entities, and possibly
  * other game objects.
  */
-public interface Extent extends EntityUniverse, TileEntityVolume, InteractableVolume, MutableBiomeVolume,
+public interface Extent extends IEntityUniverse, TileEntityVolume, InteractableVolume, MutableBiomeVolume,
         LocationCompositeValueStore, Identifiable, LocationBasePropertyHolder {
 
     /**

@@ -6,6 +6,7 @@ import rikka.api.entity.living.player.IPlayer;
 import rikka.api.world.IWorld;
 import rikka.bukkit.BukkitRikka;
 
+import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -19,7 +20,7 @@ public class BukkitWorld extends BukkitRikka<World> implements IWorld {
         return null;
     }
 
-    public IEntity getEntity(UUID uuid) {
+    public IEntity getEntity(@Nonnull UUID uuid) {
         return null;
     }
 

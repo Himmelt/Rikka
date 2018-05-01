@@ -25,7 +25,7 @@
 package rikka.api.world.storage;
 
 import rikka.api.data.DataContainer;
-import rikka.api.world.Chunk;
+import rikka.api.world.IChunk;
 
 import javax.annotation.Nullable;
 
@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
 public interface ChunkDataStream {
 
     /**
-     * Gets the next {@link Chunk} represented by a read only
+     * Gets the next {@link IChunk} represented by a read only
      * {@link DataContainer}.
      *
      * <p>This method BLOCKS the thread until the next available data has been

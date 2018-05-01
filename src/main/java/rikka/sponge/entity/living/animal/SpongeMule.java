@@ -1,7 +1,7 @@
 package rikka.sponge.entity.living.animal;
 
-import org.soraworld.rikka.entity.living.animal.IMule;
 import org.spongepowered.api.entity.living.animal.Mule;
+import rikka.api.entity.living.animal.IMule;
 
 public abstract class SpongeMule<T extends Mule> extends SpongeHorse<T> implements IMule {
 
