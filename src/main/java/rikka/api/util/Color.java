@@ -1,47 +1,16 @@
-/*
- * This file is part of SpongeAPI, licensed under the MIT License (MIT).
- *
- * Copyright (c) SpongePowered <https://www.spongepowered.org>
- * Copyright (c) contributors
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
 package rikka.api.util;
 
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3f;
 import com.flowpowered.math.vector.Vector3i;
 import org.apache.commons.lang3.Validate;
-import rikka.api.data.DataContainer;
-import rikka.api.data.DataSerializable;
-import rikka.api.data.DataView;
-import rikka.api.data.Queries;
-import rikka.api.data.persistence.AbstractDataBuilder;
-import rikka.api.data.persistence.InvalidDataException;
 import rikka.api.data.type.DyeColor;
 
 import java.util.Objects;
-import java.util.Optional;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-public final class Color implements DataSerializable {
+public final class Color {
 
     private static final int MASK = 0xFF;
 
@@ -77,82 +46,30 @@ public final class Color implements DataSerializable {
 
     public static final Color PINK = ofRgb(0xFF00AA);
 
-    /**
-     * Gets a new {@link Color} based on the hexadecimal value
-     * for a combined {@code red}, {@code green}, and {@code blue}
-     * color. Note that colors do not utilize an alpha modifier
-     *
-     * @param hex The hexadecimal value of the color
-     * @return The color object
-     */
     public static Color ofRgb(int hex) {
         return ofRgb((hex >> 0x10) & MASK, (hex >> 0x8) & MASK, hex & MASK);
     }
 
-    /**
-     * Gets a new {@link Color} based on the hexadecimal value
-     * for a combined {@code red}, {@code green}, and {@code blue}
-     * color. Note that colors do not utilize an alpha modifier
-     *
-     * @param red   The red value
-     * @param green The green value
-     * @param blue  The blue value
-     * @return The color object
-     */
     public static Color ofRgb(int red, int green, int blue) {
         return new Color(red, green, blue);
     }
 
-    /**
-     * Converts the provided {@link java.awt.Color} object into a valid
-     * {@link Color} object to be used throughout the API.
-     *
-     * @param color The java color object
-     * @return The converted color object
-     */
     public static Color of(java.awt.Color color) {
         return new Color(color.getRed(), color.getGreen(), color.getBlue());
     }
 
-    /**
-     * Converts the provided {@link Vector3i} into a {@link Color} object.
-     *
-     * @param vector3i The vector of three integers representing color
-     * @return The color object
-     */
     public static Color of(Vector3i vector3i) {
         return new Color(vector3i.getX(), vector3i.getY(), vector3i.getZ());
     }
 
-    /**
-     * converts the provided {@link Vector3f} into a {@link Color} object.
-     *
-     * @param vector3f The vector of three floats representing color
-     * @return The color object
-     */
     public static Color of(Vector3f vector3f) {
         return new Color(Math.round(vector3f.getX()), Math.round(vector3f.getY()), Math.round(vector3f.getZ()));
     }
 
-    /**
-     * converts the provided {@link Vector3d} into a {@link Color} object.
-     *
-     * @param vector3d The vector of three doubles representing color
-     * @return The color object
-     */
     public static Color of(Vector3d vector3d) {
         return new Color((int) Math.round(vector3d.getX()), (int) Math.round(vector3d.getY()), (int) Math.round(vector3d.getZ()));
     }
 
-    /**
-     * Creates a new {@link Color} combining the provided {@link DyeColor}
-     * objects. Since {@link DyeColor}s can be converted into {@link Color}
-     * objects themselves, their summation and average is taken into effect
-     * to properly mix the colors together.
-     *
-     * @param colors The colors to mix
-     * @return The final output mixed color
-     */
     public static Color mixDyeColors(DyeColor... colors) {
         Validate.noNullElements(colors, "No nulls allowed!");
         final Color[] actualColors = new Color[colors.length];
@@ -163,14 +80,6 @@ public final class Color implements DataSerializable {
         return mixColors(actualColors);
     }
 
-    /**
-     * Creates a new {@link Color} combining the provided {@link Color}
-     * objects, their summation and average is taken into effect
-     * to properly mix the colors together.
-     *
-     * @param colors The colors to mix
-     * @return The final output mixed color
-     */
     public static Color mixColors(Color... colors) {
         Validate.noNullElements(colors, "No null colors allowed!");
         checkArgument(colors.length > 0, "Cannot have an empty color array!");
@@ -205,95 +114,38 @@ public final class Color implements DataSerializable {
                 | ((this.blue & MASK) << 0);
     }
 
-    /**
-     * Gets the {@code red} value of this {@link Color}.
-     *
-     * @return The red value
-     */
     public int getRed() {
         return MASK & this.red;
     }
 
-    /**
-     * Creates a new {@link Color} by using the provided
-     * {@code red} color, while retaining the current {@link #getGreen()}
-     * and {@link #getBlue()} values.
-     *
-     * @param red The red value to use
-     * @return The new color object
-     */
     public Color withRed(int red) {
         return ofRgb(red, getGreen(), getBlue());
     }
 
-    /**
-     * Gets the {@code red} value of this {@link Color}.
-     *
-     * @return The red value
-     */
     public int getGreen() {
         return MASK & this.green;
     }
 
-    /**
-     * Creates a new {@link Color} by using the provided
-     * {@code green} color, while retaining the current {@link #getRed()}
-     * and {@link #getBlue()} values.
-     *
-     * @param green The green value to use
-     * @return The new color object
-     */
     public Color withGreen(int green) {
         return ofRgb(getRed(), green, getBlue());
     }
 
-    /**
-     * Gets the current {@code blue} value of this {@link Color}.
-     *
-     * @return The blue value
-     */
     public int getBlue() {
         return MASK & this.blue;
     }
 
-    /**
-     * Creates a new {@link Color} by using the provided
-     * {@code blue} color, while retaining the current {@link #getGreen()}
-     * and {@link #getRed()} ()} values.
-     *
-     * @param blue The blue value to use
-     * @return The new color object
-     */
     public Color withBlue(int blue) {
         return ofRgb(getRed(), getGreen(), blue);
     }
 
-    /**
-     * Converts this {@link Color} into a {@link java.awt.Color} object for use
-     * in other APIs.
-     *
-     * @return The java awt color object
-     */
     public java.awt.Color asJavaColor() {
         return new java.awt.Color(getRed(), getGreen(), getBlue());
     }
 
-    /**
-     * Gets the {@code red green blue} representation of this color in
-     * a "hexadecimal" format.
-     *
-     * @return The current color value in a hexadecimal format
-     */
     public int getRgb() {
         return this.rgb;
     }
 
-    /**
-     * Creates a new color with the provided {@code Colors}.
-     *
-     * @param colors The provided colors to mix
-     * @return The new color
-     */
     public Color mixWithColors(Color... colors) {
         Color[] newColorArray = new Color[colors.length + 1];
         newColorArray[0] = this;
@@ -301,13 +153,6 @@ public final class Color implements DataSerializable {
         return mixColors(newColorArray);
     }
 
-    /**
-     * Similar to {@link #mixWithColors(Color...)}, mixes the
-     * provided {@link DyeColor}s with this {@link Color}.
-     *
-     * @param dyeColors The dye colors to mix
-     * @return The new color
-     */
     public Color mixWithDyes(DyeColor... dyeColors) {
         Color[] newColorArray = new Color[dyeColors.length + 1];
         newColorArray[0] = this;
@@ -315,20 +160,6 @@ public final class Color implements DataSerializable {
             newColorArray[i + 1] = dyeColors[i].getColor();
         }
         return mixColors(newColorArray);
-    }
-
-    @Override
-    public int getContentVersion() {
-        return 1;
-    }
-
-    @Override
-    public DataContainer toContainer() {
-        return DataContainer.createNew()
-                .set(Queries.CONTENT_VERSION, getContentVersion())
-                .set(Queries.COLOR_RED, this.getRed())
-                .set(Queries.COLOR_GREEN, this.getGreen())
-                .set(Queries.COLOR_BLUE, this.getBlue());
     }
 
     @Override
@@ -355,31 +186,5 @@ public final class Color implements DataSerializable {
                 .add("green", this.getGreen())
                 .add("blue", this.getBlue())
                 .toString();
-    }
-
-    public static final class Builder extends AbstractDataBuilder<Color> {
-
-        /**
-         * Creates a new {@link Builder} for building {@link Color} objects, either
-         * from {@link DataView}s, or otherwise.
-         */
-        public Builder() {
-            super(Color.class, 1);
-        }
-
-        @Override
-        protected Optional<Color> buildContent(DataView container) throws InvalidDataException {
-            if (!container.contains(Queries.COLOR_RED, Queries.COLOR_GREEN, Queries.COLOR_BLUE)) {
-                return Optional.empty();
-            }
-            try {
-                final int red = container.getInt(Queries.COLOR_RED).get();
-                final int green = container.getInt(Queries.COLOR_GREEN).get();
-                final int blue = container.getInt(Queries.COLOR_BLUE).get();
-                return Optional.of(Color.ofRgb(red, green, blue));
-            } catch (Exception e) {
-                throw new InvalidDataException("Could not parse some data.", e);
-            }
-        }
     }
 }

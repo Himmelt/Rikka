@@ -35,7 +35,7 @@ import java.util.Optional;
  * Represents Multiple Blocks that are the Carrier for an Inventory.
  * e.g. A DoubleChest Inventory carried by two blocks
  */
-public interface MultiBlockCarrier extends BlockCarrier {
+public interface MultiBlockCarrier extends IBlockCarrier {
 
     /**
      * Returns the Locations of the Blocks.

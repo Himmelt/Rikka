@@ -26,9 +26,8 @@ package rikka.api.item.inventory;
 
 import rikka.api.Sponge;
 import rikka.api.block.BlockSnapshot;
-import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
-import rikka.api.block.tileentity.TileEntity;
+import rikka.api.block.IBlockState;
 import rikka.api.data.DataHolder;
 import rikka.api.data.DataView;
 import rikka.api.data.key.Key;
@@ -39,6 +38,7 @@ import rikka.api.data.value.BaseValue;
 import rikka.api.item.ItemType;
 import rikka.api.item.ItemTypes;
 import rikka.api.text.translation.Translatable;
+import rikka.api.tileentity.ITileEntity;
 
 import java.util.Map;
 import java.util.Set;
@@ -296,7 +296,7 @@ public interface ItemStack extends DataHolder, Translatable {
 
         /**
          * Attempts to reconstruct a {@link BlockSnapshot} including all data
-         * and {@link TileEntity} related data if necessary for creating an
+         * and {@link ITileEntity} related data if necessary for creating an
          * {@link ItemStack} representation.
          *
          * @param blockSnapshot The snapshot to use

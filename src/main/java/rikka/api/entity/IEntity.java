@@ -16,17 +16,9 @@ public interface IEntity extends Identifiable, Locatable, Translatable {
 
     EntityType getType();
 
-    EntitySnapshot createSnapshot();
-
     boolean setLocation(Location location);
 
-    default boolean setLocationSafely(Location location) {
-        return false;
-        /*Sponge.getGame().getTeleportHelper()
-                .getSafeLocation(location)
-                .map(this::setLocation)
-                .orElse(false);*/
-    }
+    boolean setLocationSafely(Location location);
 
     Vector3d getRotation();
 
@@ -36,21 +28,9 @@ public interface IEntity extends Identifiable, Locatable, Translatable {
 
     boolean setLocationAndRotation(Location location, Vector3d rotation, EnumSet<RelativePositions> relativePositions);
 
-    default boolean setLocationAndRotationSafely(Location location, Vector3d rotation) {
-        return false;
-        /*Sponge.getGame().getTeleportHelper()
-                .getSafeLocation(location)
-                .map(safe -> this.setLocationAndRotation(safe, rotation))
-                .orElse(false);*/
-    }
+    boolean setLocationAndRotationSafely(Location location, Vector3d rotation);
 
-    default boolean setLocationAndRotationSafely(Location location, Vector3d rotation, EnumSet<RelativePositions> relativePositions) {
-        return false;
-        /*Sponge.getGame().getTeleportHelper()
-                .getSafeLocation(location)
-                .map(safe -> this.setLocationAndRotation(safe, rotation, relativePositions))
-                .orElse(false);*/
-    }
+    boolean setLocationAndRotationSafely(Location location, Vector3d rotation, EnumSet<RelativePositions> relativePositions);
 
     Vector3d getScale();
 

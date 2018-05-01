@@ -25,9 +25,9 @@
 package rikka.api.item.enchantment;
 
 import rikka.api.CatalogType;
-import rikka.api.block.tileentity.EnchantmentTable;
 import rikka.api.item.inventory.ItemStack;
 import rikka.api.text.translation.Translatable;
+import rikka.api.tileentity.IEnchantmentTable;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**
@@ -89,7 +89,7 @@ public interface EnchantmentType extends CatalogType, Translatable {
 
     /**
      * Test if this enchantment type can be applied to an {@link ItemStack} by
-     * the {@link EnchantmentTable}.
+     * the {@link IEnchantmentTable}.
      *
      * @param stack Te item stack to check
      * @return Whether this enchantment type can be applied by the

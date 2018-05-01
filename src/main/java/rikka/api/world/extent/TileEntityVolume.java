@@ -25,7 +25,7 @@
 package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
-import rikka.api.block.tileentity.TileEntity;
+import rikka.api.tileentity.ITileEntity;
 import rikka.api.world.extent.worker.MutableBlockVolumeWorker;
 
 import java.util.Collection;
@@ -33,7 +33,7 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 /**
- * A mutable block volume that also contains {@link TileEntity} instances.
+ * A mutable block volume that also contains {@link ITileEntity} instances.
  */
 public interface TileEntityVolume extends MutableBlockVolume {
 
@@ -47,7 +47,7 @@ public interface TileEntityVolume extends MutableBlockVolume {
      *
      * @return A collection of entities
      */
-    Collection<TileEntity> getTileEntities();
+    Collection<ITileEntity> getTileEntities();
 
     /**
      * Return a collection of tile entities contained within this volume,
@@ -62,7 +62,7 @@ public interface TileEntityVolume extends MutableBlockVolume {
      * @param filter The filter to apply to the returned entities
      * @return A collection of filtered entities
      */
-    Collection<TileEntity> getTileEntities(Predicate<TileEntity> filter);
+    Collection<ITileEntity> getTileEntities(Predicate<ITileEntity> filter);
 
     /**
      * Gets the tile entity at the given position, if it exists.
@@ -70,7 +70,7 @@ public interface TileEntityVolume extends MutableBlockVolume {
      * @param position The position
      * @return The tile entity, or {@link Optional#empty()}
      */
-    default Optional<TileEntity> getTileEntity(Vector3i position) {
+    default Optional<ITileEntity> getTileEntity(Vector3i position) {
         return getTileEntity(position.getX(), position.getY(), position.getZ());
     }
 
@@ -82,7 +82,7 @@ public interface TileEntityVolume extends MutableBlockVolume {
      * @param z The Z position
      * @return The tile entity, or {@link Optional#empty()}
      */
-    Optional<TileEntity> getTileEntity(int x, int y, int z);
+    Optional<ITileEntity> getTileEntity(int x, int y, int z);
 
     @Override
     MutableBlockVolumeWorker<? extends TileEntityVolume> getBlockWorker();

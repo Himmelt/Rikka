@@ -5,11 +5,10 @@ import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.equipment.EquipmentTypes;
 
 import javax.annotation.Nullable;
-import java.util.Optional;
 
-public interface IArmorEquipable extends Equipable {
+public interface IArmorEquipable extends IEquipable {
 
-    default Optional<ItemStack> getHelmet() {
+    default ItemStack getHelmet() {
         return this.getEquipped(EquipmentTypes.HEADWEAR);
     }
 
@@ -17,7 +16,7 @@ public interface IArmorEquipable extends Equipable {
         this.equip(EquipmentTypes.HEADWEAR, helmet);
     }
 
-    default Optional<ItemStack> getChestplate() {
+    default ItemStack getChestplate() {
         return this.getEquipped(EquipmentTypes.CHESTPLATE);
     }
 
@@ -25,7 +24,7 @@ public interface IArmorEquipable extends Equipable {
         this.equip(EquipmentTypes.CHESTPLATE, chestplate);
     }
 
-    default Optional<ItemStack> getLeggings() {
+    default ItemStack getLeggings() {
         return this.getEquipped(EquipmentTypes.LEGGINGS);
     }
 
@@ -33,7 +32,7 @@ public interface IArmorEquipable extends Equipable {
         this.equip(EquipmentTypes.LEGGINGS, leggings);
     }
 
-    default Optional<ItemStack> getBoots() {
+    default ItemStack getBoots() {
         return this.getEquipped(EquipmentTypes.BOOTS);
     }
 
@@ -41,7 +40,7 @@ public interface IArmorEquipable extends Equipable {
         this.equip(EquipmentTypes.BOOTS, boots);
     }
 
-    Optional<ItemStack> getItemInHand(HandType handType);
+    ItemStack getItemInHand(HandType handType);
 
     void setItemInHand(HandType hand, @Nullable ItemStack itemInHand);
 

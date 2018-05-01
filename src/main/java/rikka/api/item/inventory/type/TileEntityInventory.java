@@ -24,15 +24,15 @@
  */
 package rikka.api.item.inventory.type;
 
-import rikka.api.block.tileentity.TileEntity;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.Inventory;
+import rikka.api.tileentity.ITileEntity;
 
 import java.util.Optional;
 
 /**
  * An {@link Inventory} which is owned by a
- * {@link TileEntity}. In Sponge, a TE is never seen as an Inventory itself and
+ * {@link ITileEntity}. In Sponge, a TE is never seen as an Inventory itself and
  * Tile Entities are instead considered to "own" their own Inventory (much like
  * equipable entities do). Underlying implementations are of course completely
  * at liberty to return the TE object directly but as far as consumers are
@@ -50,7 +50,7 @@ import java.util.Optional;
  *
  * @param <T> Tile entity type, the specified TE must be a {@link ICarrier}
  */
-public interface TileEntityInventory<T extends TileEntity & ICarrier>
+public interface TileEntityInventory<T extends ITileEntity & ICarrier>
         extends PersistentInventory, Interactable, CarriedInventory<T> {
 
     /**

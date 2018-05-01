@@ -1,0 +1,12 @@
+package rikka.api.tileentity.carrier;
+
+import rikka.api.item.inventory.Inventory;
+
+import java.util.Optional;
+import java.util.Set;
+
+public interface IChest extends ITileEntityCarrier {
+    Optional<Inventory> getDoubleChestInventory();
+
+    Set<IChest> getConnectedChests();
+}

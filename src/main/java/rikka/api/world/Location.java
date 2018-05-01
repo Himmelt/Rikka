@@ -4,9 +4,9 @@ import org.spongepowered.api.world.World;
 import rikka.api.block.BlockType;
 import rikka.api.block.BlockTypes;
 import rikka.api.block.IBlockState;
-import rikka.api.block.tileentity.TileEntity;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
+import rikka.api.tileentity.ITileEntity;
 import rikka.api.util.Direction;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.math.Vector3i;
@@ -134,7 +134,7 @@ public final class Location {
         return world.getTileEntity(getBlockPosition()).isPresent();
     }
 
-    public TileEntity getTileEntity() {
+    public ITileEntity getTileEntity() {
         return world.getTileEntity(getBlockPosition());
     }
 

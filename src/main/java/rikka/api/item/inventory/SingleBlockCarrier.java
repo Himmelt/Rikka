@@ -28,7 +28,7 @@ package rikka.api.item.inventory;
  * Represents a Block that is a carrier of an Inventory
  * e.g. An Anvil
  */
-public interface SingleBlockCarrier extends BlockCarrier {
+public interface SingleBlockCarrier extends IBlockCarrier {
 
 
 }

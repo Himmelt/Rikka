@@ -25,7 +25,7 @@
 package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
-import rikka.api.block.tileentity.TileEntityArchetype;
+import rikka.api.tileentity.TileEntityArchetype;
 import rikka.api.world.BlockChangeFlag;
 import rikka.api.world.IWorld;
 import rikka.api.world.Location;

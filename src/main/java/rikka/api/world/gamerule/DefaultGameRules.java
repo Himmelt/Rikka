@@ -25,7 +25,6 @@
 package rikka.api.world.gamerule;
 
 import rikka.api.block.BlockTypes;
-import rikka.api.block.tileentity.CommandBlock;
 import rikka.api.entity.living.IAgent;
 import rikka.api.entity.living.IBat;
 import rikka.api.entity.living.IVillager;
@@ -38,6 +37,7 @@ import rikka.api.entity.living.player.IPlayer;
 import rikka.api.entity.living.player.gamemode.GameModes;
 import rikka.api.entity.vehicle.IBoat;
 import rikka.api.entity.vehicle.minecart.IMinecart;
+import rikka.api.tileentity.ICommandBlock;
 
 /**
  * An enumeration of all possible GameRule names in vanilla minecraft.
@@ -52,7 +52,7 @@ public class DefaultGameRules {
     public static final String ANNOUNCE_ADVANCEMENTS = "announceAdvancements";
 
     /**
-     * Whether {@link CommandBlock}s should notify admins when
+     * Whether {@link ICommandBlock}s should notify admins when
      * they perform commands.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
@@ -243,7 +243,7 @@ public class DefaultGameRules {
      * should show up in chat.
      *
      * <p>This game rule affects the default behavior of whether
-     * {@link CommandBlock}s store their output text.</p>
+     * {@link ICommandBlock}s store their output text.</p>
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */

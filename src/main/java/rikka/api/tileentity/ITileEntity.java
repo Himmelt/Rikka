@@ -1,10 +1,16 @@
 package rikka.api.tileentity;
 
-import net.minecraft.tileentity.TileEntity;
-import rikka.api.Rikka;
-import rikka.api.handler.IPosHandler;
-import rikka.api.world.IWorld;
+import rikka.api.block.IBlockState;
+import rikka.api.world.Locatable;
 
-public interface ITileEntity extends Rikka<TileEntity>, IPosHandler {
-    IWorld getWorld();
+public interface ITileEntity extends Locatable {
+    boolean isValid();
+
+    void setValid(boolean valid);
+
+    TileEntityType getType();
+
+    IBlockState getBlock();
+
+    TileEntityArchetype createArchetype();
 }

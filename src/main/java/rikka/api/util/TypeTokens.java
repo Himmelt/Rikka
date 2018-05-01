@@ -27,35 +27,28 @@ package rikka.api.util;
 import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3i;
 import com.google.common.reflect.TypeToken;
-import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
+import rikka.api.block.IBlockState;
 import rikka.api.data.meta.PatternLayer;
-import rikka.api.data.type.*;
+import rikka.api.data.type.DyeColor;
 import rikka.api.data.value.mutable.*;
 import rikka.api.effect.particle.ParticleType;
 import rikka.api.effect.potion.PotionEffect;
 import rikka.api.effect.potion.PotionEffectType;
-import rikka.api.entity.EntityArchetype;
-import rikka.api.entity.EntitySnapshot;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.living.ILiving;
 import rikka.api.entity.living.player.gamemode.GameMode;
-import rikka.api.extra.fluid.FluidStackSnapshot;
 import rikka.api.item.FireworkEffect;
 import rikka.api.item.enchantment.Enchantment;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.item.merchant.TradeOffer;
 import rikka.api.profile.GameProfile;
-import rikka.api.statistic.Statistic;
 import rikka.api.text.Text;
 import rikka.api.util.rotation.Rotation;
-import rikka.api.util.weighted.WeightedSerializableObject;
-import rikka.api.util.weighted.WeightedTable;
 
 import java.time.Instant;
 import java.util.*;
 
-@SuppressWarnings("unused")
 public final class TypeTokens {
 
     // SORTFIELDS:ON
