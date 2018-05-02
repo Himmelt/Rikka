@@ -8,9 +8,6 @@ public interface ITileEntity extends Locatable {
 
     void setValid(boolean valid);
 
-    TileEntityType getType();
-
     IBlockState getBlock();
 
-    TileEntityArchetype createArchetype();
 }
