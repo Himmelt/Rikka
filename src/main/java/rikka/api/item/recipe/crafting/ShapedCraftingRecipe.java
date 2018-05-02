@@ -25,7 +25,7 @@
 package rikka.api.item.recipe.crafting;
 
 import rikka.api.Sponge;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.util.ResettableBuilder;
 
@@ -224,13 +224,13 @@ public interface ShapedCraftingRecipe extends CraftingRecipe {
             }
 
             /**
-             * Sets the resultant {@link ItemStack} for when this shaped recipe
+             * Sets the resultant {@link IItemStack} for when this shaped recipe
              * is correctly crafted.
              *
              * @param result The resultant stack
              * @return The builder
              */
-            EndStep result(ItemStack result);
+            EndStep result(IItemStack result);
         }
 
         /**

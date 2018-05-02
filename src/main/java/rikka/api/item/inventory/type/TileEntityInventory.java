@@ -25,13 +25,13 @@
 package rikka.api.item.inventory.type;
 
 import rikka.api.item.inventory.ICarrier;
-import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.IInventory;
 import rikka.api.tileentity.ITileEntity;
 
 import java.util.Optional;
 
 /**
- * An {@link Inventory} which is owned by a
+ * An {@link IInventory} which is owned by a
  * {@link ITileEntity}. In Sponge, a TE is never seen as an Inventory itself and
  * Tile Entities are instead considered to "own" their own Inventory (much like
  * equipable entities do). Underlying implementations are of course completely

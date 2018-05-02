@@ -24,8 +24,8 @@
  */
 package rikka.api.item.inventory.type;
 
-import rikka.api.item.inventory.Inventory;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IInventory;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.Slot;
 import rikka.api.item.inventory.property.SlotIndex;
 import rikka.api.item.inventory.transaction.InventoryTransactionResult;
@@ -36,55 +36,55 @@ import java.util.Optional;
  * An Ordered Inventory contains {@link Slot}s in some pre-determined order with
  * indices between 0 and 1-{@link #capacity}.
  */
-public interface OrderedInventory extends Inventory {
+public interface OrderedInventory extends IInventory {
 
     /**
      * Gets and remove the stack at the supplied index in this Inventory.
      *
      * @param index slot index to query
-     * @return matching stacks, as per the semantics of {@link Inventory#poll()}
-     * @see Inventory#poll()
+     * @return matching stacks, as per the semantics of {@link IInventory#poll()}
+     * @see IInventory#poll()
      */
-    Optional<ItemStack> poll(SlotIndex index);
+    Optional<IItemStack> poll(SlotIndex index);
 
     /**
      * Gets and remove the stack at the supplied index in this Inventory.
      *
      * @param index slot index to query
      * @param limit item limit
-     * @return matching stacks, as per the semantics of {@link Inventory#poll()}
-     * @see Inventory#poll()
+     * @return matching stacks, as per the semantics of {@link IInventory#poll()}
+     * @see IInventory#poll()
      */
-    Optional<ItemStack> poll(SlotIndex index, int limit);
+    Optional<IItemStack> poll(SlotIndex index, int limit);
 
     /**
      * Gets without removing the stack at the supplied index in this Inventory.
      *
      * @param index slot index to query
-     * @return matching stacks, as per the semantics of {@link Inventory#peek()}
-     * @see Inventory#peek()
+     * @return matching stacks, as per the semantics of {@link IInventory#peek()}
+     * @see IInventory#peek()
      */
-    Optional<ItemStack> peek(SlotIndex index);
+    Optional<IItemStack> peek(SlotIndex index);
 
     /**
      * Gets without removing the stack at the supplied index in this Inventory.
      *
      * @param index slot index to query
      * @param limit item limit
-     * @return matching stacks, as per the semantics of {@link Inventory#peek()}
-     * @see Inventory#peek()
+     * @return matching stacks, as per the semantics of {@link IInventory#peek()}
+     * @see IInventory#peek()
      */
-    Optional<ItemStack> peek(SlotIndex index, int limit);
+    Optional<IItemStack> peek(SlotIndex index, int limit);
 
     /**
      * Sets the item in the specified slot.
      *
      * @param index Slot index to set
      * @param stack Stack to insert
-     * @return matching stacks, as per the semantics of {@link Inventory#set}
-     * @see Inventory#set(ItemStack)
+     * @return matching stacks, as per the semantics of {@link IInventory#set}
+     * @see IInventory#set(IItemStack)
      */
-    InventoryTransactionResult set(SlotIndex index, ItemStack stack);
+    InventoryTransactionResult set(SlotIndex index, IItemStack stack);
 
     /**
      * Gets the {@link Slot} at the specified position.

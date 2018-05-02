@@ -25,7 +25,7 @@
 package rikka.api.item.recipe.crafting;
 
 import rikka.api.Sponge;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.util.ResettableBuilder;
 
@@ -77,7 +77,7 @@ public interface ShapelessCraftingRecipe extends CraftingRecipe {
 
             /**
              * Changes the result and returns this builder. The result is the
-             * {@link ItemStack} created when the recipe is fulfilled.
+             * {@link IItemStack} created when the recipe is fulfilled.
              *
              * @param result The result
              * @return This builder, for chaining
@@ -86,12 +86,12 @@ public interface ShapelessCraftingRecipe extends CraftingRecipe {
 
             /**
              * Changes the result and returns this builder. The result is the
-             * {@link ItemStack} created when the recipe is fulfilled.
+             * {@link IItemStack} created when the recipe is fulfilled.
              *
              * @param result The result
              * @return This builder, for chaining
              */
-            default EndStep result(ItemStack result) {
+            default EndStep result(IItemStack result) {
                 checkNotNull(result, "result");
 
                 return result(result.createSnapshot());

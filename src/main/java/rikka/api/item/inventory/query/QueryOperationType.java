@@ -25,12 +25,12 @@
 package rikka.api.item.inventory.query;
 
 import rikka.api.CatalogType;
-import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.IInventory;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**
  * Represents a possible type of operation for an {@linkplain
- * Inventory#query(QueryOperation...) inventory query}.
+ * IInventory#query(QueryOperation...) inventory query}.
  *
  * @param <T> The argument type for the query
  */
@@ -42,7 +42,7 @@ public interface QueryOperationType<T> extends CatalogType {
      *
      * @param arg The object to test the inventory against
      * @return A query that may be passed to {@link
-     * Inventory#query(QueryOperation...)}
+     * IInventory#query(QueryOperation...)}
      */
     QueryOperation<T> of(T arg);
 

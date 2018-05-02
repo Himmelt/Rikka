@@ -24,8 +24,8 @@
  */
 package rikka.api.item.inventory.type;
 
-import rikka.api.item.inventory.Inventory;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IInventory;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.Slot;
 import rikka.api.item.inventory.property.SlotPos;
 import rikka.api.item.inventory.transaction.InventoryTransactionResult;
@@ -41,30 +41,30 @@ public interface Inventory2D extends OrderedInventory {
      * Gets and remove the stack at the supplied position in this Inventory.
      *
      * @param pos Slot position to query
-     * @return matching stacks, as per the semantics of {@link Inventory#poll()}
-     * @see Inventory#poll()
+     * @return matching stacks, as per the semantics of {@link IInventory#poll()}
+     * @see IInventory#poll()
      */
-    Optional<ItemStack> poll(SlotPos pos);
+    Optional<IItemStack> poll(SlotPos pos);
 
     /**
      * Gets and remove the stack at the supplied position in this Inventory.
      *
      * @param pos   Slot position to query
      * @param limit item limit
-     * @return matching stacks, as per the semantics of {@link Inventory#poll()}
-     * @see Inventory#poll()
+     * @return matching stacks, as per the semantics of {@link IInventory#poll()}
+     * @see IInventory#poll()
      */
-    Optional<ItemStack> poll(SlotPos pos, int limit);
+    Optional<IItemStack> poll(SlotPos pos, int limit);
 
     /**
      * Gets without removing the stack at the supplied position in this
      * Inventory.
      *
      * @param pos Slot position to query
-     * @return matching stacks, as per the semantics of {@link Inventory#peek()}
-     * @see Inventory#peek()
+     * @return matching stacks, as per the semantics of {@link IInventory#peek()}
+     * @see IInventory#peek()
      */
-    Optional<ItemStack> peek(SlotPos pos);
+    Optional<IItemStack> peek(SlotPos pos);
 
     /**
      * Gets without removing the stack at the supplied position in this
@@ -72,20 +72,20 @@ public interface Inventory2D extends OrderedInventory {
      *
      * @param pos   Slot position to query
      * @param limit item limit
-     * @return matching stacks, as per the semantics of {@link Inventory#peek()}
-     * @see Inventory#peek()
+     * @return matching stacks, as per the semantics of {@link IInventory#peek()}
+     * @see IInventory#peek()
      */
-    Optional<ItemStack> peek(SlotPos pos, int limit);
+    Optional<IItemStack> peek(SlotPos pos, int limit);
 
     /**
      * Sets the item in the specified slot.
      *
      * @param pos   Slot position to set
      * @param stack Stack to insert
-     * @return matching stacks, as per the semantics of {@link Inventory#set}
-     * @see Inventory#set(ItemStack)
+     * @return matching stacks, as per the semantics of {@link IInventory#set}
+     * @see IInventory#set(IItemStack)
      */
-    InventoryTransactionResult set(SlotPos pos, ItemStack stack);
+    InventoryTransactionResult set(SlotPos pos, IItemStack stack);
 
     /**
      * Gets the {@link Slot} at the specified position.

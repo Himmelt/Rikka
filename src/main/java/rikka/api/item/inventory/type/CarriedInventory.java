@@ -25,17 +25,17 @@
 package rikka.api.item.inventory.type;
 
 import rikka.api.item.inventory.ICarrier;
-import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.IInventory;
 
 import java.util.Optional;
 
 /**
- * An {@link Inventory} which is owned or otherwise carried by a
+ * An {@link IInventory} which is owned or otherwise carried by a
  * {@link ICarrier}.
  *
  * @param <C> Carrier type
  */
-public interface CarriedInventory<C extends ICarrier> extends Inventory {
+public interface CarriedInventory<C extends ICarrier> extends IInventory {
 
     /**
      * Returns the Carrier of this Inventory. It can be an entity, block, or

@@ -1,47 +1,47 @@
 package rikka.api.entity;
 
 import rikka.api.data.type.HandType;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.equipment.EquipmentTypes;
 
 import javax.annotation.Nullable;
 
 public interface IArmorEquipable extends IEquipable {
 
-    default ItemStack getHelmet() {
+    default IItemStack getHelmet() {
         return this.getEquipped(EquipmentTypes.HEADWEAR);
     }
 
-    default void setHelmet(@Nullable ItemStack helmet) {
+    default void setHelmet(@Nullable IItemStack helmet) {
         this.equip(EquipmentTypes.HEADWEAR, helmet);
     }
 
-    default ItemStack getChestplate() {
+    default IItemStack getChestplate() {
         return this.getEquipped(EquipmentTypes.CHESTPLATE);
     }
 
-    default void setChestplate(@Nullable ItemStack chestplate) {
+    default void setChestplate(@Nullable IItemStack chestplate) {
         this.equip(EquipmentTypes.CHESTPLATE, chestplate);
     }
 
-    default ItemStack getLeggings() {
+    default IItemStack getLeggings() {
         return this.getEquipped(EquipmentTypes.LEGGINGS);
     }
 
-    default void setLeggings(@Nullable ItemStack leggings) {
+    default void setLeggings(@Nullable IItemStack leggings) {
         this.equip(EquipmentTypes.LEGGINGS, leggings);
     }
 
-    default ItemStack getBoots() {
+    default IItemStack getBoots() {
         return this.getEquipped(EquipmentTypes.BOOTS);
     }
 
-    default void setBoots(@Nullable ItemStack boots) {
+    default void setBoots(@Nullable IItemStack boots) {
         this.equip(EquipmentTypes.BOOTS, boots);
     }
 
-    ItemStack getItemInHand(HandType handType);
+    IItemStack getItemInHand(HandType handType);
 
-    void setItemInHand(HandType hand, @Nullable ItemStack itemInHand);
+    void setItemInHand(HandType hand, @Nullable IItemStack itemInHand);
 
 }

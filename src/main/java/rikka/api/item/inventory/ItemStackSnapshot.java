@@ -31,9 +31,9 @@ import rikka.api.text.translation.Translatable;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 /**
- * Represents a snapshot of an {@link ItemStack} as an
+ * Represents a snapshot of an {@link IItemStack} as an
  * {@link ImmutableDataHolder} to represent all of the data associated with
- * the {@link ItemStack} of which the snapshot was created from. Being that
+ * the {@link IItemStack} of which the snapshot was created from. Being that
  * it is a snapshot, a snapshot cannot be modified, but modifications will
  * result in a new instance of the {@link ItemStackSnapshot}.
  */
@@ -50,7 +50,7 @@ public interface ItemStackSnapshot extends ImmutableDataHolder<ItemStackSnapshot
     ItemType getType();
 
     /**
-     * Gets the current stack size count of the {@link ItemStack} this
+     * Gets the current stack size count of the {@link IItemStack} this
      * {@link ItemStackSnapshot} is representing.
      *
      * @return The current stack size
@@ -62,7 +62,7 @@ public interface ItemStackSnapshot extends ImmutableDataHolder<ItemStackSnapshot
     }
 
     /**
-     * Gets the quantity of items in this the {@link ItemStack} this
+     * Gets the quantity of items in this the {@link IItemStack} this
      * {@link ItemStackSnapshot} is representing.
      *
      * @return The current stack size
@@ -78,12 +78,12 @@ public interface ItemStackSnapshot extends ImmutableDataHolder<ItemStackSnapshot
     boolean isEmpty();
 
     /**
-     * Creates a new {@link ItemStack} with all the data currently available
+     * Creates a new {@link IItemStack} with all the data currently available
      * on this {@link ItemStackSnapshot}.
      *
      * @return The newly generated item stack
      */
-    ItemStack createStack();
+    IItemStack createStack();
 
     /**
      * Creates a {@link rikka.api.GameDictionary.Entry} that

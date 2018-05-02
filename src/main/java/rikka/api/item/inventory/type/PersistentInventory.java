@@ -24,12 +24,12 @@
  */
 package rikka.api.item.inventory.type;
 
-import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.IInventory;
 
 /**
  * An inventory with some kind of backing storage, for example Tile Entities.
  */
-public interface PersistentInventory extends Inventory {
+public interface PersistentInventory extends IInventory {
 
     /**
      * Mark this inventory as dirty to serve as a flag to the serialisation

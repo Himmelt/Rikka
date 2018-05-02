@@ -1,6 +1,6 @@
 package rikka.api.tileentity;
 
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 
 public interface IJukebox extends ITileEntity {
     void playRecord();
@@ -9,5 +9,5 @@ public interface IJukebox extends ITileEntity {
 
     void ejectRecord();
 
-    void insertRecord(ItemStack record);
+    void insertRecord(IItemStack record);
 }

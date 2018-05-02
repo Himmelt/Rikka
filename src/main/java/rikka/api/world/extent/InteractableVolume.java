@@ -26,7 +26,7 @@ package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
 import rikka.api.block.IBlockState;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.profile.GameProfile;
 import rikka.api.util.Direction;
 import rikka.api.world.extent.worker.MutableBlockVolumeWorker;
@@ -101,7 +101,7 @@ public interface InteractableVolume extends MutableBlockVolume {
      * @param profile   The game profile of the player this is imitating
      * @return True if the interact succeeded
      */
-    default boolean interactBlockWith(Vector3i position, ItemStack itemStack, Direction side, GameProfile profile) {
+    default boolean interactBlockWith(Vector3i position, IItemStack itemStack, Direction side, GameProfile profile) {
         return interactBlockWith(checkNotNull(position, "position").getX(), position.getY(), position.getZ(), itemStack, side, profile);
     }
 
@@ -117,7 +117,7 @@ public interface InteractableVolume extends MutableBlockVolume {
      * @param profile   The game profile of the player this is imitating
      * @return True if the interact succeeded
      */
-    boolean interactBlockWith(int x, int y, int z, ItemStack itemStack, Direction side, GameProfile profile);
+    boolean interactBlockWith(int x, int y, int z, IItemStack itemStack, Direction side, GameProfile profile);
 
     /**
      * Simulates the placement of a block at the given location as if a player
@@ -178,7 +178,7 @@ public interface InteractableVolume extends MutableBlockVolume {
      * @param profile   The game profile of the player this is imitating
      * @return Whether the block was destroyed
      */
-    default boolean digBlockWith(Vector3i position, ItemStack itemStack, GameProfile profile) {
+    default boolean digBlockWith(Vector3i position, IItemStack itemStack, GameProfile profile) {
         return digBlockWith(checkNotNull(position, "position").getX(), position.getY(), position.getZ(), itemStack, profile);
     }
 
@@ -193,7 +193,7 @@ public interface InteractableVolume extends MutableBlockVolume {
      * @param profile   The game profile of the player this is imitating
      * @return Whether the block was destroyed
      */
-    boolean digBlockWith(int x, int y, int z, ItemStack itemStack, GameProfile profile);
+    boolean digBlockWith(int x, int y, int z, IItemStack itemStack, GameProfile profile);
 
     /**
      * Gets the time it takes to dig this block with the specified item in
@@ -204,7 +204,7 @@ public interface InteractableVolume extends MutableBlockVolume {
      * @param profile   The game profile of the player this is imitating
      * @return The time in ticks
      */
-    default int getBlockDigTimeWith(Vector3i position, ItemStack itemStack, GameProfile profile) {
+    default int getBlockDigTimeWith(Vector3i position, IItemStack itemStack, GameProfile profile) {
         return getBlockDigTimeWith(checkNotNull(position, "position").getX(), position.getY(), position.getZ(), itemStack, profile);
     }
 
@@ -219,7 +219,7 @@ public interface InteractableVolume extends MutableBlockVolume {
      * @param profile   The game profile of the player this is imitating
      * @return The time in ticks
      */
-    int getBlockDigTimeWith(int x, int y, int z, ItemStack itemStack, GameProfile profile);
+    int getBlockDigTimeWith(int x, int y, int z, IItemStack itemStack, GameProfile profile);
 
     @Override
     MutableBlockVolumeWorker<? extends InteractableVolume> getBlockWorker();

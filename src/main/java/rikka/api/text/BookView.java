@@ -30,7 +30,7 @@ import com.google.common.collect.ImmutableList;
 import rikka.api.data.DataContainer;
 import rikka.api.data.DataSerializable;
 import rikka.api.data.Queries;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.util.ResettableBuilder;
 
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Represents a view of the Book GUI on the client. A BookView is not
- * associated with any Book {@link ItemStack} that exists on the server and is
+ * associated with any Book {@link IItemStack} that exists on the server and is
  * simply for displaying {@link Text} to the player. This BookView is read-only
  * as it is currently impossible to tell the client to open an unsigned book.
  */

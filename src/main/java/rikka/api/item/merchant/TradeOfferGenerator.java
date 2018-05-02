@@ -25,7 +25,7 @@
 package rikka.api.item.merchant;
 
 import rikka.api.Sponge;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.ItemStackGenerator;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.util.weighted.VariableAmount;
@@ -38,7 +38,7 @@ import java.util.function.Function;
 /**
  * Represents a generator to create {@link TradeOffer}s with a bit of
  * randomization based on {@link ItemStackGenerator}s for populating
- * {@link ItemStack}s and finally generating a {@link TradeOffer}.
+ * {@link IItemStack}s and finally generating a {@link TradeOffer}.
  *
  * <p>The primary use of this, and why the {@link Random} must be provided as
  * part of the {@link Function} signature is that during multiple world
@@ -48,7 +48,7 @@ import java.util.function.Function;
  * "chance" on the various aspects of the generated {@link TradeOffer} versus
  * creating a static non-changing offer. Normally, the vanilla
  * {@link TradeOffer}s are using a similar generator with limited scopes of
- * what the {@link ItemStack} can be customized as.</p>
+ * what the {@link IItemStack} can be customized as.</p>
  */
 @FunctionalInterface
 public interface TradeOfferGenerator extends Function<Random, TradeOffer>, TradeOfferListMutator {

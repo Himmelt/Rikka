@@ -28,7 +28,7 @@ import rikka.api.Sponge;
 import rikka.api.data.DataSerializable;
 import rikka.api.data.persistence.DataBuilder;
 import rikka.api.entity.living.IHumanoid;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 
 import java.util.Optional;
@@ -141,7 +141,7 @@ public interface TradeOffer extends DataSerializable {
          * @param item The first item to buy
          * @return This builder
          */
-        Builder firstBuyingItem(ItemStack item);
+        Builder firstBuyingItem(IItemStack item);
 
         /**
          * Sets the second selling item of the trade offer to be generated.
@@ -149,7 +149,7 @@ public interface TradeOffer extends DataSerializable {
          * @param item The second item to buy
          * @return This builder
          */
-        Builder secondBuyingItem(ItemStack item);
+        Builder secondBuyingItem(IItemStack item);
 
         /**
          * Sets the selling item of the trade offer to be generated.
@@ -157,7 +157,7 @@ public interface TradeOffer extends DataSerializable {
          * @param item The item to sell
          * @return This builder
          */
-        Builder sellingItem(ItemStack item);
+        Builder sellingItem(IItemStack item);
 
         /**
          * Sets the existing uses of the trade offer to be generated. A trade

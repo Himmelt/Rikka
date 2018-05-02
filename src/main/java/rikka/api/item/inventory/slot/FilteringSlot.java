@@ -25,7 +25,7 @@
 package rikka.api.item.inventory.slot;
 
 import rikka.api.item.ItemType;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.Slot;
 
 /**
@@ -41,7 +41,7 @@ public interface FilteringSlot extends Slot {
      * @param stack ItemStack to check
      * @return true if the stack is valid for this slot
      */
-    boolean isValidItem(ItemStack stack);
+    boolean isValidItem(IItemStack stack);
 
     /**
      * Check whether the supplied item can be inserted into this slot. Returning

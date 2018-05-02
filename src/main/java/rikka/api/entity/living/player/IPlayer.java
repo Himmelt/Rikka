@@ -7,8 +7,8 @@ import rikka.api.entity.IEntity;
 import rikka.api.entity.living.IHumanoid;
 import rikka.api.entity.living.player.gamemode.GameMode;
 import rikka.api.entity.living.player.tab.TabList;
-import rikka.api.item.inventory.Container;
-import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.IContainer;
+import rikka.api.item.inventory.IInventory;
 import rikka.api.scoreboard.Scoreboard;
 import rikka.api.text.Text;
 import rikka.api.text.channel.ChatTypeMessageReceiver;
@@ -25,10 +25,10 @@ public interface IPlayer extends IHumanoid, IUser, ICommandSender, ChatTypeMessa
     }
 
     @Nullable
-    Container getOpenInventory();
+    IContainer getOpenInventory();
 
     @Nullable
-    Container openInventory(Inventory inventory) throws IllegalArgumentException;
+    IContainer openInventory(IInventory inventory) throws IllegalArgumentException;
 
     boolean closeInventory() throws IllegalArgumentException;
 
@@ -67,7 +67,7 @@ public interface IPlayer extends IHumanoid, IUser, ICommandSender, ChatTypeMessa
 
     void setSleepingIgnored(boolean sleepingIgnored);
 
-    Inventory getEnderChestInventory();
+    IInventory getEnderChestInventory();
 
     boolean respawnPlayer();
 

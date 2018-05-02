@@ -33,7 +33,7 @@ import rikka.api.util.generator.dummy.DummyObjectProvider;
 import java.util.Comparator;
 
 /**
- * A utility class for getting all available {@link Comparator}s for {@link ItemStack}s.
+ * A utility class for getting all available {@link Comparator}s for {@link IItemStack}s.
  */
 public final class ItemStackComparators {
 
@@ -43,53 +43,53 @@ public final class ItemStackComparators {
      * ItemStack.equals(ItemStack) for ItemStacks with extra attached data,
      * different damage values, or different sizes.
      */
-    public static final Comparator<ItemStack> TYPE = DummyObjectProvider.createExtendedFor(Comparator.class, "TYPE");
+    public static final Comparator<IItemStack> TYPE = DummyObjectProvider.createExtendedFor(Comparator.class, "TYPE");
 
     /**
      * Compares ItemStacks based on
-     * {@link ItemStack} size. This
+     * {@link IItemStack} size. This
      * comparator will not return the same results as
      * ItemStack.equals(ItemStack) for ItemStacks with extra attached data,
      * different types, or different damage values.
      */
-    public static final Comparator<ItemStack> SIZE = DummyObjectProvider.createExtendedFor(Comparator.class, "SIZE");
+    public static final Comparator<IItemStack> SIZE = DummyObjectProvider.createExtendedFor(Comparator.class, "SIZE");
 
     /**
      * Compares ItemStacks based on {@link ItemType}
-     * and {@link ItemStack} size. This comparator will not return the same
+     * and {@link IItemStack} size. This comparator will not return the same
      * results as ItemStack.equals(ItemStack) for ItemStacks with extra attached
      * data or different damage values.
      */
-    public static final Comparator<ItemStack> TYPE_SIZE = DummyObjectProvider.createExtendedFor(Comparator.class, "TYPE_SIZE");
+    public static final Comparator<IItemStack> TYPE_SIZE = DummyObjectProvider.createExtendedFor(Comparator.class, "TYPE_SIZE");
 
     /**
-     * The default comparator for {@link ItemStack}s.
+     * The default comparator for {@link IItemStack}s.
      */
-    public static final Comparator<ItemStack> DEFAULT = DummyObjectProvider.createExtendedFor(Comparator.class, "TYPE_SIZE");
+    public static final Comparator<IItemStack> DEFAULT = DummyObjectProvider.createExtendedFor(Comparator.class, "TYPE_SIZE");
 
     /**
      * Compares ItemStacks based on its {@link Property} list.
      */
-    public static final Comparator<ItemStack> PROPERTIES = DummyObjectProvider.createExtendedFor(Comparator.class, "PROPERTIES");
+    public static final Comparator<IItemStack> PROPERTIES = DummyObjectProvider.createExtendedFor(Comparator.class, "PROPERTIES");
 
     /**
      * Compares ItemStacks based on their {@link DataManipulator}s.
      */
-    public static final Comparator<ItemStack> ITEM_DATA = DummyObjectProvider.createExtendedFor(Comparator.class, "ITEM_DATA");
+    public static final Comparator<IItemStack> ITEM_DATA = DummyObjectProvider.createExtendedFor(Comparator.class, "ITEM_DATA");
 
     /**
      * Compares ItemStacks based on their {@link DataManipulator}s ignoring {@link DamageableData}
      */
-    public static final Comparator<ItemStack> ITEM_DATA_IGNORE_DAMAGE = DummyObjectProvider.createExtendedFor(Comparator.class, "ITEM_DATA_IGNORE_DAMAGE");
+    public static final Comparator<IItemStack> ITEM_DATA_IGNORE_DAMAGE = DummyObjectProvider.createExtendedFor(Comparator.class, "ITEM_DATA_IGNORE_DAMAGE");
 
     /**
      * Compares ItemStacks only ignoring their stack-size.
      *
      * <p>This means for stackable items that they can stack together</p>
      */
-    public static final Comparator<ItemStack> IGNORE_SIZE = DummyObjectProvider.createExtendedFor(Comparator.class, "IGNORE_SIZE");
+    public static final Comparator<IItemStack> IGNORE_SIZE = DummyObjectProvider.createExtendedFor(Comparator.class, "IGNORE_SIZE");
 
-    public static final Comparator<ItemStack> ALL = DummyObjectProvider.createExtendedFor(Comparator.class, "ALL");
+    public static final Comparator<IItemStack> ALL = DummyObjectProvider.createExtendedFor(Comparator.class, "ALL");
 
     // Suppress default constructor to ensure non-instantiability.
     private ItemStackComparators() {

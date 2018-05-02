@@ -26,9 +26,9 @@ package rikka.api.item.inventory.query;
 
 import rikka.api.Nameable;
 import rikka.api.item.ItemType;
-import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.IInventory;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.InventoryProperty;
-import rikka.api.item.inventory.ItemStack;
 import rikka.api.item.inventory.property.InventoryTitle;
 import rikka.api.text.translation.Translation;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
@@ -43,7 +43,7 @@ public final class QueryOperationTypes {
     /**
      * Tests based on an inventory property present on the target inventory.
      *
-     * @see Inventory#getProperties(Inventory, Class)
+     * @see IInventory#getProperties(IInventory, Class)
      */
     public static final QueryOperationType<InventoryProperty<?, ?>> INVENTORY_PROPERTY = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "INVENTORY_PROPERTY");
 
@@ -58,33 +58,33 @@ public final class QueryOperationTypes {
     /**
      * Tests based on the class of the inventory.
      */
-    public static final QueryOperationType<Class<? extends Inventory>> INVENTORY_TYPE = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "INVENTORY_TYPE");
+    public static final QueryOperationType<Class<? extends IInventory>> INVENTORY_TYPE = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "INVENTORY_TYPE");
 
     /**
      * Allows a custom condition for the items contained within an item stack.
      */
-    public static final QueryOperationType<Predicate<ItemStack>> ITEM_STACK_CUSTOM = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "ITEM_STACK_CUSTOM");
+    public static final QueryOperationType<Predicate<IItemStack>> ITEM_STACK_CUSTOM = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "ITEM_STACK_CUSTOM");
 
     /**
      * Tests for an exact match of the item stack contained in each slot.
      *
-     * <p>Generally uses {@link ItemStack}'s <code>#equals</code> method.</p>
+     * <p>Generally uses {@link IItemStack}'s <code>#equals</code> method.</p>
      */
-    public static final QueryOperationType<ItemStack> ITEM_STACK_EXACT = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "ITEM_STACK_EXACT");
+    public static final QueryOperationType<IItemStack> ITEM_STACK_EXACT = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "ITEM_STACK_EXACT");
 
     /**
      * Tests for an exact match of the item stack contained in each slot, with
      * the exception of the quantity. This allows testing for custom data on
      * item stacks that may be moved and stacked by players.
      *
-     * @see ItemStack#equalTo(ItemStack)
+     * @see IItemStack#equalTo(IItemStack)
      */
-    public static final QueryOperationType<ItemStack> ITEM_STACK_IGNORE_QUANTITY = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "ITEM_STACK_IGNORE_QUANTITY");
+    public static final QueryOperationType<IItemStack> ITEM_STACK_IGNORE_QUANTITY = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "ITEM_STACK_IGNORE_QUANTITY");
 
     /**
      * Tests for a match of the type of item contained in each slot.
      *
-     * @see ItemStack#getType()
+     * @see IItemStack#getType()
      */
     public static final QueryOperationType<ItemType> ITEM_TYPE = DummyObjectProvider.createExtendedFor(QueryOperationType.class, "ITEM_TYPE");
 

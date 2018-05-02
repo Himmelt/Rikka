@@ -25,7 +25,7 @@
 package rikka.api.item.inventory.property;
 
 import rikka.api.data.Property;
-import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.IInventory;
 import rikka.api.text.Text;
 import rikka.api.util.Coerce;
 
@@ -37,7 +37,7 @@ public class InventoryTitle extends AbstractInventoryProperty<String, Text> {
     public static final String PROPERTY_NAME = "inventorytitle";
 
     /**
-     * Creates a new {@link InventoryTitle} to be displayed on an {@link Inventory}.
+     * Creates a new {@link InventoryTitle} to be displayed on an {@link IInventory}.
      *
      * @param value The text value to display
      */

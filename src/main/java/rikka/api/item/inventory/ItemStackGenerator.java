@@ -35,9 +35,9 @@ import java.util.function.Function;
 
 /**
  * A simple generator that takes a {@link Random} and generates
- * an {@link ItemStack}.
+ * an {@link IItemStack}.
  */
-public interface ItemStackGenerator extends Function<Random, ItemStack> {
+public interface ItemStackGenerator extends Function<Random, IItemStack> {
 
     /**
      * Creates a new builder to build an {@link ItemStackGenerator}.
@@ -61,7 +61,7 @@ public interface ItemStackGenerator extends Function<Random, ItemStack> {
          * @param consumer The consumer that mutates an itemstack builder
          * @return This builder, for chaining
          */
-        Builder add(BiConsumer<ItemStack.Builder, Random> consumer);
+        Builder add(BiConsumer<IItemStack.Builder, Random> consumer);
 
         /**
          * Adds all the provided biconsumers from the provided collection.
@@ -69,7 +69,7 @@ public interface ItemStackGenerator extends Function<Random, ItemStack> {
          * @param collection The collection of consumer to add
          * @return This builder, for chaining
          */
-        Builder addAll(Collection<BiConsumer<ItemStack.Builder, Random>> collection);
+        Builder addAll(Collection<BiConsumer<IItemStack.Builder, Random>> collection);
 
         /**
          * Sets the base {@link ItemType} for the {@link ItemStackGenerator}. A

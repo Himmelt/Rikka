@@ -25,12 +25,12 @@
 package rikka.api.util.rotation;
 
 import rikka.api.entity.hanging.ItemFrame;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 /**
  * An enumeration of possible rotations for something that can rotate,
- * such as an {@link ItemStack} within
+ * such as an {@link IItemStack} within
  * an {@link ItemFrame}.
  */
 public final class Rotations {

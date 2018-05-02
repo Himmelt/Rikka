@@ -27,7 +27,7 @@ package rikka.api.item.recipe.crafting;
 import rikka.api.CatalogType;
 import rikka.api.Sponge;
 import rikka.api.item.ItemTypes;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.item.inventory.crafting.CraftingGridInventory;
 import rikka.api.item.recipe.Recipe;
@@ -41,7 +41,7 @@ import java.util.Optional;
  * A CraftingRecipe represents some craftable recipe in the game.
  *
  * <p>It is essentially a Predicate that checks for if a recipe is valid as well
- * as a function from a crafting matrix to a list of {@link ItemStack} (the
+ * as a function from a crafting matrix to a list of {@link IItemStack} (the
  * crafting result), therefore making it an immutable interface.</p>
  *
  * <p>The passed in {@link CraftingGridInventory} is usually a crafting

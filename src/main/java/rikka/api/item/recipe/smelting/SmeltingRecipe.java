@@ -26,7 +26,7 @@ package rikka.api.item.recipe.smelting;
 
 import rikka.api.Sponge;
 import rikka.api.item.ItemType;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.item.recipe.Recipe;
 import rikka.api.util.ResettableBuilder;
@@ -106,7 +106,7 @@ public interface SmeltingRecipe extends Recipe {
          * The ingredient predicate is the predicate which must return
          * {@code true} in order for this recipe to be fulfilled.
          *
-         * <p>The vanilla {@link ItemStack} matching behavior is used as the
+         * <p>The vanilla {@link IItemStack} matching behavior is used as the
          * ingredient predicate.</p>
          *
          * @param ingredient The required ingredient
@@ -116,19 +116,19 @@ public interface SmeltingRecipe extends Recipe {
 
         /**
          * Changes the ingredient and returns this builder. The ingredient is
-         * the {@link ItemStack} required in order for the recipe to be
+         * the {@link IItemStack} required in order for the recipe to be
          * fulfilled.
          *
          * @param ingredient The required ingredient
          * @return This builder, for chaining
          */
-        default ResultStep ingredient(ItemStack ingredient) {
+        default ResultStep ingredient(IItemStack ingredient) {
             return ingredient(ingredient.createSnapshot());
         }
 
         /**
          * Changes the ingredient and returns this builder. The ingredient is
-         * the {@link ItemStack} required in order for the recipe to be
+         * the {@link IItemStack} required in order for the recipe to be
          * fulfilled.
          *
          * @param ingredient The required ingredient
@@ -142,7 +142,7 @@ public interface SmeltingRecipe extends Recipe {
 
             /**
              * Changes the result and returns this builder. The result is the
-             * {@link ItemStack} created when the recipe is fulfilled.
+             * {@link IItemStack} created when the recipe is fulfilled.
              *
              * @param result The output of this recipe
              * @return This builder, for chaining
@@ -151,12 +151,12 @@ public interface SmeltingRecipe extends Recipe {
 
             /**
              * Changes the result and returns this builder. The result is the
-             * {@link ItemStack} created when the recipe is fulfilled.
+             * {@link IItemStack} created when the recipe is fulfilled.
              *
              * @param result The output of this recipe
              * @return This builder, for chaining
              */
-            default EndStep result(ItemStack result) {
+            default EndStep result(IItemStack result) {
                 return result(result.createSnapshot());
             }
 

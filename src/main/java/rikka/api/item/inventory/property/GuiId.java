@@ -25,14 +25,14 @@
 package rikka.api.item.inventory.property;
 
 import rikka.api.CatalogType;
-import rikka.api.item.inventory.Container;
-import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.IContainer;
+import rikka.api.item.inventory.IInventory;
 import rikka.api.item.inventory.InventoryArchetype;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**
- * GuiIds are used in a {@link GuiIdProperty} when building a custom {@link Inventory}.
- * The GuiId defines what {@link Container} is displayed on the client side when the
+ * GuiIds are used in a {@link GuiIdProperty} when building a custom {@link IInventory}.
+ * The GuiId defines what {@link IContainer} is displayed on the client side when the
  * custom inventory is opened.
  *
  * <p>When using the default vanilla {@link InventoryArchetype}s the

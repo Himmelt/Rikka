@@ -25,7 +25,7 @@
 package rikka.api.item.inventory.transaction;
 
 import com.google.common.collect.ImmutableList;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.util.ResettableBuilder;
 
@@ -172,17 +172,17 @@ public final class InventoryTransactionResult {
         }
 
         /**
-         * Adds the provided {@link ItemStack itemstacks} as stacks that have been
+         * Adds the provided {@link IItemStack itemstacks} as stacks that have been
          * "rejected".
          *
          * @param itemStacks The itemstacks being rejected
          * @return This builder, for chaining
          */
-        public Builder reject(ItemStack... itemStacks) {
+        public Builder reject(IItemStack... itemStacks) {
             if (this.rejected == null) {
                 this.rejected = new ArrayList<>();
             }
-            for (ItemStack itemStack1 : itemStacks) {
+            for (IItemStack itemStack1 : itemStacks) {
                 if (itemStack1 != null) {
                     this.rejected.add(itemStack1.createSnapshot());
                 }
@@ -191,17 +191,17 @@ public final class InventoryTransactionResult {
         }
 
         /**
-         * Adds the provided {@link ItemStack itemstacks} as stacks that are
+         * Adds the provided {@link IItemStack itemstacks} as stacks that are
          * being replaced.
          *
          * @param itemStacks The itemstacks being replaced
          * @return This builder, for chaining
          */
-        public Builder replace(ItemStack... itemStacks) {
+        public Builder replace(IItemStack... itemStacks) {
             if (this.replaced == null) {
                 this.replaced = new ArrayList<>();
             }
-            for (ItemStack itemStack1 : itemStacks) {
+            for (IItemStack itemStack1 : itemStacks) {
                 if (itemStack1 != null) {
                     this.replaced.add(itemStack1.createSnapshot());
                 }

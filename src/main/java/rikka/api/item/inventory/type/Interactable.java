@@ -25,12 +25,12 @@
 package rikka.api.item.inventory.type;
 
 import rikka.api.entity.living.player.IPlayer;
-import rikka.api.item.inventory.Inventory;
+import rikka.api.item.inventory.IInventory;
 
 /**
  * Interface for inventories which may be interacted with by Players.
  */
-public interface Interactable extends Inventory {
+public interface Interactable extends IInventory {
 
     /**
      * Gets whether the specified player can interact with this object.

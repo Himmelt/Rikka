@@ -1,7 +1,7 @@
 package rikka.api.entity;
 
 import rikka.api.item.inventory.ICarrier;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.equipment.EquipmentType;
 import rikka.api.util.Identifiable;
 
@@ -11,10 +11,10 @@ public interface IEquipable extends Identifiable, ICarrier {
 
     boolean canEquip(EquipmentType type);
 
-    boolean canEquip(EquipmentType type, @Nullable ItemStack equipment);
+    boolean canEquip(EquipmentType type, @Nullable IItemStack equipment);
 
-    ItemStack getEquipped(EquipmentType type);
+    IItemStack getEquipped(EquipmentType type);
 
-    boolean equip(EquipmentType type, @Nullable ItemStack equipment);
+    boolean equip(EquipmentType type, @Nullable IItemStack equipment);
 
 }

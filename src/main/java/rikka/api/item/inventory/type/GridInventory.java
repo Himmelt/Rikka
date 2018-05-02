@@ -25,15 +25,15 @@
 package rikka.api.item.inventory.type;
 
 import com.flowpowered.math.vector.Vector2i;
-import rikka.api.item.inventory.Inventory;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IInventory;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.Slot;
 import rikka.api.item.inventory.transaction.InventoryTransactionResult;
 
 import java.util.Optional;
 
 /**
- * An GridInventory is an {@link Inventory}
+ * An GridInventory is an {@link IInventory}
  * which is ordered into a coherent grid format, meaning that its slots can be
  * referred to by X-Y coordinates as well as single indices.
  */
@@ -67,9 +67,9 @@ public interface GridInventory extends Inventory2D {
      * @param y y coordinate
      * @return ItemStack at the specified position or {@link Optional#empty()}
      * if the slot is empty or out of bounds
-     * @see Inventory#poll()
+     * @see IInventory#poll()
      */
-    Optional<ItemStack> poll(int x, int y);
+    Optional<IItemStack> poll(int x, int y);
 
     /**
      * Gets and remove the stack at the supplied position in this Inventory.
@@ -79,9 +79,9 @@ public interface GridInventory extends Inventory2D {
      * @param limit item limit
      * @return ItemStack at the specified position or {@link Optional#empty()}
      * if the slot is empty or out of bounds
-     * @see Inventory#poll()
+     * @see IInventory#poll()
      */
-    Optional<ItemStack> poll(int x, int y, int limit);
+    Optional<IItemStack> poll(int x, int y, int limit);
 
     /**
      * Gets without removing the stack at the supplied position in this
@@ -91,9 +91,9 @@ public interface GridInventory extends Inventory2D {
      * @param y y coordinate
      * @return ItemStack at the specified position or {@link Optional#empty()}
      * if the slot is empty or out of bounds
-     * @see Inventory#peek()
+     * @see IInventory#peek()
      */
-    Optional<ItemStack> peek(int x, int y);
+    Optional<IItemStack> peek(int x, int y);
 
     /**
      * Gets without removing the stack at the supplied position in this
@@ -104,9 +104,9 @@ public interface GridInventory extends Inventory2D {
      * @param limit item limit
      * @return ItemStack at the specified position or {@link Optional#empty()}
      * if the slot is empty or out of bounds
-     * @see Inventory#peek()
+     * @see IInventory#peek()
      */
-    Optional<ItemStack> peek(int x, int y, int limit);
+    Optional<IItemStack> peek(int x, int y, int limit);
 
     /**
      * Sets the item in the specified slot.
@@ -115,9 +115,9 @@ public interface GridInventory extends Inventory2D {
      * @param y     y coordinate
      * @param stack Item stack to insert
      * @return operation result
-     * @see Inventory#set(ItemStack)
+     * @see IInventory#set(IItemStack)
      */
-    InventoryTransactionResult set(int x, int y, ItemStack stack);
+    InventoryTransactionResult set(int x, int y, IItemStack stack);
 
     /**
      * Gets the {@link Slot} at the specified position.

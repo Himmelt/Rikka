@@ -27,7 +27,7 @@ package rikka.api.item.recipe.crafting;
 import rikka.api.GameDictionary;
 import rikka.api.Sponge;
 import rikka.api.item.ItemType;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
@@ -43,7 +43,7 @@ import java.util.function.Predicate;
  * <p>Crafting recipes can only be crafted when all of the ingredients match
  * the items in the input grid.</p>
  */
-public interface Ingredient extends Predicate<ItemStack> {
+public interface Ingredient extends Predicate<IItemStack> {
 
     /**
      * An empty ingredient.
@@ -51,10 +51,10 @@ public interface Ingredient extends Predicate<ItemStack> {
     Ingredient NONE = DummyObjectProvider.createFor(Ingredient.class, "NONE");
 
     @Override
-    boolean test(ItemStack itemStack);
+    boolean test(IItemStack itemStack);
 
     /**
-     * Returns the list of {@link ItemStack}s used to display the ingredient in a recipe.
+     * Returns the list of {@link IItemStack}s used to display the ingredient in a recipe.
      * These are not necessarily all the items that this Ingredient can match.
      *
      * @return The list of items to display the Ingredient in a recipe.
@@ -84,12 +84,12 @@ public interface Ingredient extends Predicate<ItemStack> {
     }
 
     /**
-     * Creates a new {@link Ingredient} for the provided {@link ItemStack}s.
+     * Creates a new {@link Ingredient} for the provided {@link IItemStack}s.
      *
      * @param itemStacks The itemStacks
      * @return The new ingredient
      */
-    static Ingredient of(@Nullable ItemStack... itemStacks) {
+    static Ingredient of(@Nullable IItemStack... itemStacks) {
         if (itemStacks == null || itemStacks.length == 0) {
             return NONE;
         }
@@ -140,7 +140,7 @@ public interface Ingredient extends Predicate<ItemStack> {
          * @param predicate The predicate.
          * @return This Builder, for chaining
          */
-        Builder with(Predicate<ItemStack> predicate);
+        Builder with(Predicate<IItemStack> predicate);
 
         /**
          * Adds a GameDictionary Entry as Predicate for matching the ingredient.
@@ -175,7 +175,7 @@ public interface Ingredient extends Predicate<ItemStack> {
          * @param items The items
          * @return This Builder, for chaining
          */
-        Builder with(ItemStack... items);
+        Builder with(IItemStack... items);
 
         /**
          * Adds one or more ItemStackSnapshots for matching the ingredient.
@@ -203,7 +203,7 @@ public interface Ingredient extends Predicate<ItemStack> {
          * @param items The list of items.
          * @return This Builder, for chaining
          */
-        Builder withDisplay(ItemStack... items);
+        Builder withDisplay(IItemStack... items);
 
         /**
          * Adds ItemStackSnasphots used to display this Ingredient in a recipe.

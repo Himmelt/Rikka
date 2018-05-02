@@ -24,8 +24,8 @@
  */
 package rikka.api.item.inventory.slot;
 
-import rikka.api.item.inventory.Inventory;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IInventory;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.Slot;
 import rikka.api.util.Direction;
 
@@ -43,7 +43,7 @@ public interface SidedSlot extends Slot {
      * @return true if this inventory can accept the supplied stack from the
      * specified direction
      */
-    boolean canAccept(ItemStack stack, Direction from);
+    boolean canAccept(IItemStack stack, Direction from);
 
     /**
      * Attempts to insert the supplied stack into this inventory from the
@@ -53,9 +53,9 @@ public interface SidedSlot extends Slot {
      * @param from  Direction to check for insertion from
      * @return true if this inventory can accept the supplied stack from the
      * specified direction
-     * @see Inventory#offer(ItemStack)
+     * @see IInventory#offer(IItemStack)
      */
-    boolean offer(ItemStack stack, Direction from);
+    boolean offer(IItemStack stack, Direction from);
 
     /**
      * Gets whether automation can extract the specified item from the specified
@@ -66,6 +66,6 @@ public interface SidedSlot extends Slot {
      * @return true if automation can retrieve the supplied stack from the
      * specified direction
      */
-    boolean canGet(ItemStack stack, Direction from);
+    boolean canGet(IItemStack stack, Direction from);
 
 }

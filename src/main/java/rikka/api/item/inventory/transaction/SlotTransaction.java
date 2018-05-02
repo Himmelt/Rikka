@@ -25,7 +25,7 @@
 package rikka.api.item.inventory.transaction;
 
 import rikka.api.data.Transaction;
-import rikka.api.item.inventory.ItemStack;
+import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.ItemStackSnapshot;
 import rikka.api.item.inventory.Slot;
 
@@ -50,12 +50,12 @@ public class SlotTransaction extends Transaction<ItemStackSnapshot> {
     }
 
     /**
-     * Sets the custom {@link ItemStack} output of this
+     * Sets the custom {@link IItemStack} output of this
      * {@link SlotTransaction}.
      *
      * @param stack The stack
      */
-    public void setCustom(ItemStack stack) {
+    public void setCustom(IItemStack stack) {
         setCustom(checkNotNull(stack, "ItemStack was null").createSnapshot());
     }
 
