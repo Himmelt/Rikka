@@ -1,8 +1,8 @@
 package rikka.bukkit.entity;
 
 import org.bukkit.entity.Entity;
+import org.bukkit.event.player.PlayerTeleportEvent;
 import rikka.api.Rikka;
-import rikka.api.entity.EntitySnapshot;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
 import rikka.api.text.translation.Translation;
@@ -38,15 +38,11 @@ public abstract class BukkitEntity<T extends Entity> extends BukkitRikka<T> impl
     }
 
     public EntityType getType() {
-        return null;
-    }
-
-    public EntitySnapshot createSnapshot() {
-        return null;
+        return EntityType.getType(source);
     }
 
     public boolean setLocation(Location location) {
-        return false;
+        return source.teleport(location.bukkitLocation(), PlayerTeleportEvent.TeleportCause.PLUGIN);
     }
 
     public Vector3d getRotation() {

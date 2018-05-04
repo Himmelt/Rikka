@@ -2,7 +2,6 @@ package rikka.api.world;
 
 import org.spongepowered.api.world.World;
 import rikka.api.block.BlockType;
-import rikka.api.block.BlockTypes;
 import rikka.api.block.IBlockState;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
@@ -176,6 +175,10 @@ public final class Location {
 
     public String toString() {
         return "Location{" + getPosition() + " in " + world + "}";
+    }
+
+    public org.bukkit.Location bukkitLocation() {
+        return new org.bukkit.Location(world, x, y, z);
     }
 
 }

@@ -34,4 +34,8 @@ public interface IWorld extends IEntityUniverse {
 
     Collection<IEntity> getNearbyEntities(Vector3d position, double distance);
 
+    org.bukkit.World bukkitWorld();
+
+    org.spongepowered.api.world.World spongeWorld();
+
 }
