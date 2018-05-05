@@ -11,5 +11,11 @@ public class Vector3d {
         this.z = z;
     }
 
+    public Vector3d(com.flowpowered.math.vector.Vector3d rotation) {
+        this.x = rotation.getX();
+        this.y = rotation.getY();
+        this.z = rotation.getZ();
+    }
+
 }
 

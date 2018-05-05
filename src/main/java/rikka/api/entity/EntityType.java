@@ -1,6 +1,5 @@
 package rikka.api.entity;
 
-import org.bukkit.entity.Entity;
 import rikka.api.text.translation.Translatable;
 import rikka.api.text.translation.Translation;
 
@@ -96,7 +95,13 @@ public enum EntityType implements Translatable {
     ZOMBIE_HORSE,
     ZOMBIE_VILLAGER;
 
-    public static <T extends Entity> EntityType getType(T source) {
+    public static <T extends org.bukkit.entity.Entity> EntityType getType(T source) {
+        source.getType();
+        return null;
+    }
+
+    public static <T extends org.spongepowered.api.entity.Entity> EntityType getType(T source) {
+        String id = source.getType().getId();
         return null;
     }
 

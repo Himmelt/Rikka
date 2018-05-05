@@ -11,6 +11,7 @@ import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorld;
 import rikka.api.world.Location;
 import rikka.bukkit.BukkitRikka;
+import rikka.bukkit.world.BukkitWorld;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -37,12 +38,18 @@ public abstract class BukkitEntity<T extends Entity> extends BukkitRikka<T> impl
         source.setGravity(gravity);
     }
 
-    public EntityType getType() {
+    public final EntityType getType() {
         return EntityType.getType(source);
     }
 
-    public boolean setLocation(Location location) {
-        return source.teleport(location.bukkitLocation(), PlayerTeleportEvent.TeleportCause.PLUGIN);
+    public final boolean setLocation(Location location) {
+        IWorld world = location.getWorld();
+        if (world instanceof BukkitWorld) {
+            return source.teleport(
+                    new org.bukkit.Location(((BukkitWorld) world).getSource(), location.getX(), location.getY(), location.getZ()),
+                    PlayerTeleportEvent.TeleportCause.PLUGIN
+            );
+        } else return false;
     }
 
     public Vector3d getRotation() {

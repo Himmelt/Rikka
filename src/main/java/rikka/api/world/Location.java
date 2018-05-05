@@ -154,7 +154,7 @@ public final class Location {
     }
 
     public boolean removeBlock() {
-        return world.setBlockType(getBlockPosition(), BlockTypes.AIR, BlockChangeFlags.ALL);
+        return world.setBlockType(getBlockPosition(), BlockType.AIR, BlockChangeFlags.ALL);
     }
 
     public IEntity createEntity(EntityType type) {
@@ -175,10 +175,6 @@ public final class Location {
 
     public String toString() {
         return "Location{" + getPosition() + " in " + world + "}";
-    }
-
-    public org.bukkit.Location bukkitLocation() {
-        return new org.bukkit.Location(world, x, y, z);
     }
 
 }

@@ -1,7 +1,6 @@
 package rikka.api.entity.living.player;
 
 import rikka.api.entity.IArmorEquipable;
-import rikka.api.entity.ITamer;
 import rikka.api.profile.GameProfile;
 import rikka.api.service.permission.Permissible;
 import rikka.api.util.math.Vector3d;
@@ -9,7 +8,7 @@ import rikka.api.util.math.Vector3d;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface IUser extends IArmorEquipable, ITamer, Permissible {
+public interface IUser extends IArmorEquipable, Permissible {
 
     GameProfile getProfile();
 
@@ -24,9 +23,5 @@ public interface IUser extends IArmorEquipable, ITamer, Permissible {
     Optional<UUID> getWorldUniqueId();
 
     boolean setLocation(Vector3d position, UUID world);
-
-    void setRotation(Vector3d rotation);
-
-    Vector3d getRotation();
 
 }
