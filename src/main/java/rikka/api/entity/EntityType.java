@@ -4,8 +4,8 @@ import rikka.api.text.translation.Translatable;
 import rikka.api.text.translation.Translation;
 
 public enum EntityType implements Translatable {
-    AREA_EFFECT_CLOUD,
-    ARMOR_STAND,
+    AREA_EFFECT_CLOUD("area_effect_cloud", org.bukkit.entity.AreaEffectCloud.class, org.spongepowered.api.entity.AreaEffectCloud.class),
+    ARMOR_STAND("armor_stand"),
     BAT,
     BLAZE,
     BOAT,
@@ -94,6 +94,10 @@ public enum EntityType implements Translatable {
     ZOMBIE,
     ZOMBIE_HORSE,
     ZOMBIE_VILLAGER;
+
+    EntityType(String id, Class<? extends org.bukkit.entity.Entity> bukkitClass, Class<? extends org.spongepowered.api.entity.Entity> spongeClass) {
+
+    }
 
     public static <T extends org.bukkit.entity.Entity> EntityType getType(T source) {
         source.getType();
