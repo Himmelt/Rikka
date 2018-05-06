@@ -26,6 +26,7 @@ import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorldBorder;
 import rikka.api.world.Location;
 import rikka.bukkit.scoreboard.BukkitScoreboard;
+import rikka.bukkit.world.BukkitWorldBorder;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -33,9 +34,9 @@ import java.util.UUID;
 
 import static org.bukkit.GameMode.*;
 
-public class BukkitPlayer<T extends Player> extends BukkitEntity<T> implements IPlayer {
+public class BukkitPlayer extends BukkitEntity<Player> implements IPlayer {
 
-    public BukkitPlayer(T source) {
+    public BukkitPlayer(Player source) {
         super(source);
     }
 
@@ -121,8 +122,8 @@ public class BukkitPlayer<T extends Player> extends BukkitEntity<T> implements I
         return source.getEnderChest();
     }
 
-    public boolean respawnPlayer() {
-        return source;
+    public void respawn() {
+        source.spigot().respawn();
     }
 
     public Optional<IEntity> getSpectatorTarget() {
@@ -133,8 +134,8 @@ public class BukkitPlayer<T extends Player> extends BukkitEntity<T> implements I
 
     }
 
-    public Optional<IWorldBorder> getWorldBorder() {
-        return Optional.empty();
+    public IWorldBorder getWorldBorder() {
+        return new BukkitWorldBorder(source.getWorld().getWorldBorder());
     }
 
     public void setWorldBorder(@Nullable IWorldBorder border, Cause cause) {
@@ -272,4 +273,6 @@ public class BukkitPlayer<T extends Player> extends BukkitEntity<T> implements I
     public void sendMessage(ChatType type, Text message) {
 
     }
+
+
 }

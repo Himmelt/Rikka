@@ -34,7 +34,7 @@ public abstract class SpongeRikka<T> implements Rikka<T> {
         RCommandSender sender = senders.get(source.getName());
         if (sender != null) return sender;
         if (source instanceof Player)
-            sender = new SpongePlayer<>((Player) source);
+            sender = new SpongePlayer((Player) source);
         else return null;
         senders.put(source.getName(), sender);
         return sender;
@@ -53,7 +53,7 @@ public abstract class SpongeRikka<T> implements Rikka<T> {
     public static SpongePlayer getPlayer(Player player) {
         SpongePlayer iPlayer = players.get(player.getUniqueId());
         if (iPlayer == null) {
-            iPlayer = new SpongePlayer<>(player);
+            iPlayer = new SpongePlayer(player);
             players.put(player.getUniqueId(), iPlayer);
         }
         return iPlayer;

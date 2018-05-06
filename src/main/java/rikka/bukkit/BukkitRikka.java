@@ -30,7 +30,6 @@ public class BukkitRikka<T> implements Rikka<T> {
         this.source = source;
     }
 
-
     public T getSource() {
         return source;
     }
@@ -50,7 +49,7 @@ public class BukkitRikka<T> implements Rikka<T> {
             if (sender != null) return sender;
         }
         if (source instanceof Player)
-            sender = new BukkitPlayer<>((Player) source);
+            sender = new BukkitPlayer((Player) source);
         else if (source instanceof ConsoleCommandSender) {
             sender = new BukkitConsoleSender<>((ConsoleCommandSender) source);
         } else if (source instanceof BlockCommandSender) {
@@ -76,7 +75,7 @@ public class BukkitRikka<T> implements Rikka<T> {
     public static BukkitPlayer getPlayer(Player player) {
         BukkitPlayer iPlayer = players.get(player.getUniqueId());
         if (iPlayer == null) {
-            iPlayer = new BukkitPlayer<>(player);
+            iPlayer = new BukkitPlayer(player);
             players.put(player.getUniqueId(), iPlayer);
         }
         return iPlayer;

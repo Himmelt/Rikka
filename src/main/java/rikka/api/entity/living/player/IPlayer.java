@@ -57,7 +57,7 @@ public interface IPlayer extends IHumanoid, RUser, RCommandSender, RChatTypeMess
     }
 
     // TODO Text
-    Text getDisplayName();
+    String getDisplayName();
 
     GameMode gameMode();
 
@@ -67,13 +67,13 @@ public interface IPlayer extends IHumanoid, RUser, RCommandSender, RChatTypeMess
 
     IInventory getEnderChestInventory();
 
-    boolean respawnPlayer();
+    void respawn();
 
     Optional<IEntity> getSpectatorTarget();
 
     void setSpectatorTarget(@Nullable IEntity entity);
 
-    Optional<IWorldBorder> getWorldBorder();
+    IWorldBorder getWorldBorder();
 
     void setWorldBorder(@Nullable IWorldBorder border, Cause cause);
 

@@ -1,6 +1,6 @@
 package rikka.api.world;
 
-import com.flowpowered.math.vector.Vector3d;
+import rikka.api.util.math.Vector3d;
 
 public interface IWorldBorder {
 
@@ -28,8 +28,10 @@ public interface IWorldBorder {
 
     void setWarningDistance(int distance);
 
+    // TODO fix method name with spigot
     double getDamageThreshold();
 
+    // TODO fix method name with spigot
     void setDamageThreshold(double distance);
 
     double getDamageAmount();

@@ -26,13 +26,14 @@ import rikka.api.text.chat.ChatVisibility;
 import rikka.api.text.translation.Translation;
 import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorldBorder;
+import rikka.sponge.world.SpongeWorldBorder;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
-public class SpongePlayer<T extends Player> extends SpongeEntity<T> implements IPlayer {
-    public SpongePlayer(T source) {
+public class SpongePlayer extends SpongeEntity<Player> implements IPlayer {
+    public SpongePlayer(Player source) {
         super(source);
     }
 
@@ -91,8 +92,9 @@ public class SpongePlayer<T extends Player> extends SpongeEntity<T> implements I
         return source.lastPlayed().get().toEpochMilli();
     }
 
-    public Text getDisplayName() {
-        return source.getDisplayNameData().displayName().get();
+    public String getDisplayName() {
+        // TODO
+        return source.getDisplayNameData().displayName().get().toPlain();
     }
 
     public GameMode gameMode() {
@@ -116,8 +118,8 @@ public class SpongePlayer<T extends Player> extends SpongeEntity<T> implements I
         return null;
     }
 
-    public boolean respawnPlayer() {
-        return false;
+    public void respawn() {
+        source.respawnPlayer();
     }
 
     public Optional<IEntity> getSpectatorTarget() {
@@ -128,8 +130,10 @@ public class SpongePlayer<T extends Player> extends SpongeEntity<T> implements I
 
     }
 
-    public Optional<IWorldBorder> getWorldBorder() {
-        return Optional.empty();
+    public IWorldBorder getWorldBorder() {
+        if (source.getWorldBorder().isPresent()) {
+            return new SpongeWorldBorder(source.getWorldBorder().get());
+        } else return null;
     }
 
     public void setWorldBorder(@Nullable IWorldBorder border, Cause cause) {
