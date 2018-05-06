@@ -24,18 +24,18 @@
  */
 package rikka.api.service.economy.account;
 
-import rikka.api.entity.living.player.IUser;
+import rikka.api.entity.living.player.RUser;
 import rikka.api.profile.GameProfile;
-import rikka.api.util.Identifiable;
+import rikka.api.util.RIdentifiable;
 
 import java.util.UUID;
 
 /**
  * Represents an {@link Account} identified by a {@link UUID}.
  *
- * <p>This is usually linked to a particular {@link IUser}'s {@link GameProfile},
+ * <p>This is usually linked to a particular {@link RUser}'s {@link GameProfile},
  * through {@link #getUUID()}.</p>.
  */
-public interface UniqueAccount extends Account, Identifiable {
+public interface UniqueAccount extends Account, RIdentifiable {
 
 }

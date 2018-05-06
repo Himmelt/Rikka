@@ -234,7 +234,7 @@ public interface Team {
      *
      * <p>While any {@link Text} may be added, the {@link Text} to use should
      * normally be obtained by calling
-     * {@link TeamMember#getTeamRepresentation()} on a {@link TeamMember}, such
+     * {@link RTeamMember#getTeamRepresentation()} on a {@link RTeamMember}, such
      * as a {@link IPlayer}.</p>
      *
      * @param member the {@link Text} to add
@@ -245,8 +245,8 @@ public interface Team {
      * Removes the specified {@link Text} from this team.
      *
      * <p>While any {@link Text} may be removed, the {@link Text}
-     * to use should normally be obtained by calling {@link TeamMember#getTeamRepresentation()}
-     * on a {@link TeamMember}, such as a {@link IPlayer}.</p>
+     * to use should normally be obtained by calling {@link RTeamMember#getTeamRepresentation()}
+     * on a {@link RTeamMember}, such as a {@link IPlayer}.</p>
      *
      * @param member The {@link Text} to remove
      * @return Whether the {@link Text} was on this team
@@ -257,22 +257,22 @@ public interface Team {
      * Returns the scoreboard this team is registered on, if available.
      *
      * <p>This will return {@link Optional#empty()} when a team has
-     * been removed from its {@link Scoreboard}, or has been created
+     * been removed from its {@link IScoreboard}, or has been created
      * but not yet registered.</p>
      *
      * @return The scoreboard this team is registered on, if available.
      */
-    Optional<Scoreboard> getScoreboard();
+    Optional<IScoreboard> getScoreboard();
 
     /**
-     * Unregisters this team from its {@link Scoreboard}, if present.
+     * Unregisters this team from its {@link IScoreboard}, if present.
      *
      * <p>A team can still be fully used after being unregistered. However,
      * it will not affect the game in any way until registered to a
-     * {@link Scoreboard} again, through
-     * {@link Scoreboard#registerTeam(Team)}.</p>
+     * {@link IScoreboard} again, through
+     * {@link IScoreboard#registerTeam(Team)}.</p>
      *
-     * @return Whether this team was registered to a {@link Scoreboard}.
+     * @return Whether this team was registered to a {@link IScoreboard}.
      */
     boolean unregister();
 

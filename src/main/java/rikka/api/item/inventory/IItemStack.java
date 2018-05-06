@@ -1,9 +1,9 @@
 package rikka.api.item.inventory;
 
 import rikka.api.item.ItemType;
-import rikka.api.text.translation.Translatable;
+import rikka.api.text.translation.RTranslatable;
 
-public interface IItemStack extends Translatable {
+public interface IItemStack extends RTranslatable {
     ItemType getType();
 
     int getQuantity();

@@ -25,7 +25,7 @@
 package rikka.api.service.user;
 
 import rikka.api.entity.living.player.IPlayer;
-import rikka.api.entity.living.player.IUser;
+import rikka.api.entity.living.player.RUser;
 import rikka.api.profile.GameProfile;
 import rikka.api.profile.GameProfileManager;
 
@@ -34,40 +34,40 @@ import java.util.Optional;
 import java.util.UUID;
 
 /**
- * Stores the persistent {@link IUser} data of a {@link IPlayer}.
+ * Stores the persistent {@link RUser} data of a {@link IPlayer}.
  */
 public interface UserStorageService {
 
     /**
-     * Gets the data of a {@link IUser} by their unique id.
+     * Gets the data of a {@link RUser} by their unique id.
      *
      * @param uniqueId The UUID of the user
-     * @return {@link IUser} or Optional.empty() if not found
+     * @return {@link RUser} or Optional.empty() if not found
      */
-    Optional<IUser> get(UUID uniqueId);
+    Optional<RUser> get(UUID uniqueId);
 
     /**
-     * Gets the data of a {@link IUser} by their last known user name
+     * Gets the data of a {@link RUser} by their last known user name
      * (case-insensitive).
      *
      * <p>To get the current name of a player, use the
      * {@link GameProfileManager} service.</p>
      *
      * @param lastKnownName The user name
-     * @return {@link IUser} or Optional.empty() if not found
+     * @return {@link RUser} or Optional.empty() if not found
      */
-    Optional<IUser> get(String lastKnownName);
+    Optional<RUser> get(String lastKnownName);
 
     /**
-     * Gets the data of a {@link IUser} by their {@link GameProfile}.
+     * Gets the data of a {@link RUser} by their {@link GameProfile}.
      *
      * @param profile The profile
-     * @return {@link IUser} or Optional.empty() if not found
+     * @return {@link RUser} or Optional.empty() if not found
      */
-    Optional<IUser> get(GameProfile profile);
+    Optional<RUser> get(GameProfile profile);
 
     /**
-     * Gets or creates a persistent {@link IUser} associated with the given
+     * Gets or creates a persistent {@link RUser} associated with the given
      * {@link GameProfile}.
      *
      * <p>To obtain a {@link GameProfile}, use the {@link GameProfileManager}.
@@ -76,16 +76,16 @@ public interface UserStorageService {
      * @param profile The profile
      * @return The user object
      */
-    IUser getOrCreate(GameProfile profile);
+    RUser getOrCreate(GameProfile profile);
 
     /**
-     * Gets the collection of all {@link GameProfile}s with stored {@link IUser}
+     * Gets the collection of all {@link GameProfile}s with stored {@link RUser}
      * data.
      *
      * <p>Note that this method is resource-intensive depending on the amount of
      * stored data.</p>
      *
-     * <p>Use {@link #get(GameProfile)} to get the {@link IUser} data
+     * <p>Use {@link #get(GameProfile)} to get the {@link RUser} data
      * corresponding to a {@link GameProfile}.</p>
      *
      * @return A {@link Collection} of {@link GameProfile}s
@@ -93,7 +93,7 @@ public interface UserStorageService {
     Collection<GameProfile> getAll();
 
     /**
-     * Deletes the data associated with a {@link IUser}.
+     * Deletes the data associated with a {@link RUser}.
      *
      * <p>This may not work if the user is logged in.</p>
      *
@@ -103,21 +103,21 @@ public interface UserStorageService {
     boolean delete(GameProfile profile);
 
     /**
-     * Deletes the data associated with a {@link IUser}.
+     * Deletes the data associated with a {@link RUser}.
      *
      * <p>This may not work if the user is logged in.</p>
      *
      * @param user The user to delete
      * @return true if the deletion was successful
      */
-    boolean delete(IUser user);
+    boolean delete(RUser user);
 
     /**
      * Returns a collection of matching {@link GameProfile}s with stored
-     * {@link IUser} data whose last known user names start with the given string
+     * {@link RUser} data whose last known user names start with the given string
      * (case-insensitive).
      *
-     * <p>Use {@link #get(GameProfile)} to get the {@link IUser} data
+     * <p>Use {@link #get(GameProfile)} to get the {@link RUser} data
      * corresponding to a {@link GameProfile}.</p>
      *
      * @param lastKnownName The user name

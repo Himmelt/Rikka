@@ -28,8 +28,8 @@ import rikka.api.Sponge;
 import rikka.api.entity.explosive.IExplosive;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.world.IWorld;
-import rikka.api.world.Locatable;
 import rikka.api.world.Location;
+import rikka.api.world.RLocatable;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -37,7 +37,7 @@ import java.util.Optional;
 /**
  * Represents an explosion in a {@link IWorld}.
  */
-public interface Explosion extends Locatable {
+public interface Explosion extends RLocatable {
 
     /**
      * Creates a new {@link Builder} to build a {@link Explosion}.

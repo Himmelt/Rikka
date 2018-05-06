@@ -27,7 +27,7 @@ package rikka.api.item.inventory;
 import rikka.api.GameDictionary;
 import rikka.api.data.ImmutableDataHolder;
 import rikka.api.item.ItemType;
-import rikka.api.text.translation.Translatable;
+import rikka.api.text.translation.RTranslatable;
 import rikka.api.util.generator.dummy.DummyObjectProvider;
 
 /**
@@ -37,7 +37,7 @@ import rikka.api.util.generator.dummy.DummyObjectProvider;
  * it is a snapshot, a snapshot cannot be modified, but modifications will
  * result in a new instance of the {@link ItemStackSnapshot}.
  */
-public interface ItemStackSnapshot extends ImmutableDataHolder<ItemStackSnapshot>, Translatable {
+public interface ItemStackSnapshot extends ImmutableDataHolder<ItemStackSnapshot>, RTranslatable {
 
     ItemStackSnapshot NONE = DummyObjectProvider.createFor(ItemStackSnapshot.class, "NONE");
 

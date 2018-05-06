@@ -22,7 +22,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-@NonnullByDefault
-package rikka.api.text.translation.locale;
+package rikka.api.scoreboard;
 
-import rikka.api.util.annotation.NonnullByDefault;
+import rikka.api.entity.living.ILiving;
+import rikka.api.entity.living.player.IPlayer;
+import rikka.api.text.Text;
+
+import java.util.UUID;
+
+/**
+ * A team member represents something which has a meaningful {@link Text}
+ * representation on a {@link Team}. The client may be able to link the team
+ * {@link Text} entry to a particular object, and perform extra functionality.
+ *
+ * <p>Examples include:</p>
+ *
+ * <ul>
+ * <li>{@link IPlayer}s, represented in Vanilla by their name</li>
+ * <li>Other {@link ILiving living entities}, represented in Vanilla by their {@link UUID}</li>
+ * </ul>
+ */
+public interface RTeamMember {
+
+    /**
+     * Gets a {@link Text} representing this team member, suitable for adding
+     * to an {@link Team} with {@link Team#addMember(Text)}.
+     *
+     * @return an {@link Text} representing this team member
+     */
+    Text getTeamRepresentation();
+
+}

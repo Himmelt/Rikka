@@ -2,23 +2,23 @@ package rikka.api.entity.living.player;
 
 import org.spongepowered.api.event.cause.Cause;
 import org.spongepowered.api.event.message.MessageChannelEvent;
-import rikka.api.command.ICommandSender;
+import rikka.api.command.RCommandSender;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.IHumanoid;
 import rikka.api.entity.living.player.gamemode.GameMode;
 import rikka.api.entity.living.player.tab.TabList;
 import rikka.api.item.inventory.IContainer;
 import rikka.api.item.inventory.IInventory;
-import rikka.api.scoreboard.Scoreboard;
+import rikka.api.scoreboard.IScoreboard;
 import rikka.api.text.Text;
-import rikka.api.text.channel.ChatTypeMessageReceiver;
+import rikka.api.text.channel.RChatTypeMessageReceiver;
 import rikka.api.text.chat.ChatVisibility;
 import rikka.api.world.IWorldBorder;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 
-public interface IPlayer extends IHumanoid, IUser, ICommandSender, ChatTypeMessageReceiver {
+public interface IPlayer extends IHumanoid, RUser, RCommandSender, RChatTypeMessageReceiver {
 
     default boolean isViewingInventory() {
         return getOpenInventory() != null;
@@ -32,8 +32,6 @@ public interface IPlayer extends IHumanoid, IUser, ICommandSender, ChatTypeMessa
 
     boolean closeInventory() throws IllegalArgumentException;
 
-    int getViewDistance();
-
     ChatVisibility getChatVisibility();
 
     boolean isChatColorsEnabled();
@@ -46,9 +44,9 @@ public interface IPlayer extends IHumanoid, IUser, ICommandSender, ChatTypeMessa
 
     void kick(Text reason);
 
-    Scoreboard getScoreboard();
+    IScoreboard getScoreboard();
 
-    void setScoreboard(Scoreboard scoreboard);
+    void setScoreboard(IScoreboard scoreboard);
 
     long firstPlayed();
 
@@ -59,7 +57,7 @@ public interface IPlayer extends IHumanoid, IUser, ICommandSender, ChatTypeMessa
     }
 
     // TODO Text
-    String getDisplayName();
+    Text getDisplayName();
 
     GameMode gameMode();
 

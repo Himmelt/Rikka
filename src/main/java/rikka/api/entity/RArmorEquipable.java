@@ -6,7 +6,7 @@ import rikka.api.item.inventory.equipment.EquipmentTypes;
 
 import javax.annotation.Nullable;
 
-public interface IArmorEquipable extends IEquipable {
+public interface RArmorEquipable extends IEquipable {
 
     default IItemStack getHelmet() {
         return this.getEquipped(EquipmentTypes.HEADWEAR);

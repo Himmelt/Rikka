@@ -10,7 +10,7 @@ import java.util.Map;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 @FunctionalInterface
-public interface ChatTypeMessageReceiver {
+public interface RChatTypeMessageReceiver {
 
     void sendMessage(ChatType type, Text message);
 

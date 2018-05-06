@@ -25,10 +25,10 @@
 package rikka.api.service.economy.account;
 
 import rikka.api.entity.IEntity;
-import rikka.api.entity.living.player.IUser;
+import rikka.api.entity.living.player.RUser;
 
 /**
- * Represents an {@link Account} which is not tied to a particular {@link IUser}.
+ * Represents an {@link Account} which is not tied to a particular {@link RUser}.
  *
  * <p>Examples of virtual accounts include:
  * * A global server account

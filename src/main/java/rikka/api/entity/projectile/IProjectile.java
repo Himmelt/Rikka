@@ -1,10 +1,10 @@
 package rikka.api.entity.projectile;
 
 import rikka.api.entity.IEntity;
-import rikka.api.entity.projectile.source.IProjectileSource;
+import rikka.api.entity.projectile.source.RProjectileSource;
 
 public interface IProjectile extends IEntity {
-    IProjectileSource getShooter();
+    RProjectileSource getShooter();
 
-    void setShooter(IProjectileSource shooter);
+    void setShooter(RProjectileSource shooter);
 }

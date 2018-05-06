@@ -1,9 +1,9 @@
 package rikka.api.block;
 
-import rikka.api.text.translation.Translatable;
+import rikka.api.text.translation.RTranslatable;
 import rikka.api.text.translation.Translation;
 
-public enum BlockType implements Translatable {
+public enum BlockType implements RTranslatable {
 
     STONE, AIR;
 

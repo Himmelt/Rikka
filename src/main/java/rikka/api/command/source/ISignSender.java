@@ -1,9 +1,9 @@
 package rikka.api.command.source;
 
-import rikka.api.command.ICommandSender;
+import rikka.api.command.RCommandSender;
 import rikka.api.tileentity.ISign;
-import rikka.api.world.Locatable;
+import rikka.api.world.RLocatable;
 
-public interface ISignSender extends ICommandSender, Locatable {
+public interface ISignSender extends RCommandSender, RLocatable {
     ISign getSign();
 }

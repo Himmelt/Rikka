@@ -9,14 +9,13 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.minecart.CommandMinecart;
 import rikka.api.Rikka;
-import rikka.api.command.ICommandSender;
-import rikka.api.entity.IEntity;
-import rikka.api.entity.living.player.IPlayer;
+import rikka.api.command.RCommandSender;
 import rikka.api.world.IWorld;
 import rikka.bukkit.command.BukkitBlockSender;
 import rikka.bukkit.command.BukkitConsoleSender;
 import rikka.bukkit.command.BukkitMinecartSender;
 import rikka.bukkit.command.BukkitRconSender;
+import rikka.bukkit.entity.BukkitEntity;
 import rikka.bukkit.entity.BukkitPlayer;
 import rikka.bukkit.world.BukkitWorld;
 
@@ -32,17 +31,17 @@ public class BukkitRikka<T> implements Rikka<T> {
     }
 
 
-    public final T getSource() {
+    public T getSource() {
         return source;
     }
 
-    private static final HashMap<String, ICommandSender> senders = new HashMap<>();
-    private static final HashMap<UUID, IPlayer> players = new HashMap<>();
-    private static final HashMap<UUID, IWorld> worlds = new HashMap<>();
+    private static final HashMap<String, RCommandSender> senders = new HashMap<>();
+    private static final HashMap<UUID, BukkitPlayer> players = new HashMap<>();
+    private static final HashMap<UUID, BukkitWorld> worlds = new HashMap<>();
 
-    public static ICommandSender getCommandSender(CommandSender source) {
+    public static RCommandSender getCommandSender(CommandSender source) {
         if (source == null) return null;
-        ICommandSender sender;
+        RCommandSender sender;
         if (source instanceof Player) {
             sender = players.get(((Player) source).getUniqueId());
             if (sender != null) return sender;
@@ -66,7 +65,7 @@ public class BukkitRikka<T> implements Rikka<T> {
     }
 
     public static IWorld getWorld(World world) {
-        IWorld iWorld = worlds.get(world.getUID());
+        BukkitWorld iWorld = worlds.get(world.getUID());
         if (iWorld == null) {
             iWorld = new BukkitWorld(world);
             worlds.put(world.getUID(), iWorld);
@@ -74,8 +73,8 @@ public class BukkitRikka<T> implements Rikka<T> {
         return iWorld;
     }
 
-    public static IPlayer getPlayer(Player player) {
-        IPlayer iPlayer = players.get(player.getUniqueId());
+    public static BukkitPlayer getPlayer(Player player) {
+        BukkitPlayer iPlayer = players.get(player.getUniqueId());
         if (iPlayer == null) {
             iPlayer = new BukkitPlayer<>(player);
             players.put(player.getUniqueId(), iPlayer);
@@ -83,7 +82,7 @@ public class BukkitRikka<T> implements Rikka<T> {
         return iPlayer;
     }
 
-    public static IEntity getEntity(Entity entity) {
+    public static BukkitEntity getEntity(Entity entity) {
         if (entity instanceof Player) {
             return getPlayer((Player) entity);
         } else {

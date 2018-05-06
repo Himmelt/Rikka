@@ -34,8 +34,8 @@ import rikka.api.block.ScheduledBlockUpdate;
 import rikka.api.data.property.LocationBasePropertyHolder;
 import rikka.api.entity.IEntity;
 import rikka.api.util.AABB;
-import rikka.api.util.Identifiable;
 import rikka.api.util.PositionOutOfBoundsException;
+import rikka.api.util.RIdentifiable;
 import rikka.api.world.BlockChangeFlag;
 import rikka.api.world.Location;
 import rikka.api.world.extent.worker.MutableBiomeVolumeWorker;
@@ -51,7 +51,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * other game objects.
  */
 public interface Extent extends IEntityUniverse, TileEntityVolume, InteractableVolume, MutableBiomeVolume,
-        LocationCompositeValueStore, Identifiable, LocationBasePropertyHolder {
+        LocationCompositeValueStore, RIdentifiable, LocationBasePropertyHolder {
 
     /**
      * Gets a location in this extent at the given position. Essentially, this

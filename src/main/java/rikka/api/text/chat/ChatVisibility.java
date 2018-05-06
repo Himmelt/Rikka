@@ -25,14 +25,14 @@
 package rikka.api.text.chat;
 
 import rikka.api.CatalogType;
-import rikka.api.text.translation.Translatable;
+import rikka.api.text.translation.RTranslatable;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**
  * Represents a visibility mode for a client's chat.
  */
 @CatalogedBy(ChatVisibilities.class)
-public interface ChatVisibility extends CatalogType, Translatable {
+public interface ChatVisibility extends CatalogType, RTranslatable {
 
     /**
      * Tests whether the given chat type will be visible to a player's chat.

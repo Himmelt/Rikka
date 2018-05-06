@@ -1,6 +1,6 @@
 package rikka.api.entity.living;
 
-import rikka.api.entity.IArmorEquipable;
+import rikka.api.entity.RArmorEquipable;
 
-public interface IArmorStand extends ILiving, IArmorEquipable {
+public interface IArmorStand extends ILiving, RArmorEquipable {
 }

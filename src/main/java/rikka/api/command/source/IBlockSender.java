@@ -1,15 +1,15 @@
 package rikka.api.command.source;
 
-import rikka.api.command.ICommandSender;
+import rikka.api.command.RCommandSender;
 import rikka.api.data.DataHolder;
 import rikka.api.data.key.Keys;
 import rikka.api.data.manipulator.mutable.CommandData;
 import rikka.api.data.value.mutable.OptionalValue;
 import rikka.api.data.value.mutable.Value;
 import rikka.api.text.Text;
-import rikka.api.world.Locatable;
+import rikka.api.world.RLocatable;
 
-public interface IBlockSender extends Locatable, ICommandSender, DataHolder {
+public interface IBlockSender extends RLocatable, RCommandSender, DataHolder {
 
     default CommandData getCommandData() {
         return get(CommandData.class).get();

@@ -2,7 +2,7 @@ package rikka;
 
 import org.bukkit.command.CommandSender;
 import org.spongepowered.api.command.CommandSource;
-import rikka.api.command.ICommandSender;
+import rikka.api.command.RCommandSender;
 import rikka.api.text.Text;
 import rikka.api.text.channel.MessageChannel;
 import rikka.bukkit.BukkitRikka;
@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
 
 public final class RikkaAPI {
 
-    private static final ICommandSender invalid = new ICommandSender() {
+    private static final RCommandSender invalid = new RCommandSender() {
         public String getName() {
             return "invalid";
         }
@@ -32,12 +32,12 @@ public final class RikkaAPI {
         }
     };
 
-    public static ICommandSender getCommandSender(CommandSender sender) {
+    public static RCommandSender getCommandSender(CommandSender sender) {
         if (ServerType.runningBukkit()) return BukkitRikka.getCommandSender(sender);
         return invalid;
     }
 
-    public static ICommandSender getCommandSender(CommandSource sender) {
+    public static RCommandSender getCommandSender(CommandSource sender) {
         if (ServerType.runningSponge()) return SpongeRikka.getCommandSender(sender);
         return invalid;
     }

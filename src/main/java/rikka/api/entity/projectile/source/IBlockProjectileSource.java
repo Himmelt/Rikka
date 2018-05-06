@@ -4,7 +4,7 @@ import rikka.api.block.IBlockState;
 import rikka.api.world.IWorld;
 import rikka.api.world.Location;
 
-public interface IBlockProjectileSource extends IProjectileSource {
+public interface IBlockProjectileSource extends RProjectileSource {
     Location<IWorld> getLocation();
 
     IBlockState getBlock();

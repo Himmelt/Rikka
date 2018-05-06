@@ -1,4 +1,4 @@
 package rikka.api.entity.projectile;
 
-public interface IProjectileLauncher {
+public interface RProjectileLauncher {
 }

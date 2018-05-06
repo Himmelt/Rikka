@@ -1,8 +1,8 @@
 package rikka.api.item.inventory;
 
 import rikka.api.util.Direction;
-import rikka.api.world.Locatable;
+import rikka.api.world.RLocatable;
 
-public interface IBlockCarrier extends ICarrier, Locatable {
+public interface IBlockCarrier extends ICarrier, RLocatable {
     IInventory getInventory(Direction from);
 }

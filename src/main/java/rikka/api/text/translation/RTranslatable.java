@@ -27,10 +27,10 @@ package rikka.api.text.translation;
 /**
  * Represents a game object with a corresponding translation.
  */
-public interface Translatable {
+public interface RTranslatable {
 
     /**
-     * Returns the Translation that corresponds to this {@link Translatable}.
+     * Returns the Translation that corresponds to this {@link RTranslatable}.
      *
      * @return The translation of this object
      */

@@ -25,7 +25,7 @@
 package rikka.api.world.difficulty;
 
 import rikka.api.CatalogType;
-import rikka.api.text.translation.Translatable;
+import rikka.api.text.translation.RTranslatable;
 import rikka.api.util.annotation.CatalogedBy;
 
 /**
@@ -34,6 +34,6 @@ import rikka.api.util.annotation.CatalogedBy;
  * @see Difficulties
  */
 @CatalogedBy(Difficulties.class)
-public interface Difficulty extends CatalogType, Translatable {
+public interface Difficulty extends CatalogType, RTranslatable {
 
 }

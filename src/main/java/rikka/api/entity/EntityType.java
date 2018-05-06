@@ -1,11 +1,14 @@
 package rikka.api.entity;
 
-import rikka.api.text.translation.Translatable;
+import rikka.api.text.translation.RTranslatable;
 import rikka.api.text.translation.Translation;
 
-public enum EntityType implements Translatable {
+import javax.annotation.Nonnull;
+import java.util.HashMap;
+
+public enum EntityType implements RTranslatable {
     AREA_EFFECT_CLOUD("area_effect_cloud", org.bukkit.entity.AreaEffectCloud.class, org.spongepowered.api.entity.AreaEffectCloud.class),
-    ARMOR_STAND("armor_stand"),
+    ARMOR_STAND("armor_stand", org.bukkit.entity.ArmorStand.class, org.spongepowered.api.entity.living.ArmorStand.class),
     BAT,
     BLAZE,
     BOAT,
@@ -93,20 +96,46 @@ public enum EntityType implements Translatable {
     WOLF,
     ZOMBIE,
     ZOMBIE_HORSE,
-    ZOMBIE_VILLAGER;
+    ZOMBIE_VILLAGER,
+    UNKNOWN;
 
-    EntityType(String id, Class<? extends org.bukkit.entity.Entity> bukkitClass, Class<? extends org.spongepowered.api.entity.Entity> spongeClass) {
+    private final String nameId;
+    private final Class<? extends org.bukkit.entity.Entity> bukkitClass;
+    private final Class<? extends org.spongepowered.api.entity.Entity> spongeClass;
 
+    private static final HashMap<String, EntityType> nameIdMap = new HashMap<>();
+    private static final HashMap<Class<? extends org.bukkit.entity.Entity>, EntityType> bukkitClassMap = new HashMap<>();
+    private static final HashMap<Class<? extends org.spongepowered.api.entity.Entity>, EntityType> spongeClassMap = new HashMap<>();
+
+
+    static {
+        nameIdMap.clear();
+        bukkitClassMap.clear();
+        spongeClassMap.clear();
+        for (EntityType type : values()) {
+            bukkitClassMap.put(type.bukkitClass, type);
+            spongeClassMap.put(type.spongeClass, type);
+            if (type.nameId != null && !type.nameId.isEmpty()) {
+                if (nameIdMap.containsKey(type.nameId)) {
+                    throw new RuntimeException("Multi Map of EntityType nameId: " + type.nameId);
+                }
+                nameIdMap.put(type.nameId, type);
+            }
+        }
+    }
+
+    EntityType(String nameId, @Nonnull Class<? extends org.bukkit.entity.Entity> bukkitClass, @Nonnull Class<? extends org.spongepowered.api.entity.Entity> spongeClass) {
+        this.nameId = nameId;
+        this.bukkitClass = bukkitClass;
+        this.spongeClass = spongeClass;
     }
 
     public static <T extends org.bukkit.entity.Entity> EntityType getType(T source) {
-        source.getType();
-        return null;
+        return bukkitClassMap.getOrDefault(source.getClass(), UNKNOWN);
     }
 
     public static <T extends org.spongepowered.api.entity.Entity> EntityType getType(T source) {
-        String id = source.getType().getId();
-        return null;
+        return spongeClassMap.getOrDefault(source.getClass(), UNKNOWN);
     }
 
     public Translation getTranslation() {

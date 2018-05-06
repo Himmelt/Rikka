@@ -1,27 +1,3 @@
-/*
- * This file is part of SpongeAPI, licensed under the MIT License (MIT).
- *
- * Copyright (c) SpongePowered <https://www.spongepowered.org>
- * Copyright (c) contributors
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
 package rikka.api.text;
 
 import com.google.common.base.MoreObjects;
@@ -29,7 +5,6 @@ import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import rikka.api.data.DataContainer;
-import rikka.api.data.DataSerializable;
 import rikka.api.data.Queries;
 import rikka.api.scoreboard.Score;
 import rikka.api.text.action.ClickAction;
@@ -42,7 +17,7 @@ import rikka.api.text.format.TextStyle;
 import rikka.api.text.format.TextStyles;
 import rikka.api.text.selector.Selector;
 import rikka.api.text.serializer.TextSerializers;
-import rikka.api.text.translation.Translatable;
+import rikka.api.text.translation.RTranslatable;
 import rikka.api.text.translation.Translation;
 
 import javax.annotation.Nullable;
@@ -50,46 +25,16 @@ import java.util.*;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-/**
- * Represents an immutable tree-structure of formatted (text) components. Each
- * instance consists of content and a list of children texts appended after the
- * content of this text. The content of the text is available through one of the
- * subclasses.
- *
- * <p>Text is primarily used for sending formatted chat messages to players, but
- * also in other places like books or signs.</p>
- *
- * <p>Text instances can be created through the available {@link #of()} methods
- * or using one of the {@link Builder}s available through one of the
- * {@link #builder()} methods.</p>
- *
- * @see Text#builder()
- * @see Builder
- * @see LiteralText
- * @see TranslatableText
- * @see SelectorText
- * @see ScoreText
- */
-public abstract class Text implements TextRepresentable, DataSerializable, Comparable<Text> {
+public abstract class Text implements TextRepresentable, Comparable<Text> {
 
-    /**
-     * The empty, unformatted {@link Text} instance.
-     */
     public static final Text EMPTY = LiteralText.EMPTY;
 
     static final char NEW_LINE_CHAR = '\n';
     static final String NEW_LINE_STRING = "\n";
 
-    /**
-     * An unformatted {@link Text} that will start a new line (if supported).
-     */
     public static final LiteralText NEW_LINE = new LiteralText(NEW_LINE_STRING);
 
-    /**
-     * A {@link Comparator} for texts that compares the plain text of two text
-     * instances.
-     */
-    public static Comparator<Text> PLAIN_COMPARATOR = (text1, text2) -> text1.toPlain().compareTo(text2.toPlain());
+    public static Comparator<Text> PLAIN_COMPARATOR = Comparator.comparing(Text::toPlain);
 
     final TextFormat format;
     final ImmutableList<Text> children;
@@ -97,10 +42,6 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
     final Optional<HoverAction<?>> hoverAction;
     final Optional<ShiftClickAction<?>> shiftClickAction;
 
-    /**
-     * An {@link Iterable} providing an {@link Iterator} over this {@link Text}
-     * as well as all children text and their children.
-     */
     final Iterable<Text> childrenIterable;
 
     Text() {
@@ -112,17 +53,6 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
         this.childrenIterable = () -> Iterators.singletonIterator(this);
     }
 
-    /**
-     * Constructs a new immutable {@link Text} with the specified formatting and
-     * text actions applied.
-     *
-     * @param format           The format of the text
-     * @param children         The immutable list of children of the text
-     * @param clickAction      The click action of the text, or {@code null} for none
-     * @param hoverAction      The hover action of the text, or {@code null} for none
-     * @param shiftClickAction The shift click action of the text, or
-     *                         {@code null} for none
-     */
     Text(TextFormat format, ImmutableList<Text> children, @Nullable ClickAction<?> clickAction,
          @Nullable HoverAction<?> hoverAction, @Nullable ShiftClickAction<?> shiftClickAction) {
         this.format = checkNotNull(format, "format");
@@ -133,165 +63,74 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
         this.childrenIterable = () -> new TextIterator(this);
     }
 
-    /**
-     * Returns the format of this {@link Text}.
-     *
-     * @return The format of this text
-     */
     public final TextFormat getFormat() {
         return this.format;
     }
 
-    /**
-     * Returns the color of this {@link Text}.
-     *
-     * @return The color of this text
-     */
     public final TextColor getColor() {
         return this.format.getColor();
     }
 
-    /**
-     * Returns the style of this {@link Text}. This will return a compound
-     * {@link TextStyle} if multiple different styles have been set.
-     *
-     * @return The style of this text
-     */
     public final TextStyle getStyle() {
         return this.format.getStyle();
     }
 
-    /**
-     * Returns the immutable list of children appended after the content of this
-     * {@link Text}.
-     *
-     * @return The immutable list of children
-     */
     public final ImmutableList<Text> getChildren() {
         return this.children;
     }
 
-    /**
-     * Returns an immutable {@link Iterable} over this text and all of its
-     * children. This is recursive, the children of the children will be also
-     * included.
-     *
-     * @return An iterable over this text and the children texts
-     */
     public final Iterable<Text> withChildren() {
         return this.childrenIterable;
     }
 
-    /**
-     * Returns the {@link ClickAction} executed on the client when this
-     * {@link Text} gets clicked.
-     *
-     * @return The click action of this text, or {@link Optional#empty()} if not
-     * set
-     */
     public final Optional<ClickAction<?>> getClickAction() {
         return this.clickAction;
     }
 
-    /**
-     * Returns the {@link HoverAction} executed on the client when this
-     * {@link Text} gets hovered.
-     *
-     * @return The hover action of this text, or {@link Optional#empty()} if not
-     * set
-     */
     public final Optional<HoverAction<?>> getHoverAction() {
         return this.hoverAction;
     }
 
-    /**
-     * Returns the {@link ShiftClickAction} executed on the client when this
-     * {@link Text} gets shift-clicked.
-     *
-     * @return The shift-click action of this text, or {@link Optional#empty()}
-     * if not set
-     */
     public final Optional<ShiftClickAction<?>> getShiftClickAction() {
         return this.shiftClickAction;
     }
 
-    /**
-     * Returns whether this {@link Text} is empty.
-     *
-     * @return {@code true} if this text is empty
-     */
     public final boolean isEmpty() {
         return this == EMPTY;
     }
 
-    /**
-     * Returns a new {@link Builder} with the content, formatting and actions of
-     * this text. This can be used to edit an otherwise immutable {@link Text}
-     * instance.
-     *
-     * @return A new message builder with the content of this text
-     */
     public abstract Builder toBuilder();
 
-    /**
-     * Returns a plain text representation of this {@link Text} without any
-     * formatting.
-     *
-     * @return This text converted to plain text
-     */
     public final String toPlain() {
         return TextSerializers.PLAIN.serialize(this);
     }
 
-    /**
-     * Returns a plain text representation of this {@link Text} without any
-     * children.
-     *
-     * @return This text (without children) converted to plain text
-     */
     public final String toPlainSingle() {
         return TextSerializers.PLAIN.serializeSingle(this);
     }
 
-    /**
-     * Concatenates the specified {@link Text} to this Text and returns the
-     * result.
-     *
-     * @param other To concatenate
-     * @return Concatenated text
-     */
     public final Text concat(Text other) {
         return toBuilder().append(other).build();
     }
 
-    /**
-     * Removes all empty texts from the beginning and end of this
-     * text.
-     *
-     * @return Text result
-     */
     public final Text trim() {
         return toBuilder().trim().build();
     }
 
-    @Override
     public int getContentVersion() {
         return 1;
     }
 
-    @Override
     public DataContainer toContainer() {
         return DataContainer.createNew()
                 .set(Queries.CONTENT_VERSION, getContentVersion())
                 .set(Queries.JSON, TextSerializers.JSON.serialize(this));
     }
 
-    @Override
     public int compareTo(Text o) {
         return PLAIN_COMPARATOR.compare(this, o);
     }
 
-    @Override
     public boolean equals(@Nullable Object o) {
         if (this == o) {
             return true;
@@ -308,7 +147,6 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
                 && this.shiftClickAction.equals(that.shiftClickAction);
     }
 
-    @Override
     public int hashCode() {
         return Objects.hashCode(this.format, this.children, this.clickAction, this.hoverAction, this.shiftClickAction);
     }
@@ -323,21 +161,14 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
                 .add("shiftClickAction", this.shiftClickAction.orElse(null));
     }
 
-    @Override
     public final String toString() {
         return toStringHelper().toString();
     }
 
-    @Override
     public final Text toText() {
         return this;
     }
 
-    /**
-     * Represents a builder class to create immutable {@link Text} instances.
-     *
-     * @see Text
-     */
     public abstract static class Builder implements TextRepresentable {
 
         TextFormat format = TextFormat.NONE;
@@ -779,23 +610,10 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
 
     }
 
-    /**
-     * Returns an empty, unformatted {@link Text} instance.
-     *
-     * @return An empty text
-     */
     public static Text of() {
         return EMPTY;
     }
 
-    /**
-     * Creates a {@link Text} with the specified plain text. The created text
-     * won't have any formatting or events configured.
-     *
-     * @param content The content of the text
-     * @return The created text
-     * @see LiteralText
-     */
     public static LiteralText of(String content) {
         if (checkNotNull(content, "content").isEmpty()) {
             return LiteralText.EMPTY;
@@ -806,14 +624,6 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
         }
     }
 
-    /**
-     * Creates a {@link Text} with the specified char as plain text. The created
-     * text won't have any formatting or events configured.
-     *
-     * @param content The content of the text as char
-     * @return The created text
-     * @see LiteralText
-     */
     public static LiteralText of(char content) {
         if (content == NEW_LINE_CHAR) {
             return NEW_LINE;
@@ -821,76 +631,22 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
         return new LiteralText(String.valueOf(content));
     }
 
-    /**
-     * Creates a new unformatted {@link TranslatableText} with the given
-     * {@link Translation} and arguments.
-     *
-     * @param translation The translation for the text
-     * @param args        The arguments for the translation
-     * @return The created text
-     * @see TranslatableText
-     */
     public static TranslatableText of(Translation translation, Object... args) {
         return new TranslatableText(translation, ImmutableList.copyOf(checkNotNull(args, "args")));
     }
 
-    /**
-     * Creates a new unformatted {@link TranslatableText} from the given
-     * {@link Translatable}.
-     *
-     * @param translatable The translatable for the text
-     * @param args         The arguments for the translation
-     * @return The created text
-     * @see TranslatableText
-     */
-    public static TranslatableText of(Translatable translatable, Object... args) {
+    public static TranslatableText of(RTranslatable translatable, Object... args) {
         return of(checkNotNull(translatable, "translatable").getTranslation(), args);
     }
 
-    /**
-     * Creates a new unformatted {@link SelectorText} with the given selector.
-     *
-     * @param selector The selector for the text
-     * @return The created text
-     * @see SelectorText
-     */
     public static SelectorText of(Selector selector) {
         return new SelectorText(selector);
     }
 
-    /**
-     * Creates a new unformatted {@link ScoreText} with the given score.
-     *
-     * @param score The score for the text
-     * @return The created text
-     * @see ScoreText
-     */
     public static ScoreText of(Score score) {
         return new ScoreText(score);
     }
 
-    /**
-     * Builds a {@link Text} from a given array of objects.
-     *
-     * <p>For instance, you can use this like
-     * <code>Text.of(TextColors.DARK_AQUA, "Hi", TextColors.AQUA, "Bye")</code>
-     * </p>
-     *
-     * <p>This will create the correct {@link Text} instance if the input object
-     * is the input for one of the {@link Text} types or convert the object to a
-     * string otherwise.</p>
-     *
-     * <p>For instances of type {@link TextRepresentable} (e.g. {@link Text},
-     * {@link Builder}, ...) the formatting of appended text has priority over
-     * the current formatting in the method, e.g. the following results in a
-     * green, then yellow and at the end green again {@link Text}:</p>
-     *
-     * <code>Text.of(TextColors.GREEN, "Hello ", Text.of(TextColors.YELLOW,
-     * "Spongie"), '!');</code>
-     *
-     * @param objects The object array
-     * @return The built text object
-     */
     public static Text of(Object... objects) {
         // Shortcut for lonely TextRepresentables
         if (objects.length == 1 && objects[0] instanceof TextRepresentable) {
@@ -957,8 +713,8 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
                     childBuilder = builder((String) obj);
                 } else if (obj instanceof Translation) {
                     childBuilder = builder((Translation) obj);
-                } else if (obj instanceof Translatable) {
-                    childBuilder = builder(((Translatable) obj).getTranslation());
+                } else if (obj instanceof RTranslatable) {
+                    childBuilder = builder(((RTranslatable) obj).getTranslation());
                 } else if (obj instanceof Selector) {
                     childBuilder = builder((Selector) obj);
                 } else if (obj instanceof Score) {
@@ -1005,204 +761,66 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
         return builder.build();
     }
 
-    /**
-     * Creates a {@link Text.Builder} with empty text.
-     *
-     * @return A new text builder with empty text
-     */
     public static Text.Builder builder() {
         return new LiteralText.Builder();
     }
 
-    /**
-     * Creates a new unformatted {@link LiteralText.Builder} with the specified
-     * content.
-     *
-     * @param content The content of the text
-     * @return The created text builder
-     * @see LiteralText
-     * @see LiteralText.Builder
-     */
     public static LiteralText.Builder builder(String content) {
         return new LiteralText.Builder(content);
     }
 
-    /**
-     * Creates a new unformatted {@link LiteralText.Builder} with the specified
-     * content.
-     *
-     * @param content The content of the text as char
-     * @return The created text builder
-     * @see LiteralText
-     * @see LiteralText.Builder
-     */
     public static LiteralText.Builder builder(char content) {
         return builder(String.valueOf(content));
     }
 
-    /**
-     * Creates a new {@link LiteralText.Builder} with the formatting and actions
-     * of the specified {@link Text} and the given content.
-     *
-     * @param text    The text to apply the properties from
-     * @param content The content for the text builder
-     * @return The created text builder
-     * @see LiteralText
-     * @see LiteralText.Builder
-     */
     public static LiteralText.Builder builder(Text text, String content) {
         return new LiteralText.Builder(text, content);
     }
 
-    /**
-     * Creates a new unformatted {@link TranslatableText.Builder} with the given
-     * {@link Translation} and arguments.
-     *
-     * @param translation The translation for the builder
-     * @param args        The arguments for the translation
-     * @return The created text builder
-     * @see TranslatableText
-     * @see TranslatableText.Builder
-     */
     public static TranslatableText.Builder builder(Translation translation, Object... args) {
         return new TranslatableText.Builder(translation, args);
     }
 
-    /**
-     * Creates a new unformatted {@link TranslatableText.Builder} from the given
-     * {@link Translatable}.
-     *
-     * @param translatable The translatable for the builder
-     * @param args         The arguments for the translation
-     * @return The created text builder
-     * @see TranslatableText
-     * @see TranslatableText.Builder
-     */
-    public static TranslatableText.Builder builder(Translatable translatable, Object... args) {
+    public static TranslatableText.Builder builder(RTranslatable translatable, Object... args) {
         return new TranslatableText.Builder(translatable, args);
     }
 
-    /**
-     * Creates a new {@link TranslatableText.Builder} with the formatting and
-     * actions of the specified {@link Text} and the given {@link Translation}
-     * and arguments.
-     *
-     * @param text        The text to apply the properties from
-     * @param translation The translation for the builder
-     * @param args        The arguments for the translation
-     * @return The created text builder
-     * @see TranslatableText
-     * @see TranslatableText.Builder
-     */
     public static TranslatableText.Builder builder(Text text, Translation translation, Object... args) {
         return new TranslatableText.Builder(text, translation, args);
     }
 
-    /**
-     * Creates a new {@link TranslatableText.Builder} with the formatting and
-     * actions of the specified {@link Text} and the given {@link Translatable}.
-     *
-     * @param text         The text to apply the properties from
-     * @param translatable The translatable for the builder
-     * @param args         The arguments for the translation
-     * @return The created text builder
-     * @see TranslatableText
-     * @see TranslatableText.Builder
-     */
-    public static TranslatableText.Builder builder(Text text, Translatable translatable, Object... args) {
+    public static TranslatableText.Builder builder(Text text, RTranslatable translatable, Object... args) {
         return new TranslatableText.Builder(text, translatable, args);
     }
 
-    /**
-     * Creates a new unformatted {@link SelectorText.Builder} with the given
-     * selector.
-     *
-     * @param selector The selector for the builder
-     * @return The created text builder
-     * @see SelectorText
-     * @see SelectorText.Builder
-     */
     public static SelectorText.Builder builder(Selector selector) {
         return new SelectorText.Builder(selector);
     }
 
-    /**
-     * Creates a new {@link SelectorText.Builder} with the formatting and
-     * actions of the specified {@link Text} and the given selector.
-     *
-     * @param text     The text to apply the properties from
-     * @param selector The selector for the builder
-     * @return The created text builder
-     * @see SelectorText
-     * @see SelectorText.Builder
-     */
     public static SelectorText.Builder builder(Text text, Selector selector) {
         return new SelectorText.Builder(text, selector);
     }
 
-    /**
-     * Creates a new unformatted {@link ScoreText.Builder} with the given score.
-     *
-     * @param score The score for the text builder
-     * @return The created text builder
-     * @see ScoreText
-     * @see ScoreText.Builder
-     */
     public static ScoreText.Builder builder(Score score) {
         return new ScoreText.Builder(score);
     }
 
-    /**
-     * Creates a new {@link ScoreText.Builder} with the formatting and actions
-     * of the specified {@link Text} and the given score.
-     *
-     * @param text  The text to apply the properties from
-     * @param score The score for the text builder
-     * @return The created text builder
-     * @see ScoreText
-     * @see ScoreText.Builder
-     */
     public static ScoreText.Builder builder(Text text, Score score) {
         return new ScoreText.Builder(text, score);
     }
 
-    /**
-     * Joins a sequence of text objects together.
-     *
-     * @param texts The texts to join
-     * @return A text object that joins the given text objects
-     */
     public static Text join(Text... texts) {
         return builder().append(texts).build();
     }
 
-    /**
-     * Joins a sequence of text objects together.
-     *
-     * @param texts The texts to join
-     * @return A text object that joins the given text objects
-     */
     public static Text join(Iterable<? extends Text> texts) {
         return builder().append(texts).build();
     }
 
-    /**
-     * Joins a sequence of text objects together.
-     *
-     * @param texts The texts to join
-     * @return A text object that joins the given text objects
-     */
     public static Text join(Iterator<? extends Text> texts) {
         return builder().append(texts).build();
     }
 
-    /**
-     * Joins a sequence of text objects together along with a separator.
-     *
-     * @param separator The separator
-     * @param texts     The texts to join
-     * @return A text object that joins the given text objects
-     */
     public static Text joinWith(Text separator, Text... texts) {
         switch (texts.length) {
             case 0:
@@ -1226,24 +844,10 @@ public abstract class Text implements TextRepresentable, DataSerializable, Compa
         }
     }
 
-    /**
-     * Joins a sequence of text objects together along with a separator.
-     *
-     * @param separator The separator
-     * @param texts     The texts to join
-     * @return A text object that joins the given text objects
-     */
     public static Text joinWith(Text separator, Iterable<? extends Text> texts) {
         return joinWith(separator, texts.iterator());
     }
 
-    /**
-     * Joins a sequence of text objects together along with a separator.
-     *
-     * @param separator The separator
-     * @param texts     An iterator for the texts to join
-     * @return A text object that joins the given text objects
-     */
     public static Text joinWith(Text separator, Iterator<? extends Text> texts) {
         if (!texts.hasNext()) {
             return EMPTY;

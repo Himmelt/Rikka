@@ -6,15 +6,16 @@ import rikka.api.Rikka;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
 import rikka.api.text.translation.Translation;
-import rikka.api.util.RelativePositions;
 import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorld;
 import rikka.api.world.Location;
 import rikka.bukkit.BukkitRikka;
 import rikka.bukkit.world.BukkitWorld;
 
-import javax.annotation.Nullable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
 
 public abstract class BukkitEntity<T extends Entity> extends BukkitRikka<T> implements IEntity, Rikka<T> {
 
@@ -53,59 +54,60 @@ public abstract class BukkitEntity<T extends Entity> extends BukkitRikka<T> impl
     }
 
     public Vector3d getRotation() {
-        return null;
+        return new Vector3d(source.getLocation().getDirection());
     }
 
     public void setRotation(Vector3d rotation) {
-
-    }
-
-    public boolean setLocationAndRotation(Location location, Vector3d rotation) {
-        return false;
-    }
-
-    public boolean setLocationAndRotation(Location location, Vector3d rotation, EnumSet<RelativePositions> relativePositions) {
-        return false;
+        // TODO check is result correct ?
+        source.getLocation().setDirection(new org.bukkit.util.Vector(rotation.x, rotation.y, rotation.z));
     }
 
     public Vector3d getScale() {
-        return null;
+        // TODO
+        return Vector3d.ONE;
     }
 
     public void setScale(Vector3d scale) {
-
+        // TODO
     }
 
-    public List<IEntity> getPassengers() {
-        return null;
+    public List<BukkitEntity> getPassengers() {
+        List<BukkitEntity> entities = new ArrayList<>();
+        for (Entity entity : source.getPassengers()) {
+            entities.add(BukkitEntity.getEntity(entity));
+        }
+        return entities;
     }
 
     public boolean hasPassenger(IEntity entity) {
+        if (entity instanceof BukkitEntity) {
+            return source.getPassengers().contains(((BukkitEntity) entity).getSource());
+        }
         return false;
     }
 
     public boolean addPassenger(IEntity entity) {
+        if (entity instanceof BukkitEntity) {
+            return source.addPassenger(((BukkitEntity) entity).getSource());
+        }
         return false;
     }
 
-    public void removePassenger(IEntity entity) {
-
+    public boolean removePassenger(IEntity entity) {
+        if (entity instanceof BukkitEntity) {
+            return source.removePassenger(((BukkitEntity) entity).getSource());
+        }
+        return false;
     }
 
     public void clearPassengers() {
-
+        for (Entity entity : source.getPassengers()) {
+            source.removePassenger(entity);
+        }
     }
 
     public IEntity getVehicle() {
-        return null;
-    }
-
-    public boolean setVehicle(@Nullable IEntity entity) {
-        return false;
-    }
-
-    public IEntity getBaseVehicle() {
-        return null;
+        return BukkitRikka.getEntity(source.getVehicle());
     }
 
     public boolean isOnGround() {
@@ -141,6 +143,10 @@ public abstract class BukkitEntity<T extends Entity> extends BukkitRikka<T> impl
 
     public UUID getUUID() {
         return source.getUniqueId();
+    }
+
+    public T getSource() {
+        return source;
     }
 
 }

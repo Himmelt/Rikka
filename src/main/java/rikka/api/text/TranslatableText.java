@@ -33,6 +33,7 @@ import rikka.api.text.action.ShiftClickAction;
 import rikka.api.text.format.TextColor;
 import rikka.api.text.format.TextFormat;
 import rikka.api.text.format.TextStyle;
+import rikka.api.text.translation.RTranslatable;
 import rikka.api.text.translation.Translation;
 
 import javax.annotation.Nullable;
@@ -152,12 +153,12 @@ public final class TranslatableText extends Text {
 
         /**
          * Constructs a new unformatted {@link Builder} from the given
-         * {@link rikka.api.text.translation.Translatable} .
+         * {@link RTranslatable} .
          *
          * @param translatable The translatable for the builder
          * @param args         The arguments for the translation
          */
-        Builder(rikka.api.text.translation.Translatable translatable, Object... args) {
+        Builder(RTranslatable translatable, Object... args) {
             translation(translatable, args);
         }
 
@@ -178,13 +179,13 @@ public final class TranslatableText extends Text {
         /**
          * Constructs a new {@link Builder} with the formatting and actions of
          * the specified {@link Text} and the given
-         * {@link rikka.api.text.translation.Translatable}.
+         * {@link RTranslatable}.
          *
          * @param text         The text to apply the properties from
          * @param translatable The translatable for the builder
          * @param args         The arguments for the translation
          */
-        Builder(Text text, rikka.api.text.translation.Translatable translatable, Object... args) {
+        Builder(Text text, RTranslatable translatable, Object... args) {
             super(text);
             translation(translatable, args);
         }
@@ -241,7 +242,7 @@ public final class TranslatableText extends Text {
          * @param args         The arguments for the translation
          * @return This text builder
          */
-        public Builder translation(rikka.api.text.translation.Translatable translatable, Object... args) {
+        public Builder translation(RTranslatable translatable, Object... args) {
             return translation(checkNotNull(translatable, "translatable").getTranslation(), args);
         }
 

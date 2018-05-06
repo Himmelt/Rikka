@@ -17,5 +17,11 @@ public class Vector3d {
         this.z = rotation.getZ();
     }
 
+    public Vector3d(org.bukkit.util.Vector direction) {
+        this.x = direction.getX();
+        this.y = direction.getY();
+        this.z = direction.getZ();
+    }
+
 }
 

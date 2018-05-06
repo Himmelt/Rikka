@@ -1,18 +1,15 @@
 package rikka.api.entity;
 
-import rikka.api.text.translation.Translatable;
-import rikka.api.util.Identifiable;
-import rikka.api.util.RelativePositions;
+import rikka.api.text.translation.RTranslatable;
+import rikka.api.util.RIdentifiable;
 import rikka.api.util.math.Vector3d;
-import rikka.api.world.Locatable;
 import rikka.api.world.Location;
+import rikka.api.world.RLocatable;
 
-import javax.annotation.Nullable;
 import java.util.Collection;
-import java.util.EnumSet;
 import java.util.List;
 
-public interface IEntity extends Identifiable, Locatable, Translatable {
+public interface IEntity extends RIdentifiable, RLocatable, RTranslatable {
 
     EntityType getType();
 
@@ -24,33 +21,21 @@ public interface IEntity extends Identifiable, Locatable, Translatable {
 
     void setRotation(Vector3d rotation);
 
-    boolean setLocationAndRotation(Location location, Vector3d rotation);
-
-    boolean setLocationAndRotation(Location location, Vector3d rotation, EnumSet<RelativePositions> relativePositions);
-
-    boolean setLocationAndRotationSafely(Location location, Vector3d rotation);
-
-    boolean setLocationAndRotationSafely(Location location, Vector3d rotation, EnumSet<RelativePositions> relativePositions);
-
     Vector3d getScale();
 
     void setScale(Vector3d scale);
 
-    List<IEntity> getPassengers();
+    List<? extends IEntity> getPassengers();
 
     boolean hasPassenger(IEntity entity);
 
     boolean addPassenger(IEntity entity);
 
-    void removePassenger(IEntity entity);
+    boolean removePassenger(IEntity entity);
 
     void clearPassengers();
 
     IEntity getVehicle();
-
-    boolean setVehicle(@Nullable IEntity entity);
-
-    IEntity getBaseVehicle();
 
     boolean isOnGround();
 

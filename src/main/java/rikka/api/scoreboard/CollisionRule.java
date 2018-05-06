@@ -30,7 +30,7 @@ import rikka.api.util.annotation.CatalogedBy;
 /**
  * Represents a collision rule.
  *
- * <p>A collision rule controls how {@link TeamMember}s on
+ * <p>A collision rule controls how {@link RTeamMember}s on
  * a {@link Team} collide with other entities.</p>
  */
 @CatalogedBy(CollisionRules.class)

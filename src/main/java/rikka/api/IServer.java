@@ -2,7 +2,7 @@ package rikka.api;
 
 import rikka.api.command.source.IConsoleSender;
 import rikka.api.entity.living.player.IPlayer;
-import rikka.api.scoreboard.Scoreboard;
+import rikka.api.scoreboard.IScoreboard;
 import rikka.api.text.Text;
 import rikka.api.text.channel.MessageChannel;
 import rikka.api.world.IWorld;
@@ -33,7 +33,7 @@ public interface IServer {
 
     boolean unloadWorld(IWorld world);
 
-    Scoreboard getServerScoreboard();
+    IScoreboard getServerScoreboard();
 
     ChunkLayout getChunkLayout();
 

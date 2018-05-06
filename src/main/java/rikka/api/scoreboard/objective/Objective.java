@@ -25,8 +25,8 @@
 package rikka.api.scoreboard.objective;
 
 import rikka.api.Sponge;
+import rikka.api.scoreboard.IScoreboard;
 import rikka.api.scoreboard.Score;
-import rikka.api.scoreboard.Scoreboard;
 import rikka.api.scoreboard.critieria.Criterion;
 import rikka.api.scoreboard.objective.displaymode.ObjectiveDisplayMode;
 import rikka.api.text.Text;
@@ -160,13 +160,13 @@ public interface Objective {
     boolean removeScore(Text name);
 
     /**
-     * Returns a {@link Set} of parent {@link Scoreboard}s this
+     * Returns a {@link Set} of parent {@link IScoreboard}s this
      * {@link Objective} is registered to.
      *
-     * @return A {@link Set} of parent {@link Scoreboard}s this
+     * @return A {@link Set} of parent {@link IScoreboard}s this
      * {@link Objective} is registered to
      */
-    Set<Scoreboard> getScoreboards();
+    Set<IScoreboard> getScoreboards();
 
     /**
      * Represents a builder to create {@link Objective} instances.

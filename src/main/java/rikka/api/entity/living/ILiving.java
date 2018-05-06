@@ -1,12 +1,11 @@
 package rikka.api.entity.living;
 
 import rikka.api.entity.IEntity;
-import rikka.api.entity.projectile.source.IProjectileSource;
-import rikka.api.scoreboard.TeamMember;
+import rikka.api.entity.projectile.source.RProjectileSource;
+import rikka.api.scoreboard.RTeamMember;
 import rikka.api.util.math.Vector3d;
 
-public interface ILiving extends IEntity, IProjectileSource, TeamMember {
-
+public interface ILiving extends IEntity, RProjectileSource, RTeamMember {
 
     double health();
 

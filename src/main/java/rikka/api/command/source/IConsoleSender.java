@@ -1,6 +1,6 @@
 package rikka.api.command.source;
 
-import rikka.api.command.ICommandSender;
+import rikka.api.command.RCommandSender;
 
-public interface IConsoleSender extends ICommandSender {
+public interface IConsoleSender extends RCommandSender {
 }

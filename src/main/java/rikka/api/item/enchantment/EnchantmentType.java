@@ -2,11 +2,11 @@ package rikka.api.item.enchantment;
 
 import rikka.api.CatalogType;
 import rikka.api.item.inventory.IItemStack;
-import rikka.api.text.translation.Translatable;
+import rikka.api.text.translation.RTranslatable;
 import rikka.api.util.annotation.CatalogedBy;
 
 @CatalogedBy(EnchantmentTypes.class)
-public interface EnchantmentType extends CatalogType, Translatable {
+public interface EnchantmentType extends CatalogType, RTranslatable {
 
     int getWeight();
 

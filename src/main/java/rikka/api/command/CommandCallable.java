@@ -8,12 +8,12 @@ import java.util.List;
 
 public interface CommandCallable {
 
-    boolean process(ICommandSender source, String arguments);
+    boolean process(RCommandSender source, String arguments);
 
-    List<String> getSuggestions(ICommandSender source, String arguments, @Nullable Location location);
+    List<String> getSuggestions(RCommandSender source, String arguments, @Nullable Location location);
 
-    boolean testPermission(ICommandSender source);
+    boolean testPermission(RCommandSender source);
 
-    Text getUsage(ICommandSender source);
+    Text getUsage(RCommandSender source);
 
 }

@@ -24,7 +24,7 @@
  */
 package rikka.api.text.selector;
 
-import rikka.api.command.ICommandSender;
+import rikka.api.command.RCommandSender;
 import rikka.api.entity.IEntity;
 import rikka.api.util.ResettableBuilder;
 import rikka.api.world.IWorld;
@@ -168,7 +168,7 @@ public interface Selector {
      *               selector
      * @return The matched entities
      */
-    Set<IEntity> resolve(ICommandSender origin);
+    Set<IEntity> resolve(RCommandSender origin);
 
     /**
      * Resolves this {@link Selector} to a list of entities around (0|0|0) in
@@ -204,7 +204,7 @@ public interface Selector {
      *               selector
      * @return The matched entities
      */
-    Set<IEntity> resolveForce(ICommandSender origin);
+    Set<IEntity> resolveForce(RCommandSender origin);
 
     /**
      * Resolves this {@link Selector} to a list of entities around (0|0|0) in
