@@ -10,7 +10,6 @@ import rikka.api.entity.living.player.CooldownTracker;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.entity.living.player.gamemode.GameMode;
 import rikka.api.entity.living.player.tab.TabList;
-import rikka.api.entity.projectile.IProjectile;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IContainer;
 import rikka.api.item.inventory.IInventory;
@@ -23,16 +22,16 @@ import rikka.api.text.Text;
 import rikka.api.text.channel.MessageChannel;
 import rikka.api.text.chat.ChatType;
 import rikka.api.text.chat.ChatVisibility;
-import rikka.api.text.translation.Translation;
 import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorldBorder;
 import rikka.sponge.world.SpongeWorldBorder;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
-public class SpongePlayer extends SpongeEntity<Player> implements IPlayer {
+public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
     public SpongePlayer(Player source) {
         super(source);
     }
@@ -168,42 +167,6 @@ public class SpongePlayer extends SpongeEntity<Player> implements IPlayer {
         return false;
     }
 
-    public double health() {
-        return 0;
-    }
-
-    public void setHealth(double health) {
-
-    }
-
-    public double maxHealth() {
-        return 0;
-    }
-
-    public void setMaxHealth(double maxHealth) {
-
-    }
-
-    public IEntity lastAttacker() {
-        return null;
-    }
-
-    public double lastDamage() {
-        return 0;
-    }
-
-    public Vector3d getHeadRotation() {
-        return null;
-    }
-
-    public void setHeadRotation(Vector3d rotation) {
-
-    }
-
-    public void lookAt(Vector3d target) {
-
-    }
-
     public GameProfile getProfile() {
         return null;
     }
@@ -232,23 +195,11 @@ public class SpongePlayer extends SpongeEntity<Player> implements IPlayer {
         return false;
     }
 
-    public <T extends IProjectile> Optional<T> launchProjectile(Class<T> projectileClass) {
-        return Optional.empty();
-    }
-
-    public <T extends IProjectile> Optional<T> launchProjectile(Class<T> projectileClass, Vector3d velocity) {
-        return Optional.empty();
-    }
-
     public CarriedInventory<? extends ICarrier> getInventory() {
         return null;
     }
 
-    public Text getTeamRepresentation() {
-        return null;
-    }
-
-    public boolean hasPermission(String permission) {
+    public boolean hasPermission(@Nonnull String permission) {
         return false;
     }
 
@@ -266,9 +217,5 @@ public class SpongePlayer extends SpongeEntity<Player> implements IPlayer {
 
     public void sendMessage(ChatType type, Text message) {
 
-    }
-
-    public Translation getTranslation() {
-        return null;
     }
 }

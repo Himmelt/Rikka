@@ -23,7 +23,6 @@ public abstract class SpongeRikka<T> implements Rikka<T> {
 
     public abstract T getSource();
 
-
     private static final HashMap<String, RCommandSender> senders = new HashMap<>();
     private static final HashMap<UUID, SpongePlayer> players = new HashMap<>();
     private static final HashMap<UUID, SpongeWorld> worlds = new HashMap<>();

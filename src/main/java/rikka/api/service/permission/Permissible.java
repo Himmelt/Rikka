@@ -1,7 +1,9 @@
 package rikka.api.service.permission;
 
+import javax.annotation.Nonnull;
+
 public interface Permissible {
 
-    boolean hasPermission(String permission);
+    boolean hasPermission(@Nonnull String permission);
 
 }

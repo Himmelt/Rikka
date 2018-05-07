@@ -9,7 +9,6 @@ import rikka.api.entity.living.player.CooldownTracker;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.entity.living.player.gamemode.GameMode;
 import rikka.api.entity.living.player.tab.TabList;
-import rikka.api.entity.projectile.IProjectile;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IContainer;
 import rikka.api.item.inventory.IInventory;
@@ -28,13 +27,14 @@ import rikka.api.world.Location;
 import rikka.bukkit.scoreboard.BukkitScoreboard;
 import rikka.bukkit.world.BukkitWorldBorder;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
 import static org.bukkit.GameMode.*;
 
-public class BukkitPlayer extends BukkitEntity<Player> implements IPlayer {
+public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
 
     public BukkitPlayer(Player source) {
         super(source);
@@ -202,50 +202,6 @@ public class BukkitPlayer extends BukkitEntity<Player> implements IPlayer {
         return false;
     }
 
-    public double health() {
-        return 0;
-    }
-
-    public void setHealth(double health) {
-
-    }
-
-    public double maxHealth() {
-        return 0;
-    }
-
-    public void setMaxHealth(double maxHealth) {
-
-    }
-
-    public IEntity lastAttacker() {
-        return null;
-    }
-
-    public double lastDamage() {
-        return 0;
-    }
-
-    public Vector3d getHeadRotation() {
-        return null;
-    }
-
-    public void setHeadRotation(Vector3d rotation) {
-
-    }
-
-    public void lookAt(Vector3d target) {
-
-    }
-
-    public <T extends IProjectile> Optional<T> launchProjectile(Class<T> projectileClass) {
-        return Optional.empty();
-    }
-
-    public <T extends IProjectile> Optional<T> launchProjectile(Class<T> projectileClass, Vector3d velocity) {
-        return Optional.empty();
-    }
-
     public CarriedInventory<? extends ICarrier> getInventory() {
         return null;
     }
@@ -254,8 +210,8 @@ public class BukkitPlayer extends BukkitEntity<Player> implements IPlayer {
         return null;
     }
 
-    public boolean hasPermission(String permission) {
-        return false;
+    public boolean hasPermission(@Nonnull String permission) {
+        return source.hasPermission(permission);
     }
 
     public void sendMessage(Text message) {
@@ -273,6 +229,5 @@ public class BukkitPlayer extends BukkitEntity<Player> implements IPlayer {
     public void sendMessage(ChatType type, Text message) {
 
     }
-
 
 }

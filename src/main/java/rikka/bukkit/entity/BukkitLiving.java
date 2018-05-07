@@ -2,52 +2,54 @@ package rikka.bukkit.entity;
 
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.LivingEntity;
-import rikka.api.entity.IEntity;
+import org.bukkit.util.Vector;
 import rikka.api.entity.living.ILiving;
+import rikka.api.entity.projectile.IProjectile;
+import rikka.api.entity.projectile.ProjectileType;
+import rikka.api.text.Text;
 import rikka.api.util.math.Vector3d;
+import rikka.api.world.Location;
+import rikka.bukkit.entity.projectile.BukkitProjectile;
 
-public abstract class BukkitLiving<T extends LivingEntity> extends BukkitEntity<T> implements ILiving {
+public class BukkitLiving<T extends LivingEntity> extends BukkitEntity<T> implements ILiving {
 
     public BukkitLiving(T source) {
         super(source);
     }
 
-    public double health() {
+    public final double health() {
         return source.getHealth();
     }
 
-    public void setHealth(double health) {
+    public final void setHealth(double health) {
         source.setHealth(health);
     }
 
-    public double maxHealth() {
+    public final double maxHealth() {
         return source.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue();
     }
 
-    public void setMaxHealth(double maxHealth) {
+    public final void setMaxHealth(double maxHealth) {
         source.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(maxHealth);
     }
 
-    public IEntity lastAttacker() {
-        // TODO
-        return null;// source.getLastDamageCause().getCause();
-    }
-
-    public double lastDamage() {
+    public final double lastDamage() {
         return source.getLastDamage();
     }
 
-    public Vector3d getHeadRotation() {
-        // TODO
+    public boolean setLocationSafely(Location location) {
+        return false;
+    }
+
+    public Text getTeamRepresentation() {
         return null;
     }
 
-    public void setHeadRotation(Vector3d rotation) {
-        // TODO
+    public <P extends IProjectile> P launchProjectile(ProjectileType type) {
+        return BukkitProjectile.getProjectile(source.launchProjectile(type.bukkitClass));
     }
 
-    public void lookAt(Vector3d target) {
-        // TODO
+    public <P extends IProjectile> P launchProjectile(ProjectileType type, Vector3d vc) {
+        return BukkitProjectile.getProjectile(source.launchProjectile(type.bukkitClass, new Vector(vc.x, vc.y, vc.z)));
     }
-
 }
