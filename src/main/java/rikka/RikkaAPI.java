@@ -10,6 +10,9 @@ import rikka.sponge.SpongeRikka;
 
 import javax.annotation.Nonnull;
 
+import static rikka.ServerType.BUKKIT;
+import static rikka.ServerType.SPONGE;
+
 public final class RikkaAPI {
 
     private static final RCommandSender invalid = new RCommandSender() {
@@ -33,12 +36,12 @@ public final class RikkaAPI {
     };
 
     public static RCommandSender getCommandSender(CommandSender sender) {
-        if (ServerType.runningBukkit()) return BukkitRikka.getCommandSender(sender);
+        if (BUKKIT) return BukkitRikka.getCommandSender(sender);
         return invalid;
     }
 
     public static RCommandSender getCommandSender(CommandSource sender) {
-        if (ServerType.runningSponge()) return SpongeRikka.getCommandSender(sender);
+        if (SPONGE) return SpongeRikka.getCommandSender(sender);
         return invalid;
     }
 

@@ -6,6 +6,8 @@ import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorldBorder;
 import rikka.bukkit.BukkitRikka;
 
+import static rikka.bukkit.server.NMSVersion.*;
+
 public class BukkitWorldBorder extends BukkitRikka<WorldBorder> implements IWorldBorder {
 
     public BukkitWorldBorder(WorldBorder source) {
@@ -14,13 +16,14 @@ public class BukkitWorldBorder extends BukkitRikka<WorldBorder> implements IWorl
 
     public double getNewDiameter() {
         World world = source.getCenter().getWorld();
-        try {
-            if (world instanceof org.bukkit.craftbukkit.v1_12_R1.CraftWorld) {
-                ((org.bukkit.craftbukkit.v1_12_R1.CraftWorld) world).getHandle().getWorldBorder().j();
-            } else if (world instanceof org.bukkit.craftbukkit.v1_7_R4.CraftWorld) {
-                // TODO not support
-            }
-        } catch (Throwable ignored) {
+        if (v1_12_R1) {
+            return ((org.bukkit.craftbukkit.v1_12_R1.CraftWorld) world).getHandle().getWorldBorder().j();
+        } else if (v1_11_R1) {
+            return ((org.bukkit.craftbukkit.v1_11_R1.CraftWorld) world).getHandle().getWorldBorder().j();
+        } else if (v1_10_R1) {
+            return ((org.bukkit.craftbukkit.v1_10_R1.CraftWorld) world).getHandle().getWorldBorder().j();
+        } else if (v1_7_R4) {
+            System.out.println("1.7.10 no WorldBorder !");
         }
         return 0;
     }
@@ -41,13 +44,14 @@ public class BukkitWorldBorder extends BukkitRikka<WorldBorder> implements IWorl
 
     public void setDiameter(double startDiameter, double endDiameter, long time) {
         World world = source.getCenter().getWorld();
-        try {
-            if (world instanceof org.bukkit.craftbukkit.v1_12_R1.CraftWorld) {
-                ((org.bukkit.craftbukkit.v1_12_R1.CraftWorld) world).getHandle().getWorldBorder().transitionSizeBetween(startDiameter, endDiameter, time);
-            } else if (world instanceof org.bukkit.craftbukkit.v1_7_R4.CraftWorld) {
-                // TODO not support
-            }
-        } catch (Throwable ignored) {
+        if (v1_12_R1) {
+            ((org.bukkit.craftbukkit.v1_12_R1.CraftWorld) world).getHandle().getWorldBorder().transitionSizeBetween(startDiameter, endDiameter, time);
+        } else if (v1_11_R1) {
+            ((org.bukkit.craftbukkit.v1_11_R1.CraftWorld) world).getHandle().getWorldBorder().transitionSizeBetween(startDiameter, endDiameter, time);
+        } else if (v1_10_R1) {
+            ((org.bukkit.craftbukkit.v1_10_R1.CraftWorld) world).getHandle().getWorldBorder().transitionSizeBetween(startDiameter, endDiameter, time);
+        } else if (v1_7_R4) {
+            System.out.println("1.7.10 no WorldBorder !");
         }
     }
 

@@ -3,40 +3,30 @@ package rikka;
 import org.bukkit.Bukkit;
 import org.spongepowered.api.Sponge;
 
-public enum ServerType {
+public final class ServerType {
 
-    UNKNOWN, BUKKIT, SPONGE;
-
-    private static final ServerType serverType;
+    public static final boolean UNKNOWN, BUKKIT, SPONGE;
 
     static {
-        ServerType type;
+        boolean unknown, bukkit, sponge;
         if (Bukkit.getServer() != null) {
-            type = ServerType.BUKKIT;
-            System.out.println("Running Bukkit Server.");
+            bukkit = true;
+            unknown = false;
+            sponge = false;
         } else {
+            bukkit = false;
             try {
                 Sponge.getServer();
-                type = ServerType.SPONGE;
-                System.out.println("Running Sponge Server.");
+                sponge = true;
+                unknown = false;
             } catch (Throwable e) {
-                type = ServerType.UNKNOWN;
-                System.out.println("Running Unknown Server.");
+                sponge = false;
+                unknown = true;
             }
         }
-        serverType = type;
-    }
-
-    public static ServerType getServerType() {
-        return serverType;
-    }
-
-    public static boolean runningSponge() {
-        return serverType == SPONGE;
-    }
-
-    public static boolean runningBukkit() {
-        return serverType == BUKKIT;
+        UNKNOWN = unknown;
+        BUKKIT = bukkit;
+        SPONGE = sponge;
     }
 
 }
