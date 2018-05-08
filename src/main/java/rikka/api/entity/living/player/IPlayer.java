@@ -1,7 +1,6 @@
 package rikka.api.entity.living.player;
 
 import org.spongepowered.api.event.cause.Cause;
-import org.spongepowered.api.event.message.MessageChannelEvent;
 import rikka.api.command.RCommandSender;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.IHumanoid;
@@ -12,11 +11,7 @@ import rikka.api.item.inventory.IInventory;
 import rikka.api.scoreboard.IScoreboard;
 import rikka.api.text.Text;
 import rikka.api.text.channel.RChatTypeMessageReceiver;
-import rikka.api.text.chat.ChatVisibility;
 import rikka.api.world.IWorldBorder;
-
-import javax.annotation.Nullable;
-import java.util.Optional;
 
 public interface IPlayer extends IHumanoid, RUser, RCommandSender, RChatTypeMessageReceiver {
 
@@ -24,19 +19,13 @@ public interface IPlayer extends IHumanoid, RUser, RCommandSender, RChatTypeMess
         return getOpenInventory() != null;
     }
 
-    @Nullable
     IContainer getOpenInventory();
 
-    @Nullable
-    IContainer openInventory(IInventory inventory) throws IllegalArgumentException;
+    IContainer openInventory(IInventory inventory);
 
-    boolean closeInventory() throws IllegalArgumentException;
-
-    ChatVisibility getChatVisibility();
+    boolean closeInventory();
 
     boolean isChatColorsEnabled();
-
-    MessageChannelEvent.Chat simulateChat(Text message, Cause cause);
 
     TabList getTabList();
 
@@ -69,13 +58,13 @@ public interface IPlayer extends IHumanoid, RUser, RCommandSender, RChatTypeMess
 
     void respawn();
 
-    Optional<IEntity> getSpectatorTarget();
+    IEntity getSpectatorTarget();
 
-    void setSpectatorTarget(@Nullable IEntity entity);
+    void setSpectatorTarget(IEntity entity);
 
     IWorldBorder getWorldBorder();
 
-    void setWorldBorder(@Nullable IWorldBorder border, Cause cause);
+    void setWorldBorder(IWorldBorder border, Cause cause);
 
     CooldownTracker getCooldownTracker();
 

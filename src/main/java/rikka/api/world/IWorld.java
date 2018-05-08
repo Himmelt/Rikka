@@ -6,7 +6,6 @@ import rikka.api.util.math.Vector3d;
 import rikka.api.util.math.Vector3i;
 import rikka.api.world.extent.IEntityUniverse;
 
-import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -30,7 +29,7 @@ public interface IWorld extends IEntityUniverse {
         return new Location(this, x, y, z);
     }
 
-    IEntity getEntity(@Nonnull UUID uuid);
+    IEntity getEntity(UUID uuid);
 
     Collection<IEntity> getNearbyEntities(Vector3d position, double distance);
 

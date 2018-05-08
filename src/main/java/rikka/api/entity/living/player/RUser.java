@@ -5,7 +5,6 @@ import rikka.api.profile.GameProfile;
 import rikka.api.service.permission.Permissible;
 import rikka.api.util.math.Vector3d;
 
-import java.util.Optional;
 import java.util.UUID;
 
 public interface RUser extends RArmorEquipable, Permissible {
@@ -19,8 +18,6 @@ public interface RUser extends RArmorEquipable, Permissible {
     IPlayer getPlayer();
 
     Vector3d getPosition();
-
-    Optional<UUID> getWorldUniqueId();
 
     boolean setLocation(Vector3d position, UUID world);
 

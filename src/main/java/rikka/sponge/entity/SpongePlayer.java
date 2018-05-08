@@ -3,7 +3,10 @@ package rikka.sponge.entity;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.entity.living.player.gamemode.GameModes;
 import org.spongepowered.api.event.cause.Cause;
-import org.spongepowered.api.event.message.MessageChannelEvent;
+import org.spongepowered.api.event.cause.EventContext;
+import org.spongepowered.api.item.inventory.Container;
+import org.spongepowered.api.world.Location;
+import org.spongepowered.api.world.WorldBorder;
 import rikka.api.data.type.HandType;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.CooldownTracker;
@@ -21,45 +24,51 @@ import rikka.api.scoreboard.IScoreboard;
 import rikka.api.text.Text;
 import rikka.api.text.channel.MessageChannel;
 import rikka.api.text.chat.ChatType;
-import rikka.api.text.chat.ChatVisibility;
 import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorldBorder;
+import rikka.sponge.item.inventory.SpongeContainer;
+import rikka.sponge.item.inventory.SpongeInventory;
+import rikka.sponge.scoreboard.SpongeScoreboard;
+import rikka.sponge.world.SpongeWorld;
 import rikka.sponge.world.SpongeWorldBorder;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Optional;
 import java.util.UUID;
 
 public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
+
     public SpongePlayer(Player source) {
         super(source);
     }
 
-    @Nullable
     public IContainer getOpenInventory() {
+        Container container = source.getOpenInventory().orElse(null);
+        return container == null ? null : new SpongeContainer(container);
+    }
+
+    public IContainer openInventory(IInventory inv) {
+        if (inv instanceof SpongeInventory) {
+            Container container = null;
+            try {
+                container = source.openInventory(((SpongeInventory) inv).getSource()).orElse(null);
+            } catch (Throwable ignored) {
+            }
+            return container == null ? null : new SpongeContainer(container);
+        }
         return null;
     }
 
-    @Nullable
-    public IContainer openInventory(IInventory inventory) throws IllegalArgumentException {
-        return null;
-    }
-
-    public boolean closeInventory() throws IllegalArgumentException {
+    public boolean closeInventory() {
+        try {
+            return source.closeInventory();
+        } catch (Throwable ignored) {
+        }
         return false;
-    }
-
-    public ChatVisibility getChatVisibility() {
-        return null;
     }
 
     public boolean isChatColorsEnabled() {
-        return false;
-    }
-
-    public MessageChannelEvent.Chat simulateChat(Text message, Cause cause) {
-        return null;
+        return source.isChatColorsEnabled();
     }
 
     public TabList getTabList() {
@@ -76,11 +85,13 @@ public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
     }
 
     public IScoreboard getScoreboard() {
-        return null;
+        return new SpongeScoreboard(source.getScoreboard());
     }
 
     public void setScoreboard(IScoreboard scoreboard) {
-
+        if (scoreboard instanceof SpongeScoreboard) {
+            source.setScoreboard(((SpongeScoreboard) scoreboard).getSource());
+        }
     }
 
     public long firstPlayed() {
@@ -114,29 +125,33 @@ public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
     }
 
     public IInventory getEnderChestInventory() {
-        return null;
+        // TODO EndChest Inventory
+        return new SpongeInventory<>(source.getEnderChestInventory());
     }
 
     public void respawn() {
         source.respawnPlayer();
     }
 
-    public Optional<IEntity> getSpectatorTarget() {
-        return Optional.empty();
+    public IEntity getSpectatorTarget() {
+        return getEntity(source.getSpectatorTarget().orElse(null));
     }
 
-    public void setSpectatorTarget(@Nullable IEntity entity) {
-
+    public void setSpectatorTarget(IEntity entity) {
+        if (entity instanceof SpongeEntity) {
+            source.setSpectatorTarget(((SpongeEntity) entity).getSource());
+        }
     }
 
     public IWorldBorder getWorldBorder() {
-        if (source.getWorldBorder().isPresent()) {
-            return new SpongeWorldBorder(source.getWorldBorder().get());
-        } else return null;
+        WorldBorder border = source.getWorldBorder().orElse(null);
+        return border == null ? null : new SpongeWorldBorder(border);
     }
 
-    public void setWorldBorder(@Nullable IWorldBorder border, Cause cause) {
-
+    public void setWorldBorder(IWorldBorder border, Cause cause) {
+        if (border instanceof SpongeWorldBorder) {
+            source.setWorldBorder(((SpongeWorldBorder) border).getSource(), Cause.of(EventContext.empty(), "TODO"));
+        }
     }
 
     public CooldownTracker getCooldownTracker() {
@@ -176,22 +191,22 @@ public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
     }
 
     public boolean isOnline() {
-        return false;
+        return source.isOnline();
     }
 
     public IPlayer getPlayer() {
-        return null;
+        return this;
     }
 
     public Vector3d getPosition() {
-        return null;
+        return new Vector3d(source.getPosition());
     }
 
-    public Optional<UUID> getWorldUniqueId() {
-        return Optional.empty();
-    }
-
-    public boolean setLocation(Vector3d position, UUID world) {
+    public boolean setLocation(Vector3d pos, UUID worldId) {
+        SpongeWorld world = getWorld(worldId);
+        if (world != null) {
+            return source.setLocation(new Location<>(world.getSource(), new com.flowpowered.math.vector.Vector3d(pos.x, pos.y, pos.z)));
+        }
         return false;
     }
 
@@ -200,11 +215,11 @@ public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
     }
 
     public boolean hasPermission(@Nonnull String permission) {
-        return false;
+        return source.hasPermission(permission);
     }
 
     public void sendMessage(Text message) {
-
+        source.sendMessage(message);
     }
 
     public MessageChannel getMessageChannel() {

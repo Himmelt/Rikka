@@ -6,7 +6,6 @@ import org.bukkit.util.Vector;
 import rikka.api.entity.living.ILiving;
 import rikka.api.entity.projectile.IProjectile;
 import rikka.api.entity.projectile.ProjectileType;
-import rikka.api.text.Text;
 import rikka.api.util.math.Vector3d;
 import rikka.api.world.Location;
 import rikka.bukkit.entity.projectile.BukkitProjectile;
@@ -41,8 +40,8 @@ public class BukkitLiving<T extends LivingEntity> extends BukkitEntity<T> implem
         return false;
     }
 
-    public Text getTeamRepresentation() {
-        return null;
+    public String getTeamRepresentation() {
+        return source.;
     }
 
     public <P extends IProjectile> P launchProjectile(ProjectileType type) {

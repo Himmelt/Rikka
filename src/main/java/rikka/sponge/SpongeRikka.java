@@ -1,5 +1,6 @@
 package rikka.sponge;
 
+import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.entity.living.player.Player;
@@ -45,6 +46,18 @@ public abstract class SpongeRikka<T> implements Rikka<T> {
         if (iWorld == null) {
             iWorld = new SpongeWorld(world);
             worlds.put(world.getUniqueId(), iWorld);
+        }
+        return iWorld;
+    }
+
+    public static SpongeWorld getWorld(UUID worldId) {
+        SpongeWorld iWorld = worlds.get(worldId);
+        if (iWorld == null) {
+            World world = Sponge.getServer().getWorld(worldId).orElse(null);
+            if (world != null) {
+                iWorld = new SpongeWorld(world);
+                worlds.put(worldId, iWorld);
+            }
         }
         return iWorld;
     }

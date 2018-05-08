@@ -86,7 +86,7 @@ public abstract class SpongeEntity<T extends Entity> extends SpongeRikka<T> impl
     public List<? extends IEntity> getPassengers() {
         List<SpongeEntity> entities = new ArrayList<>();
         for (Entity entity : source.getPassengers()) {
-            entities.add(SpongeEntity.getEntity(entity));
+            entities.add(getEntity(entity));
         }
         return entities;
     }
@@ -111,7 +111,7 @@ public abstract class SpongeEntity<T extends Entity> extends SpongeRikka<T> impl
     }
 
     public IEntity getVehicle() {
-        return SpongeRikka.getEntity(source.getVehicle().orElse(null));
+        return getEntity(source.getVehicle().orElse(null));
     }
 
     public boolean setVehicle(@Nullable IEntity entity) {

@@ -1,17 +1,12 @@
 package rikka.api.world.extent;
 
-import rikka.api.data.DataContainer;
-import rikka.api.data.property.entity.EyeLocationProperty;
-import rikka.api.entity.EntitySnapshot;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
 import rikka.api.util.AABB;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.math.Vector3i;
 
-import javax.annotation.Nonnull;
 import java.util.Collection;
-import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import java.util.function.Predicate;
@@ -20,7 +15,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public interface IEntityUniverse {
 
-    IEntity getEntity(@Nonnull UUID uuid);
+    IEntity getEntity(UUID uuid);
 
     Collection<IEntity> getEntities();
 
@@ -31,13 +26,8 @@ public interface IEntityUniverse {
     IEntity createEntity(EntityType type, Vector3d position) throws IllegalArgumentException, IllegalStateException;
 
     default IEntity createEntity(EntityType type, Vector3i position) throws IllegalArgumentException, IllegalStateException {
-        checkNotNull(position, "position");
-        return createEntity(type, position.toDouble());
+        return createEntity(type, );
     }
-
-    Optional<IEntity> createEntity(DataContainer entityContainer);
-
-    Optional<IEntity> createEntity(DataContainer entityContainer, Vector3d position);
 
     IEntity createEntityNaturally(EntityType type, Vector3d position) throws IllegalArgumentException, IllegalStateException;
 
@@ -45,8 +35,6 @@ public interface IEntityUniverse {
         checkNotNull(position, "position");
         return createEntityNaturally(type, position.toDouble());
     }
-
-    Optional<IEntity> restoreSnapshot(EntitySnapshot snapshot, Vector3d position);
 
     boolean spawnEntity(IEntity entity);
 
@@ -69,12 +57,6 @@ public interface IEntityUniverse {
     }
 
     default Set<EntityHit> getIntersectingEntities(IEntity looker, double distance, Predicate<EntityHit> filter) {
-        checkNotNull(looker, "looker");
-        final Vector3d rotation = looker.getRotation();
-        final Vector3d direction = Quaterniond.fromAxesAnglesDeg(rotation.getX(), -rotation.getY(), rotation.getZ()).getDirection();
-        final Optional<EyeLocationProperty> data = looker.getProperty(EyeLocationProperty.class);
-        final Vector3d start = data.map(EyeLocationProperty::getValue).orElse(looker.getLocation().getPosition());
-        return getIntersectingEntities(start, direction, distance, filter);
     }
 
     default Set<EntityHit> getIntersectingEntities(Vector3d start, Vector3d direction, double distance) {

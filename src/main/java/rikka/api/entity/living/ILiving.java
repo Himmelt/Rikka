@@ -2,9 +2,8 @@ package rikka.api.entity.living;
 
 import rikka.api.entity.IEntity;
 import rikka.api.entity.projectile.source.RProjectileSource;
-import rikka.api.scoreboard.RTeamMember;
 
-public interface ILiving extends IEntity, RProjectileSource, RTeamMember {
+public interface ILiving extends IEntity, RProjectileSource {
 
     double health();
 

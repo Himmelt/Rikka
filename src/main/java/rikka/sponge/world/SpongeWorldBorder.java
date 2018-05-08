@@ -3,76 +3,79 @@ package rikka.sponge.world;
 import org.spongepowered.api.world.WorldBorder;
 import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorldBorder;
+import rikka.sponge.SpongeRikka;
 
-public class SpongeWorldBorder implements IWorldBorder {
-
-    private final WorldBorder border;
+public class SpongeWorldBorder extends SpongeRikka<WorldBorder> implements IWorldBorder {
 
     public SpongeWorldBorder(WorldBorder border) {
-        this.border = border;
+        super(border);
+    }
+
+    public WorldBorder getSource() {
+        return source;
     }
 
     public double getNewDiameter() {
-        return border.getNewDiameter();
+        return source.getNewDiameter();
     }
 
     public double getDiameter() {
-        return border.getDiameter();
+        return source.getDiameter();
     }
 
     public void setDiameter(double diameter) {
-        border.setDiameter(diameter);
+        source.setDiameter(diameter);
     }
 
     public void setDiameter(double diameter, long time) {
-        border.setDiameter(diameter, time);
+        source.setDiameter(diameter, time);
     }
 
     public void setDiameter(double startDiameter, double endDiameter, long time) {
-        border.setDiameter(startDiameter, endDiameter, time);
+        source.setDiameter(startDiameter, endDiameter, time);
     }
 
     public long getTimeRemaining() {
-        return border.getTimeRemaining();
+        return source.getTimeRemaining();
     }
 
     public void setCenter(double x, double z) {
-        border.setCenter(x, z);
+        source.setCenter(x, z);
     }
 
     public Vector3d getCenter() {
-        return new Vector3d(border.getCenter());
+        return new Vector3d(source.getCenter());
     }
 
     public int getWarningTime() {
-        return border.getWarningTime();
+        return source.getWarningTime();
     }
 
     public void setWarningTime(int time) {
-        border.setWarningTime(time);
+        source.setWarningTime(time);
     }
 
     public int getWarningDistance() {
-        return border.getWarningDistance();
+        return source.getWarningDistance();
     }
 
     public void setWarningDistance(int distance) {
-        border.setWarningDistance(distance);
+        source.setWarningDistance(distance);
     }
 
     public double getDamageThreshold() {
-        return border.getDamageThreshold();
+        return source.getDamageThreshold();
     }
 
     public void setDamageThreshold(double distance) {
-        border.setDamageThreshold(distance);
+        source.setDamageThreshold(distance);
     }
 
     public double getDamageAmount() {
-        return border.getDamageAmount();
+        return source.getDamageAmount();
     }
 
     public void setDamageAmount(double damage) {
-        border.setDamageAmount(damage);
+        source.setDamageAmount(damage);
     }
 }

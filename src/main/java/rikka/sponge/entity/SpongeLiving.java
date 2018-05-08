@@ -3,11 +3,10 @@ package rikka.sponge.entity;
 import org.spongepowered.api.entity.living.Living;
 import rikka.api.entity.living.ILiving;
 import rikka.api.entity.projectile.IProjectile;
-import rikka.api.text.Text;
+import rikka.api.entity.projectile.ProjectileType;
 import rikka.api.text.translation.Translation;
 import rikka.api.util.math.Vector3d;
-
-import java.util.Optional;
+import rikka.sponge.entity.projectile.SpongeProjectile;
 
 public class SpongeLiving<T extends Living> extends SpongeEntity<T> implements ILiving {
 
@@ -35,20 +34,17 @@ public class SpongeLiving<T extends Living> extends SpongeEntity<T> implements I
         return source.lastDamage().or(0D).get();
     }
 
-    public <P extends IProjectile> P launchProjectile(Class<P> projectileClass) {
-        source.launchProjectile(projectileClass);
-        return Optional.empty();
-    }
-
-    public <P extends IProjectile> Optional<P> launchProjectile(Class<P> projectileClass, Vector3d velocity) {
-        return Optional.empty();
-    }
-
-    public Text getTeamRepresentation() {
-        return null;
-    }
-
     public Translation getTranslation() {
         return null;
+    }
+
+    public <P extends IProjectile> P launchProjectile(ProjectileType type) {
+        return SpongeProjectile.getProjectile(source.launchProjectile(type.spongeClass).orElse(null));
+    }
+
+    public <P extends IProjectile> P launchProjectile(ProjectileType type, Vector3d vc) {
+        return SpongeProjectile.getProjectile(source.launchProjectile(
+                type.spongeClass, new com.flowpowered.math.vector.Vector3d(vc.x, vc.y, vc.z))
+                .orElse(null));
     }
 }

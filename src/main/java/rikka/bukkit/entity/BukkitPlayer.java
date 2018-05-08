@@ -2,7 +2,6 @@ package rikka.bukkit.entity;
 
 import org.bukkit.entity.Player;
 import org.spongepowered.api.event.cause.Cause;
-import org.spongepowered.api.event.message.MessageChannelEvent;
 import rikka.api.data.type.HandType;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.CooldownTracker;
@@ -20,10 +19,8 @@ import rikka.api.scoreboard.IScoreboard;
 import rikka.api.text.Text;
 import rikka.api.text.channel.MessageChannel;
 import rikka.api.text.chat.ChatType;
-import rikka.api.text.chat.ChatVisibility;
 import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorldBorder;
-import rikka.api.world.Location;
 import rikka.bukkit.scoreboard.BukkitScoreboard;
 import rikka.bukkit.world.BukkitWorldBorder;
 
@@ -40,30 +37,20 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
         super(source);
     }
 
-    @Nullable
     public IContainer getOpenInventory() {
         return null;
     }
 
-    @Nullable
-    public IContainer openInventory(IInventory inventory) throws IllegalArgumentException {
+    public IContainer openInventory(IInventory inventory) {
         return null;
     }
 
-    public boolean closeInventory() throws IllegalArgumentException {
+    public boolean closeInventory() {
         return false;
-    }
-
-    public ChatVisibility getChatVisibility() {
-        return null;
     }
 
     public boolean isChatColorsEnabled() {
         return false;
-    }
-
-    public MessageChannelEvent.Chat simulateChat(Text message, Cause cause) {
-        return null;
     }
 
     public TabList getTabList() {
@@ -81,7 +68,6 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
     public IScoreboard getScoreboard() {
         return new BukkitScoreboard(source.getScoreboard());
     }
-
 
     public void setScoreboard(IScoreboard scoreboard) {
         if (scoreboard instanceof BukkitScoreboard) {
@@ -146,10 +132,6 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
         return null;
     }
 
-    public boolean setLocationSafely(Location location) {
-        return false;
-    }
-
     public GameProfile getProfile() {
         return null;
     }
@@ -168,10 +150,6 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
 
     public Vector3d getPosition() {
         return null;
-    }
-
-    public Optional<UUID> getWorldUniqueId() {
-        return Optional.empty();
     }
 
     public boolean setLocation(Vector3d position, UUID world) {
@@ -203,10 +181,6 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
     }
 
     public CarriedInventory<? extends ICarrier> getInventory() {
-        return null;
-    }
-
-    public Text getTeamRepresentation() {
         return null;
     }
 
