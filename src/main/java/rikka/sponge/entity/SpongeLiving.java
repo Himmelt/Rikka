@@ -8,7 +8,7 @@ import rikka.api.text.translation.Translation;
 import rikka.api.util.math.Vector3d;
 import rikka.sponge.entity.projectile.SpongeProjectile;
 
-public class SpongeLiving<T extends Living> extends SpongeEntity<T> implements ILiving {
+public abstract class SpongeLiving<T extends Living> extends SpongeEntity<T> implements ILiving {
 
     public SpongeLiving(T source) {
         super(source);

@@ -6,7 +6,6 @@ import rikka.api.item.inventory.type.Interactable;
 import java.util.Set;
 
 public interface IContainer extends Interactable {
-
     Set<IPlayer> getViewers();
 
     boolean hasViewers();
@@ -14,5 +13,4 @@ public interface IContainer extends Interactable {
     void open(IPlayer viewer) throws IllegalArgumentException;
 
     void close(IPlayer viewer) throws IllegalArgumentException;
-
 }

@@ -17,5 +17,4 @@ public interface IItemStack extends RTranslatable {
     boolean isEmpty();
 
     IItemStack copy();
-
 }
