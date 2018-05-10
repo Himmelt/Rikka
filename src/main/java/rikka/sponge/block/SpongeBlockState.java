@@ -1,6 +1,8 @@
 package rikka.sponge.block;
 
 import org.spongepowered.api.block.BlockSnapshot;
+import org.spongepowered.api.data.key.Keys;
+import org.spongepowered.api.world.World;
 import rikka.api.block.BlockType;
 import rikka.api.block.IBlockState;
 import rikka.api.world.IChunk;
@@ -15,37 +17,43 @@ public class SpongeBlockState extends SpongeRikka<BlockSnapshot> implements IBlo
         super(source);
     }
 
-    public byte getMeta() {
+    public BlockSnapshot getSource() {
         return source;
     }
 
+    public byte getMeta() {
+        // TODO
+        return 0;
+    }
+
     public void setMeta(byte meta) {
-        source.setData(meta);
+        // TODO
     }
 
     public int getX() {
-        return source.getX();
+        return source.getPosition().getX();
     }
 
     public int getY() {
-        return source.getY();
+        return source.getPosition().getY();
     }
 
     public int getZ() {
-        return source.getZ();
+        return source.getPosition().getZ();
     }
 
     public Location getLocation() {
-        return new Location(source.getLocation());
+        org.spongepowered.api.world.Location<World> loc = source.getLocation().orElse(null);
+        return loc == null ? null : new Location(loc);
     }
 
     public BlockType getType() {
         // TODO if forge mod block get type ??
-        return BlockType.getType(source.getType());
+        return BlockType.getType(source.getState().getType());
     }
 
     public void setType(BlockType type) {
-        source.setType(type.bukkitType);
+        getLocation().setBlockType(type);
     }
 
     public IChunk getChunk() {
@@ -53,7 +61,7 @@ public class SpongeBlockState extends SpongeRikka<BlockSnapshot> implements IBlo
     }
 
     public IWorld getWorld() {
-        return getWorld(source.getWorld());
+        return getLocation().getWorld();
     }
 
     public BiomeType getBiome() {
@@ -65,14 +73,15 @@ public class SpongeBlockState extends SpongeRikka<BlockSnapshot> implements IBlo
     }
 
     public boolean isBlockPowered() {
-        return source.isBlockPowered();
+        return source.get(Keys.POWERED).orElse(false);
     }
 
     public boolean isEmpty() {
-        return source.isEmpty();
+        return source.getState().getType() == org.spongepowered.api.block.BlockTypes.AIR;
     }
 
     public boolean isLiquid() {
-        return source.isLiquid();
+        // TODO
+        return false;
     }
 }

@@ -26,14 +26,14 @@ public interface IEntityUniverse {
     IEntity createEntity(EntityType type, Vector3d position) throws IllegalArgumentException, IllegalStateException;
 
     default IEntity createEntity(EntityType type, Vector3i position) throws IllegalArgumentException, IllegalStateException {
-        return createEntity(type, );
+        return createEntity(type, position);
     }
 
     IEntity createEntityNaturally(EntityType type, Vector3d position) throws IllegalArgumentException, IllegalStateException;
 
     default IEntity createEntityNaturally(EntityType type, Vector3i position) throws IllegalArgumentException, IllegalStateException {
         checkNotNull(position, "position");
-        return createEntityNaturally(type, position.toDouble());
+        return createEntityNaturally(type, new Vector3d(position));
     }
 
     boolean spawnEntity(IEntity entity);
@@ -56,8 +56,7 @@ public interface IEntityUniverse {
         return getIntersectingEntities(looker, distance, hit -> true);
     }
 
-    default Set<EntityHit> getIntersectingEntities(IEntity looker, double distance, Predicate<EntityHit> filter) {
-    }
+    Set<EntityHit> getIntersectingEntities(IEntity looker, double distance, Predicate<EntityHit> filter);
 
     default Set<EntityHit> getIntersectingEntities(Vector3d start, Vector3d direction, double distance) {
         return getIntersectingEntities(start, direction, distance, hit -> true);

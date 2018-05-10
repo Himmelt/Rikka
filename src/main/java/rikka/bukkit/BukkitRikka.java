@@ -22,17 +22,15 @@ import rikka.bukkit.world.BukkitWorld;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class BukkitRikka<T> implements Rikka<T> {
+public abstract class BukkitRikka<T> implements Rikka<T> {
 
     protected final T source;
 
-    public BukkitRikka(T source) {
+    protected BukkitRikka(T source) {
         this.source = source;
     }
 
-    public T getSource() {
-        return source;
-    }
+    public abstract T getSource();
 
     private static final HashMap<String, RCommandSender> senders = new HashMap<>();
     private static final HashMap<UUID, BukkitPlayer> players = new HashMap<>();

@@ -146,7 +146,8 @@ public final class Location {
     }
 
     public boolean setBlockType(BlockType type) {
-        return world.setBlockType(getBlockPosition(), type);
+        // TODO flag
+        return world.setBlockType(getBlockPosition(), type, BlockChangeFlags.NONE);
     }
 
     public boolean setBlockType(BlockType type, BlockChangeFlag flag) {

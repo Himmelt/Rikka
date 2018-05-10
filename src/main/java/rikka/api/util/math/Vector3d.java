@@ -23,5 +23,10 @@ public class Vector3d {
         this.z = direction.getZ();
     }
 
+    public Vector3d(Vector3i position) {
+        this.x = position.x;
+        this.y = position.y;
+        this.z = position.z;
+    }
 }
 

@@ -11,14 +11,14 @@ public enum BlockType implements RTranslatable {
 
     AIR("air", Material.AIR, BlockTypes.AIR),
     STONE("stone", Material.STONE, BlockTypes.STONE),
-    UNKNOWN;
+    UNKNOWN("unknown", null, null);
 
     public final String nameId;
-    public final org.bukkit.Material bukkitType;
+    public final Material bukkitType;
     public final org.spongepowered.api.block.BlockType spongeType;
 
     private static final HashMap<String, BlockType> nameIdMap = new HashMap<>();
-    private static final HashMap<org.bukkit.Material, BlockType> bukkitTypeMap = new HashMap<>();
+    private static final HashMap<Material, BlockType> bukkitTypeMap = new HashMap<>();
     private static final HashMap<org.spongepowered.api.block.BlockType, BlockType> spongeTypeMap = new HashMap<>();
 
     static {
@@ -37,13 +37,15 @@ public enum BlockType implements RTranslatable {
         }
     }
 
-    BlockType(String nameId, org.bukkit.Material bukkitType, org.spongepowered.api.block.BlockType spongeType) {
+    private IBlockState defaultState;
+
+    BlockType(String nameId, Material bukkitType, org.spongepowered.api.block.BlockType spongeType) {
         this.nameId = nameId;
         this.bukkitType = bukkitType;
         this.spongeType = spongeType;
     }
 
-    public static BlockType getType(org.bukkit.Material type) {
+    public static BlockType getType(Material type) {
         return bukkitTypeMap.getOrDefault(type, UNKNOWN);
     }
 
@@ -53,5 +55,13 @@ public enum BlockType implements RTranslatable {
 
     public Translation getTranslation() {
         return null;
+    }
+
+    public IBlockState getDefaultState() {
+        return defaultState;
+    }
+
+    public void setDefaultState(IBlockState defaultState) {
+        this.defaultState = defaultState;
     }
 }

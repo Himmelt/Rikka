@@ -16,6 +16,10 @@ public class BukkitLiving<T extends LivingEntity> extends BukkitEntity<T> implem
         super(source);
     }
 
+    public T getSource() {
+        return source;
+    }
+
     public final double health() {
         return source.getHealth();
     }
@@ -41,7 +45,7 @@ public class BukkitLiving<T extends LivingEntity> extends BukkitEntity<T> implem
     }
 
     public String getTeamRepresentation() {
-        return source.;
+        return null;
     }
 
     public <P extends IProjectile> P launchProjectile(ProjectileType type) {

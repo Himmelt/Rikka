@@ -14,6 +14,10 @@ public class BukkitWorldBorder extends BukkitRikka<WorldBorder> implements IWorl
         super(source);
     }
 
+    public WorldBorder getSource() {
+        return source;
+    }
+
     public double getNewDiameter() {
         World world = source.getCenter().getWorld();
         if (v1_12_R1) {

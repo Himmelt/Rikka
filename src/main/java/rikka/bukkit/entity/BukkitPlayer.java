@@ -26,7 +26,6 @@ import rikka.bukkit.world.BukkitWorldBorder;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Optional;
 import java.util.UUID;
 
 import static org.bukkit.GameMode.*;
@@ -105,15 +104,15 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
     }
 
     public IInventory getEnderChestInventory() {
-        return source.getEnderChest();
+        return null;
     }
 
     public void respawn() {
         source.spigot().respawn();
     }
 
-    public Optional<IEntity> getSpectatorTarget() {
-        return Optional.empty();
+    public IEntity getSpectatorTarget() {
+        return null;
     }
 
     public void setSpectatorTarget(@Nullable IEntity entity) {
@@ -204,4 +203,7 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
 
     }
 
+    public Player getSource() {
+        return source;
+    }
 }

@@ -15,6 +15,10 @@ public class BukkitBlockState extends BukkitRikka<Block> implements IBlockState 
         super(source);
     }
 
+    public Block getSource() {
+        return source;
+    }
+
     public byte getMeta() {
         return source.getData();
     }

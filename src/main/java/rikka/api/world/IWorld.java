@@ -1,5 +1,7 @@
 package rikka.api.world;
 
+import rikka.api.block.BlockType;
+import rikka.api.block.IBlockState;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.util.math.Vector3d;
@@ -32,5 +34,19 @@ public interface IWorld extends IEntityUniverse {
     IEntity getEntity(UUID uuid);
 
     Collection<IEntity> getNearbyEntities(Vector3d position, double distance);
+
+    default boolean setBlock(Vector3i position, IBlockState state, BlockChangeFlag flag) {
+        return setBlock(position.x, position.y, position.z, state, flag);
+    }
+
+    boolean setBlock(int x, int y, int z, IBlockState blockState, BlockChangeFlag flag);
+
+    default boolean setBlockType(Vector3i position, BlockType type, BlockChangeFlag flag) {
+        return setBlock(position.x, position.y, position.z, type.getDefaultState(), flag);
+    }
+
+    default boolean setBlockType(int x, int y, int z, BlockType type, BlockChangeFlag flag) {
+        return setBlock(x, y, z, type.getDefaultState(), flag);
+    }
 
 }
