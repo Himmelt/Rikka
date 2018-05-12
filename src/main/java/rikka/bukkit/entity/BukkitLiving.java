@@ -7,17 +7,12 @@ import rikka.api.entity.living.ILiving;
 import rikka.api.entity.projectile.IProjectile;
 import rikka.api.entity.projectile.ProjectileType;
 import rikka.api.util.math.Vector3d;
-import rikka.api.world.Location;
 import rikka.bukkit.entity.projectile.BukkitProjectile;
 
 public class BukkitLiving<T extends LivingEntity> extends BukkitEntity<T> implements ILiving {
 
     public BukkitLiving(T source) {
         super(source);
-    }
-
-    public T getSource() {
-        return source;
     }
 
     public final double health() {
@@ -38,14 +33,6 @@ public class BukkitLiving<T extends LivingEntity> extends BukkitEntity<T> implem
 
     public final double lastDamage() {
         return source.getLastDamage();
-    }
-
-    public boolean setLocationSafely(Location location) {
-        return false;
-    }
-
-    public String getTeamRepresentation() {
-        return null;
     }
 
     public <P extends IProjectile> P launchProjectile(ProjectileType type) {

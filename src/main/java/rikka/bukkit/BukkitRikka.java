@@ -88,4 +88,12 @@ public abstract class BukkitRikka<T> implements Rikka<T> {
         }
     }
 
+    public final boolean equals(Object obj) {
+        if (obj instanceof BukkitRikka) {
+            BukkitRikka rikka = (BukkitRikka) obj;
+            return source == rikka.source;
+        }
+        return false;
+    }
+
 }

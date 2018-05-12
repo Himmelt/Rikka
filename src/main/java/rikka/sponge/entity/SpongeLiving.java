@@ -4,11 +4,10 @@ import org.spongepowered.api.entity.living.Living;
 import rikka.api.entity.living.ILiving;
 import rikka.api.entity.projectile.IProjectile;
 import rikka.api.entity.projectile.ProjectileType;
-import rikka.api.text.translation.Translation;
 import rikka.api.util.math.Vector3d;
 import rikka.sponge.entity.projectile.SpongeProjectile;
 
-public abstract class SpongeLiving<T extends Living> extends SpongeEntity<T> implements ILiving {
+public class SpongeLiving<T extends Living> extends SpongeEntity<T> implements ILiving {
 
     public SpongeLiving(T source) {
         super(source);
@@ -32,10 +31,6 @@ public abstract class SpongeLiving<T extends Living> extends SpongeEntity<T> imp
 
     public double lastDamage() {
         return source.lastDamage().or(0D).get();
-    }
-
-    public Translation getTranslation() {
-        return null;
     }
 
     public <P extends IProjectile> P launchProjectile(ProjectileType type) {

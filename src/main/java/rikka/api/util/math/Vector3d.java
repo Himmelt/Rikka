@@ -28,5 +28,25 @@ public class Vector3d {
         this.y = position.y;
         this.z = position.z;
     }
+
+    public Vector3d round() {
+        return new Vector3d(Math.round(x), Math.round(y), Math.round(z));
+    }
+
+    public Vector3d normalize() {
+        final double length = length();
+        if (Math.abs(length) < Double.longBitsToDouble(0x3cb0000000000000L)) {
+            throw new ArithmeticException("Cannot normalize the zero vector");
+        }
+        return new Vector3d(x / length, y / length, z / length);
+    }
+
+    public double lengthSquared() {
+        return x * x + y * y + z * z;
+    }
+
+    public double length() {
+        return Math.sqrt(lengthSquared());
+    }
 }
 

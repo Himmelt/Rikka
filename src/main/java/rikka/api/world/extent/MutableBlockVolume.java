@@ -25,8 +25,8 @@
 package rikka.api.world.extent;
 
 import com.flowpowered.math.vector.Vector3i;
-import rikka.api.block.IBlockState;
 import rikka.api.block.BlockType;
+import rikka.api.block.IBlockState;
 import rikka.api.util.DiscreteTransform3;
 import rikka.api.util.PositionOutOfBoundsException;
 import rikka.api.world.extent.worker.MutableBlockVolumeWorker;

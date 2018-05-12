@@ -90,9 +90,11 @@ public interface MessageChannel {
     default void send(Text original, ChatType type) {
         this.send(null, original, type);
     }
+
     default void send(@Nullable Object sender, Text original) {
         this.send(sender, original, ChatTypes.SYSTEM);
     }
+
     default void send(@Nullable Object sender, Text original, ChatType type) {
         checkNotNull(original, "original text");
         checkNotNull(type, "type");

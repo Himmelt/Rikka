@@ -1,6 +1,5 @@
 package rikka.sponge.entity;
 
-import net.minecraftforge.event.world.BlockEvent;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.entity.living.player.gamemode.GameModes;
 import org.spongepowered.api.event.cause.Cause;
@@ -44,10 +43,6 @@ public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
     }
 
     public IContainer getOpenInventory() {
-
-        BlockEvent.BreakEvent event;
-        event.getWorld()
-
         Container container = source.getOpenInventory().orElse(null);
         return container == null ? null : new SpongeContainer(container);
     }
@@ -224,7 +219,7 @@ public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
     }
 
     public void sendMessage(Text message) {
-        source.sendMessage(message);
+        source.sendMessage(org.spongepowered.api.text.Text.of(message.toPlain()));
     }
 
     public MessageChannel getMessageChannel() {

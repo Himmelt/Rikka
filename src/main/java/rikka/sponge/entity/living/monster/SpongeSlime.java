@@ -4,7 +4,7 @@ import org.spongepowered.api.entity.living.monster.Slime;
 import rikka.api.entity.living.monster.ISlime;
 import rikka.sponge.entity.SpongeLiving;
 
-public abstract class SpongeSlime<T extends Slime> extends SpongeLiving<T> implements ISlime {
+public class SpongeSlime<T extends Slime> extends SpongeLiving<T> implements ISlime {
     public SpongeSlime(T source) {
         super(source);
     }

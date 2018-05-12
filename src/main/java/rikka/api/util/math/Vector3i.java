@@ -9,4 +9,9 @@ public class Vector3i {
         this.z = z;
     }
 
+    public Vector3i(Vector3d vector3d) {
+        this.x = (int) vector3d.x;
+        this.y = (int) vector3d.y;
+        this.z = (int) vector3d.z;
+    }
 }

@@ -33,7 +33,8 @@ import rikka.api.data.DataSerializable;
 import rikka.api.data.DataView;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.gamemode.GameMode;
-import rikka.api.world.*;
+import rikka.api.world.DimensionType;
+import rikka.api.world.IWorld;
 import rikka.api.world.difficulty.Difficulty;
 import rikka.api.world.gen.WorldGeneratorModifier;
 

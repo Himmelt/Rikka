@@ -4,7 +4,7 @@ import org.spongepowered.api.entity.living.animal.Pig;
 import rikka.api.entity.living.animal.IPig;
 import rikka.sponge.entity.SpongeLiving;
 
-public abstract class SpongePig<T extends Pig> extends SpongeLiving<T> implements IPig {
+public class SpongePig<T extends Pig> extends SpongeLiving<T> implements IPig {
     public SpongePig(T source) {
         super(source);
     }

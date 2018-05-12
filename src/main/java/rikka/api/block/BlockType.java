@@ -244,7 +244,8 @@ public enum BlockType implements RTranslatable {
     RED_SHULKER_BOX(233, "red_shulker_box", Material.RED_SHULKER_BOX, BlockTypes.RED_SHULKER_BOX),
     BLACK_SHULKER_BOX(234, "black_shulker_box", Material.BLACK_SHULKER_BOX, BlockTypes.BLACK_SHULKER_BOX),
     WHITE_GLAZED_TERRACOTTA(235, "white_glazed_terracotta", Material.WHITE_GLAZED_TERRACOTTA, BlockTypes.WHITE_GLAZED_TERRACOTTA),
-    ORANGE_GLAZED_TERRACOTTA(236, "orange_glazed_terracotta", Material.ORANGE_GLAZED_TERRACOTTA, BlockTypes.ORANGE_GLAZED_TERRACOTTA),
+    // TODO
+    //ORANGE_GLAZED_TERRACOTTA(236, "orange_glazed_terracotta", Material.ORANGE_GLAZED_TERRACOTTA, BlockTypes.ORANGE_GLAZED_TERRACOTTA),
     MAGENTA_GLAZED_TERRACOTTA(237, "magenta_glazed_terracotta", Material.MAGENTA_GLAZED_TERRACOTTA, BlockTypes.MAGENTA_GLAZED_TERRACOTTA),
     LIGHT_BLUE_GLAZED_TERRACOTTA(238, "light_blue_glazed_terracotta", Material.LIGHT_BLUE_GLAZED_TERRACOTTA, BlockTypes.LIGHT_BLUE_GLAZED_TERRACOTTA),
     YELLOW_GLAZED_TERRACOTTA(239, "yellow_glazed_terracotta", Material.YELLOW_GLAZED_TERRACOTTA, BlockTypes.YELLOW_GLAZED_TERRACOTTA),
@@ -304,6 +305,10 @@ public enum BlockType implements RTranslatable {
 
     public static BlockType getType(org.spongepowered.api.block.BlockType type) {
         return spongeTypeMap.getOrDefault(type, UNKNOWN);
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Translation getTranslation() {

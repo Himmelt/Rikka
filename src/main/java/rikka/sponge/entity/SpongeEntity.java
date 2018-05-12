@@ -3,6 +3,7 @@ package rikka.sponge.entity;
 import org.spongepowered.api.entity.Entity;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
+import rikka.api.text.translation.Translation;
 import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorld;
 import rikka.api.world.Location;
@@ -15,7 +16,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-public abstract class SpongeEntity<T extends Entity> extends SpongeRikka<T> implements IEntity {
+public class SpongeEntity<T extends Entity> extends SpongeRikka<T> implements IEntity {
 
     public SpongeEntity(T source) {
         super(source);
@@ -158,4 +159,7 @@ public abstract class SpongeEntity<T extends Entity> extends SpongeRikka<T> impl
         return source.getUniqueId();
     }
 
+    public Translation getTranslation() {
+        return null;
+    }
 }

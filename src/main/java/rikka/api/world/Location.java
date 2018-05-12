@@ -86,15 +86,15 @@ public final class Location {
     }
 
     public Location sub(Vector3d v) {
-        return sub(v.x, v.y, v.z);
+        return sub(-v.x, -v.y, -v.z);
     }
 
     public Location sub(Vector3i v) {
-        return sub(v.x, v.y, v.z);
+        return sub(-v.x, -v.y, -v.z);
     }
 
     public Location sub(double x, double y, double z) {
-        return setPosition(getPosition().sub(x, y, z));
+        return add(-x, -y, -z);
     }
 
     public Location add(Vector3d v) {
@@ -106,7 +106,10 @@ public final class Location {
     }
 
     public Location add(double x, double y, double z) {
-        return setPosition(getPosition().add(x, y, z));
+        this.x += x;
+        this.y += y;
+        this.z += z;
+        return this;
     }
 
     public Location getRelative(Direction direction) {
@@ -118,31 +121,31 @@ public final class Location {
     }
 
     public BiomeType getBiome() {
-        return world.getBiome(getBiomePosition());
+        return world.getBiome(x, y, z);
     }
 
     public BlockType getBlockType() {
-        return world.getBlockType(getBlockPosition());
+        return world.getBlockType(x, y, z);
     }
 
     public IBlockState getBlock() {
-        return world.getBlock((int) x, (int) y, (int) z);
+        return world.getBlockState(x, y, z);
     }
 
     public boolean hasTileEntity() {
-        return world.getTileEntity(getBlockPosition()).isPresent();
+        return world.getTileEntity(x, y, z) != null;
     }
 
     public ITileEntity getTileEntity() {
-        return world.getTileEntity(getBlockPosition());
+        return world.getTileEntity(x, y, z);
     }
 
     public boolean setBlock(IBlockState state) {
-        return world.setBlock(getBlockPosition(), state);
+        return world.setBlock(x, y, z, state, null);
     }
 
     public boolean setBlock(IBlockState state, BlockChangeFlag flag) {
-        return world.setBlock(getBlockPosition(), state, flag);
+        return world.setBlock(x, y, z, state, flag);
     }
 
     public boolean setBlockType(BlockType type) {
@@ -176,6 +179,14 @@ public final class Location {
 
     public String toString() {
         return "Location{" + getPosition() + " in " + world + "}";
+    }
+
+    public boolean equals(Object obj) {
+        if (obj instanceof Location) {
+            Location loc = (Location) obj;
+            return world.equals(loc.world) && x == loc.x && y == loc.y && z == loc.z;
+        }
+        return false;
     }
 
 }

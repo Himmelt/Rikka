@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-public abstract class BukkitEntity<T extends Entity> extends BukkitRikka<T> implements IEntity, Rikka<T> {
+public class BukkitEntity<T extends Entity> extends BukkitRikka<T> implements IEntity, Rikka<T> {
 
     public BukkitEntity(T source) {
         super(source);
@@ -51,6 +51,10 @@ public abstract class BukkitEntity<T extends Entity> extends BukkitRikka<T> impl
                     PlayerTeleportEvent.TeleportCause.PLUGIN
             );
         } else return false;
+    }
+
+    public boolean setLocationSafely(Location location) {
+        return false;
     }
 
     public Vector3d getRotation() {

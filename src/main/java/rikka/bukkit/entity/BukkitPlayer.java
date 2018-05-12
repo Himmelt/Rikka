@@ -203,7 +203,4 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
 
     }
 
-    public Player getSource() {
-        return source;
-    }
 }

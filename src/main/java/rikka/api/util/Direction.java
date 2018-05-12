@@ -2,8 +2,8 @@ package rikka.api.util;
 
 import com.flowpowered.math.GenericMath;
 import com.flowpowered.math.TrigMath;
-import com.flowpowered.math.vector.Vector3d;
-import com.flowpowered.math.vector.Vector3i;
+import rikka.api.util.math.Vector3d;
+import rikka.api.util.math.Vector3i;
 
 public enum Direction {
     NORTH(new Vector3d(0, 0, -1), Division.CARDINAL),
@@ -82,7 +82,7 @@ public enum Direction {
         } else {
             this.offset = direction.normalize();
         }
-        this.blockOffset = direction.round().toInt();
+        this.blockOffset = new Vector3i(direction.round());
         this.division = division;
     }
 
@@ -91,9 +91,9 @@ public enum Direction {
     }
 
     public static Direction getClosest(Vector3d vector, Division smallestDivision) {
-        if (vector.getY() * vector.getY() <= vector.getX() * vector.getX() + vector.getZ() * vector.getZ()) {
+        if (vector.y * vector.y <= vector.x * vector.x + vector.z * vector.z) {
             return getClosestHorizontal(vector, smallestDivision);
-        } else if (vector.getY() > 0) {
+        } else if (vector.y > 0) {
             return UP;
         } else {
             return DOWN;
@@ -106,14 +106,14 @@ public enum Direction {
 
     public static Direction getClosestHorizontal(Vector3d vector, Division smallestDivision) {
         // Ignore vectors not in the xz plane
-        if (Math.abs(vector.getX()) <= GenericMath.DBL_EPSILON && Math.abs(vector.getZ()) <= GenericMath.DBL_EPSILON) {
+        if (Math.abs(vector.x) <= GenericMath.DBL_EPSILON && Math.abs(vector.z) <= GenericMath.DBL_EPSILON) {
             return NONE;
         }
         // Normalize so it lies on the unit circle in xz
         vector = vector.normalize();
         // Get the angle from the x component and correct for complement with z
-        double angle = TrigMath.acos(vector.getX());
-        if (vector.getZ() < 0) {
+        double angle = TrigMath.acos(vector.x);
+        if (vector.z < 0) {
             angle = TrigMath.TWO_PI - angle;
         }
         // Make the angle positive, offset for MC's system, then wrap in [0, 2pi)
