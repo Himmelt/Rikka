@@ -5,9 +5,11 @@ import org.spongepowered.api.entity.living.player.gamemode.GameModes;
 import org.spongepowered.api.event.cause.Cause;
 import org.spongepowered.api.event.cause.EventContext;
 import org.spongepowered.api.item.inventory.Container;
+import org.spongepowered.api.item.inventory.equipment.EquipmentType;
+import org.spongepowered.api.text.Text;
+import org.spongepowered.api.text.channel.MessageChannel;
 import org.spongepowered.api.world.Location;
 import org.spongepowered.api.world.WorldBorder;
-import rikka.api.data.type.HandType;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.CooldownTracker;
 import rikka.api.entity.living.player.IPlayer;
@@ -17,14 +19,11 @@ import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IContainer;
 import rikka.api.item.inventory.IInventory;
 import rikka.api.item.inventory.IItemStack;
-import rikka.api.item.inventory.equipment.EquipmentType;
 import rikka.api.item.inventory.type.CarriedInventory;
 import rikka.api.profile.GameProfile;
 import rikka.api.scoreboard.IScoreboard;
-import rikka.api.text.Text;
-import rikka.api.text.channel.MessageChannel;
-import rikka.api.text.chat.ChatType;
 import rikka.api.util.math.Vector3d;
+import rikka.api.util.type.HandType;
 import rikka.api.world.IWorldBorder;
 import rikka.sponge.item.inventory.SpongeContainer;
 import rikka.sponge.item.inventory.SpongeInventory;
@@ -79,9 +78,9 @@ public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
         source.kick();
     }
 
-    public void kick(Text reason) {
+    public void kick(String reason) {
         // TODO
-        source.kick(org.spongepowered.api.text.Text.of(reason.toPlain()));
+        source.kick(org.spongepowered.api.text.Text.of(reason));
     }
 
     public IScoreboard getScoreboard() {
@@ -218,8 +217,12 @@ public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
         return source.hasPermission(permission);
     }
 
+    public void sendMessage(String message) {
+        source.sendMessage(org.spongepowered.api.text.Text.of(message));
+    }
+
     public void sendMessage(Text message) {
-        source.sendMessage(org.spongepowered.api.text.Text.of(message.toPlain()));
+
     }
 
     public MessageChannel getMessageChannel() {
@@ -227,10 +230,6 @@ public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
     }
 
     public void setMessageChannel(MessageChannel channel) {
-
-    }
-
-    public void sendMessage(ChatType type, Text message) {
 
     }
 }

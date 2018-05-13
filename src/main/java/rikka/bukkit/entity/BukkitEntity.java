@@ -5,7 +5,6 @@ import org.bukkit.event.player.PlayerTeleportEvent;
 import rikka.api.Rikka;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
-import rikka.api.text.translation.Translation;
 import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorld;
 import rikka.api.world.Location;
@@ -139,10 +138,6 @@ public class BukkitEntity<T extends Entity> extends BukkitRikka<T> implements IE
             }
         }
         return entities;
-    }
-
-    public Translation getTranslation() {
-        return null;
     }
 
     public UUID getUUID() {

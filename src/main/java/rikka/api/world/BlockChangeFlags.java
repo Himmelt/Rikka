@@ -1,6 +1,7 @@
 package rikka.api.world;
 
-import rikka.api.util.generator.dummy.DummyObjectProvider;
+
+import org.spongepowered.api.util.generator.dummy.DummyObjectProvider;
 
 public final class BlockChangeFlags {
 

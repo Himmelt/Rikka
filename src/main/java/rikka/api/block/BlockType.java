@@ -2,12 +2,10 @@ package rikka.api.block;
 
 import org.bukkit.Material;
 import org.spongepowered.api.block.BlockTypes;
-import rikka.api.text.translation.RTranslatable;
-import rikka.api.text.translation.Translation;
 
 import java.util.HashMap;
 
-public enum BlockType implements RTranslatable {
+public enum BlockType {
 
     AIR(0, "air", Material.AIR, BlockTypes.AIR),
     STONE(1, "stone", Material.STONE, BlockTypes.STONE),
@@ -270,17 +268,24 @@ public enum BlockType implements RTranslatable {
     public final Material bukkitType;
     public final org.spongepowered.api.block.BlockType spongeType;
 
+    private static final HashMap<Integer, BlockType> idMap = new HashMap<>();
     private static final HashMap<String, BlockType> nameIdMap = new HashMap<>();
     private static final HashMap<Material, BlockType> bukkitTypeMap = new HashMap<>();
     private static final HashMap<org.spongepowered.api.block.BlockType, BlockType> spongeTypeMap = new HashMap<>();
 
     static {
+        idMap.clear();
         nameIdMap.clear();
         bukkitTypeMap.clear();
         spongeTypeMap.clear();
         for (BlockType type : values()) {
             bukkitTypeMap.put(type.bukkitType, type);
             spongeTypeMap.put(type.spongeType, type);
+            if (idMap.containsKey(type.id)) {
+                throw new RuntimeException("Multi Map of BlockType id: " + type.id);
+            }
+            idMap.put(type.id, type);
+            nameIdMap.put(type.nameId, type);
             if (type.nameId != null && !type.nameId.isEmpty()) {
                 if (nameIdMap.containsKey(type.nameId)) {
                     throw new RuntimeException("Multi Map of BlockType nameId: " + type.nameId);
@@ -289,8 +294,6 @@ public enum BlockType implements RTranslatable {
             }
         }
     }
-
-    private IBlockState defaultState;
 
     BlockType(int id, String nameId, Material bukkitType, org.spongepowered.api.block.BlockType spongeType) {
         this.id = id;
@@ -307,19 +310,8 @@ public enum BlockType implements RTranslatable {
         return spongeTypeMap.getOrDefault(type, UNKNOWN);
     }
 
-    public int getId() {
-        return id;
+    public static BlockType getType(int id) {
+        return idMap.getOrDefault(id, UNKNOWN);
     }
 
-    public Translation getTranslation() {
-        return null;
-    }
-
-    public IBlockState getDefaultState() {
-        return defaultState;
-    }
-
-    public void setDefaultState(IBlockState defaultState) {
-        this.defaultState = defaultState;
-    }
 }

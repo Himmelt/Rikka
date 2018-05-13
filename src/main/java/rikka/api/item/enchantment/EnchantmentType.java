@@ -1,31 +1,51 @@
 package rikka.api.item.enchantment;
 
 import rikka.api.CatalogType;
-import rikka.api.item.inventory.IItemStack;
-import rikka.api.text.translation.RTranslatable;
-import rikka.api.util.annotation.CatalogedBy;
 
-@CatalogedBy(EnchantmentTypes.class)
-public interface EnchantmentType extends CatalogType, RTranslatable {
+public enum EnchantmentType implements CatalogType {
 
-    int getWeight();
+    AQUA_AFFINITY,
+    BANE_OF_ARTHROPODS,
+    BINDING_CURSE,
+    BLAST_PROTECTION,
+    DEPTH_STRIDER,
+    EFFICIENCY,
+    FEATHER_FALLING,
+    FIRE_ASPECT,
+    FIRE_PROTECTION,
+    FLAME,
+    FORTUNE,
+    FROST_WALKER,
+    INFINITY,
+    KNOCKBACK,
+    LOOTING,
+    LUCK_OF_THE_SEA,
+    LURE,
+    MENDING,
+    POWER,
+    PROJECTILE_PROTECTION,
+    PROTECTION,
+    PUNCH,
+    RESPIRATION,
+    SHARPNESS,
+    SILK_TOUCH,
+    SMITE,
+    SWEEPING,
+    THORNS,
+    UNBREAKING,
+    VANISHING_CURSE;
 
-    int getMinimumLevel();
+    public int weight;
 
-    int getMaximumLevel();
+    public int minimumLevel;
 
-    int getMinimumEnchantabilityForLevel(int level);
+    public int maximumLevel;
 
-    int getMaximumEnchantabilityForLevel(int level);
+    public String getId() {
+        return null;
+    }
 
-    boolean canBeAppliedToStack(IItemStack stack);
-
-    boolean canBeAppliedByTable(IItemStack stack);
-
-    boolean isCompatibleWith(EnchantmentType enchantmentType);
-
-    boolean isTreasure();
-
-    boolean isCurse();
-
+    public String getName() {
+        return null;
+    }
 }

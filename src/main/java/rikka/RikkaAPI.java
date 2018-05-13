@@ -2,9 +2,9 @@ package rikka;
 
 import org.bukkit.command.CommandSender;
 import org.spongepowered.api.command.CommandSource;
-import rikka.api.command.RCommandSender;
-import rikka.api.text.Text;
-import rikka.api.text.channel.MessageChannel;
+import org.spongepowered.api.text.Text;
+import org.spongepowered.api.text.channel.MessageChannel;
+import rikka.api.command.ICommandSender;
 import rikka.bukkit.BukkitRikka;
 import rikka.sponge.SpongeRikka;
 
@@ -15,7 +15,19 @@ import static rikka.ServerType.SPONGE;
 
 public final class RikkaAPI {
 
-    private static final RCommandSender invalid = new RCommandSender() {
+    private static final ICommandSender invalid = new ICommandSender() {
+        public void sendMessage(Text message) {
+
+        }
+
+        public MessageChannel getMessageChannel() {
+            return null;
+        }
+
+        public void setMessageChannel(MessageChannel channel) {
+
+        }
+
         public String getName() {
             return "invalid";
         }
@@ -24,23 +36,17 @@ public final class RikkaAPI {
             return false;
         }
 
-        public void sendMessage(@Nonnull Text msg) {
+        public void sendMessage(@Nonnull String msg) {
         }
 
-        public MessageChannel getMessageChannel() {
-            return null;
-        }
-
-        public void setMessageChannel(MessageChannel channel) {
-        }
     };
 
-    public static RCommandSender getCommandSender(CommandSender sender) {
+    public static ICommandSender getCommandSender(CommandSender sender) {
         if (BUKKIT) return BukkitRikka.getCommandSender(sender);
         return invalid;
     }
 
-    public static RCommandSender getCommandSender(CommandSource sender) {
+    public static ICommandSender getCommandSender(CommandSource sender) {
         if (SPONGE) return SpongeRikka.getCommandSender(sender);
         return invalid;
     }

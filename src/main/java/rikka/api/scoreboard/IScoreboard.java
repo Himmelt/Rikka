@@ -1,10 +1,5 @@
 package rikka.api.scoreboard;
 
-import rikka.api.scoreboard.critieria.Criterion;
-import rikka.api.scoreboard.displayslot.DisplaySlot;
-import rikka.api.scoreboard.objective.Objective;
-import rikka.api.text.Text;
-
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Set;
@@ -23,17 +18,15 @@ public interface IScoreboard {
         this.updateDisplaySlot(null, slot);
     }
 
-    Set<Objective> getObjectivesByCriteria(Criterion criteria);
-
     Set<Objective> getObjectives();
 
     void removeObjective(Objective objective);
 
     Set<Score> getScores();
 
-    Set<Score> getScores(Text name);
+    Set<Score> getScores(String name);
 
-    void removeScores(Text name);
+    void removeScores(String name);
 
     Optional<Team> getTeam(String teamName);
 
@@ -41,6 +34,6 @@ public interface IScoreboard {
 
     Set<Team> getTeams();
 
-    Optional<Team> getMemberTeam(Text member);
+    Optional<Team> getMemberTeam(String member);
 
 }

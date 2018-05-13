@@ -1,6 +1,5 @@
 package rikka.api.command;
 
-import rikka.api.text.Text;
 import rikka.api.world.Location;
 
 import javax.annotation.Nullable;
@@ -8,12 +7,12 @@ import java.util.List;
 
 public interface CommandCallable {
 
-    boolean process(RCommandSender source, String arguments);
+    boolean process(ICommandSender sender, String args);
 
-    List<String> getSuggestions(RCommandSender source, String arguments, @Nullable Location location);
+    List<String> getSuggestions(ICommandSender sender, String args, @Nullable Location location);
 
-    boolean testPermission(RCommandSender source);
+    boolean testPermission(ICommandSender source);
 
-    Text getUsage(RCommandSender source);
+    String getUsage(ICommandSender source);
 
 }

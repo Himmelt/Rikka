@@ -1,20 +1,13 @@
 package rikka.api.effect;
 
 import rikka.api.block.IBlockState;
-import rikka.api.effect.particle.ParticleEffect;
 import rikka.api.effect.sound.SoundCategory;
 import rikka.api.effect.sound.SoundType;
 import rikka.api.effect.sound.record.RecordType;
-import rikka.api.text.BookView;
-import rikka.api.text.title.Title;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.math.Vector3i;
 
 public interface Viewer {
-
-    void spawnParticles(ParticleEffect particleEffect, Vector3d position);
-
-    void spawnParticles(ParticleEffect particleEffect, Vector3d position, int radius);
 
     default void playSound(SoundType sound, Vector3d position, double volume) {
         this.playSound(sound, SoundCategory.MASTER, position, volume);
@@ -45,18 +38,6 @@ public interface Viewer {
     void playRecord(Vector3i position, RecordType recordType);
 
     void stopRecord(Vector3i position);
-
-    void sendTitle(Title title);
-
-    default void resetTitle() {
-        sendTitle(Title.RESET);
-    }
-
-    default void clearTitle() {
-        sendTitle(Title.CLEAR);
-    }
-
-    void sendBookView(BookView bookView);
 
     default void sendBlockChange(Vector3i vec, IBlockState state) {
         this.sendBlockChange(vec.x, vec.y, vec.z, state);

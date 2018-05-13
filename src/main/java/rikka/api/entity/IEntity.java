@@ -1,15 +1,14 @@
 package rikka.api.entity;
 
-import rikka.api.text.translation.RTranslatable;
 import rikka.api.util.RIdentifiable;
 import rikka.api.util.math.Vector3d;
+import rikka.api.world.Locatable;
 import rikka.api.world.Location;
-import rikka.api.world.RLocatable;
 
 import java.util.Collection;
 import java.util.List;
 
-public interface IEntity extends RIdentifiable, RLocatable, RTranslatable {
+public interface IEntity extends RIdentifiable, Locatable {
 
     EntityType getType();
 

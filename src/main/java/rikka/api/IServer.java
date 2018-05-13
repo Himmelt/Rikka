@@ -1,12 +1,9 @@
 package rikka.api;
 
-import rikka.api.command.source.IConsoleSender;
+import rikka.api.command.IConsoleSender;
 import rikka.api.entity.living.player.IPlayer;
 import rikka.api.scoreboard.IScoreboard;
-import rikka.api.text.Text;
-import rikka.api.text.channel.MessageChannel;
 import rikka.api.world.IWorld;
-import rikka.api.world.storage.ChunkLayout;
 
 import java.util.Collection;
 import java.util.UUID;
@@ -35,13 +32,7 @@ public interface IServer {
 
     IScoreboard getServerScoreboard();
 
-    ChunkLayout getChunkLayout();
-
     int getRunningTimeTicks();
-
-    MessageChannel getBroadcastChannel();
-
-    void setBroadcastChannel(MessageChannel channel);
 
     boolean hasWhitelist();
 
@@ -49,11 +40,11 @@ public interface IServer {
 
     boolean getOnlineMode();
 
-    Text getMotd();
+    String getMotd();
 
     void shutdown();
 
-    void shutdown(Text kickMessage);
+    void shutdown(String kickMessage);
 
     IConsoleSender getConsole();
 

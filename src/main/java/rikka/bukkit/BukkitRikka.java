@@ -9,7 +9,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.minecart.CommandMinecart;
 import rikka.api.Rikka;
-import rikka.api.command.RCommandSender;
+import rikka.api.command.ICommandSender;
 import rikka.api.world.IWorld;
 import rikka.bukkit.command.BukkitBlockSender;
 import rikka.bukkit.command.BukkitConsoleSender;
@@ -32,13 +32,13 @@ public abstract class BukkitRikka<T> implements Rikka<T> {
 
     public abstract T getSource();
 
-    private static final HashMap<String, RCommandSender> senders = new HashMap<>();
+    private static final HashMap<String, ICommandSender> senders = new HashMap<>();
     private static final HashMap<UUID, BukkitPlayer> players = new HashMap<>();
     private static final HashMap<UUID, BukkitWorld> worlds = new HashMap<>();
 
-    public static RCommandSender getCommandSender(CommandSender source) {
+    public static ICommandSender getCommandSender(CommandSender source) {
         if (source == null) return null;
-        RCommandSender sender;
+        ICommandSender sender;
         if (source instanceof Player) {
             sender = players.get(((Player) source).getUniqueId());
             if (sender != null) return sender;

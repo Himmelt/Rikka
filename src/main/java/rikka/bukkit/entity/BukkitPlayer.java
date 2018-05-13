@@ -2,7 +2,9 @@ package rikka.bukkit.entity;
 
 import org.bukkit.entity.Player;
 import org.spongepowered.api.event.cause.Cause;
-import rikka.api.data.type.HandType;
+import org.spongepowered.api.item.inventory.equipment.EquipmentType;
+import org.spongepowered.api.text.Text;
+import org.spongepowered.api.text.channel.MessageChannel;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.player.CooldownTracker;
 import rikka.api.entity.living.player.IPlayer;
@@ -12,14 +14,11 @@ import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IContainer;
 import rikka.api.item.inventory.IInventory;
 import rikka.api.item.inventory.IItemStack;
-import rikka.api.item.inventory.equipment.EquipmentType;
 import rikka.api.item.inventory.type.CarriedInventory;
 import rikka.api.profile.GameProfile;
 import rikka.api.scoreboard.IScoreboard;
-import rikka.api.text.Text;
-import rikka.api.text.channel.MessageChannel;
-import rikka.api.text.chat.ChatType;
 import rikka.api.util.math.Vector3d;
+import rikka.api.util.type.HandType;
 import rikka.api.world.IWorldBorder;
 import rikka.bukkit.scoreboard.BukkitScoreboard;
 import rikka.bukkit.world.BukkitWorldBorder;
@@ -60,8 +59,8 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
         source.kickPlayer("");
     }
 
-    public void kick(Text reason) {
-        source.kickPlayer(reason.toPlain());
+    public void kick(String reason) {
+        source.kickPlayer(reason);
     }
 
     public IScoreboard getScoreboard() {
@@ -196,10 +195,6 @@ public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
     }
 
     public void setMessageChannel(MessageChannel channel) {
-
-    }
-
-    public void sendMessage(ChatType type, Text message) {
 
     }
 

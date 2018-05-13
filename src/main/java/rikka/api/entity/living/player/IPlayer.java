@@ -1,7 +1,7 @@
 package rikka.api.entity.living.player;
 
 import org.spongepowered.api.event.cause.Cause;
-import rikka.api.command.RCommandSender;
+import rikka.api.command.ICommandSender;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.IHumanoid;
 import rikka.api.entity.living.player.gamemode.GameMode;
@@ -9,11 +9,9 @@ import rikka.api.entity.living.player.tab.TabList;
 import rikka.api.item.inventory.IContainer;
 import rikka.api.item.inventory.IInventory;
 import rikka.api.scoreboard.IScoreboard;
-import rikka.api.text.Text;
-import rikka.api.text.channel.RChatTypeMessageReceiver;
 import rikka.api.world.IWorldBorder;
 
-public interface IPlayer extends IHumanoid, RUser, RCommandSender, RChatTypeMessageReceiver {
+public interface IPlayer extends IHumanoid, RUser, ICommandSender {
 
     default boolean isViewingInventory() {
         return getOpenInventory() != null;
@@ -31,7 +29,7 @@ public interface IPlayer extends IHumanoid, RUser, RCommandSender, RChatTypeMess
 
     void kick();
 
-    void kick(Text reason);
+    void kick(String reason);
 
     IScoreboard getScoreboard();
 

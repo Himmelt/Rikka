@@ -1,8 +1,8 @@
 package rikka.bukkit.tileentity;
 
 import org.bukkit.block.CommandBlock;
-import rikka.api.text.Text;
-import rikka.api.text.channel.MessageChannel;
+import org.spongepowered.api.text.Text;
+import org.spongepowered.api.text.channel.MessageChannel;
 import rikka.api.tileentity.ICommandBlock;
 
 import javax.annotation.Nonnull;

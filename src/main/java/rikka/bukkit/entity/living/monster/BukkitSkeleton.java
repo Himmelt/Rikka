@@ -1,12 +1,12 @@
 package rikka.bukkit.entity.living.monster;
 
 import org.bukkit.entity.Skeleton;
-import rikka.api.data.type.HandType;
+import org.spongepowered.api.item.inventory.equipment.EquipmentType;
 import rikka.api.entity.living.monster.ISkeleton;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IItemStack;
-import rikka.api.item.inventory.equipment.EquipmentType;
 import rikka.api.item.inventory.type.CarriedInventory;
+import rikka.api.util.type.HandType;
 import rikka.bukkit.entity.BukkitLiving;
 
 import javax.annotation.Nullable;

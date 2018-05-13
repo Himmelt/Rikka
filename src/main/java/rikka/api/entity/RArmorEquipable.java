@@ -1,8 +1,8 @@
 package rikka.api.entity;
 
-import rikka.api.data.type.HandType;
+import org.spongepowered.api.item.inventory.equipment.EquipmentTypes;
 import rikka.api.item.inventory.IItemStack;
-import rikka.api.item.inventory.equipment.EquipmentTypes;
+import rikka.api.util.type.HandType;
 
 import javax.annotation.Nullable;
 

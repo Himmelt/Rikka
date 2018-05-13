@@ -1,8 +1,8 @@
 package rikka.api.entity;
 
+import org.spongepowered.api.item.inventory.equipment.EquipmentType;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IItemStack;
-import rikka.api.item.inventory.equipment.EquipmentType;
 import rikka.api.util.RIdentifiable;
 
 import javax.annotation.Nullable;

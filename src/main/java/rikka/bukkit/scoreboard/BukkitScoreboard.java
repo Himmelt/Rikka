@@ -2,13 +2,7 @@ package rikka.bukkit.scoreboard;
 
 import org.bukkit.scoreboard.Scoreboard;
 import rikka.api.Rikka;
-import rikka.api.scoreboard.IScoreboard;
-import rikka.api.scoreboard.Score;
-import rikka.api.scoreboard.Team;
-import rikka.api.scoreboard.critieria.Criterion;
-import rikka.api.scoreboard.displayslot.DisplaySlot;
-import rikka.api.scoreboard.objective.Objective;
-import rikka.api.text.Text;
+import rikka.api.scoreboard.*;
 import rikka.bukkit.BukkitRikka;
 
 import javax.annotation.Nullable;
@@ -41,10 +35,6 @@ public class BukkitScoreboard extends BukkitRikka<Scoreboard> implements IScoreb
 
     }
 
-    public Set<Objective> getObjectivesByCriteria(Criterion criteria) {
-        return null;
-    }
-
     public Set<Objective> getObjectives() {
         return null;
     }
@@ -57,11 +47,11 @@ public class BukkitScoreboard extends BukkitRikka<Scoreboard> implements IScoreb
         return null;
     }
 
-    public Set<Score> getScores(Text name) {
+    public Set<Score> getScores(String name) {
         return null;
     }
 
-    public void removeScores(Text name) {
+    public void removeScores(String name) {
 
     }
 
@@ -77,7 +67,7 @@ public class BukkitScoreboard extends BukkitRikka<Scoreboard> implements IScoreb
         return null;
     }
 
-    public Optional<Team> getMemberTeam(Text member) {
+    public Optional<Team> getMemberTeam(String member) {
         return Optional.empty();
     }
 }

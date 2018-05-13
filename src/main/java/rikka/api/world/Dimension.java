@@ -1,6 +1,7 @@
 package rikka.api.world;
 
-import rikka.api.service.context.ContextSource;
+import org.spongepowered.api.service.context.ContextSource;
+import org.spongepowered.api.world.GeneratorType;
 
 public interface Dimension extends ContextSource {
 

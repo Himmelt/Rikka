@@ -1,59 +1,86 @@
-/*
- * This file is part of SpongeAPI, licensed under the MIT License (MIT).
- *
- * Copyright (c) SpongePowered <https://www.spongepowered.org>
- * Copyright (c) contributors
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
 package rikka.api.world.biome;
 
 import rikka.api.CatalogType;
-import rikka.api.util.annotation.CatalogedBy;
-import rikka.api.world.IWorld;
 
-/**
- * Represents a biome.
- */
-@CatalogedBy(BiomeTypes.class)
-public interface BiomeType extends CatalogType {
+public enum BiomeType implements CatalogType {
+    BEACH,
+    BIRCH_FOREST,
+    BIRCH_FOREST_HILLS,
+    COLD_BEACH,
+    COLD_TAIGA,
+    COLD_TAIGA_HILLS,
+    DEEP_OCEAN,
+    DESERT,
+    DESERT_HILLS,
+    EXTREME_HILLS,
+    EXTREME_HILLS_EDGE,
+    EXTREME_HILLS_PLUS,
+    FOREST,
+    FOREST_HILLS,
+    FROZEN_OCEAN,
+    FROZEN_RIVER,
+    HELL,
+    ICE_MOUNTAINS,
+    ICE_PLAINS,
+    JUNGLE,
+    JUNGLE_EDGE,
+    JUNGLE_HILLS,
+    MEGA_TAIGA,
+    MEGA_TAIGA_HILLS,
+    MESA,
+    MESA_PLATEAU,
+    MESA_PLATEAU_FOREST,
+    MUSHROOM_ISLAND,
+    MUSHROOM_ISLAND_SHORE,
+    OCEAN,
+    PLAINS,
+    RIVER,
+    ROOFED_FOREST,
+    SAVANNA,
+    SAVANNA_PLATEAU,
+    SKY,
+    STONE_BEACH,
+    SWAMPLAND,
+    TAIGA,
+    TAIGA_HILLS,
+    BIRCH_FOREST_HILLS_MOUNTAINS,
+    BIRCH_FOREST_MOUNTAINS,
+    COLD_TAIGA_MOUNTAINS,
+    DESERT_MOUNTAINS,
+    EXTREME_HILLS_MOUNTAINS,
+    EXTREME_HILLS_PLUS_MOUNTAINS,
+    FLOWER_FOREST,
+    ICE_PLAINS_SPIKES,
+    JUNGLE_EDGE_MOUNTAINS,
+    JUNGLE_MOUNTAINS,
+    MEGA_SPRUCE_TAIGA,
+    MEGA_SPRUCE_TAIGA_HILLS,
+    MESA_BRYCE,
+    MESA_PLATEAU_FOREST_MOUNTAINS,
+    MESA_PLATEAU_MOUNTAINS,
+    ROOFED_FOREST_MOUNTAINS,
+    SAVANNA_MOUNTAINS,
+    SAVANNA_PLATEAU_MOUNTAINS,
+    SUNFLOWER_PLAINS,
+    SWAMPLAND_MOUNTAINS,
+    TAIGA_MOUNTAINS,
+    VOID;
 
-    /**
-     * Gets the temperature of this biome.
-     *
-     * @return The temperature
-     */
-    double getTemperature();
+    double getTemperature() {
+        // TODO
+        return 0;
+    }
 
-    /**
-     * Gets the humidity of this biome.
-     *
-     * @return The humidity
-     */
-    double getHumidity();
+    double getHumidity() {
+        // TODO
+        return 0;
+    }
 
-    /**
-     * Gets the default generation settings of this biome for the given world.
-     *
-     * @param world The world the settings are being made for
-     * @return The default generation settings
-     */
-    BiomeGenerationSettings createDefaultGenerationSettings(IWorld world);
+    public String getId() {
+        return null;
+    }
 
+    public String getName() {
+        return null;
+    }
 }

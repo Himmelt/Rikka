@@ -1,12 +1,12 @@
 package rikka.bukkit.entity.living;
 
 import org.bukkit.entity.ArmorStand;
-import rikka.api.data.type.HandType;
+import org.spongepowered.api.item.inventory.equipment.EquipmentType;
 import rikka.api.entity.living.IArmorStand;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IItemStack;
-import rikka.api.item.inventory.equipment.EquipmentType;
 import rikka.api.item.inventory.type.CarriedInventory;
+import rikka.api.util.type.HandType;
 import rikka.bukkit.entity.BukkitLiving;
 
 import javax.annotation.Nullable;

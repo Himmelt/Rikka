@@ -1,8 +1,5 @@
 package rikka.api.world;
 
-import rikka.api.util.annotation.CatalogedBy;
-
-@CatalogedBy(BlockChangeFlags.class)
 public interface BlockChangeFlag {
 
     boolean updateNeighbors();

@@ -1,27 +1,18 @@
 package rikka.api.world;
 
-import com.flowpowered.math.vector.Vector3d;
-import com.flowpowered.math.vector.Vector3i;
-import rikka.api.world.extent.Extent;
+import rikka.api.util.math.Vector3d;
+import rikka.api.util.math.Vector3i;
 
 public interface IChunk extends Extent {
 
-    @Override
-    default Location getLocation(Vector3i position) {
-        return new Location(this, position);
-    }
+    Location getLocation(Vector3i position);
 
-    @Override
     default Location getLocation(int x, int y, int z) {
         return getLocation(new Vector3i(x, y, z));
     }
 
-    @Override
-    default Location getLocation(Vector3d position) {
-        return new Location(this, position);
-    }
+    Location getLocation(Vector3d position);
 
-    @Override
     default Location getLocation(double x, double y, double z) {
         return getLocation(new Vector3d(x, y, z));
     }

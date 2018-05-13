@@ -4,7 +4,7 @@ import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector3f;
 import com.flowpowered.math.vector.Vector3i;
 import org.apache.commons.lang3.Validate;
-import rikka.api.data.type.DyeColor;
+import rikka.api.util.type.DyeColor;
 
 import java.util.Objects;
 

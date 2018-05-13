@@ -1,12 +1,12 @@
 package rikka.sponge.entity.living.monster;
 
 import org.spongepowered.api.entity.living.monster.Giant;
-import rikka.api.data.type.HandType;
+import org.spongepowered.api.item.inventory.equipment.EquipmentType;
 import rikka.api.entity.living.monster.IGiant;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IItemStack;
-import rikka.api.item.inventory.equipment.EquipmentType;
 import rikka.api.item.inventory.type.CarriedInventory;
+import rikka.api.util.type.HandType;
 import rikka.sponge.entity.SpongeLiving;
 
 import javax.annotation.Nullable;

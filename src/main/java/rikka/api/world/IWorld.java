@@ -8,7 +8,6 @@ import rikka.api.tileentity.ITileEntity;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.math.Vector3i;
 import rikka.api.world.biome.BiomeType;
-import rikka.api.world.extent.IEntityUniverse;
 
 import java.util.Collection;
 import java.util.UUID;
@@ -44,11 +43,13 @@ public interface IWorld extends IEntityUniverse {
     boolean setBlock(double x, double y, double z, IBlockState blockState, BlockChangeFlag flag);
 
     default boolean setBlockType(Vector3i position, BlockType type, BlockChangeFlag flag) {
-        return setBlock(position.x, position.y, position.z, type.getDefaultState(), flag);
+        // TODO
+        return setBlock(position.x, position.y, position.z, null, flag);
     }
 
     default boolean setBlockType(int x, int y, int z, BlockType type, BlockChangeFlag flag) {
-        return setBlock(x, y, z, type.getDefaultState(), flag);
+        // TODO
+        return setBlock(x, y, z, null, flag);
     }
 
     BiomeType getBiome(int x, int y, int z);

@@ -1,7 +1,6 @@
 package rikka.api.entity.living.player.tab;
 
 import rikka.api.entity.living.player.IPlayer;
-import rikka.api.text.Text;
 
 import javax.annotation.Nullable;
 import java.util.Collection;
@@ -12,15 +11,15 @@ public interface TabList {
 
     IPlayer getPlayer();
 
-    Optional<Text> getHeader();
+    String getHeader();
 
-    TabList setHeader(@Nullable Text header);
+    TabList setHeader(@Nullable String header);
 
-    Optional<Text> getFooter();
+    String getFooter();
 
-    TabList setFooter(@Nullable Text footer);
+    TabList setFooter(@Nullable String footer);
 
-    default TabList setHeaderAndFooter(@Nullable Text header, @Nullable Text footer) {
+    default TabList setHeaderAndFooter(@Nullable String header, @Nullable String footer) {
         this.setHeader(header);
         this.setFooter(footer);
         return this;

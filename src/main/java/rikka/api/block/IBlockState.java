@@ -6,6 +6,7 @@ import rikka.api.world.Location;
 import rikka.api.world.biome.BiomeType;
 
 public interface IBlockState {
+
     byte getMeta();
 
     void setMeta(byte meta);

@@ -6,7 +6,7 @@ import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.world.World;
 import rikka.api.Rikka;
-import rikka.api.command.RCommandSender;
+import rikka.api.command.ICommandSender;
 import rikka.sponge.entity.SpongeEntity;
 import rikka.sponge.entity.SpongePlayer;
 import rikka.sponge.world.SpongeWorld;
@@ -24,14 +24,14 @@ public abstract class SpongeRikka<T> implements Rikka<T> {
 
     public abstract T getSource();
 
-    private static final HashMap<String, RCommandSender> senders = new HashMap<>();
+    private static final HashMap<String, ICommandSender> senders = new HashMap<>();
     private static final HashMap<UUID, SpongePlayer> players = new HashMap<>();
     private static final HashMap<UUID, SpongeWorld> worlds = new HashMap<>();
 
 
-    public static RCommandSender getCommandSender(CommandSource source) {
+    public static ICommandSender getCommandSender(CommandSource source) {
         if (source == null) return null;
-        RCommandSender sender = senders.get(source.getName());
+        ICommandSender sender = senders.get(source.getName());
         if (sender != null) return sender;
         if (source instanceof Player)
             sender = new SpongePlayer((Player) source);
