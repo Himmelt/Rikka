@@ -2,6 +2,6 @@ package rikka.api.util;
 
 import java.util.UUID;
 
-public interface RIdentifiable {
+public interface Identifiable {
     UUID getUUID();
 }

@@ -7,7 +7,7 @@ import rikka.api.block.BlockType;
 import rikka.api.block.IBlockState;
 import rikka.api.entity.IEntity;
 import rikka.api.util.AABB;
-import rikka.api.util.RIdentifiable;
+import rikka.api.util.Identifiable;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -16,7 +16,7 @@ import java.util.UUID;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-public interface Extent extends IEntityUniverse, RIdentifiable {
+public interface Extent extends IEntityUniverse, Identifiable {
 
     Location getLocation(Vector3i position);
 
