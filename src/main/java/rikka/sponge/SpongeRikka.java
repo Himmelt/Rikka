@@ -3,10 +3,14 @@ package rikka.sponge;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.entity.Entity;
+import org.spongepowered.api.entity.living.Living;
 import org.spongepowered.api.entity.living.player.Player;
+import org.spongepowered.api.entity.projectile.Projectile;
 import org.spongepowered.api.world.World;
 import rikka.api.Rikka;
 import rikka.api.command.ICommandSender;
+import rikka.api.entity.living.ILiving;
+import rikka.api.entity.projectile.IProjectile;
 import rikka.sponge.entity.SpongeEntity;
 import rikka.sponge.entity.SpongePlayer;
 import rikka.sponge.world.SpongeWorld;
@@ -20,6 +24,14 @@ public abstract class SpongeRikka<T> implements Rikka<T> {
 
     public SpongeRikka(T source) {
         this.source = source;
+    }
+
+    public static ILiving getLiving(Living living) {
+        return null;
+    }
+
+    public static IProjectile getProjectile(Projectile projectile) {
+        return null;
     }
 
     public abstract T getSource();
