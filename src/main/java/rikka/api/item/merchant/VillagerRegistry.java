@@ -29,7 +29,7 @@ public interface VillagerRegistry {
 
     VillagerRegistry setMutators(Career career, Multimap<Integer, TradeOfferListMutator> mutatorMap);
 
-    default Collection<TradeOffer> generateTradeOffers(IMerchant merchant, Career career, int level, Random random) {
+    default Collection<TradeOffer> generateTradeOffers(Merchant merchant, Career career, int level, Random random) {
         checkNotNull(random, "Random cannot be null!");
         List<TradeOffer> generatedList = new ArrayList<>();
         this.getMutatorsForCareer(career, level)
@@ -37,7 +37,7 @@ public interface VillagerRegistry {
         return generatedList;
     }
 
-    default List<TradeOffer> populateOffers(IMerchant merchant, List<TradeOffer> currentOffers, Career career, int level, Random random) {
+    default List<TradeOffer> populateOffers(Merchant merchant, List<TradeOffer> currentOffers, Career career, int level, Random random) {
         this.getMutatorsForCareer(career, level)
                 .forEach(mutator -> mutator.accept(merchant, currentOffers, random));
         return currentOffers;

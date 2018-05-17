@@ -1,6 +1,6 @@
-package rikka.api.entity.living;
+package rikka.api.entity.api;
 
-public interface RAgent extends ILiving {
+public interface Agent {
     // TODO
     //Optional<IEntity> getTarget();
     // TODO

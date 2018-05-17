@@ -1,7 +1,7 @@
 package rikka.api.entity.living;
 
-import rikka.api.entity.RArmorEquipable;
-import rikka.api.entity.projectile.RProjectileLauncher;
+import rikka.api.entity.api.ArmorEquipable;
+import rikka.api.entity.api.ProjectileLauncher;
 
-public interface IHumanoid extends ILiving, RProjectileLauncher, RArmorEquipable {
+public interface IHumanoid extends ILiving, ProjectileLauncher, ArmorEquipable {
 }

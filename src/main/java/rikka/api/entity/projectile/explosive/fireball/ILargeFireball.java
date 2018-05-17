@@ -1,6 +1,6 @@
 package rikka.api.entity.projectile.explosive.fireball;
 
-import rikka.api.entity.explosive.IExplosive;
+import rikka.api.entity.api.Explosive;
 
-public interface ILargeFireball extends IFireball, IExplosive {
+public interface ILargeFireball extends IFireball, Explosive {
 }

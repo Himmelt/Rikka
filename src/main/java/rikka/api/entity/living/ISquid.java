@@ -1,4 +1,6 @@
 package rikka.api.entity.living;
 
-public interface ISquid extends IAquatic {
+import rikka.api.entity.api.Aquatic;
+
+public interface ISquid extends ICreature, Aquatic {
 }

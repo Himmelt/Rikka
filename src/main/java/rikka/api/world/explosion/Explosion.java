@@ -1,11 +1,11 @@
 package rikka.api.world.explosion;
 
-import rikka.api.entity.explosive.IExplosive;
+import rikka.api.entity.api.Explosive;
 import rikka.api.world.Locatable;
 
 public interface Explosion extends Locatable {
 
-    IExplosive getSourceExplosive();
+    Explosive getSourceExplosive();
 
     float getRadius();
 

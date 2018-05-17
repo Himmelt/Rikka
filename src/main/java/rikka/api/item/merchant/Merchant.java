@@ -6,7 +6,7 @@ import rikka.api.world.Locatable;
 
 import javax.annotation.Nullable;
 
-public interface IMerchant extends ICarrier, Locatable {
+public interface Merchant extends ICarrier, Locatable {
     IHumanoid getCustomer();
 
     void setCustomer(@Nullable IHumanoid humanoid);

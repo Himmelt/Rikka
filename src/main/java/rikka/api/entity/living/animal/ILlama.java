@@ -1,6 +1,6 @@
 package rikka.api.entity.living.animal;
 
-import rikka.api.entity.projectile.RProjectileLauncher;
+import rikka.api.entity.api.ProjectileLauncher;
 
-public interface ILlama extends IHorse, RProjectileLauncher {
+public interface ILlama extends IHorse, ProjectileLauncher {
 }

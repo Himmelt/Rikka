@@ -1,4 +1,6 @@
 package rikka.api.entity.living;
 
-public interface IAmbient extends RAgent {
+import rikka.api.entity.api.Agent;
+
+public interface IAmbient extends ILiving, Agent {
 }

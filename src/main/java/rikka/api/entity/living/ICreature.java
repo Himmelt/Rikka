@@ -1,4 +1,6 @@
 package rikka.api.entity.living;
 
-public interface ICreature extends RAgent {
+import rikka.api.entity.api.Agent;
+
+public interface ICreature extends ILiving, Agent {
 }

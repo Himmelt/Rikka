@@ -1,6 +1,6 @@
 package rikka.api.entity.living.monster;
 
-import rikka.api.entity.living.RRanger;
+import rikka.api.entity.api.Ranger;
 
-public interface IWitch extends IMonster, RRanger {
+public interface IWitch extends IMonster, Ranger {
 }

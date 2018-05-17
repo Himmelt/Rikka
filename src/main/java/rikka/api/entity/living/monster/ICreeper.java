@@ -1,6 +1,6 @@
 package rikka.api.entity.living.monster;
 
-import rikka.api.entity.explosive.IFusedExplosive;
+import rikka.api.entity.api.FusedExplosive;
 
-public interface ICreeper extends IMonster, IFusedExplosive {
+public interface ICreeper extends IMonster, FusedExplosive {
 }

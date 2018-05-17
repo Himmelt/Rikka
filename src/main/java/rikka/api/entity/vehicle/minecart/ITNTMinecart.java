@@ -1,6 +1,6 @@
 package rikka.api.entity.vehicle.minecart;
 
-import rikka.api.entity.explosive.IFusedExplosive;
+import rikka.api.entity.api.FusedExplosive;
 
-public interface ITNTMinecart extends IMinecart, IFusedExplosive {
+public interface ITNTMinecart extends IMinecart, FusedExplosive {
 }

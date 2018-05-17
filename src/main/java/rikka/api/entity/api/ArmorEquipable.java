@@ -1,4 +1,4 @@
-package rikka.api.entity;
+package rikka.api.entity.api;
 
 import org.spongepowered.api.item.inventory.equipment.EquipmentTypes;
 import rikka.api.item.inventory.IItemStack;
@@ -6,7 +6,7 @@ import rikka.api.util.type.HandType;
 
 import javax.annotation.Nullable;
 
-public interface RArmorEquipable extends IEquipable {
+public interface ArmorEquipable extends Equipable {
 
     default IItemStack getHelmet() {
         return this.getEquipped(EquipmentTypes.HEADWEAR);

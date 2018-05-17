@@ -1,6 +1,6 @@
 package rikka.api.entity.living.golem;
 
-import rikka.api.entity.living.RRanger;
+import rikka.api.entity.api.Ranger;
 
-public interface ISnowGolem extends IGolem, RRanger {
+public interface ISnowGolem extends IGolem, Ranger {
 }
