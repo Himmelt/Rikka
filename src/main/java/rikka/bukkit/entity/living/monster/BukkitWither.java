@@ -3,11 +3,11 @@ package rikka.bukkit.entity.living.monster;
 import org.bukkit.entity.Wither;
 import rikka.api.entity.living.ILiving;
 import rikka.api.entity.living.monster.IWither;
-import rikka.bukkit.entity.BukkitLiving;
+import rikka.bukkit.entity.living.BukkitLiving;
 
 import java.util.List;
 
-public class BukkitWither<T extends Wither> extends BukkitLiving<T> implements IWither {
+public final class BukkitWither<T extends Wither> extends BukkitLiving<T> implements IWither {
     public BukkitWither(T source) {
         super(source);
     }

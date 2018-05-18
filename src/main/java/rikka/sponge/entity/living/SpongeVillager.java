@@ -5,11 +5,10 @@ import rikka.api.entity.living.IHumanoid;
 import rikka.api.entity.living.IVillager;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.type.CarriedInventory;
-import rikka.sponge.entity.SpongeLiving;
 
 import javax.annotation.Nullable;
 
-public class SpongeVillager<T extends Villager> extends SpongeLiving<T> implements IVillager {
+public final class SpongeVillager<T extends Villager> extends SpongeLiving<T> implements IVillager {
     public SpongeVillager(T source) {
         super(source);
     }

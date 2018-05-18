@@ -4,9 +4,9 @@ import org.spongepowered.api.entity.living.monster.Enderman;
 import rikka.api.entity.living.monster.IEnderman;
 import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.type.CarriedInventory;
-import rikka.sponge.entity.SpongeLiving;
+import rikka.sponge.entity.living.SpongeLiving;
 
-public class SpongeEnderman<T extends Enderman> extends SpongeLiving<T> implements IEnderman {
+public final class SpongeEnderman<T extends Enderman> extends SpongeLiving<T> implements IEnderman {
     public SpongeEnderman(T source) {
         super(source);
     }

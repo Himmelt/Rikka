@@ -1,4 +1,4 @@
-package rikka.api.entity.projectile.arrow;
+package rikka.api.entity.projectile;
 
 public interface ITippedArrow extends IArrow {
 }

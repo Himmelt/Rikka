@@ -25,6 +25,7 @@ import rikka.api.scoreboard.IScoreboard;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.type.HandType;
 import rikka.api.world.IWorldBorder;
+import rikka.sponge.entity.living.SpongeLiving;
 import rikka.sponge.item.inventory.SpongeContainer;
 import rikka.sponge.item.inventory.SpongeInventory;
 import rikka.sponge.scoreboard.SpongeScoreboard;
@@ -35,7 +36,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
+public final class SpongePlayer extends SpongeLiving<Player> implements IPlayer {
 
     public SpongePlayer(Player source) {
         super(source);

@@ -20,6 +20,7 @@ import rikka.api.scoreboard.IScoreboard;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.type.HandType;
 import rikka.api.world.IWorldBorder;
+import rikka.bukkit.entity.living.BukkitLiving;
 import rikka.bukkit.scoreboard.BukkitScoreboard;
 import rikka.bukkit.world.BukkitWorldBorder;
 
@@ -29,7 +30,7 @@ import java.util.UUID;
 
 import static org.bukkit.GameMode.*;
 
-public class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
+public final class BukkitPlayer extends BukkitLiving<Player> implements IPlayer {
 
     public BukkitPlayer(Player source) {
         super(source);

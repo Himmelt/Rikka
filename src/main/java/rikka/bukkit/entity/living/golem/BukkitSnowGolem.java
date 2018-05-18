@@ -3,8 +3,8 @@ package rikka.bukkit.entity.living.golem;
 import org.bukkit.entity.Snowman;
 import rikka.api.entity.living.golem.ISnowGolem;
 
-public class BukkitSnowGolem<T extends Snowman> extends BukkitGolem<T> implements ISnowGolem {
-    public BukkitSnowGolem(T source) {
+public final class BukkitSnowGolem extends BukkitGolem<Snowman> implements ISnowGolem {
+    public BukkitSnowGolem(Snowman source) {
         super(source);
     }
 }

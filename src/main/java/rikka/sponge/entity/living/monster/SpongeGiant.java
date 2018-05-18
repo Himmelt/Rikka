@@ -7,11 +7,11 @@ import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.type.CarriedInventory;
 import rikka.api.util.type.HandType;
-import rikka.sponge.entity.SpongeLiving;
+import rikka.sponge.entity.living.SpongeLiving;
 
 import javax.annotation.Nullable;
 
-public class SpongeGiant<T extends Giant> extends SpongeLiving<T> implements IGiant {
+public final class SpongeGiant<T extends Giant> extends SpongeLiving<T> implements IGiant {
     public SpongeGiant(T source) {
         super(source);
     }

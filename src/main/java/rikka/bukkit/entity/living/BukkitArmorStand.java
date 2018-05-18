@@ -7,11 +7,10 @@ import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.type.CarriedInventory;
 import rikka.api.util.type.HandType;
-import rikka.bukkit.entity.BukkitLiving;
 
 import javax.annotation.Nullable;
 
-public class BukkitArmorStand<T extends ArmorStand> extends BukkitLiving<T> implements IArmorStand {
+public final class BukkitArmorStand<T extends ArmorStand> extends BukkitLiving<T> implements IArmorStand {
     public BukkitArmorStand(T source) {
         super(source);
     }

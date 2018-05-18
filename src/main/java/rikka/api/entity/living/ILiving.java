@@ -1,9 +1,9 @@
 package rikka.api.entity.living;
 
 import rikka.api.entity.IEntity;
-import rikka.api.entity.projectile.source.RProjectileSource;
+import rikka.api.entity.api.ProjectileSource;
 
-public interface ILiving extends IEntity, RProjectileSource {
+public interface ILiving extends IEntity, ProjectileSource {
 
     double health();
 

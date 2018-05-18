@@ -3,8 +3,8 @@ package rikka.bukkit.entity.living.animal;
 import org.bukkit.entity.Donkey;
 import rikka.api.entity.living.animal.IDonkey;
 
-public class BukkitDonkey<T extends Donkey> extends BukkitHorse<T> implements IDonkey {
-    public BukkitDonkey(T source) {
+public final class BukkitDonkey extends BukkitHorse<Donkey> implements IDonkey {
+    public BukkitDonkey(Donkey source) {
         super(source);
     }
 }

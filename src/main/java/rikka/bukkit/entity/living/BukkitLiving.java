@@ -1,18 +1,22 @@
-package rikka.bukkit.entity;
+package rikka.bukkit.entity.living;
 
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.util.Vector;
 import rikka.api.entity.living.ILiving;
-import rikka.api.entity.projectile.IProjectile;
 import rikka.api.entity.projectile.ProjectileType;
 import rikka.api.util.math.Vector3d;
+import rikka.bukkit.entity.BukkitEntity;
 import rikka.bukkit.entity.projectile.BukkitProjectile;
 
 public class BukkitLiving<T extends LivingEntity> extends BukkitEntity<T> implements ILiving {
 
     public BukkitLiving(T source) {
         super(source);
+    }
+
+    public T getSource() {
+        return source;
     }
 
     public final double health() {
@@ -35,11 +39,11 @@ public class BukkitLiving<T extends LivingEntity> extends BukkitEntity<T> implem
         return source.getLastDamage();
     }
 
-    public <P extends IProjectile> P launchProjectile(ProjectileType type) {
-        return BukkitProjectile.getProjectile(source.launchProjectile(type.bukkitClass));
+    public BukkitProjectile launchProjectile(ProjectileType type) {
+        return getProjectile(source.launchProjectile(type.bukkitClass));
     }
 
-    public <P extends IProjectile> P launchProjectile(ProjectileType type, Vector3d vc) {
-        return BukkitProjectile.getProjectile(source.launchProjectile(type.bukkitClass, new Vector(vc.x, vc.y, vc.z)));
+    public BukkitProjectile launchProjectile(ProjectileType type, Vector3d vc) {
+        return getProjectile(source.launchProjectile(type.bukkitClass, new Vector(vc.x, vc.y, vc.z)));
     }
 }

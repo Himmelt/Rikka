@@ -2,10 +2,10 @@ package rikka.bukkit.entity.living.animal;
 
 import org.bukkit.entity.Pig;
 import rikka.api.entity.living.animal.IPig;
-import rikka.bukkit.entity.BukkitLiving;
+import rikka.bukkit.entity.living.BukkitLiving;
 
-public class BukkitPig<T extends Pig> extends BukkitLiving<T> implements IPig {
-    public BukkitPig(T source) {
+public final class BukkitPig extends BukkitLiving<Pig> implements IPig {
+    public BukkitPig(Pig source) {
         super(source);
     }
 }

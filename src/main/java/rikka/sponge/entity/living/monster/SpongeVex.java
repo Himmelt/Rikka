@@ -2,9 +2,9 @@ package rikka.sponge.entity.living.monster;
 
 import org.spongepowered.api.entity.living.monster.Vex;
 import rikka.api.entity.living.monster.IVex;
-import rikka.sponge.entity.SpongeLiving;
+import rikka.sponge.entity.living.SpongeLiving;
 
-public class SpongeVex<T extends Vex> extends SpongeLiving<T> implements IVex {
+public final class SpongeVex<T extends Vex> extends SpongeLiving<T> implements IVex {
     public SpongeVex(T source) {
         super(source);
     }

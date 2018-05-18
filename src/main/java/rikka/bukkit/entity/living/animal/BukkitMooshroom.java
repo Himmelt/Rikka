@@ -3,8 +3,8 @@ package rikka.bukkit.entity.living.animal;
 import org.bukkit.entity.MushroomCow;
 import rikka.api.entity.living.animal.IMooshroom;
 
-public class BukkitMooshroom<T extends MushroomCow> extends BukkitCow<T> implements IMooshroom {
-    public BukkitMooshroom(T source) {
+public final class BukkitMooshroom extends BukkitCow<MushroomCow> implements IMooshroom {
+    public BukkitMooshroom(MushroomCow source) {
         super(source);
     }
 }

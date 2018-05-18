@@ -3,6 +3,7 @@ package rikka.api.entity.living.player;
 import org.spongepowered.api.event.cause.Cause;
 import rikka.api.command.ICommandSender;
 import rikka.api.entity.IEntity;
+import rikka.api.entity.api.User;
 import rikka.api.entity.living.IHumanoid;
 import rikka.api.entity.living.player.gamemode.GameMode;
 import rikka.api.entity.living.player.tab.TabList;
@@ -11,7 +12,7 @@ import rikka.api.item.inventory.IInventory;
 import rikka.api.scoreboard.IScoreboard;
 import rikka.api.world.IWorldBorder;
 
-public interface IPlayer extends IHumanoid, RUser, ICommandSender {
+public interface IPlayer extends IHumanoid, User, ICommandSender {
 
     default boolean isViewingInventory() {
         return getOpenInventory() != null;

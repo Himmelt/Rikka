@@ -7,7 +7,7 @@ import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.IItemStack;
 import rikka.api.item.inventory.type.CarriedInventory;
 import rikka.api.util.type.HandType;
-import rikka.bukkit.entity.BukkitLiving;
+import rikka.bukkit.entity.living.BukkitLiving;
 
 import javax.annotation.Nullable;
 

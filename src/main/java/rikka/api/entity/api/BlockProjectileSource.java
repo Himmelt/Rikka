@@ -1,9 +1,9 @@
-package rikka.api.entity.projectile.source;
+package rikka.api.entity.api;
 
 import rikka.api.block.IBlockState;
 import rikka.api.world.Location;
 
-public interface IBlockProjectileSource extends RProjectileSource {
+public interface BlockProjectileSource extends ProjectileSource {
     Location getLocation();
 
     IBlockState getBlock();

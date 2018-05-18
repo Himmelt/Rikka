@@ -16,6 +16,7 @@ import rikka.bukkit.command.BukkitMinecartSender;
 import rikka.bukkit.command.BukkitRconSender;
 import rikka.bukkit.entity.*;
 import rikka.bukkit.entity.living.BukkitArmorStand;
+import rikka.bukkit.entity.living.BukkitLiving;
 import rikka.bukkit.entity.projectile.BukkitProjectile;
 import rikka.bukkit.world.BukkitWorld;
 

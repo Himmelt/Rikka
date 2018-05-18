@@ -1,4 +1,4 @@
-package rikka.api.entity.projectile.explosive.fireball;
+package rikka.api.entity.projectile;
 
 import rikka.api.entity.api.Explosive;
 
