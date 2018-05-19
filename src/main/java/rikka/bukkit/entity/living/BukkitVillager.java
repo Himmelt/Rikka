@@ -8,8 +8,8 @@ import rikka.api.item.inventory.type.CarriedInventory;
 
 import javax.annotation.Nullable;
 
-public final class BukkitVillager<T extends Villager> extends BukkitLiving<T> implements IVillager {
-    public BukkitVillager(T source) {
+public final class BukkitVillager extends BukkitLiving<Villager> implements IVillager {
+    public BukkitVillager(Villager source) {
         super(source);
     }
 

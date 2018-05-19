@@ -7,8 +7,8 @@ import rikka.bukkit.entity.living.BukkitLiving;
 
 import java.util.List;
 
-public final class BukkitWither<T extends Wither> extends BukkitLiving<T> implements IWither {
-    public BukkitWither(T source) {
+public final class BukkitWither extends BukkitLiving<Wither> implements IWither {
+    public BukkitWither(Wither source) {
         super(source);
     }
 

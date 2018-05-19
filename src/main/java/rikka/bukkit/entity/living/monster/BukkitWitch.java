@@ -4,8 +4,8 @@ import org.bukkit.entity.Witch;
 import rikka.api.entity.living.monster.IWitch;
 import rikka.bukkit.entity.living.BukkitLiving;
 
-public final class BukkitWitch<T extends Witch> extends BukkitLiving<T> implements IWitch {
-    public BukkitWitch(T source) {
+public final class BukkitWitch extends BukkitLiving<Witch> implements IWitch {
+    public BukkitWitch(Witch source) {
         super(source);
     }
 }

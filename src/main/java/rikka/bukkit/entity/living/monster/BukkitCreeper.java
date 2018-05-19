@@ -4,8 +4,8 @@ import org.bukkit.entity.Creeper;
 import rikka.api.entity.living.monster.ICreeper;
 import rikka.bukkit.entity.living.BukkitLiving;
 
-public final class BukkitCreeper<T extends Creeper> extends BukkitLiving<T> implements ICreeper {
-    public BukkitCreeper(T source) {
+public final class BukkitCreeper extends BukkitLiving<Creeper> implements ICreeper {
+    public BukkitCreeper(Creeper source) {
         super(source);
     }
 

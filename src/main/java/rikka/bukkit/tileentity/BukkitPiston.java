@@ -3,8 +3,9 @@ package rikka.bukkit.tileentity;
 import org.bukkit.block.BlockState;
 import rikka.api.tileentity.IPiston;
 
-public class BukkitPiston<T extends BlockState> extends BukkitTileEntity<T> implements IPiston {
-    public BukkitPiston(T source) {
+//TODO how to check the state
+public final class BukkitPiston extends BukkitTileEntity<BlockState> implements IPiston {
+    public BukkitPiston(BlockState source) {
         super(source);
     }
 }

@@ -3,8 +3,8 @@ package rikka.bukkit.tileentity;
 import org.bukkit.block.CreatureSpawner;
 import rikka.api.tileentity.IMobSpawner;
 
-public class BukkitMobSpawner<T extends CreatureSpawner> extends BukkitTileEntity<T> implements IMobSpawner {
-    public BukkitMobSpawner(T source) {
+public final class BukkitMobSpawner extends BukkitTileEntity<CreatureSpawner> implements IMobSpawner {
+    public BukkitMobSpawner(CreatureSpawner source) {
         super(source);
     }
 

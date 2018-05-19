@@ -10,8 +10,8 @@ import rikka.api.util.type.HandType;
 
 import javax.annotation.Nullable;
 
-public final class BukkitArmorStand<T extends ArmorStand> extends BukkitLiving<T> implements IArmorStand {
-    public BukkitArmorStand(T source) {
+public final class BukkitArmorStand extends BukkitLiving<ArmorStand> implements IArmorStand {
+    public BukkitArmorStand(ArmorStand source) {
         super(source);
     }
 

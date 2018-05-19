@@ -8,9 +8,9 @@ import rikka.api.entity.living.complex.IEnderDragon;
 import java.util.Optional;
 import java.util.Set;
 
-public final class BukkitEnderDragon<T extends EnderDragon> extends BukkitLiving<T> implements IEnderDragon {
+public final class BukkitEnderDragon extends BukkitLiving<EnderDragon> implements IEnderDragon {
 
-    public BukkitEnderDragon(T source) {
+    public BukkitEnderDragon(EnderDragon source) {
         super(source);
     }
 

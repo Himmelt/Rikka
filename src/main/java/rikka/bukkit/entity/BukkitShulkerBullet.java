@@ -8,8 +8,8 @@ import rikka.api.entity.IShulkerBullet;
 import rikka.api.entity.living.ILiving;
 import rikka.bukkit.entity.living.BukkitLiving;
 
-public final class BukkitShulkerBullet<T extends ShulkerBullet> extends BukkitEntity<T> implements IShulkerBullet {
-    public BukkitShulkerBullet(T source) {
+public final class BukkitShulkerBullet extends BukkitEntity<ShulkerBullet> implements IShulkerBullet {
+    public BukkitShulkerBullet(ShulkerBullet source) {
         super(source);
     }
 

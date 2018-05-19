@@ -1,7 +1,7 @@
 package rikka.api;
 
 import rikka.api.command.IConsoleSender;
-import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.IPlayer;
 import rikka.api.scoreboard.IScoreboard;
 import rikka.api.world.IWorld;
 

@@ -3,8 +3,8 @@ package rikka.bukkit.entity.living.monster;
 import org.bukkit.entity.MagmaCube;
 import rikka.api.entity.living.monster.IMagmaCube;
 
-public final class BukkitMagmaCube<T extends MagmaCube> extends BukkitSlime<T> implements IMagmaCube {
-    public BukkitMagmaCube(T source) {
+public final class BukkitMagmaCube extends BukkitSlime<MagmaCube> implements IMagmaCube {
+    public BukkitMagmaCube(MagmaCube source) {
         super(source);
     }
 }

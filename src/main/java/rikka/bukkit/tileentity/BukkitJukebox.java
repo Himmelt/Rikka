@@ -4,8 +4,8 @@ import org.bukkit.block.Jukebox;
 import rikka.api.item.inventory.IItemStack;
 import rikka.api.tileentity.IJukebox;
 
-public class BukkitJukebox<T extends Jukebox> extends BukkitTileEntity<T> implements IJukebox {
-    public BukkitJukebox(T source) {
+public final class BukkitJukebox extends BukkitTileEntity<Jukebox> implements IJukebox {
+    public BukkitJukebox(Jukebox source) {
         super(source);
     }
 

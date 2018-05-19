@@ -1,6 +1,6 @@
 package rikka.api.entity.api;
 
-import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.IPlayer;
 import rikka.api.profile.GameProfile;
 import rikka.api.service.permission.Permissible;
 import rikka.api.util.math.Vector3d;

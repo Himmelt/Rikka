@@ -4,8 +4,8 @@ import org.bukkit.entity.Endermite;
 import rikka.api.entity.living.monster.IEndermite;
 import rikka.bukkit.entity.living.BukkitLiving;
 
-public final class BukkitEndermite<T extends Endermite> extends BukkitLiving<T> implements IEndermite {
-    public BukkitEndermite(T source) {
+public final class BukkitEndermite extends BukkitLiving<Endermite> implements IEndermite {
+    public BukkitEndermite(Endermite source) {
         super(source);
     }
 }

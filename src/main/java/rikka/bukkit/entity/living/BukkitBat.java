@@ -3,8 +3,8 @@ package rikka.bukkit.entity.living;
 import org.bukkit.entity.Bat;
 import rikka.api.entity.living.IBat;
 
-public final class BukkitBat<T extends Bat> extends BukkitLiving<T> implements IBat {
-    public BukkitBat(T source) {
+public final class BukkitBat extends BukkitLiving<Bat> implements IBat {
+    public BukkitBat(Bat source) {
         super(source);
     }
 }

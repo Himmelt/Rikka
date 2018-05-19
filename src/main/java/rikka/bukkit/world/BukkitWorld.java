@@ -5,7 +5,7 @@ import rikka.api.block.BlockType;
 import rikka.api.block.IBlockState;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
-import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.IPlayer;
 import rikka.api.tileentity.ITileEntity;
 import rikka.api.util.AABB;
 import rikka.api.util.math.Vector3d;
@@ -20,7 +20,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class BukkitWorld extends BukkitRikka<World> implements IWorld {
+public final class BukkitWorld extends BukkitRikka<World> implements IWorld {
 
     public BukkitWorld(World source) {
         super(source);

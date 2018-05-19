@@ -4,8 +4,8 @@ import org.bukkit.entity.Ghast;
 import rikka.api.entity.living.monster.IGhast;
 import rikka.bukkit.entity.living.BukkitLiving;
 
-public final class BukkitGhast<T extends Ghast> extends BukkitLiving<T> implements IGhast {
-    public BukkitGhast(T source) {
+public final class BukkitGhast extends BukkitLiving<Ghast> implements IGhast {
+    public BukkitGhast(Ghast source) {
         super(source);
     }
 }

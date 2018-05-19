@@ -3,8 +3,8 @@ package rikka.bukkit.tileentity;
 import org.bukkit.block.NoteBlock;
 import rikka.api.tileentity.INote;
 
-public class BukkitNote<T extends NoteBlock> extends BukkitTileEntity<T> implements INote {
-    public BukkitNote(T source) {
+public final class BukkitNote extends BukkitTileEntity<NoteBlock> implements INote {
+    public BukkitNote(NoteBlock source) {
         super(source);
     }
 

@@ -6,8 +6,8 @@ import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.type.CarriedInventory;
 import rikka.bukkit.entity.living.BukkitLiving;
 
-public final class BukkitEnderman<T extends Enderman> extends BukkitLiving<T> implements IEnderman {
-    public BukkitEnderman(T source) {
+public final class BukkitEnderman extends BukkitLiving<Enderman> implements IEnderman {
+    public BukkitEnderman(Enderman source) {
         super(source);
     }
 

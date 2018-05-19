@@ -1,10 +1,10 @@
-package rikka.api.entity.living.player;
+package rikka.api.entity.living;
 
 import org.spongepowered.api.event.cause.Cause;
 import rikka.api.command.ICommandSender;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.api.User;
-import rikka.api.entity.living.IHumanoid;
+import rikka.api.entity.living.player.CooldownTracker;
 import rikka.api.entity.living.player.gamemode.GameMode;
 import rikka.api.entity.living.player.tab.TabList;
 import rikka.api.item.inventory.IContainer;

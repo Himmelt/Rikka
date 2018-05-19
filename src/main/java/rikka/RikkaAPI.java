@@ -13,7 +13,7 @@ import org.spongepowered.api.text.channel.MessageChannel;
 import rikka.api.command.ICommandSender;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.ILiving;
-import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.IPlayer;
 import rikka.api.entity.projectile.IProjectile;
 import rikka.api.world.IWorld;
 import rikka.bukkit.BukkitRikka;

@@ -3,7 +3,7 @@ package rikka.api.world;
 import rikka.api.block.BlockType;
 import rikka.api.block.IBlockState;
 import rikka.api.entity.IEntity;
-import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.IPlayer;
 import rikka.api.tileentity.ITileEntity;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.math.Vector3i;

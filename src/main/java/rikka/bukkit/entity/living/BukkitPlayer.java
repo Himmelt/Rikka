@@ -1,4 +1,4 @@
-package rikka.bukkit.entity;
+package rikka.bukkit.entity.living;
 
 import org.bukkit.entity.Player;
 import org.spongepowered.api.event.cause.Cause;
@@ -6,8 +6,8 @@ import org.spongepowered.api.item.inventory.equipment.EquipmentType;
 import org.spongepowered.api.text.Text;
 import org.spongepowered.api.text.channel.MessageChannel;
 import rikka.api.entity.IEntity;
+import rikka.api.entity.living.IPlayer;
 import rikka.api.entity.living.player.CooldownTracker;
-import rikka.api.entity.living.player.IPlayer;
 import rikka.api.entity.living.player.gamemode.GameMode;
 import rikka.api.entity.living.player.tab.TabList;
 import rikka.api.item.inventory.ICarrier;
@@ -20,7 +20,6 @@ import rikka.api.scoreboard.IScoreboard;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.type.HandType;
 import rikka.api.world.IWorldBorder;
-import rikka.bukkit.entity.living.BukkitLiving;
 import rikka.bukkit.scoreboard.BukkitScoreboard;
 import rikka.bukkit.world.BukkitWorldBorder;
 

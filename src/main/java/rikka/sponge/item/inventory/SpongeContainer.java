@@ -1,7 +1,7 @@
 package rikka.sponge.item.inventory;
 
 import org.spongepowered.api.item.inventory.Container;
-import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.IPlayer;
 import rikka.api.item.ItemType;
 import rikka.api.item.inventory.IContainer;
 import rikka.api.item.inventory.IInventory;

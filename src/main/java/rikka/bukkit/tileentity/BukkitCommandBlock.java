@@ -7,8 +7,8 @@ import rikka.api.tileentity.ICommandBlock;
 
 import javax.annotation.Nonnull;
 
-public class BukkitCommandBlock<T extends CommandBlock> extends BukkitTileEntity<T> implements ICommandBlock {
-    public BukkitCommandBlock(T source) {
+public final class BukkitCommandBlock extends BukkitTileEntity<CommandBlock> implements ICommandBlock {
+    public BukkitCommandBlock(CommandBlock source) {
         super(source);
     }
 

@@ -1,6 +1,6 @@
 package rikka.api.entity.living.player.tab;
 
-import rikka.api.entity.living.player.IPlayer;
+import rikka.api.entity.living.IPlayer;
 
 import javax.annotation.Nullable;
 import java.util.Collection;

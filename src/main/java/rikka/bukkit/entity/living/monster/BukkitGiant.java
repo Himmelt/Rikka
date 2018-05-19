@@ -11,8 +11,8 @@ import rikka.bukkit.entity.living.BukkitLiving;
 
 import javax.annotation.Nullable;
 
-public final class BukkitGiant<T extends Giant> extends BukkitLiving<T> implements IGiant {
-    public BukkitGiant(T source) {
+public final class BukkitGiant extends BukkitLiving<Giant> implements IGiant {
+    public BukkitGiant(Giant source) {
         super(source);
     }
 

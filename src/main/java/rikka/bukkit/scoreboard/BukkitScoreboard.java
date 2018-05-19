@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Set;
 
-public class BukkitScoreboard extends BukkitRikka<Scoreboard> implements IScoreboard, Rikka<Scoreboard> {
+public final class BukkitScoreboard extends BukkitRikka<Scoreboard> implements IScoreboard, Rikka<Scoreboard> {
 
     public BukkitScoreboard(Scoreboard source) {
         super(source);

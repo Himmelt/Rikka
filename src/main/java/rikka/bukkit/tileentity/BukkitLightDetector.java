@@ -3,8 +3,8 @@ package rikka.bukkit.tileentity;
 import org.bukkit.block.DaylightDetector;
 import rikka.api.tileentity.ILightDetector;
 
-public class BukkitLightDetector<T extends DaylightDetector> extends BukkitTileEntity<T> implements ILightDetector {
-    public BukkitLightDetector(T source) {
+public final class BukkitLightDetector extends BukkitTileEntity<DaylightDetector> implements ILightDetector {
+    public BukkitLightDetector(DaylightDetector source) {
         super(source);
     }
 }
