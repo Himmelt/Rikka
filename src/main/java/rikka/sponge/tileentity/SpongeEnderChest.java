@@ -3,8 +3,8 @@ package rikka.sponge.tileentity;
 import org.spongepowered.api.block.tileentity.EnderChest;
 import rikka.api.tileentity.IEnderChest;
 
-public class SpongeEnderChest<T extends EnderChest> extends SpongeTileEntity<T> implements IEnderChest {
-    public SpongeEnderChest(T source) {
+public final class SpongeEnderChest extends SpongeTileEntity<EnderChest> implements IEnderChest {
+    public SpongeEnderChest(EnderChest source) {
         super(source);
     }
 }

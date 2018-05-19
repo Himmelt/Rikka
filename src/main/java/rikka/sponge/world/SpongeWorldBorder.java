@@ -5,7 +5,7 @@ import rikka.api.util.math.Vector3d;
 import rikka.api.world.IWorldBorder;
 import rikka.sponge.SpongeRikka;
 
-public class SpongeWorldBorder extends SpongeRikka<WorldBorder> implements IWorldBorder {
+public final class SpongeWorldBorder extends SpongeRikka<WorldBorder> implements IWorldBorder {
 
     public SpongeWorldBorder(WorldBorder border) {
         super(border);

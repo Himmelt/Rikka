@@ -1,4 +1,4 @@
-package rikka.sponge.entity;
+package rikka.sponge.entity.living;
 
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.entity.living.player.gamemode.GameModes;
@@ -25,7 +25,7 @@ import rikka.api.scoreboard.IScoreboard;
 import rikka.api.util.math.Vector3d;
 import rikka.api.util.type.HandType;
 import rikka.api.world.IWorldBorder;
-import rikka.sponge.entity.living.SpongeLiving;
+import rikka.sponge.entity.SpongeEntity;
 import rikka.sponge.item.inventory.SpongeContainer;
 import rikka.sponge.item.inventory.SpongeInventory;
 import rikka.sponge.scoreboard.SpongeScoreboard;

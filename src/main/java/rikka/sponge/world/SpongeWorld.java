@@ -21,7 +21,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class SpongeWorld extends SpongeRikka<World> implements IWorld {
+public final class SpongeWorld extends SpongeRikka<World> implements IWorld {
 
     public SpongeWorld(World source) {
         super(source);

@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Set;
 
-public class SpongeScoreboard extends SpongeRikka<Scoreboard> implements IScoreboard, Rikka<Scoreboard> {
+public final class SpongeScoreboard extends SpongeRikka<Scoreboard> implements IScoreboard, Rikka<Scoreboard> {
 
     public SpongeScoreboard(Scoreboard source) {
         super(source);

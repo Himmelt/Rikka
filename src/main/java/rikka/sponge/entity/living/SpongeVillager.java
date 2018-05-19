@@ -8,8 +8,8 @@ import rikka.api.item.inventory.type.CarriedInventory;
 
 import javax.annotation.Nullable;
 
-public final class SpongeVillager<T extends Villager> extends SpongeLiving<T> implements IVillager {
-    public SpongeVillager(T source) {
+public final class SpongeVillager extends SpongeLiving<Villager> implements IVillager {
+    public SpongeVillager(Villager source) {
         super(source);
     }
 
@@ -22,7 +22,6 @@ public final class SpongeVillager<T extends Villager> extends SpongeLiving<T> im
     }
 
     public void setCustomer(@Nullable IHumanoid humanoid) {
-
     }
 
     public CarriedInventory<? extends ICarrier> getInventory() {

@@ -7,8 +7,8 @@ import rikka.api.tileentity.ICommandBlock;
 
 import javax.annotation.Nonnull;
 
-public class SpongeCommandBlock<T extends CommandBlock> extends SpongeTileEntity<T> implements ICommandBlock {
-    public SpongeCommandBlock(T source) {
+public final class SpongeCommandBlock extends SpongeTileEntity<CommandBlock> implements ICommandBlock {
+    public SpongeCommandBlock(CommandBlock source) {
         super(source);
     }
 

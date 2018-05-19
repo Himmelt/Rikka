@@ -4,8 +4,8 @@ import org.spongepowered.api.block.tileentity.Jukebox;
 import rikka.api.item.inventory.IItemStack;
 import rikka.api.tileentity.IJukebox;
 
-public class SpongeJukebox<T extends Jukebox> extends SpongeTileEntity<T> implements IJukebox {
-    public SpongeJukebox(T source) {
+public final class SpongeJukebox extends SpongeTileEntity<Jukebox> implements IJukebox {
+    public SpongeJukebox(Jukebox source) {
         super(source);
     }
 

@@ -12,7 +12,7 @@ import rikka.api.command.ICommandSender;
 import rikka.api.entity.living.ILiving;
 import rikka.api.entity.projectile.IProjectile;
 import rikka.sponge.entity.SpongeEntity;
-import rikka.sponge.entity.SpongePlayer;
+import rikka.sponge.entity.living.SpongePlayer;
 import rikka.sponge.world.SpongeWorld;
 
 import java.util.HashMap;

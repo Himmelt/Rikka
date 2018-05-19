@@ -3,8 +3,8 @@ package rikka.sponge.tileentity;
 import org.spongepowered.api.block.tileentity.DaylightDetector;
 import rikka.api.tileentity.ILightDetector;
 
-public class SpongeLightDetector<T extends DaylightDetector> extends SpongeTileEntity<T> implements ILightDetector {
-    public SpongeLightDetector(T source) {
+public final class SpongeLightDetector extends SpongeTileEntity<DaylightDetector> implements ILightDetector {
+    public SpongeLightDetector(DaylightDetector source) {
         super(source);
     }
 }

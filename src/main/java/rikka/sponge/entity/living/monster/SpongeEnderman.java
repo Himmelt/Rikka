@@ -6,8 +6,8 @@ import rikka.api.item.inventory.ICarrier;
 import rikka.api.item.inventory.type.CarriedInventory;
 import rikka.sponge.entity.living.SpongeLiving;
 
-public final class SpongeEnderman<T extends Enderman> extends SpongeLiving<T> implements IEnderman {
-    public SpongeEnderman(T source) {
+public final class SpongeEnderman extends SpongeLiving<Enderman> implements IEnderman {
+    public SpongeEnderman(Enderman source) {
         super(source);
     }
 

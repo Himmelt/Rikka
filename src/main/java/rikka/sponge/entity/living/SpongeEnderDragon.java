@@ -8,8 +8,8 @@ import rikka.api.entity.living.complex.IEnderDragon;
 import java.util.Optional;
 import java.util.Set;
 
-public final class SpongeEnderDragon<T extends EnderDragon> extends SpongeLiving<T> implements IEnderDragon {
-    public SpongeEnderDragon(T source) {
+public final class SpongeEnderDragon extends SpongeLiving<EnderDragon> implements IEnderDragon {
+    public SpongeEnderDragon(EnderDragon source) {
         super(source);
     }
 

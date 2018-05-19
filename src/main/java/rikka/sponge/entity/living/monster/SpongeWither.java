@@ -7,8 +7,8 @@ import rikka.sponge.entity.living.SpongeLiving;
 
 import java.util.List;
 
-public final class SpongeWither<T extends Wither> extends SpongeLiving<T> implements IWither {
-    public SpongeWither(T source) {
+public final class SpongeWither extends SpongeLiving<Wither> implements IWither {
+    public SpongeWither(Wither source) {
         super(source);
     }
 

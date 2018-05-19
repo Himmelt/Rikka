@@ -3,8 +3,8 @@ package rikka.sponge.entity.living.monster;
 import org.spongepowered.api.entity.living.monster.ZombiePigman;
 import rikka.api.entity.living.monster.IPigZombie;
 
-public final class SpongePigZombie<T extends ZombiePigman> extends SpongeZombie<T> implements IPigZombie {
-    public SpongePigZombie(T source) {
+public final class SpongePigZombie extends SpongeZombie<ZombiePigman> implements IPigZombie {
+    public SpongePigZombie(ZombiePigman source) {
         super(source);
     }
 }

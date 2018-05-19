@@ -4,8 +4,8 @@ import org.spongepowered.api.entity.living.monster.Creeper;
 import rikka.api.entity.living.monster.ICreeper;
 import rikka.sponge.entity.living.SpongeLiving;
 
-public final class SpongeCreeper<T extends Creeper> extends SpongeLiving<T> implements ICreeper {
-    public SpongeCreeper(T source) {
+public final class SpongeCreeper extends SpongeLiving<Creeper> implements ICreeper {
+    public SpongeCreeper(Creeper source) {
         super(source);
     }
 

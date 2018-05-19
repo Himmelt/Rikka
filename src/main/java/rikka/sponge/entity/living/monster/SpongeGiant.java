@@ -11,8 +11,8 @@ import rikka.sponge.entity.living.SpongeLiving;
 
 import javax.annotation.Nullable;
 
-public final class SpongeGiant<T extends Giant> extends SpongeLiving<T> implements IGiant {
-    public SpongeGiant(T source) {
+public final class SpongeGiant extends SpongeLiving<Giant> implements IGiant {
+    public SpongeGiant(Giant source) {
         super(source);
     }
 

@@ -8,7 +8,7 @@ import rikka.bukkit.BukkitRikka;
 
 import static rikka.bukkit.server.NMSVersion.*;
 
-public class BukkitWorldBorder extends BukkitRikka<WorldBorder> implements IWorldBorder {
+public final class BukkitWorldBorder extends BukkitRikka<WorldBorder> implements IWorldBorder {
 
     public BukkitWorldBorder(WorldBorder source) {
         super(source);

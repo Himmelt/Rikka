@@ -4,8 +4,8 @@ import org.spongepowered.api.entity.living.monster.Evoker;
 import rikka.api.entity.living.monster.IEvoker;
 import rikka.sponge.entity.living.SpongeLiving;
 
-public final class SpongeEvoker<T extends Evoker> extends SpongeLiving<T> implements IEvoker {
-    public SpongeEvoker(T source) {
+public final class SpongeEvoker extends SpongeLiving<Evoker> implements IEvoker {
+    public SpongeEvoker(Evoker source) {
         super(source);
     }
 }

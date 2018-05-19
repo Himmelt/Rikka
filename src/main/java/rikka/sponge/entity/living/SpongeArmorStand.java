@@ -10,8 +10,8 @@ import rikka.api.util.type.HandType;
 
 import javax.annotation.Nullable;
 
-public final class SpongeArmorStand<T extends ArmorStand> extends SpongeLiving<T> implements IArmorStand {
-    public SpongeArmorStand(T source) {
+public final class SpongeArmorStand extends SpongeLiving<ArmorStand> implements IArmorStand {
+    public SpongeArmorStand(ArmorStand source) {
         super(source);
     }
 
