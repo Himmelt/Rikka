@@ -30,3 +30,8 @@ dependencies {
     compile files('lib/spongevanilla.jar')
     compile files('lib/spongevanilla-sources.jar')
 }
+
+jar {
+    includeEmptyDirs = false
+    exclude 'net/minecraft/entity'
+}

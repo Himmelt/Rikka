@@ -24,12 +24,29 @@ public final class SpongeShulkerBullet extends SpongeEntity<ShulkerBullet> imple
             field.setAccessible(true);
         } catch (Throwable ignored) {
         }
+        if (field == null) {
+            try {
+                // owner
+                field = EntityShulkerBullet.class.getDeclaredField("owner");
+                field.setAccessible(true);
+            } catch (Throwable ignored) {
+            }
+        }
         owner = field;
+        field = null;
         try {
             // target
             field = EntityShulkerBullet.class.getDeclaredField("field_184571_b");
             field.setAccessible(true);
         } catch (Throwable ignored) {
+        }
+        if (field == null) {
+            try {
+                // target
+                field = EntityShulkerBullet.class.getDeclaredField("target");
+                field.setAccessible(true);
+            } catch (Throwable ignored) {
+            }
         }
         target = field;
     }
