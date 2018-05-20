@@ -27,8 +27,8 @@ dependencies {
     compile 'org.spongepowered:spongeapi:7.1.0-SNAPSHOT'
 
     compile files('lib/spigot-nms.jar')
-    compile files('lib/spongevanilla.jar')
-    compile files('lib/spongevanilla-sources.jar')
+    runtime files('lib/spongevanilla.jar')
+    runtime files('lib/spongevanilla-sources.jar')
 }
 
 jar {
