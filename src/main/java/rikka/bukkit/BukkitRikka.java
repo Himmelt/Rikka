@@ -7,7 +7,6 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.command.RemoteConsoleCommandSender;
 import org.bukkit.entity.*;
 import org.bukkit.entity.minecart.CommandMinecart;
-import rikka.api.Rikka;
 import rikka.api.command.ICommandSender;
 import rikka.api.world.IWorld;
 import rikka.bukkit.command.BukkitBlockSender;
@@ -24,7 +23,7 @@ import rikka.bukkit.world.BukkitWorld;
 import java.util.HashMap;
 import java.util.UUID;
 
-public abstract class BukkitRikka<T> implements Rikka<T> {
+public abstract class BukkitRikka<T> {
 
     protected final T source;
 
@@ -73,17 +72,17 @@ public abstract class BukkitRikka<T> implements Rikka<T> {
         if (entity instanceof LivingEntity) {
             return getLiving((LivingEntity) entity);
         } else if (entity instanceof AreaEffectCloud) {
-            return new BukkitEffectCloud<>((AreaEffectCloud) entity);
+            return new BukkitEffectCloud((AreaEffectCloud) entity);
         } else if (entity instanceof ComplexEntityPart) {
             // TODO
         } else if (entity instanceof EnderCrystal) {
-            return new BukkitEnderCrystal<>((EnderCrystal) entity);
+            return new BukkitEnderCrystal((EnderCrystal) entity);
         } else if (entity instanceof EnderSignal) {
             // TODO
         } else if (entity instanceof EvokerFangs) {
             // TODO
         } else if (entity instanceof ExperienceOrb) {
-            return new BukkitExpOrb<>((ExperienceOrb) entity);
+            return new BukkitExpOrb((ExperienceOrb) entity);
         } else if (entity instanceof FallingBlock) {
             // TODO
         } else if (entity instanceof Firework) {
@@ -91,7 +90,7 @@ public abstract class BukkitRikka<T> implements Rikka<T> {
         } else if (entity instanceof Hanging) {
             // TODO
         } else if (entity instanceof Item) {
-            return new BukkitEntityItem<>((Item) entity);
+            return new BukkitEntityItem((Item) entity);
         } else if (entity instanceof Projectile) {
             return getProjectile((Projectile) entity);
         } else if (entity instanceof Weather) {
@@ -106,7 +105,7 @@ public abstract class BukkitRikka<T> implements Rikka<T> {
         } else if (entity instanceof Ambient) {
             // TODO
         } else if (entity instanceof ArmorStand) {
-            return new BukkitArmorStand<>((ArmorStand) entity);
+            return new BukkitArmorStand((ArmorStand) entity);
         } else if (entity instanceof ComplexLivingEntity) {
             // TODO
         } else if (entity instanceof Creature) {

@@ -1,7 +1,6 @@
 package rikka.sponge.scoreboard;
 
 import org.spongepowered.api.scoreboard.Scoreboard;
-import rikka.api.Rikka;
 import rikka.api.scoreboard.*;
 import rikka.sponge.SpongeRikka;
 
@@ -9,7 +8,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Set;
 
-public final class SpongeScoreboard extends SpongeRikka<Scoreboard> implements IScoreboard, Rikka<Scoreboard> {
+public final class SpongeScoreboard extends SpongeRikka<Scoreboard> implements IScoreboard {
 
     public SpongeScoreboard(Scoreboard source) {
         super(source);

@@ -7,7 +7,6 @@ import org.spongepowered.api.entity.living.Living;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.entity.projectile.Projectile;
 import org.spongepowered.api.world.World;
-import rikka.api.Rikka;
 import rikka.api.command.ICommandSender;
 import rikka.api.entity.living.ILiving;
 import rikka.api.entity.projectile.IProjectile;
@@ -18,13 +17,15 @@ import rikka.sponge.world.SpongeWorld;
 import java.util.HashMap;
 import java.util.UUID;
 
-public abstract class SpongeRikka<T> implements Rikka<T> {
+public abstract class SpongeRikka<T> {
 
     protected final T source;
 
     public SpongeRikka(T source) {
         this.source = source;
     }
+
+    public abstract T getSource();
 
     public static ILiving getLiving(Living living) {
         return null;
@@ -33,8 +34,6 @@ public abstract class SpongeRikka<T> implements Rikka<T> {
     public static IProjectile getProjectile(Projectile projectile) {
         return null;
     }
-
-    public abstract T getSource();
 
     private static final HashMap<String, ICommandSender> senders = new HashMap<>();
     private static final HashMap<UUID, SpongePlayer> players = new HashMap<>();

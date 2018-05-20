@@ -1,7 +1,6 @@
 package rikka.bukkit.scoreboard;
 
 import org.bukkit.scoreboard.Scoreboard;
-import rikka.api.Rikka;
 import rikka.api.scoreboard.*;
 import rikka.bukkit.BukkitRikka;
 
@@ -9,7 +8,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Set;
 
-public final class BukkitScoreboard extends BukkitRikka<Scoreboard> implements IScoreboard, Rikka<Scoreboard> {
+public final class BukkitScoreboard extends BukkitRikka<Scoreboard> implements IScoreboard {
 
     public BukkitScoreboard(Scoreboard source) {
         super(source);

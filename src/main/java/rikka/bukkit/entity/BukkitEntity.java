@@ -2,7 +2,6 @@ package rikka.bukkit.entity;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.event.player.PlayerTeleportEvent;
-import rikka.api.Rikka;
 import rikka.api.entity.EntityType;
 import rikka.api.entity.IEntity;
 import rikka.api.util.math.Vector3d;
@@ -16,10 +15,14 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-public class BukkitEntity<T extends Entity> extends BukkitRikka<T> implements IEntity, Rikka<T> {
+public class BukkitEntity<T extends Entity> extends BukkitRikka<T> implements IEntity {
 
     public BukkitEntity(T source) {
         super(source);
+    }
+
+    public T getSource() {
+        return source;
     }
 
     public Location getLocation() {
@@ -142,10 +145,6 @@ public class BukkitEntity<T extends Entity> extends BukkitRikka<T> implements IE
 
     public UUID getUUID() {
         return source.getUniqueId();
-    }
-
-    public T getSource() {
-        return source;
     }
 
 }
