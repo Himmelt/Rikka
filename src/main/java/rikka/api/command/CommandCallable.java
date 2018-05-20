@@ -1,18 +1,16 @@
 package rikka.api.command;
 
-import rikka.api.world.Location;
-
-import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface CommandCallable {
 
-    boolean process(ICommandSender sender, String args);
+    boolean process(ICommandSender sender, ArrayList<String> args);
 
-    List<String> getSuggestions(ICommandSender sender, String args, @Nullable Location location);
+    List<String> getSuggestions(ICommandSender sender, ArrayList<String> args);
 
-    boolean testPermission(ICommandSender source);
+    boolean testPermission(ICommandSender sender);
 
-    String getUsage(ICommandSender source);
+    String getUsage(ICommandSender sender);
 
 }
