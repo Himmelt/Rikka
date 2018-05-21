@@ -1,5 +1,6 @@
 package rikka.api.command;
 
+import org.spongepowered.api.text.Text;
 import rikka.api.entity.living.IPlayer;
 
 import java.util.*;
@@ -55,6 +56,8 @@ public abstract class IICommand {
         return list;
     }
 
-    abstract void sendChat(ICommandSender sender, String format, Object... args);
+    public void sendChat(ICommandSender sender, String format, Object... args) {
+        sender.sendMessage(Text.of(String.format(format, args)));
+    }
 
 }
