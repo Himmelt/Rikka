@@ -8,10 +8,10 @@ import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.entity.projectile.Projectile;
 import org.spongepowered.api.world.World;
 import rikka.api.command.ICommandSender;
-import rikka.api.entity.living.ILiving;
-import rikka.api.entity.projectile.IProjectile;
 import rikka.sponge.entity.SpongeEntity;
+import rikka.sponge.entity.living.SpongeLiving;
 import rikka.sponge.entity.living.SpongePlayer;
+import rikka.sponge.entity.projectile.SpongeProjectile;
 import rikka.sponge.world.SpongeWorld;
 
 import java.util.HashMap;
@@ -27,13 +27,6 @@ public abstract class SpongeRikka<T> {
 
     public abstract T getSource();
 
-    public static ILiving getLiving(Living living) {
-        return null;
-    }
-
-    public static IProjectile getProjectile(Projectile projectile) {
-        return null;
-    }
 
     private static final HashMap<String, ICommandSender> senders = new HashMap<>();
     private static final HashMap<UUID, SpongePlayer> players = new HashMap<>();
@@ -83,12 +76,23 @@ public abstract class SpongeRikka<T> {
     }
 
     public static SpongeEntity getEntity(Entity entity) {
-        if (entity instanceof Player) {
-            return getPlayer((Player) entity);
+        if (entity instanceof Living) {
+            return getLiving((Living) entity);
         } else {
             // TODO entity
             return null;
         }
+    }
+
+    public static SpongeLiving getLiving(Living living) {
+        if (living instanceof Player) {
+            return getPlayer((Player) living);
+        }
+        return null;
+    }
+
+    public static SpongeProjectile getProjectile(Projectile projectile) {
+        return null;
     }
 
 }
