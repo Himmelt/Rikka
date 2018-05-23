@@ -4,6 +4,10 @@ import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.entity.living.Living;
+import org.spongepowered.api.entity.living.monster.Blaze;
+import org.spongepowered.api.entity.living.monster.Creeper;
+import org.spongepowered.api.entity.living.monster.Enderman;
+import org.spongepowered.api.entity.living.monster.Monster;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.entity.projectile.Projectile;
 import org.spongepowered.api.world.World;
@@ -11,6 +15,9 @@ import rikka.api.command.ICommandSender;
 import rikka.sponge.entity.SpongeEntity;
 import rikka.sponge.entity.living.SpongeLiving;
 import rikka.sponge.entity.living.SpongePlayer;
+import rikka.sponge.entity.living.monster.SpongeBlaze;
+import rikka.sponge.entity.living.monster.SpongeCreeper;
+import rikka.sponge.entity.living.monster.SpongeEnderman;
 import rikka.sponge.entity.projectile.SpongeProjectile;
 import rikka.sponge.world.SpongeWorld;
 
@@ -87,6 +94,19 @@ public abstract class SpongeRikka<T> {
     public static SpongeLiving getLiving(Living living) {
         if (living instanceof Player) {
             return getPlayer((Player) living);
+        } else if (living instanceof Monster) {
+            return getMonster((Monster) living);
+        }
+        return null;
+    }
+
+    private static SpongeLiving getMonster(Monster monster) {
+        if (monster instanceof Blaze) {
+            return new SpongeBlaze((Blaze) monster);
+        } else if (monster instanceof Creeper) {
+            return new SpongeCreeper((Creeper) monster);
+        } else if (monster instanceof Enderman) {
+            return new SpongeEnderman((Enderman) monster);
         }
         return null;
     }
