@@ -36,6 +36,7 @@ public abstract class BukkitRikka<T> {
     private static final HashMap<String, ICommandSender> senders = new HashMap<>();
     private static final HashMap<UUID, BukkitPlayer> players = new HashMap<>();
     private static final HashMap<UUID, BukkitWorld> worlds = new HashMap<>();
+    private static final HashMap<UUID, BukkitLiving> monsters = new HashMap<>();
 
     public static IWorld getWorld(World world) {
         if (world == null) return null;
@@ -122,6 +123,61 @@ public abstract class BukkitRikka<T> {
             players.put(player.getUniqueId(), iPlayer);
         }
         return iPlayer;
+    }
+
+    private static BukkitLiving getMonster(Monster monster) {
+        // TODO descending sequence by probability
+        BukkitLiving mon = monsters.get(monster.getUniqueId());
+        if (mon == null) {
+            if (monster instanceof org.spongepowered.api.entity.living.monster.Blaze)
+                mon = new SpongeBlaze((org.spongepowered.api.entity.living.monster.Blaze) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Creeper)
+                mon = new SpongeCreeper((org.spongepowered.api.entity.living.monster.Creeper) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Enderman)
+                mon = new SpongeEnderman((org.spongepowered.api.entity.living.monster.Enderman) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Endermite)
+                mon = new SpongeEndermite((org.spongepowered.api.entity.living.monster.Endermite) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Evoker)
+                mon = new SpongeEvoker((org.spongepowered.api.entity.living.monster.Evoker) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Giant)
+                mon = new SpongeGiant((org.spongepowered.api.entity.living.monster.Giant) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Guardian)
+                mon = new SpongeGuardian((org.spongepowered.api.entity.living.monster.Guardian) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Illusioner)
+                mon = new SpongeIllusioner((org.spongepowered.api.entity.living.monster.Illusioner) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Silverfish)
+                mon = new SpongeSilverfish((org.spongepowered.api.entity.living.monster.Silverfish) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Stray)
+                mon = new SpongeStray((org.spongepowered.api.entity.living.monster.Stray) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.WitherSkeleton)
+                mon = new SpongeWitherSkeleton((org.spongepowered.api.entity.living.monster.WitherSkeleton) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Skeleton)
+                mon = new SpongeSkeleton<>((org.spongepowered.api.entity.living.monster.Skeleton) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.MagmaCube)
+                mon = new SpongeMagmaCube((org.spongepowered.api.entity.living.monster.MagmaCube) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Slime)
+                mon = new SpongeSlime<>((org.spongepowered.api.entity.living.monster.Slime) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.CaveSpider)
+                mon = new SpongeCaveSpider((org.spongepowered.api.entity.living.monster.CaveSpider) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Spider)
+                mon = new SpongeSpider<>((org.spongepowered.api.entity.living.monster.Spider) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Vex)
+                mon = new SpongeVex((org.spongepowered.api.entity.living.monster.Vex) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Vindicator)
+                mon = new SpongeVindicator((org.spongepowered.api.entity.living.monster.Vindicator) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Wither)
+                mon = new SpongeWither((org.spongepowered.api.entity.living.monster.Wither) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Husk)
+                mon = new SpongeHusk((org.spongepowered.api.entity.living.monster.Husk) monster);
+            else if (monster instanceof ZombiePigman) mon = new SpongePigZombie((ZombiePigman) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.ZombieVillager)
+                mon = new SpongeZombieVillager((org.spongepowered.api.entity.living.monster.ZombieVillager) monster);
+            else if (monster instanceof org.spongepowered.api.entity.living.monster.Zombie)
+                mon = new SpongeZombie<>((Zombie) monster);
+            else return null;
+            monsters.put(monster.getUniqueId(), mon);
+        }
+        return mon;
     }
 
     public static BukkitProjectile getProjectile(Projectile entity) {
