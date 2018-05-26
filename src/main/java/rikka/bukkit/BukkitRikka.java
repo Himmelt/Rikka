@@ -130,52 +130,31 @@ public abstract class BukkitRikka<T> {
         // TODO descending sequence by probability
         BukkitLiving mon = monsters.get(monster.getUniqueId());
         if (mon == null) {
-            if (monster instanceof Blaze)
-                mon = new BukkitBlaze((Blaze) monster);
-            else if (monster instanceof Creeper)
-                mon = new BukkitCreeper((Creeper) monster);
-            else if (monster instanceof Enderman)
-                mon = new BukkitEnderman((Enderman) monster);
-            else if (monster instanceof Endermite)
-                mon = new BukkitEndermite((Endermite) monster);
-            else if (monster instanceof Evoker)
-                mon = new BukkitEvoker((Evoker) monster);
-            else if (monster instanceof Giant)
-                mon = new BukkitGiant((Giant) monster);
-            else if (monster instanceof Guardian)
-                mon = new BukkitGuardian((Guardian) monster);
-            else if (monster instanceof Illusioner)
-                mon = new BukkitIllusioner((Illusioner) monster);
-            else if (monster instanceof Silverfish)
-                mon = new BukkitSilverfish((Silverfish) monster);
-            else if (monster instanceof Stray)
-                mon = new BukkitStray((Stray) monster);
-            else if (monster instanceof WitherSkeleton)
-                mon = new BukkitWitherSkeleton((WitherSkeleton) monster);
-            else if (monster instanceof Skeleton)
-                mon = new BukkitSkeleton<>((Skeleton) monster);
-            else if (monster instanceof MagmaCube)
-                mon = new BukkitMagmaCube((MagmaCube) monster);
-            else if (monster instanceof Slime)
-                mon = new BukkitSlime<>((Slime) monster);
-            else if (monster instanceof CaveSpider)
-                mon = new BukkitCaveSpider((CaveSpider) monster);
-            else if (monster instanceof Spider)
-                mon = new BukkitSpider<>((Spider) monster);
-            else if (monster instanceof Vex)
-                mon = new BukkitVex((Vex) monster);
-            else if (monster instanceof Vindicator)
-                mon = new BukkitVindicator((Vindicator) monster);
-            else if (monster instanceof Wither)
-                mon = new BukkitWither((Wither) monster);
-            else if (monster instanceof Husk)
-                mon = new BukkitHusk((Husk) monster);
+            if (monster instanceof Blaze) mon = new BukkitBlaze((Blaze) monster);
+            else if (monster instanceof Creeper) mon = new BukkitCreeper((Creeper) monster);
+            else if (monster instanceof Enderman) mon = new BukkitEnderman((Enderman) monster);
+            else if (monster instanceof Endermite) mon = new BukkitEndermite((Endermite) monster);
+            else if (monster instanceof Evoker) mon = new BukkitEvoker((Evoker) monster);
+            else if (monster instanceof Giant) mon = new BukkitGiant((Giant) monster);
+            else if (monster instanceof Guardian) mon = new BukkitGuardian((Guardian) monster);
+            else if (monster instanceof Illusioner) mon = new BukkitIllusioner((Illusioner) monster);
+            else if (monster instanceof Ghast) mon = new BukkitGhast((Ghast) monster);
+            else if (monster instanceof Silverfish) mon = new BukkitSilverfish((Silverfish) monster);
+            else if (monster instanceof Stray) mon = new BukkitStray((Stray) monster);
+            else if (monster instanceof WitherSkeleton) mon = new BukkitWitherSkeleton((WitherSkeleton) monster);
+            else if (monster instanceof Skeleton) mon = new BukkitSkeleton<>((Skeleton) monster);
+            else if (monster instanceof MagmaCube) mon = new BukkitMagmaCube((MagmaCube) monster);
+            else if (monster instanceof Slime) mon = new BukkitSlime<>((Slime) monster);
+            else if (monster instanceof CaveSpider) mon = new BukkitCaveSpider((CaveSpider) monster);
+            else if (monster instanceof Spider) mon = new BukkitSpider<>((Spider) monster);
+            else if (monster instanceof Vex) mon = new BukkitVex((Vex) monster);
+            else if (monster instanceof Vindicator) mon = new BukkitVindicator((Vindicator) monster);
+            else if (monster instanceof Wither) mon = new BukkitWither((Wither) monster);
+            else if (monster instanceof Husk) mon = new BukkitHusk((Husk) monster);
             else if (monster instanceof PigZombie) mon = new BukkitPigZombie((PigZombie) monster);
-            else if (monster instanceof ZombieVillager)
-                mon = new BukkitZombieVillager((ZombieVillager) monster);
-            else if (monster instanceof Zombie)
-                mon = new BukkitZombie<>((Zombie) monster);
-            else return null;
+            else if (monster instanceof ZombieVillager) mon = new BukkitZombieVillager((ZombieVillager) monster);
+            else if (monster instanceof Zombie) mon = new BukkitZombie<>((Zombie) monster);
+            else mon = new BukkitLiving<>(monster);
             monsters.put(monster.getUniqueId(), mon);
         }
         return mon;

@@ -3,15 +3,29 @@ package rikka.sponge;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.entity.Entity;
+import org.spongepowered.api.entity.Item;
+import org.spongepowered.api.entity.living.Bat;
 import org.spongepowered.api.entity.living.Living;
+import org.spongepowered.api.entity.living.Squid;
+import org.spongepowered.api.entity.living.Villager;
+import org.spongepowered.api.entity.living.animal.*;
+import org.spongepowered.api.entity.living.complex.EnderDragon;
+import org.spongepowered.api.entity.living.golem.IronGolem;
+import org.spongepowered.api.entity.living.golem.Shulker;
+import org.spongepowered.api.entity.living.golem.SnowGolem;
 import org.spongepowered.api.entity.living.monster.*;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.entity.projectile.Projectile;
 import org.spongepowered.api.world.World;
+import org.spongepowered.api.world.gen.populator.Mushroom;
 import rikka.api.command.ICommandSender;
 import rikka.sponge.entity.SpongeEntity;
-import rikka.sponge.entity.living.SpongeLiving;
-import rikka.sponge.entity.living.SpongePlayer;
+import rikka.sponge.entity.SpongeEntityItem;
+import rikka.sponge.entity.living.*;
+import rikka.sponge.entity.living.animal.*;
+import rikka.sponge.entity.living.golem.SpongeIronGolem;
+import rikka.sponge.entity.living.golem.SpongeShulker;
+import rikka.sponge.entity.living.golem.SpongeSnowGolem;
 import rikka.sponge.entity.living.monster.*;
 import rikka.sponge.entity.projectile.SpongeProjectile;
 import rikka.sponge.world.SpongeWorld;
@@ -34,6 +48,9 @@ public abstract class SpongeRikka<T> {
     private static final HashMap<UUID, SpongePlayer> players = new HashMap<>();
     private static final HashMap<UUID, SpongeWorld> worlds = new HashMap<>();
     private static final HashMap<UUID, SpongeLiving> monsters = new HashMap<>();
+    private static final HashMap<UUID, SpongeLiving> animals = new HashMap<>();
+    private static final HashMap<UUID, SpongeLiving> livings = new HashMap<>();
+    private static final HashMap<UUID, SpongeEntity> entities = new HashMap<>();
 
     public static ICommandSender getCommandSender(CommandSource source) {
         if (source == null) return null;
@@ -78,25 +95,61 @@ public abstract class SpongeRikka<T> {
     }
 
     public static SpongeEntity getEntity(Entity entity) {
-        if (entity instanceof Living) {
-            return getLiving((Living) entity);
-        } else {
-            // TODO entity
-            return null;
+        if (entity == null) return null;
+        if (entity instanceof Living) return getLiving((Living) entity);
+        if (entity instanceof Projectile) return getProjectile((Projectile) entity);
+        SpongeEntity ent = entities.get(entity.getUniqueId());
+        if (ent == null) {
+            if (entity instanceof Item) return new SpongeEntityItem((Item) entity);// return without cache
+            else ent = new SpongeEntity<>(entity);
+            entities.put(entity.getUniqueId(), ent);
         }
+        return ent;
     }
 
     public static SpongeLiving getLiving(Living living) {
-        if (living instanceof Player) {
-            return getPlayer((Player) living);
-        } else if (living instanceof Monster) {
-            return getMonster((Monster) living);
+        if (living == null) return null;
+        if (living instanceof Player) return getPlayer((Player) living);
+        if (living instanceof Monster) return getMonster((Monster) living);
+        if (living instanceof Animal) return getAnimal((Animal) living);
+        SpongeLiving liv = livings.get(living.getUniqueId());
+        if (liv == null) {
+            if (living instanceof Villager) liv = new SpongeVillager((Villager) living);
+            else if (living instanceof SnowGolem) liv = new SpongeSnowGolem((SnowGolem) living);
+            else if (living instanceof IronGolem) liv = new SpongeIronGolem((IronGolem) living);
+            else if (living instanceof Shulker) liv = new SpongeShulker((Shulker) living);
+            else if (living instanceof EnderDragon) liv = new SpongeEnderDragon((EnderDragon) living);
+            else if (living instanceof Squid) return new SpongeSquid((Squid) living);//return without cache
+            else if (living instanceof Bat) return new SpongeBat((Bat) living);//return without cache
+            else liv = new SpongeLiving<>(living);
+            livings.put(living.getUniqueId(), liv);
         }
-        return null;
+        return liv;
     }
 
-    private static SpongeLiving getMonster(Monster monster) {
+    public static SpongeLiving getAnimal(Animal animal) {
+        if (animal == null) return null;
+        SpongeLiving ani = animals.get(animal.getUniqueId());
+        if (ani == null) {
+            if (animal instanceof Sheep) ani = new SpongeSheep((Sheep) animal);
+            else if (animal instanceof Pig) ani = new SpongePig((Pig) animal);
+            else if (animal instanceof Chicken) ani = new SpongeChicken((Chicken) animal);
+            else if (animal instanceof Mushroom) ani = new SpongeMooshroom((Mooshroom) animal);
+            else if (animal instanceof Cow) ani = new SpongeCow<>((Cow) animal);
+            else if (animal instanceof Rabbit) ani = new SpongeRabbit((Rabbit) animal);
+            else if (animal instanceof Parrot) ani = new SpongeParrot((Parrot) animal);
+            else if (animal instanceof Wolf) ani = new SpongeWolf((Wolf) animal);
+            else if (animal instanceof Ocelot) ani = new SpongeOcelot((Ocelot) animal);
+            else if (animal instanceof PolarBear) ani = new SpongePolarBear((PolarBear) animal);
+            else ani = new SpongeLiving<>(animal);
+            animals.put(animal.getUniqueId(), ani);
+        }
+        return ani;
+    }
+
+    public static SpongeLiving getMonster(Monster monster) {
         // TODO descending sequence by probability
+        if (monster == null) return null;
         SpongeLiving mon = monsters.get(monster.getUniqueId());
         if (mon == null) {
             if (monster instanceof Blaze) mon = new SpongeBlaze((Blaze) monster);
@@ -107,6 +160,7 @@ public abstract class SpongeRikka<T> {
             else if (monster instanceof Giant) mon = new SpongeGiant((Giant) monster);
             else if (monster instanceof Guardian) mon = new SpongeGuardian((Guardian) monster);
             else if (monster instanceof Illusioner) mon = new SpongeIllusioner((Illusioner) monster);
+            else if (monster instanceof Ghast) mon = new SpongeGhast((Ghast) monster);
             else if (monster instanceof Silverfish) mon = new SpongeSilverfish((Silverfish) monster);
             else if (monster instanceof Stray) mon = new SpongeStray((Stray) monster);
             else if (monster instanceof WitherSkeleton) mon = new SpongeWitherSkeleton((WitherSkeleton) monster);
@@ -122,7 +176,7 @@ public abstract class SpongeRikka<T> {
             else if (monster instanceof ZombiePigman) mon = new SpongePigZombie((ZombiePigman) monster);
             else if (monster instanceof ZombieVillager) mon = new SpongeZombieVillager((ZombieVillager) monster);
             else if (monster instanceof Zombie) mon = new SpongeZombie<>((Zombie) monster);
-            else return null;
+            else mon = new SpongeLiving<>(monster);
             monsters.put(monster.getUniqueId(), mon);
         }
         return mon;

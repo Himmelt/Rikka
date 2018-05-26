@@ -1,6 +1,6 @@
 package rikka.api.entity.living;
 
-import rikka.api.entity.api.Aerial;
+import rikka.api.entity.api.Flying;
 
-public interface IBat extends IAmbient, Aerial {
+public interface IBat extends IAmbient, Flying {
 }
