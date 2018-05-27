@@ -2,8 +2,11 @@ package rikka.sponge;
 
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;
-import org.spongepowered.api.entity.Entity;
-import org.spongepowered.api.entity.Item;
+import org.spongepowered.api.entity.*;
+import org.spongepowered.api.entity.explosive.PrimedTNT;
+import org.spongepowered.api.entity.hanging.ItemFrame;
+import org.spongepowered.api.entity.hanging.LeashHitch;
+import org.spongepowered.api.entity.hanging.Painting;
 import org.spongepowered.api.entity.living.Bat;
 import org.spongepowered.api.entity.living.Living;
 import org.spongepowered.api.entity.living.Squid;
@@ -15,12 +18,17 @@ import org.spongepowered.api.entity.living.golem.Shulker;
 import org.spongepowered.api.entity.living.golem.SnowGolem;
 import org.spongepowered.api.entity.living.monster.*;
 import org.spongepowered.api.entity.living.player.Player;
+import org.spongepowered.api.entity.projectile.Firework;
 import org.spongepowered.api.entity.projectile.Projectile;
+import org.spongepowered.api.entity.vehicle.Boat;
+import org.spongepowered.api.entity.vehicle.minecart.Minecart;
+import org.spongepowered.api.entity.weather.Lightning;
+import org.spongepowered.api.entity.weather.WeatherEffect;
 import org.spongepowered.api.world.World;
 import org.spongepowered.api.world.gen.populator.Mushroom;
 import rikka.api.command.ICommandSender;
-import rikka.sponge.entity.SpongeEntity;
-import rikka.sponge.entity.SpongeEntityItem;
+import rikka.api.entity.vehicle.minecart.IChestMinecart;
+import rikka.sponge.entity.*;
 import rikka.sponge.entity.living.*;
 import rikka.sponge.entity.living.animal.*;
 import rikka.sponge.entity.living.golem.SpongeIronGolem;
@@ -51,6 +59,7 @@ public abstract class SpongeRikka<T> {
     private static final HashMap<UUID, SpongeLiving> animals = new HashMap<>();
     private static final HashMap<UUID, SpongeLiving> livings = new HashMap<>();
     private static final HashMap<UUID, SpongeEntity> entities = new HashMap<>();
+    private static final HashMap<UUID, SpongeEntity> minecarts = new HashMap<>();
 
     public static ICommandSender getCommandSender(CommandSource source) {
         if (source == null) return null;
@@ -98,13 +107,40 @@ public abstract class SpongeRikka<T> {
         if (entity == null) return null;
         if (entity instanceof Living) return getLiving((Living) entity);
         if (entity instanceof Projectile) return getProjectile((Projectile) entity);
+        if (entity instanceof Minecart) return getMinecart((Minecart) entity);
         SpongeEntity ent = entities.get(entity.getUniqueId());
         if (ent == null) {
             if (entity instanceof Item) return new SpongeEntityItem((Item) entity);// return without cache
+            if (entity instanceof PrimedTNT) return new SpongePrimedTNT((PrimedTNT) entity);
+            if (entity instanceof ExperienceOrb) return new SpongeExpOrb((ExperienceOrb) entity);
+            if (entity instanceof EnderCrystal) return new SpongeEnderCrystal((EnderCrystal) entity);
+            if (entity instanceof FallingBlock) return new SpongeFallingBlock((FallingBlock) entity);
+            if (entity instanceof LeashHitch) return new SpongeLeashHitch((LeashHitch) entity);
+            if (entity instanceof Firework) return new SpongeFirework((Firework) entity);
+            if (entity instanceof Lightning) return new SpongeLighting((Lightning) entity);
+            if (entity instanceof WeatherEffect) return new SpongeWeatherEffect<>((WeatherEffect) entity);
+            if (entity instanceof AreaEffectCloud) return new SpongeEffectCloud((AreaEffectCloud) entity);
+            // cached
+            if (entity instanceof Boat) ent = new SpongeBoat((Boat) entity);
+            else if (entity instanceof ItemFrame) ent = new SpongeItemFrame((ItemFrame) entity);
+            else if (entity instanceof Painting) ent = new SpongePainting((Painting) entity);
+            else if (entity instanceof ShulkerBullet) ent = new SpongeShulkerBullet((ShulkerBullet) entity);
             else ent = new SpongeEntity<>(entity);
             entities.put(entity.getUniqueId(), ent);
         }
         return ent;
+    }
+
+    public static SpongeEntity getMinecart(Minecart minecart) {
+        if (minecart == null) return null;
+        SpongeEntity cart = minecarts.get(minecart.getUniqueId());
+        if (cart == null) {
+            // TODO
+            if (minecart instanceof IChestMinecart) cart = null;
+            else cart = null;
+            minecarts.put(minecart.getUniqueId(), cart);
+        }
+        return cart;
     }
 
     public static SpongeLiving getLiving(Living living) {
