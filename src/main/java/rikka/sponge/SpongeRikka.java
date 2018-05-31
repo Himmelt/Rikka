@@ -1,6 +1,7 @@
 package rikka.sponge;
 
 import org.spongepowered.api.Sponge;
+import org.spongepowered.api.block.tileentity.TileEntity;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.entity.*;
 import org.spongepowered.api.entity.explosive.PrimedTNT;
@@ -36,6 +37,7 @@ import rikka.sponge.entity.living.golem.SpongeShulker;
 import rikka.sponge.entity.living.golem.SpongeSnowGolem;
 import rikka.sponge.entity.living.monster.*;
 import rikka.sponge.entity.projectile.SpongeProjectile;
+import rikka.sponge.tileentity.SpongeTileEntity;
 import rikka.sponge.world.SpongeWorld;
 
 import java.util.HashMap;
@@ -216,6 +218,11 @@ public abstract class SpongeRikka<T> {
             monsters.put(monster.getUniqueId(), mon);
         }
         return mon;
+    }
+
+    public static SpongeTileEntity getTileEntity(TileEntity entity) {
+        if (entity == null) return null;
+        return new SpongeTileEntity<>(entity);
     }
 
     public static SpongeProjectile getProjectile(Projectile projectile) {
