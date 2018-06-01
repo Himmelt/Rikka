@@ -1,4 +1,4 @@
 package rikka.api.tileentity.carrier;
 
-public interface IDropper extends ITileEntityCarrier {
+public interface IDropper extends ITileCarrier {
 }

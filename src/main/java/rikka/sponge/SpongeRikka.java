@@ -1,7 +1,8 @@
 package rikka.sponge;
 
 import org.spongepowered.api.Sponge;
-import org.spongepowered.api.block.tileentity.TileEntity;
+import org.spongepowered.api.block.tileentity.*;
+import org.spongepowered.api.block.tileentity.carrier.*;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.entity.*;
 import org.spongepowered.api.entity.explosive.PrimedTNT;
@@ -37,7 +38,7 @@ import rikka.sponge.entity.living.golem.SpongeShulker;
 import rikka.sponge.entity.living.golem.SpongeSnowGolem;
 import rikka.sponge.entity.living.monster.*;
 import rikka.sponge.entity.projectile.SpongeProjectile;
-import rikka.sponge.tileentity.SpongeTileEntity;
+import rikka.sponge.tileentity.*;
 import rikka.sponge.world.SpongeWorld;
 
 import java.util.HashMap;
@@ -221,8 +222,39 @@ public abstract class SpongeRikka<T> {
     }
 
     public static SpongeTileEntity getTileEntity(TileEntity entity) {
-        if (entity == null) return null;
-        return new SpongeTileEntity<>(entity);
+        if (entity instanceof TileEntityCarrier) return getTileCarrier((TileEntityCarrier) entity);
+        if (entity instanceof Banner) return new SpongeBanner((Banner) entity);
+        if (entity instanceof Bed) return new SpongeBed((Bed) entity);
+        if (entity instanceof CommandBlock) return new SpongeCommandBlock((CommandBlock) entity);
+        if (entity instanceof Comparator) return new SpongeComparator((Comparator) entity);
+        if (entity instanceof DaylightDetector) return new SpongeLightDetector((DaylightDetector) entity);
+        if (entity instanceof EnchantmentTable) return new SpongeEnchantTable((EnchantmentTable) entity);
+        if (entity instanceof EnderChest) return new SpongeEnderChest((EnderChest) entity);
+        if (entity instanceof EndGateway) return new SpongeEndGateway((EndGateway) entity);
+        if (entity instanceof EndPortal) return new SpongeEndPortal((EndPortal) entity);
+        if (entity instanceof FlowerPot) return new SpongeFlowerPot((FlowerPot) entity);
+        if (entity instanceof Jukebox) return new SpongeJukebox((Jukebox) entity);
+        if (entity instanceof MobSpawner) return new SpongeMobSpawner((MobSpawner) entity);
+        if (entity instanceof Note) return new SpongeNote((Note) entity);
+        if (entity instanceof Piston) return new SpongePiston((Piston) entity);
+        if (entity instanceof Sign) return new SpongeSign((Sign) entity);
+        if (entity instanceof Skull) return new SpongeSkull((Skull) entity);
+        if (entity instanceof Structure) return new SpongeStructure((Structure) entity);
+        if (entity != null) return new SpongeTileEntity<>(entity);
+        else return null;
+    }
+
+    public static SpongeTileCarrier getTileCarrier(TileEntityCarrier carrier) {
+        if (carrier instanceof Beacon) return new SpongeBeacon((Beacon) carrier);
+        if (carrier instanceof BrewingStand) return new SpongeBrewingStand((BrewingStand) carrier);
+        if (carrier instanceof Chest) return new SpongeChest((Chest) carrier);
+        if (carrier instanceof Dispenser) return new SpongeDispenser((Dispenser) carrier);
+        if (carrier instanceof Dropper) return new SpongeDropper((Dropper) carrier);
+        if (carrier instanceof Furnace) return new SpongeFurnace((Furnace) carrier);
+        if (carrier instanceof Hopper) return new SpongeHopper((Hopper) carrier);
+        if (carrier instanceof ShulkerBox) return new SpongeShulkerBox((ShulkerBox) carrier);
+        if (carrier != null) return new SpongeTileCarrier<>(carrier);
+        else return null;
     }
 
     public static SpongeProjectile getProjectile(Projectile projectile) {

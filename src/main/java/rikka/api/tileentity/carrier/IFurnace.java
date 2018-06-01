@@ -1,6 +1,6 @@
 package rikka.api.tileentity.carrier;
 
-public interface IFurnace extends ITileEntityCarrier {
+public interface IFurnace extends ITileCarrier {
     boolean smelt();
 
     int passedBurnTime();

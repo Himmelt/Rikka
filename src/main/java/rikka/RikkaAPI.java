@@ -6,6 +6,8 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
+import org.spongepowered.api.block.tileentity.TileEntity;
+import org.spongepowered.api.block.tileentity.carrier.TileEntityCarrier;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.entity.living.Living;
 import org.spongepowered.api.text.Text;
@@ -15,11 +17,11 @@ import rikka.api.entity.IEntity;
 import rikka.api.entity.living.ILiving;
 import rikka.api.entity.living.IPlayer;
 import rikka.api.entity.projectile.IProjectile;
+import rikka.api.tileentity.ITileEntity;
+import rikka.api.tileentity.carrier.ITileCarrier;
 import rikka.api.world.IWorld;
 import rikka.bukkit.BukkitRikka;
 import rikka.sponge.SpongeRikka;
-
-import javax.annotation.Nonnull;
 
 import static rikka.ServerType.BUKKIT;
 import static rikka.ServerType.SPONGE;
@@ -43,11 +45,11 @@ public final class RikkaAPI {
             return "invalid";
         }
 
-        public boolean hasPermission(@Nonnull String perm) {
+        public boolean hasPermission(String perm) {
             return false;
         }
 
-        public void sendMessage(@Nonnull String msg) {
+        public void sendMessage(String msg) {
         }
 
     };
@@ -98,7 +100,17 @@ public final class RikkaAPI {
     }
 
     public static IPlayer getPlayer(org.spongepowered.api.entity.living.player.Player player) {
-        if (BUKKIT) return SpongeRikka.getPlayer(player);
+        if (SPONGE) return SpongeRikka.getPlayer(player);
+        return null;
+    }
+
+    public static ITileEntity getTileEntity(TileEntity entity) {
+        if (SPONGE) return SpongeRikka.getTileEntity(entity);
+        return null;
+    }
+
+    public static ITileCarrier getTileCarrier(TileEntityCarrier carrier) {
+        if (SPONGE) return SpongeRikka.getTileCarrier(carrier);
         return null;
     }
 

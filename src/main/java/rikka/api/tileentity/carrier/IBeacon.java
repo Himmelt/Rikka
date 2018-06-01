@@ -1,5 +1,5 @@
 package rikka.api.tileentity.carrier;
 
-public interface IBeacon extends ITileEntityCarrier {
+public interface IBeacon extends ITileCarrier {
     int getCompletedLevels();
 }
