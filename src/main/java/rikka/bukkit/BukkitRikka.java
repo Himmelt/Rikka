@@ -1,6 +1,7 @@
 package rikka.bukkit;
 
 import org.bukkit.World;
+import org.bukkit.block.BlockState;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
@@ -8,6 +9,8 @@ import org.bukkit.command.RemoteConsoleCommandSender;
 import org.bukkit.entity.*;
 import org.bukkit.entity.minecart.CommandMinecart;
 import rikka.api.command.ICommandSender;
+import rikka.api.tileentity.ITileEntity;
+import rikka.api.tileentity.carrier.ITileCarrier;
 import rikka.api.world.IWorld;
 import rikka.bukkit.command.BukkitBlockSender;
 import rikka.bukkit.command.BukkitConsoleSender;
@@ -30,6 +33,14 @@ public abstract class BukkitRikka<T> {
 
     protected BukkitRikka(T source) {
         this.source = source;
+    }
+
+    public static ITileEntity getTileEntity(BlockState entity) {
+        return null;
+    }
+
+    public static ITileCarrier getTileCarrier(BlockState carrier) {
+        return null;
     }
 
     public abstract T getSource();

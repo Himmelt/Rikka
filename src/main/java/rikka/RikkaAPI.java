@@ -1,6 +1,7 @@
 package rikka;
 
 import org.bukkit.World;
+import org.bukkit.block.BlockState;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -109,8 +110,18 @@ public final class RikkaAPI {
         return null;
     }
 
+    public static ITileEntity getTileEntity(BlockState entity) {
+        if (BUKKIT) return BukkitRikka.getTileEntity(entity);
+        return null;
+    }
+
     public static ITileCarrier getTileCarrier(TileEntityCarrier carrier) {
         if (SPONGE) return SpongeRikka.getTileCarrier(carrier);
+        return null;
+    }
+
+    public static ITileCarrier getTileCarrier(org.bukkit.block.BlockState carrier) {
+        if (BUKKIT) return BukkitRikka.getTileCarrier(carrier);
         return null;
     }
 
