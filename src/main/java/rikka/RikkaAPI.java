@@ -1,18 +1,17 @@
 package rikka;
 
+import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.block.BlockState;
+import org.bukkit.block.Container;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.Projectile;
+import org.bukkit.entity.*;
+import org.spongepowered.api.Sponge;
 import org.spongepowered.api.block.tileentity.TileEntity;
 import org.spongepowered.api.block.tileentity.carrier.TileEntityCarrier;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.entity.living.Living;
-import org.spongepowered.api.text.Text;
-import org.spongepowered.api.text.channel.MessageChannel;
+import org.spongepowered.api.entity.living.animal.Animal;
 import rikka.api.command.ICommandSender;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.ILiving;
@@ -24,45 +23,40 @@ import rikka.api.world.IWorld;
 import rikka.bukkit.BukkitRikka;
 import rikka.sponge.SpongeRikka;
 
-import static rikka.ServerType.BUKKIT;
-import static rikka.ServerType.SPONGE;
-
 public final class RikkaAPI {
 
-    private static final ICommandSender invalid = new ICommandSender() {
-        public void sendMessage(Text message) {
+    public static final boolean UNKNOWN, BUKKIT, SPONGE;
 
+    static {
+        boolean unknown, bukkit, sponge;
+        if (Bukkit.getServer() != null) {
+            bukkit = true;
+            unknown = false;
+            sponge = false;
+        } else {
+            bukkit = false;
+            try {
+                Sponge.getServer();
+                sponge = true;
+                unknown = false;
+            } catch (Throwable e) {
+                sponge = false;
+                unknown = true;
+            }
         }
-
-        public MessageChannel getMessageChannel() {
-            return null;
-        }
-
-        public void setMessageChannel(MessageChannel channel) {
-
-        }
-
-        public String getName() {
-            return "invalid";
-        }
-
-        public boolean hasPermission(String perm) {
-            return false;
-        }
-
-        public void sendMessage(String msg) {
-        }
-
-    };
+        UNKNOWN = unknown;
+        BUKKIT = bukkit;
+        SPONGE = sponge;
+    }
 
     public static ICommandSender getCommandSender(CommandSender sender) {
         if (BUKKIT) return BukkitRikka.getCommandSender(sender);
-        return invalid;
+        return null;
     }
 
     public static ICommandSender getCommandSender(CommandSource sender) {
         if (SPONGE) return SpongeRikka.getCommandSender(sender);
-        return invalid;
+        return null;
     }
 
     public static IWorld getWorld(World world) {
@@ -95,6 +89,16 @@ public final class RikkaAPI {
         return null;
     }
 
+    public static ILiving getAnimal(Animals animal) {
+        if (BUKKIT) return BukkitRikka.getAnimal(animal);
+        return null;
+    }
+
+    public static ILiving getAnimal(Animal animal) {
+        if (SPONGE) return SpongeRikka.getAnimal(animal);
+        return null;
+    }
+
     public static IPlayer getPlayer(Player player) {
         if (BUKKIT) return BukkitRikka.getPlayer(player);
         return null;
@@ -120,7 +124,7 @@ public final class RikkaAPI {
         return null;
     }
 
-    public static ITileCarrier getTileCarrier(org.bukkit.block.BlockState carrier) {
+    public static ITileCarrier getTileCarrier(Container carrier) {
         if (BUKKIT) return BukkitRikka.getTileCarrier(carrier);
         return null;
     }

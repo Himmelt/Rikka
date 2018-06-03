@@ -9,6 +9,7 @@ import org.bukkit.command.RemoteConsoleCommandSender;
 import org.bukkit.entity.*;
 import org.bukkit.entity.minecart.CommandMinecart;
 import rikka.api.command.ICommandSender;
+import rikka.api.entity.living.ILiving;
 import rikka.api.tileentity.ITileEntity;
 import rikka.api.tileentity.carrier.ITileCarrier;
 import rikka.api.world.IWorld;
@@ -72,6 +73,10 @@ public abstract class BukkitRikka<T> {
         if (carrier instanceof ShulkerBox) return new BukkitShulkerBox((ShulkerBox) carrier);
         if (carrier != null) return new BukkitTileCarrier<>(carrier);
         else return null;
+    }
+
+    public static ILiving getAnimal(Animals animal) {
+        return null;
     }
 
     public abstract T getSource();
@@ -168,7 +173,7 @@ public abstract class BukkitRikka<T> {
         return iPlayer;
     }
 
-    private static BukkitLiving getMonster(Monster monster) {
+    public static BukkitLiving getMonster(Monster monster) {
         // TODO descending sequence by probability
         BukkitLiving mon = monsters.get(monster.getUniqueId());
         if (mon == null) {
