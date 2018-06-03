@@ -1,7 +1,7 @@
 package rikka.bukkit;
 
 import org.bukkit.World;
-import org.bukkit.block.BlockState;
+import org.bukkit.block.*;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
@@ -22,6 +22,7 @@ import rikka.bukkit.entity.living.BukkitLiving;
 import rikka.bukkit.entity.living.BukkitPlayer;
 import rikka.bukkit.entity.living.monster.*;
 import rikka.bukkit.entity.projectile.BukkitProjectile;
+import rikka.bukkit.tileentity.*;
 import rikka.bukkit.world.BukkitWorld;
 
 import java.util.HashMap;
@@ -36,11 +37,41 @@ public abstract class BukkitRikka<T> {
     }
 
     public static ITileEntity getTileEntity(BlockState entity) {
-        return null;
+        if (entity instanceof Container) return getTileCarrier((Container) entity);
+        if (entity instanceof Banner) return new BukkitBanner((Banner) entity);
+        if (entity instanceof Bed) return new BukkitBed((Bed) entity);
+        if (entity instanceof CommandBlock) return new BukkitCommandBlock((CommandBlock) entity);
+        if (entity instanceof Comparator) return new BukkitComparator((Comparator) entity);
+        if (entity instanceof DaylightDetector) return new BukkitLightDetector((DaylightDetector) entity);
+        if (entity instanceof EnchantingTable) return new BukkitEnchantTable((EnchantingTable) entity);
+        if (entity instanceof EnderChest) return new BukkitEnderChest((EnderChest) entity);
+        if (entity instanceof EndGateway) return new BukkitEndGateway((EndGateway) entity);
+        // TODO EndPortal
+        //if (entity instanceof EndPortal) return new BukkitEndPortal((EndPortal) entity);
+        if (entity instanceof FlowerPot) return new BukkitFlowerPot((FlowerPot) entity);
+        if (entity instanceof Jukebox) return new BukkitJukebox((Jukebox) entity);
+        if (entity instanceof CreatureSpawner) return new BukkitMobSpawner((CreatureSpawner) entity);
+        if (entity instanceof NoteBlock) return new BukkitNote((NoteBlock) entity);
+        // TODO Piston
+        //if (entity instanceof Piston) return new BukkitPiston((Piston) entity);
+        if (entity instanceof Sign) return new BukkitSign((Sign) entity);
+        if (entity instanceof Skull) return new BukkitSkull((Skull) entity);
+        if (entity instanceof Structure) return new BukkitStructure((Structure) entity);
+        if (entity != null) return new BukkitTileEntity<>(entity);
+        else return null;
     }
 
-    public static ITileCarrier getTileCarrier(BlockState carrier) {
-        return null;
+    public static ITileCarrier getTileCarrier(Container carrier) {
+        if (carrier instanceof Beacon) return new BukkitBeacon((Beacon) carrier);
+        if (carrier instanceof BrewingStand) return new BukkitBrewingStand((BrewingStand) carrier);
+        if (carrier instanceof Chest) return new BukkitChest((Chest) carrier);
+        if (carrier instanceof Dispenser) return new BukkitDispenser((Dispenser) carrier);
+        if (carrier instanceof Dropper) return new BukkitDropper((Dropper) carrier);
+        if (carrier instanceof Furnace) return new BukkitFurnace((Furnace) carrier);
+        if (carrier instanceof Hopper) return new BukkitHopper((Hopper) carrier);
+        if (carrier instanceof ShulkerBox) return new BukkitShulkerBox((ShulkerBox) carrier);
+        if (carrier != null) return new BukkitTileCarrier<>(carrier);
+        else return null;
     }
 
     public abstract T getSource();
