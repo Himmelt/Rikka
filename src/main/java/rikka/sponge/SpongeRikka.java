@@ -4,6 +4,9 @@ import org.spongepowered.api.Sponge;
 import org.spongepowered.api.block.tileentity.*;
 import org.spongepowered.api.block.tileentity.carrier.*;
 import org.spongepowered.api.command.CommandSource;
+import org.spongepowered.api.command.source.CommandBlockSource;
+import org.spongepowered.api.command.source.ConsoleSource;
+import org.spongepowered.api.command.source.RconSource;
 import org.spongepowered.api.entity.*;
 import org.spongepowered.api.entity.explosive.PrimedTNT;
 import org.spongepowered.api.entity.hanging.ItemFrame;
@@ -23,6 +26,7 @@ import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.entity.projectile.Firework;
 import org.spongepowered.api.entity.projectile.Projectile;
 import org.spongepowered.api.entity.vehicle.Boat;
+import org.spongepowered.api.entity.vehicle.minecart.CommandBlockMinecart;
 import org.spongepowered.api.entity.vehicle.minecart.Minecart;
 import org.spongepowered.api.entity.weather.Lightning;
 import org.spongepowered.api.entity.weather.WeatherEffect;
@@ -30,6 +34,7 @@ import org.spongepowered.api.world.World;
 import org.spongepowered.api.world.gen.populator.Mushroom;
 import rikka.api.command.ICommandSender;
 import rikka.api.entity.vehicle.minecart.IChestMinecart;
+import rikka.sponge.command.*;
 import rikka.sponge.entity.*;
 import rikka.sponge.entity.living.*;
 import rikka.sponge.entity.living.animal.*;
@@ -55,7 +60,6 @@ public abstract class SpongeRikka<T> {
     public abstract T getSource();
 
 
-    private static final HashMap<String, ICommandSender> senders = new HashMap<>();
     private static final HashMap<UUID, SpongePlayer> players = new HashMap<>();
     private static final HashMap<UUID, SpongeWorld> worlds = new HashMap<>();
     private static final HashMap<UUID, SpongeLiving> monsters = new HashMap<>();
@@ -65,16 +69,15 @@ public abstract class SpongeRikka<T> {
     private static final HashMap<UUID, SpongeEntity> minecarts = new HashMap<>();
 
     public static ICommandSender getCommandSender(CommandSource source) {
-        if (source == null) return null;
-        ICommandSender sender = senders.get(source.getName());
-        if (sender != null) return sender;
-        if (source instanceof Player)
-            sender = new SpongePlayer((Player) source);
-        else return null;
-        senders.put(source.getName(), sender);
-        return sender;
+        if (source instanceof Player) return getPlayer((Player) source);
+        if (source instanceof ConsoleSource) return new SpongeConsoleSender((ConsoleSource) source);
+        // TODO if modify it like player?
+        if (source instanceof CommandBlock) return new SpongeBlockSender((CommandBlockSource) source);
+        if (source instanceof CommandBlockMinecart) return new SpongeMinecartSender((CommandBlockMinecart) source);
+        if (source instanceof RconSource) return new SpongeRconSender((RconSource) source);
+        if (source != null) return new SpongeSender<>(source);
+        return null;
     }
-
 
     public static SpongeWorld getWorld(World world) {
         SpongeWorld iWorld = worlds.get(world.getUniqueId());

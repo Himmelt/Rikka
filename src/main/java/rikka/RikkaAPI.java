@@ -1,17 +1,5 @@
 package rikka;
 
-import org.bukkit.Bukkit;
-import org.bukkit.World;
-import org.bukkit.block.BlockState;
-import org.bukkit.block.Container;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.*;
-import org.spongepowered.api.Sponge;
-import org.spongepowered.api.block.tileentity.TileEntity;
-import org.spongepowered.api.block.tileentity.carrier.TileEntityCarrier;
-import org.spongepowered.api.command.CommandSource;
-import org.spongepowered.api.entity.living.Living;
-import org.spongepowered.api.entity.living.animal.Animal;
 import rikka.api.command.ICommandSender;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.ILiving;
@@ -29,14 +17,14 @@ public final class RikkaAPI {
 
     static {
         boolean unknown, bukkit, sponge;
-        if (Bukkit.getServer() != null) {
+        if (org.bukkit.Bukkit.getServer() != null) {
             bukkit = true;
             unknown = false;
             sponge = false;
         } else {
             bukkit = false;
             try {
-                Sponge.getServer();
+                org.spongepowered.api.Sponge.getServer();
                 sponge = true;
                 unknown = false;
             } catch (Throwable e) {
@@ -49,17 +37,17 @@ public final class RikkaAPI {
         SPONGE = sponge;
     }
 
-    public static ICommandSender getCommandSender(CommandSender sender) {
+    public static ICommandSender getCommandSender(org.bukkit.command.CommandSender sender) {
         if (BUKKIT) return BukkitRikka.getCommandSender(sender);
         return null;
     }
 
-    public static ICommandSender getCommandSender(CommandSource sender) {
+    public static ICommandSender getCommandSender(org.spongepowered.api.command.CommandSource sender) {
         if (SPONGE) return SpongeRikka.getCommandSender(sender);
         return null;
     }
 
-    public static IWorld getWorld(World world) {
+    public static IWorld getWorld(org.bukkit.World world) {
         if (BUKKIT) return BukkitRikka.getWorld(world);
         return null;
     }
@@ -69,7 +57,7 @@ public final class RikkaAPI {
         return null;
     }
 
-    public static IEntity getEntity(Entity entity) {
+    public static IEntity getEntity(org.bukkit.entity.Entity entity) {
         if (BUKKIT) return BukkitRikka.getEntity(entity);
         return null;
     }
@@ -79,27 +67,27 @@ public final class RikkaAPI {
         return null;
     }
 
-    public static ILiving getLiving(LivingEntity living) {
+    public static ILiving getLiving(org.bukkit.entity.LivingEntity living) {
         if (BUKKIT) return BukkitRikka.getLiving(living);
         return null;
     }
 
-    public static ILiving getLiving(Living living) {
+    public static ILiving getLiving(org.spongepowered.api.entity.living.Living living) {
         if (SPONGE) return SpongeRikka.getLiving(living);
         return null;
     }
 
-    public static ILiving getAnimal(Animals animal) {
+    public static ILiving getAnimal(org.bukkit.entity.Animals animal) {
         if (BUKKIT) return BukkitRikka.getAnimal(animal);
         return null;
     }
 
-    public static ILiving getAnimal(Animal animal) {
+    public static ILiving getAnimal(org.spongepowered.api.entity.living.animal.Animal animal) {
         if (SPONGE) return SpongeRikka.getAnimal(animal);
         return null;
     }
 
-    public static IPlayer getPlayer(Player player) {
+    public static IPlayer getPlayer(org.bukkit.entity.Player player) {
         if (BUKKIT) return BukkitRikka.getPlayer(player);
         return null;
     }
@@ -109,27 +97,27 @@ public final class RikkaAPI {
         return null;
     }
 
-    public static ITileEntity getTileEntity(TileEntity entity) {
+    public static ITileEntity getTileEntity(org.spongepowered.api.block.tileentity.TileEntity entity) {
         if (SPONGE) return SpongeRikka.getTileEntity(entity);
         return null;
     }
 
-    public static ITileEntity getTileEntity(BlockState entity) {
+    public static ITileEntity getTileEntity(org.bukkit.block.BlockState entity) {
         if (BUKKIT) return BukkitRikka.getTileEntity(entity);
         return null;
     }
 
-    public static ITileCarrier getTileCarrier(TileEntityCarrier carrier) {
+    public static ITileCarrier getTileCarrier(org.spongepowered.api.block.tileentity.carrier.TileEntityCarrier carrier) {
         if (SPONGE) return SpongeRikka.getTileCarrier(carrier);
         return null;
     }
 
-    public static ITileCarrier getTileCarrier(Container carrier) {
+    public static ITileCarrier getTileCarrier(org.bukkit.block.Container carrier) {
         if (BUKKIT) return BukkitRikka.getTileCarrier(carrier);
         return null;
     }
 
-    public static IProjectile getProjectile(Projectile projectile) {
+    public static IProjectile getProjectile(org.bukkit.entity.Projectile projectile) {
         if (BUKKIT) return BukkitRikka.getProjectile(projectile);
         return null;
     }

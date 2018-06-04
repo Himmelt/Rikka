@@ -13,10 +13,7 @@ import rikka.api.entity.living.ILiving;
 import rikka.api.tileentity.ITileEntity;
 import rikka.api.tileentity.carrier.ITileCarrier;
 import rikka.api.world.IWorld;
-import rikka.bukkit.command.BukkitBlockSender;
-import rikka.bukkit.command.BukkitConsoleSender;
-import rikka.bukkit.command.BukkitMinecartSender;
-import rikka.bukkit.command.BukkitRconSender;
+import rikka.bukkit.command.*;
 import rikka.bukkit.entity.*;
 import rikka.bukkit.entity.living.BukkitArmorStand;
 import rikka.bukkit.entity.living.BukkitLiving;
@@ -81,7 +78,6 @@ public abstract class BukkitRikka<T> {
 
     public abstract T getSource();
 
-    private static final HashMap<String, ICommandSender> senders = new HashMap<>();
     private static final HashMap<UUID, BukkitPlayer> players = new HashMap<>();
     private static final HashMap<UUID, BukkitWorld> worlds = new HashMap<>();
     private static final HashMap<UUID, BukkitLiving> monsters = new HashMap<>();
@@ -97,25 +93,16 @@ public abstract class BukkitRikka<T> {
     }
 
     public static ICommandSender getCommandSender(CommandSender source) {
-        if (source == null) return null;
-        if (source instanceof Player) {
-            return getPlayer((Player) source);
-        }
-        ICommandSender sender = senders.get(source.getName());
-        if (sender == null) {
-            if (source instanceof ConsoleCommandSender) {
-                sender = new BukkitConsoleSender<>((ConsoleCommandSender) source);
-            } else if (source instanceof BlockCommandSender) {
-                sender = new BukkitBlockSender<>((BlockCommandSender) source);
-            } else if (source instanceof CommandMinecart) {
-                sender = new BukkitMinecartSender<>((CommandMinecart) source);
-            } else if (source instanceof RemoteConsoleCommandSender) {
-                sender = new BukkitRconSender<>((RemoteConsoleCommandSender) source);
-            }
-            if (sender != null) senders.put(source.getName(), sender);
-        }
-        return sender;
+        if (source instanceof Player) return getPlayer((Player) source);
+        if (source instanceof ConsoleCommandSender) return new BukkitConsoleSender((ConsoleCommandSender) source);
+        // TODO if modify it like player?
+        if (source instanceof BlockCommandSender) return new BukkitBlockSender((BlockCommandSender) source);
+        if (source instanceof CommandMinecart) return new BukkitMinecartSender((CommandMinecart) source);
+        if (source instanceof RemoteConsoleCommandSender) return new BukkitRconSender((RemoteConsoleCommandSender) source);
+        if (source != null) return new BukkitSender<>(source);
+        return null;
     }
+
 
     public static BukkitEntity getEntity(Entity entity) {
         if (entity instanceof LivingEntity) {

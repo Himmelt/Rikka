@@ -3,8 +3,8 @@ package rikka.sponge.command;
 import org.spongepowered.api.command.source.RconSource;
 import rikka.api.command.IRconSender;
 
-public abstract class SpongeRconSender<T extends RconSource> extends SpongeSender<T> implements IRconSender {
-    public SpongeRconSender(T source) {
+public final class SpongeRconSender extends SpongeSender<RconSource> implements IRconSender {
+    public SpongeRconSender(RconSource source) {
         super(source);
     }
 }
