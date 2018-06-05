@@ -1,6 +1,5 @@
 package rikka.api.command;
 
-import org.spongepowered.api.text.Text;
 import rikka.api.entity.living.IPlayer;
 
 import java.util.*;
@@ -19,23 +18,22 @@ public abstract class IICommand {
         this.aliases.addAll(Arrays.asList(aliases));
     }
 
-    public boolean execute(ICommandSender sender, ArrayList<String> args) {
-        if (args.isEmpty()) return false;
-        IICommand sub = subs.get(args.remove(0));
+    public boolean execute(ICommandSender sender, CommandArgs args) {
+        if (args.empty()) return false;
+        IICommand sub = subs.get(args.first());
         if (sub == null) return false;
         if (sub.canRun(sender)) {
-            if (sender instanceof IPlayer) {
-                return sub.execute((IPlayer) sender, args);
-            } else if (onlyPlayer) {
-                sendChat(sender, "only player");
-            } else {
-                return sub.execute(sender, args);
-            }
-        } else sendChat(sender, "no permission " + sub.perm);
+            args.next();
+            if (sender instanceof IPlayer) return sub.execute((IPlayer) sender, args);
+            if (!onlyPlayer) return sub.execute(sender, args);
+            sender.sendMsg("only player");
+            return true;
+        }
+        sender.sendMsg("no permission " + sub.perm);
         return false;
     }
 
-    public boolean execute(IPlayer player, ArrayList<String> args) {
+    public boolean execute(IPlayer player, CommandArgs args) {
         return execute((ICommandSender) player, args);
     }
 
@@ -54,10 +52,6 @@ public abstract class IICommand {
         if (text.isEmpty()) list.addAll(possibles);
         else for (String s : possibles) if (s.startsWith(text)) list.add(s);
         return list;
-    }
-
-    public void sendChat(ICommandSender sender, String format, Object... args) {
-        sender.sendMessage(Text.of(String.format(format, args)));
     }
 
 }
