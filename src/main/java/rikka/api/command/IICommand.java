@@ -4,7 +4,7 @@ import rikka.api.entity.living.IPlayer;
 
 import java.util.*;
 
-public abstract class IICommand {
+public abstract class IICommand implements ICommand {
 
     private final String perm;
     private final boolean onlyPlayer;
@@ -31,10 +31,6 @@ public abstract class IICommand {
         }
         sender.sendMsg("no permission " + sub.perm);
         return false;
-    }
-
-    public boolean execute(IPlayer player, CommandArgs args) {
-        return execute((ICommandSender) player, args);
     }
 
     protected void addSub(IICommand sub) {
