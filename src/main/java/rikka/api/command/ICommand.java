@@ -4,9 +4,9 @@ import rikka.api.entity.living.IPlayer;
 
 public interface ICommand {
 
-    boolean execute(ICommandSender sender, CommandArgs args);
+    CommandResult execute(ICommandSender sender, CommandArgs args);
 
-    default boolean execute(IPlayer player, CommandArgs args) {
+    default CommandResult execute(IPlayer player, CommandArgs args) {
         return execute((ICommandSender) player, args);
     }
 
