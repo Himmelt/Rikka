@@ -1,6 +1,6 @@
 package rikka.api.command;
 
-public enum CommandResult {
+public enum ExecuteResult {
     SUCCESS,
     EMPTY_ARGS,
     ONLY_PLAYER,

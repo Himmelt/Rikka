@@ -4,7 +4,7 @@ import rikka.api.entity.living.IPlayer;
 
 import java.util.*;
 
-import static rikka.api.command.CommandResult.*;
+import static rikka.api.command.ExecuteResult.*;
 
 public abstract class IICommand implements ICommand {
 
@@ -20,7 +20,7 @@ public abstract class IICommand implements ICommand {
         this.aliases.addAll(Arrays.asList(aliases));
     }
 
-    public CommandResult execute(ICommandSender sender, CommandArgs args) {
+    public ExecuteResult execute(ICommandSender sender, CommandArgs args) {
         if (args.empty()) return EMPTY_ARGS;
         IICommand sub = subs.get(args.first());
         if (sub == null) return FAILED;
