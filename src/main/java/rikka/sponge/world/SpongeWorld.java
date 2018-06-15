@@ -28,7 +28,7 @@ public final class SpongeWorld extends SpongeRikka<World> implements IWorld {
     }
 
     public World getSource() {
-        return null;
+        return source;
     }
 
     public Collection<IPlayer> getPlayers() {

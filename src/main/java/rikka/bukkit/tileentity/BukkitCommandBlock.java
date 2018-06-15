@@ -1,11 +1,7 @@
 package rikka.bukkit.tileentity;
 
 import org.bukkit.block.CommandBlock;
-import org.spongepowered.api.text.Text;
-import org.spongepowered.api.text.channel.MessageChannel;
 import rikka.api.tileentity.ICommandBlock;
-
-import javax.annotation.Nonnull;
 
 public final class BukkitCommandBlock extends BukkitTileEntity<CommandBlock> implements ICommandBlock {
     public BukkitCommandBlock(CommandBlock source) {
@@ -20,21 +16,12 @@ public final class BukkitCommandBlock extends BukkitTileEntity<CommandBlock> imp
         return source.getName();
     }
 
-    public boolean hasPermission(@Nonnull String permission) {
-        // TODO
-        return false;
-    }
-
-    public void sendMessage(Text message) {
+    public void sendMsg(String msg) {
         // TODO
     }
 
-    public MessageChannel getMessageChannel() {
+    public boolean hasPermission(String perm) {
         // TODO
-        return null;
-    }
-
-    public void setMessageChannel(MessageChannel channel) {
-        //TODO
+        return perm == null;
     }
 }

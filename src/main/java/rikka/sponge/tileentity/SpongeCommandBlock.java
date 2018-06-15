@@ -2,10 +2,7 @@ package rikka.sponge.tileentity;
 
 import org.spongepowered.api.block.tileentity.CommandBlock;
 import org.spongepowered.api.text.Text;
-import org.spongepowered.api.text.channel.MessageChannel;
 import rikka.api.tileentity.ICommandBlock;
-
-import javax.annotation.Nonnull;
 
 public final class SpongeCommandBlock extends SpongeTileEntity<CommandBlock> implements ICommandBlock {
     public SpongeCommandBlock(CommandBlock source) {
@@ -13,26 +10,19 @@ public final class SpongeCommandBlock extends SpongeTileEntity<CommandBlock> imp
     }
 
     public void execute() {
-
+        source.execute();
     }
 
     public String getName() {
-        return null;
+        return source.getName();
     }
 
-    public boolean hasPermission(@Nonnull String permission) {
-        return false;
+    public void sendMsg(String msg) {
+        source.sendMessage(Text.of(msg));
     }
 
-    public void sendMessage(Text message) {
-
-    }
-
-    public MessageChannel getMessageChannel() {
-        return null;
-    }
-
-    public void setMessageChannel(MessageChannel channel) {
-
+    public boolean hasPermission(String perm) {
+        if (perm == null) return true;
+        return source.hasPermission(perm);
     }
 }

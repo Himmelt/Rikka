@@ -3,8 +3,6 @@ package rikka.bukkit.entity.living;
 import org.bukkit.entity.Player;
 import org.spongepowered.api.event.cause.Cause;
 import org.spongepowered.api.item.inventory.equipment.EquipmentType;
-import org.spongepowered.api.text.Text;
-import org.spongepowered.api.text.channel.MessageChannel;
 import rikka.api.entity.IEntity;
 import rikka.api.entity.living.IPlayer;
 import rikka.api.entity.living.player.CooldownTracker;
@@ -23,7 +21,6 @@ import rikka.api.world.IWorldBorder;
 import rikka.bukkit.scoreboard.BukkitScoreboard;
 import rikka.bukkit.world.BukkitWorldBorder;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
@@ -135,22 +132,24 @@ public final class BukkitPlayer extends BukkitLiving<Player> implements IPlayer 
     }
 
     public String getName() {
-        return null;
+        return source.getName();
     }
 
     public boolean isOnline() {
-        return false;
+        return source.isOnline();
     }
 
     public IPlayer getPlayer() {
-        return null;
+        return this;
     }
 
     public Vector3d getPosition() {
-        return null;
+        // TODO
+        return new Vector3d(0, 0, 0);
     }
 
     public boolean setLocation(Vector3d position, UUID world) {
+        // TODO
         return false;
     }
 
@@ -182,20 +181,13 @@ public final class BukkitPlayer extends BukkitLiving<Player> implements IPlayer 
         return null;
     }
 
-    public boolean hasPermission(@Nonnull String permission) {
-        return source.hasPermission(permission);
+    public boolean hasPermission(String perm) {
+        if (perm == null) return true;
+        return source.hasPermission(perm);
     }
 
-    public void sendMessage(Text message) {
-
-    }
-
-    public MessageChannel getMessageChannel() {
-        return null;
-    }
-
-    public void setMessageChannel(MessageChannel channel) {
-
+    public void sendMsg(String msg) {
+        source.sendMessage(msg);
     }
 
 }

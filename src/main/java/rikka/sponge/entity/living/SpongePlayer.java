@@ -7,7 +7,6 @@ import org.spongepowered.api.event.cause.EventContext;
 import org.spongepowered.api.item.inventory.Container;
 import org.spongepowered.api.item.inventory.equipment.EquipmentType;
 import org.spongepowered.api.text.Text;
-import org.spongepowered.api.text.channel.MessageChannel;
 import org.spongepowered.api.world.Location;
 import org.spongepowered.api.world.WorldBorder;
 import rikka.api.entity.IEntity;
@@ -32,7 +31,6 @@ import rikka.sponge.scoreboard.SpongeScoreboard;
 import rikka.sponge.world.SpongeWorld;
 import rikka.sponge.world.SpongeWorldBorder;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
@@ -187,7 +185,7 @@ public final class SpongePlayer extends SpongeLiving<Player> implements IPlayer 
     }
 
     public String getName() {
-        return null;
+        return source.getName();
     }
 
     public boolean isOnline() {
@@ -214,23 +212,13 @@ public final class SpongePlayer extends SpongeLiving<Player> implements IPlayer 
         return null;
     }
 
-    public boolean hasPermission(@Nonnull String permission) {
-        return source.hasPermission(permission);
+    public boolean hasPermission(String perm) {
+        if (perm == null) return true;
+        return source.hasPermission(perm);
     }
 
-    public void sendMessage(String message) {
-        source.sendMessage(org.spongepowered.api.text.Text.of(message));
+    public void sendMsg(String msg) {
+        source.sendMessage(Text.of(msg));
     }
 
-    public void sendMessage(Text message) {
-
-    }
-
-    public MessageChannel getMessageChannel() {
-        return null;
-    }
-
-    public void setMessageChannel(MessageChannel channel) {
-
-    }
 }
