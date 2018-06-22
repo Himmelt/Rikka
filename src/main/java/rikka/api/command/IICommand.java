@@ -33,13 +33,23 @@ public abstract class IICommand implements ICommand {
         return NO_PERMISSION;
     }
 
+    public List<String> tabCompletions(CommandArgs args) {
+        String first = args.first();
+        if (args.size() == 1) return getMatchList(first, subs.keySet());
+        if (subs.containsKey(first)) {
+            args.next();
+            return subs.get(first).tabCompletions(args);
+        }
+        return new ArrayList<>();
+    }
+
     protected void addSub(IICommand sub) {
         for (String alias : sub.aliases) {
             subs.putIfAbsent(alias, sub);
         }
     }
 
-    private boolean canRun(ICommandSender sender) {
+    public boolean canRun(ICommandSender sender) {
         return perm == null || sender.hasPermission(perm);
     }
 
