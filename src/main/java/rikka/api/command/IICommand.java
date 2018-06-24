@@ -20,6 +20,10 @@ public abstract class IICommand implements ICommand {
         this.aliases.addAll(Arrays.asList(aliases));
     }
 
+    public String getName() {
+        return aliases.isEmpty() ? "emptyCmdName" : aliases.get(0);
+    }
+
     public ExecuteResult execute(ICommandSender sender, CommandArgs args) {
         if (args.empty()) return EMPTY_ARGS;
         IICommand sub = subs.get(args.first());
